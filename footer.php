@@ -36,7 +36,7 @@
 	</div>
 	<div class="footer footer__signature">
 		<div class="container is-fullhd">
-		©<?php echo date('Y'); ?> Purdue University <?php if (is_active_sidebar('footer-signature')) {dynamic_sidebar('footer-signature');} ?> 
+		©<?php echo date('Y'); ?> Purdue University <?php purdueBrand_signatureLinks(); ?> 
 		</div>
 	</div>
 </footer><!-- #colophon -->
