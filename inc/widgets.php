@@ -42,15 +42,7 @@ if (!function_exists('purdueBrand_widgets_init')) {
         // check alm installed
         
         if (is_plugin_active('ajax-load-more-pro/ajax-load-more-pro.php')) {
-            // register_sidebar(array(
-            //     'name'          => esc_html__('Posts List on Front Page', 'purdueBrand'),
-            //     'id'            => 'posts-front-page',
-            //     'description'   => esc_html__('Add the Front Page Posts widget here to show a list of posts with filters on the front page.', 'purdueBrand'),
-            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            //     'after_widget'  => '</div>',
-            //     'before_title'  => '<h2>',
-            //     'after_title'   => '</h2>',
-            // ));
+
             register_sidebar(array(
                 'name'          => esc_html__('Posts List on Publication Posts', 'purdueBrand'),
                 'id'            => 'posts-pub-post',
@@ -107,15 +99,6 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'after_widget'  => '</div>',
             'before_title'  => '<h3><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion3id" aria-controls="sect3">',
             'after_title'   => '<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h3>',
-        ));
-        register_sidebar(array(
-            'name'          => esc_html__('Signature links on the bottom of footer', 'purdueBrand'),
-            'id'            => 'footer-signature',
-            'description'   => esc_html__('Add a Navigation Menu widget here to add social links on footer.', 'purdueBrand'),
-            'before_widget' => '',
-            'after_widget'  => '',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
         ));
     }
 }

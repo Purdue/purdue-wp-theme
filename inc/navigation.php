@@ -12,6 +12,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		'top-nav' => esc_html__( 'Simple Header Primary', 'purdue-wp-theme' ),
 		'side-nav' => esc_html__( 'Side Navigation', 'purdue-wp-theme' ),
 		'footer-social' => esc_html__( 'Footer Social Links', 'purdue-wp-theme' ),	
+		'footer-signatureLinks' => esc_html__( 'Footer Signature Links', 'purdue-wp-theme' ),	
 		'header-buttons' => esc_html__( 'Header buttons', 'purdue-wp-theme' ),	
 		) );
 }
@@ -91,7 +92,6 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 if ( ! function_exists( 'purdueBrand_footerSocial' ) ) {
 	function purdueBrand_footerSocial()
 	{
-		error_log('running footer social walker');
 		$location = 'footer-social';
 		if (has_nav_menu($location)) :
 			$menu_obj = purdue_get_menu_by_location($location); 
@@ -107,7 +107,23 @@ if ( ! function_exists( 'purdueBrand_footerSocial' ) ) {
 		endif;
 	}
 }
+// Footer signature links
 
+if ( ! function_exists( 'purdueBrand_signatureLinks' ) ) {
+	function purdueBrand_signatureLinks()
+	{
+		$location = 'footer-signatureLinks';
+		if (has_nav_menu($location)) :
+			$menu_obj = purdue_get_menu_by_location($location); 
+			wp_nav_menu( array( 
+				'theme_location'  => $location,
+				'container'         => 'div',
+				'container_class' => '',
+				'items_wrap'=> '<ul>%3$s</ul>'
+			)); 
+		endif;
+	}
+}
 // Header buttons before searchbox
 
 if ( ! function_exists( 'purdueBrand_headerButtons' ) ) {
