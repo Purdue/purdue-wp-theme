@@ -54,6 +54,14 @@ aside.is-active {
     content: '';
     display: block; }
 
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  word-wrap: normal !important; }
+
 /*! bulma.io v0.8.1 | MIT License | github.com/jgthms/bulma */
 @keyframes spinAround {
   from {
@@ -9466,4 +9474,26 @@ h1.title.is-1 {
 
 .related-content-item .media-content {
   font-weight: 600; }
+
+.pagination {
+  justify-content: center;
+  padding: 0 0 2rem 0 !important; }
+  .pagination .page-numbers {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 2px;
+    color: #666;
+    border: 1px solid #f1f1f1;
+    background: #f7f7f7;
+    text-decoration: none;
+    -webkit-transition: all 0.15s ease;
+    transition: all 0.15s ease; }
+  .pagination .page-numbers.current {
+    color: #fff;
+    border-color: #8e6f3e;
+    background-color: #8e6f3e; }
+  .pagination a.page-numbers:hover {
+    color: #222;
+    border-color: #e1e1e1;
+    background-color: #efefef; }
 

@@ -3,7 +3,7 @@
 /**
  * Template Name: Publication Post Archive Page
  *
- * @package Purdue-brand
+ * @package purdue-wp-theme
  */
 ?>
 <?php get_header(); ?>
