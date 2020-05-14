@@ -10,7 +10,7 @@ if(toTop){
   })
   
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 800) {
+    if (window.scrollY > 600) {
       toTop.classList.remove('to-top-hidden')
       toTop.classList.add('to-top-shown')
       const footer = document.getElementsByTagName('footer')[0]
