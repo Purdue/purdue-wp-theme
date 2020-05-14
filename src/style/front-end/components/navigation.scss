@@ -1,0 +1,637 @@
+$thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+.purdue-navbar-black {
+  padding: 1.75rem 3.25rem;
+  align-items: center !important;
+  position: relative;
+  @include touch {
+    padding:1.5rem 1.5rem 1rem;
+  }
+  .navbar-brand {
+    .navbar-item {
+      padding: 0;
+      img {
+        width: 243.47px;
+        max-height: 44.18px;
+        @include touch {
+          max-height: 33px;
+          width: 181.89px;
+        }
+      }
+    }
+    .icon {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      @include touch {
+        display: block;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .burger-icon{
+        display:block;
+        font-size:2em;
+        width:1.6em;
+      }
+      .close-icon{
+        display:none;
+        font-size:2.2em;
+        width:1.5em;
+      }
+    }
+  }
+  .navbar-end {
+    display: flex;
+    align-items: center !important;
+    flex-direction: row;
+    @include touch {
+      flex-direction: column-reverse;
+      margin-top: 1rem;
+      display: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      @include touch {
+        justify-content:space-around;
+        margin: 1rem -0.5rem 0;
+        flex-wrap:wrap;
+        width:calc(100% + 16px);
+      }
+      li {
+        @include touch {
+          flex:1 1 auto; 
+          padding: 0 0.5rem;
+          margin:0.5rem 0;  
+        }
+        a {
+          padding: 0 0.75rem;
+          color: inherit;
+          font-family: $acumin-pro;
+          font-size: 1.125rem;
+          &:hover {
+            color: $boiler-gold;
+          }
+          @include touch {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: $boiler-gold;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #000;
+            padding: 0.5rem;
+            &:hover {
+              color: #000;
+            }
+          }
+        }
+        &:not(:first-child) {
+          border-left: 1px solid #fff;
+          @include touch {
+            border: none;
+          }
+        }
+      }
+    }
+    .search-box {
+      margin-left: 3rem;
+      @include touch {
+        width: 100%;
+        margin-left: 0;
+      }
+      form {
+        display: flex;
+        flex-direction: row;
+        input:focus,
+        button:focus {
+          outline: none;
+        }
+        input[type='search'] {
+          width: 200px;
+          font-size: 1rem;
+          line-height: 2rem;
+          border-radius: 0;
+          height: 2rem;
+          border: none;
+          padding: 0.5rem 1rem;
+          background: #ededed;
+          -webkit-appearance: none;
+          @include touch {
+            width: 100%;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            background: #fff;
+          }
+        }
+        .search-button {
+          background: #ededed;
+          border: none;
+          font-size: 1rem;
+          padding: 0 0.75rem 0 0;
+          @include touch {
+            background: #fff;
+          }
+          .search-icon {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+.purdue-navbar-white {
+  padding: 0 2.5rem;
+  text-transform: uppercase;
+  box-shadow: 0px 1px 6px 1px rgba(38, 38, 38, 0.2) !important;
+  @include touch {
+    padding: 0;
+    display: none;
+    background-color: $black !important;
+    box-shadow: none;
+    &.is-active {
+      #navMenu {
+        display: block;
+        li {
+          &:hover {
+            background-color: transparent;
+            a {
+              background-color: transparent;
+            }
+          }
+          a:hover{
+            color: $boiler-gold;
+          }
+        }
+      }
+    }
+  }
+  .navbar-menu {
+    @include touch {
+      padding: 0;
+      background-color: $black !important;
+    }
+    width: 100%;
+    .navbar-start {
+      flex-wrap: wrap;
+      & > li {
+        & > a {
+          &:before {
+            content: '';
+            height: 2px;
+            width: calc(100% - 25px);
+            position: absolute;
+            bottom: 12px;
+            left: 12.5px;
+            visibility: hidden;
+            background: $aged-gold;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: $thetransition;
+            transition: $thetransition;
+          }
+          @include touch {
+            &:before {
+              height: 0 !important;
+            }
+          }
+        }
+        & > a.navbar-link{
+          &:before {
+            content: '';
+            height: 2px;
+            width: calc(100% - 0px);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            visibility: hidden;
+            background: $aged-gold;
+            -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+            -webkit-transition: $thetransition;
+            transition: $thetransition;
+            @include touch {
+              &:before {
+                height: 0 !important;
+              }
+            }
+          }
+        }
+        &:hover {
+          & > a {
+            &:before {
+              visibility: visible;
+              -webkit-transform: scaleX(1);
+              transform: scaleX(1);
+            }
+          }
+        }
+        & > a.is-active-page {
+          &:before {
+            content: '';
+            height: 2px;
+            width: calc(100% - 25px);
+            position: absolute;
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            bottom: 12px;
+            left: 12.5px;
+            background: $aged-gold;
+          }
+          @include touch {
+            &:before {
+              height: 0;
+            }
+          }
+        }
+        & > a.navbar-link.is-active-page {
+          &:before {
+            content: '';
+            height: 2px;
+            width: calc(100% - 0px);
+            position: absolute;
+            visibility: visible;
+            -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+            bottom: 0;
+            left: 0;
+            background: $aged-gold;
+          }
+          @include touch {
+            &:before {
+              height: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .submenu.has-dropdown{
+    &:after {
+      font-family: 'Font Awesome 5 Free';
+      font-size: 14px !important;
+      font-weight: 900;
+      content: '\f105' !important;
+      position: absolute;
+      right: 1.75rem;
+      margin-top: 2px !important;
+      color: black !important;
+      @include touch {
+        display: none;
+      }
+    }
+  }
+  .submenu {
+    text-transform: none;
+    @include touch {
+      padding-top: 0.5rem !important;
+    }
+    &:hover > .navbar-dropdown-submenu {
+      display: block;
+    }
+
+    .navbar-dropdown-submenu {
+      top: -0.6rem;
+      margin-left: 100%;
+      background-color: #fff;
+      box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+      display: none;
+      left: 0;
+      min-width: 12rem;
+      padding-top: 4px;
+      position: absolute;
+      z-index: 20;
+      @include touch {
+        top: 0;
+        margin-left: 0;
+        background-color: inherit;
+        box-shadow: none;
+        padding-bottom: 0;
+        display: block;
+        left: initial;
+        position: relative;
+        .navbar-item {
+          padding-bottom: 0;
+        }
+      }
+      a {
+        color: $black;
+        font-size: 1rem;
+      }
+    }
+    .navbar-link-submenu {
+      color: $black;
+      line-height: 1.5;
+      position: relative;
+      width: 100%;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .navbar-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    @include touch {
+      border-top: 1px solid #2e2e2e;
+      padding: 0.5rem 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &.has-dropdown {
+      padding-right: 2.75rem;
+      &:after {
+        font-family: 'Font Awesome 5 Free';
+        font-size: 12px;
+        font-weight: 900;
+        content: '\f078';
+        position: absolute;
+        right: 1.75rem;
+        margin-top: 3px;
+        color: black !important;
+        @include touch {
+          display: none;
+        }
+      }
+      &:hover {
+
+        @include touch {
+          & > a {
+            background-color: #fff;
+          }
+        }
+      }
+    }
+    a {
+      color: $black;
+      font-size: 1.125rem;
+      &:hover {
+        background: white;
+      }
+
+      @include touch {
+        font-size: 1rem;
+        padding-left: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        &:hover {
+          color: $boiler-gold;
+        }
+      }
+    }
+    &:hover {
+
+      .navbar-dropdown {
+        display: block;
+      }
+      @include touch {
+        background-color: #fff;
+        & > a {
+          background-color: #fff;
+        }
+        // .navbar-dropdown {
+        //   display: none;
+        // }
+      }
+    }
+    @include touch {
+      a {
+        color: #fff;
+      }
+    }
+  }
+  .navbar-dropdown {
+    padding:0;
+    @include touch {
+      // display: none;
+      padding-top: 0 !important;
+    }
+    .navbar-item {
+      @include touch {
+        border-top: none;
+        padding-bottom: 0 !important;
+      }
+
+      a {
+        color: $black;
+        font-size: 1rem;
+        padding-right: 1rem;
+        &:hover{
+          text-decoration: underline;
+          @include touch {
+            text-decoration: none;
+          }
+        }
+        @include touch {
+          color: #fff;
+        }
+      }
+    }
+  }
+  a.navbar-link {
+    padding: 0;
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.header {
+  &--global {
+    @include touch {
+      display: flex;
+      flex-direction: column;
+      background: white;
+    }
+    .purdue-navbar-black {
+      padding: 1rem 1.5rem;
+      #blackBarMenu {
+        margin-left: -1.4rem;
+        align-items: stretch;
+        .sr-only-lg {
+          display: none;
+          @include touch {
+            display: block;
+            font-family: $acumin-pro-semicondensed;
+            font-size: 1rem;
+            color: $aged-gold;
+            margin-bottom: 0.5rem;
+          }
+        }
+        .navbar-item {
+          padding: 0.5rem 1.4rem;
+          &:not(:last-child) {
+            &:after {
+              content: '';
+              position: absolute;
+              right: 0;
+              top: 25%;
+              width: 1px;
+              height: 60%;
+              background: white;
+            }
+          }
+          a {
+            color: white;
+            @include touch {
+              color: black;
+            }
+          }
+        }
+        .navbar-start {
+          margin-right: 2rem;
+          @include touch {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            height: 7.5rem;
+            .navbar-item {
+              padding: 0.5rem 0 0.5rem 0.5rem;
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              &:before {
+                font-family: 'Font Awesome 5 Free';
+                font-size: 10px;
+                font-weight: 900;
+                content: '\f054';
+                position: absolute;
+                left: 0;
+                margin-top: 2px;
+                color: black !important;
+              }
+
+            }
+          }
+        }
+        .navbar-end {
+          margin-left: 0;
+          flex: 1 0 auto;
+          .search-box {
+            margin: 0;
+            width: 100%;
+            input {
+              width: 100%;
+              height: 100%;
+            }
+          }
+          .search-button {
+            padding: 0 1rem;
+            background-color: $boiler-gold;
+          }
+          @include touch {
+            display: none;
+          }
+        }
+        @include touch {
+          display: block;
+          width: 100%;
+          box-shadow: none;
+          height: auto;
+          margin: 0;
+          padding: 1rem;
+        }
+      }
+      @include touch {
+        order: 2;
+        display: none;
+        background: white;
+        padding: 0;
+        &.is-active {
+          display: flex;
+        }
+      }
+    }
+    .purdue-navbar-white {
+      padding: 0 1.5rem;
+      @include touch {
+        order: 1;
+        display: flex;
+        flex-direction: column;
+        background: white !important;
+      }
+    }
+    .navbar {
+      &--global {
+        .navbar-brand {
+          margin-right: 3.375rem;
+          .navbar-item {
+            padding: 1.5rem 0;
+            img {
+              max-height: 3rem;
+              height: 3rem;
+            }
+            border: none;
+          }
+          .icon {
+            display: none;
+            background: none;
+            border: none;
+            @include touch {
+              display: block;
+              &:hover {
+                cursor: pointer;
+              }
+            }
+            .burger-icon{
+              display:block;
+              font-size:2em;
+              width:1.6em;
+            }
+            .close-icon{
+              display:none;
+              font-size:2.2em;
+              width:1.5em;
+            }
+          }
+          @include touch {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+        }
+        .navbar-start {
+          .navbar-item {
+            a {
+              font-family: $acumin-pro-condensed;
+              font-weight: 700;
+              @include touch {
+                color: black;
+                font-weight: 400;
+                font-size: 1.5rem;
+                &.navbar-link {
+                  &:after {
+                    display: none;
+                  }
+                }
+              }
+            }
+            @include touch {
+              border: none;
+              padding: 0.6rem 0;
+              position: relative;
+              display: flex;
+              align-items: center;
+            }
+          }
+          @include touch {
+            display: none;
+            &.is-active {
+              display: block;
+            }
+          }
+        }
+        @include touch {
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+}

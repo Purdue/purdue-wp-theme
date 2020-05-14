@@ -1,0 +1,115 @@
+@import "./colors";
+$black: #000;
+
+$footer-background-color:$black;
+$tablet: 768px;
+$mobile-plus:414px;
+$stickySideNav-desktop: 1322px;
+$stickySideNav-tablet: 1066px;
+$text: $black;
+
+$content-heading-color: $black;
+
+
+$acumin-pro-condensed: acumin-pro-condensed,
+"Franklin Gothic",
+sans-serif;
+$acumin-pro-semicondensed: acumin-pro-semi-condensed,
+"Franklin Gothic",
+sans-serif;
+$acumin-pro: acumin-pro,
+"Franklin Gothic",
+sans-serif;
+$united-sans: "United Sans",
+Impact,
+"Arial Black",
+"sans serif";
+$united-sans-condensed: "United Sans Condensed",
+Impact,
+"Arial Black",
+"sans serif";
+$united-sans-extended: "United Sans Extended",
+Impact,
+"Arial Black",
+"sans serif";
+
+$farnham-headline: farnham-headline,
+serif;
+
+$family-sans-serif: acumin-pro-semi-condensed,
+"Franklin Gothic",
+sans-serif;
+
+.main-content {
+    display: block;
+}
+
+.content {
+    p {
+        font-size: 1.125rem;
+    }
+    a{
+        color:$aged-gold;
+        text-decoration:underline;
+        &:hover{
+            text-decoration:none;
+            color:#000;
+        }
+    }
+}
+.home{
+    .content{
+        margin-bottom: 0 !important;
+    }
+}
+
+hr.wp-block-separator {
+    height: 1px !important;
+}
+
+
+// .has-background-black {
+//     .google_bar_chart {
+//         svg {
+
+//             &>g:not(:nth-last-of-type(1)) {
+//                 text {
+//                     fill: #fff;
+//                 }
+//             }
+
+//             &>g:nth-child(3) {
+//                 &>g:nth-child(2) {
+//                     &>g:nth-child(3) {
+//                         rect:nth-child(1) {
+//                             fill: white;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// .has-background-black-ter {
+//     .google_bar_chart {
+//         svg {
+
+//             &>g:not(:nth-last-of-type(1)) {
+//                 text {
+//                     fill: #fff;
+//                 }
+//             }
+
+//             &>g:nth-child(3) {
+//                 &>g:nth-child(2) {
+//                     &>g:nth-child(3) {
+//                         rect:nth-child(1) {
+//                             fill: white;
+//                         }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }

@@ -1,0 +1,68 @@
+// @import "../../../node_modules/bulma/bulma.sass";
+@import "./headings.scss";
+
+input[name="search_engine_code"] {
+    display: none;
+}
+
+.search_engine_code {
+    display: none;
+}
+
+.dashicons-plus {
+    padding-top: 0.3rem;
+}
+
+.dashicons-no {
+    padding-top: 0.25rem;
+}
+
+.admin-footer-section {
+    border-top: solid;
+    padding-top: 1rem;
+}
+
+.wp-block {
+    max-width: 1080px;
+
+    p {
+        font-size: 1rem !important;
+    }
+
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.is-selected>.block-editor-block-list__block-edit {
+    &:before {
+        border-color: #00c4a7 !important;
+    }
+
+    &:after {
+        border-color: #00c4a7 !important;
+    }
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block.has-child-selected>.block-editor-block-list__block-edit {
+    &:before {
+        border-color: #00c4a7 !important;
+    }
+
+    &:after {
+        border-color: #00c4a7 !important;
+    }
+}
+
+.content {
+    figure {
+        margin: 0 !important;
+    }
+}
+
+.acf-input-wrap {
+    .field-label {
+        text-align: left !important;
+    }
+}
+
+.tags {
+    display: table !important;
+}

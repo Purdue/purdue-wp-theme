@@ -1,0 +1,86 @@
+.print-publication-articles {
+    .articles-heading {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        @include mobile {
+            align-items: stretch;
+        }
+
+        h2 {
+            font-size: 2.8125rem;
+            font-family: $acumin-pro-semicondensed;
+            font-weight: 700;
+            align-self: center;
+        }
+
+        .category-filter {
+            padding: 1rem 0 0;
+        }
+    }
+}
+.print-publication-articles-themed {
+    margin:3rem 0 0 0;
+    .articles-heading {
+        h2 {
+            font-size: 2.8125rem;
+            font-family: $acumin-pro-semicondensed;
+            font-weight: 700;
+            text-align:center;
+            @include mobile {
+                font-size: 1.875rem;
+            }
+        }
+    }
+    .theme-filter-container{
+        padding: 1.5rem 2rem;
+        height:107px;
+        @include mobile {
+            padding: 1.5rem;
+        }
+    }
+    .section{
+        padding:3rem 1.5rem 1.25rem;
+
+        .theme-header{
+            font-size: 2.1875rem;
+            font-family: $acumin-pro-condensed;
+            text-transform: uppercase;
+            color:$aged-gold;
+            font-style: italic;
+            flex:0 0 auto;
+            overflow:hidden;
+            @include mobile{
+                font-size: 1.5625rem;  
+                width:100%;
+            }
+           &:after {
+                content:"";
+                display: inline-block;
+                height: 0.2em;
+                vertical-align: bottom;
+                width: 100%;
+                margin-right: -100%;
+                margin-left: 10px;
+                border-top: 1px solid $aged-gold;
+            }
+        }
+
+        .theme-description{
+            margin-bottom:0;
+            font-size: 1.25rem;
+            font-style: italic;
+            @include mobile{
+                font-size: 1.125rem;  
+            }
+        }
+        .theme-group{
+            .post-list{
+                padding:1.75rem 0 3.75rem !important;
+            }
+        }
+    }
+
+}

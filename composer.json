@@ -1,0 +1,16 @@
+{
+    "name": "purdue/purdue-wp-theme",
+    "description": "WordPress theme based on Purdue University digital brand standards ",
+    "authors": [
+        {
+            "name": "Purdue Marketing and Media",
+            "email": "digital-marketing@groups.purdue.edu",
+            "homepage": "https://brand.purdue.edu"
+        }
+    ],
+    "license": "GPLv3",
+    "type": "wordpress-theme",
+    "require": {
+        "php": ">=7.0"
+    }
+}

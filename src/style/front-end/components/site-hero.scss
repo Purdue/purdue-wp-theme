@@ -1,0 +1,301 @@
+// bounce animation for jump to articles button hover animation
+@keyframes bounce {
+    from {
+        transform: translateY(0px);
+    }
+
+    to {
+        transform: translateY(5px);
+    }
+}
+
+.bulma-blocks-40-60-hero {
+    &>.columns {
+
+        @include touch {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        &>.column {
+            position: relative;
+
+            .content {
+                color: black !important;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-end;
+                height: auto;
+                width: auto;
+                margin-bottom: 0;
+
+                @include desktop {
+                    width: 27.5rem;
+                    padding: 0;
+                }
+
+                .level {
+                    margin-top: 2rem;
+
+                    @include mobile {
+                        margin: 1rem 0 0;
+                    }
+                }
+
+                .level-item {
+                    margin-right: 2.5rem;
+
+                    a {
+                        color: black !important;
+                    }
+                }
+
+
+                h1 {
+                    font-family: acumin-pro-semi-condensed;
+                    font-weight: 700;
+                    font-size: 1.875rem;
+                    color: black !important;
+                    line-height:1.33;
+
+                    @include tablet {
+                        font-size: 4.25rem !important;
+                        line-height:1.125;
+                    }
+                }
+
+                p {
+                    font-size: 1.5rem;
+                    font-family: "United Sans";
+                    text-transform: uppercase;
+                    width: 85%;
+
+                    @include mobile {
+                        font-size: 1.25rem;
+                    }
+                }
+
+            }
+
+            &:first-child {
+                background: White;
+                z-index: 2;
+                display: flex;
+                align-items: flex-end;
+                justify-content: flex-end;
+                margin: 0 !important;
+                padding: 2.75rem 1.5rem !important;
+                flex:auto;
+                @include touch {
+                    order: 2;
+                    height: auto;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                }
+
+                @include desktop {
+                    order: 1;
+                    padding: 0 3.25rem 8rem !important;
+                    justify-content: flex-end;
+                    height: 52rem;
+                }
+            }
+
+            &:last-child {
+
+                @include mobile {
+                    height: 18rem;
+                }
+
+                @include tablet {
+                    height: 28rem;
+                }
+
+                @include touch {
+                    flex-basis: auto;
+                    order: 1;
+                }
+
+                @include desktop {
+                    height: auto;
+                    order: 2;
+                }
+
+                .background-image {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-position: 50% 25%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    @include desktop {
+                        background-position: center;
+                    }
+                }
+            }
+        }
+    }
+
+    .jump-button {
+        font-family: "United Sans";
+        font-weight: 400;
+        font-size: 1.25rem;
+        text-transform: capitalize;
+        color: $aged-gold !important;
+        text-decoration:none;
+        svg {
+            padding-left: 0.25rem;
+        }
+
+        &:hover {
+            svg {
+                animation: bounce 0.3s infinite alternate;
+            }
+        }
+    }
+}
+
+.bulma-blocks-50-50-hero {
+    .columns {
+
+        @include touch {
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
+
+        .column {
+            position: relative;
+
+            .content {
+                color: white !important;
+                width: auto;
+                margin: 0 auto;
+
+                @include touch {
+                    &.section {
+                        padding-top: 1rem !important;
+                        padding-bottom: 3.5rem !important;
+                    }
+                }
+
+                @include desktop {
+                    margin-right: 0.6rem;
+                    width: 31rem;
+                }
+
+                @include widescreen {
+                    margin-right: 4.6rem;
+                    width: 33rem;
+                }
+
+                @include fullhd {
+                    margin-right: 10.6rem;
+                }
+
+                h1 {
+                    font-family: acumin-pro-semi-condensed;
+                    color: white !important;
+                    font-size: 1.875rem;
+
+                    @include tablet {
+                        font-size: 2.8125rem !important;
+                    }
+                }
+
+                p {
+                    font-size: 1.25rem;
+                    font-family: acumin-pro;
+                }
+
+                &.section {
+                    padding-top: 7rem;
+                    padding-bottom: 7rem;
+
+                    .level {
+                        margin-top: 2.5rem;
+                    }
+
+                    .level-item {
+                        margin-right: 2.5rem;
+
+                        a {
+                            color: white !important;
+                            &:hover{
+                                color:$boiler-gold !important;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &:first-child {
+                background: black;
+                display: flex;
+                align-items: center;
+                z-index: 2;
+                flex:auto;
+                @include touch {
+                    order: 2
+                }
+
+                @include desktop {
+                    order: 1;
+                }
+
+                &:after {
+                    content: "";
+                    background: black;
+                    width: 5rem;
+                    height: 100%;
+                    position: absolute;
+                    left: 100%;
+                    clip-path: polygon(0 0, 0% 100%, 100% 0);
+
+                    @include touch {
+                        clip-path: polygon(0 0, 0% 100%, 100% 100%);
+                        width: 100%;
+                        height: 5rem;
+                        left: 0;
+                        bottom: 100%;
+                    }
+                }
+            }
+
+            &:last-child {
+
+                @include mobile {
+                    height: 18rem;
+                }
+
+                @include tablet {
+                    height: 28rem;
+                }
+
+                @include touch {
+                    flex-basis: auto;
+                    order: 1;
+                }
+
+                @include desktop {
+                    height: auto;
+                    order: 2;
+                }
+
+                .background-image {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    background-position: 50% 25%;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+
+                    @include desktop {
+                        background-position: center;
+                    }
+                }
+            }
+        }
+    }
+}

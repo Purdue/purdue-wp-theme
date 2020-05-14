@@ -1,0 +1,50 @@
+.has-text-color {
+    &.has {
+        &-black-color {
+            color: $black !important;
+        }
+
+        &-white-color {
+            color: white !important;
+        }
+    }
+
+    &.has-background {
+        &.has {
+            &-black-background-color {
+                background-color: $black;
+            }
+
+            &-white-background-color {
+                background-color: white;
+            }
+        }
+    }
+}
+
+.wp-block {
+    .has-text-color {
+        &.has {
+            &-black-color {
+                color: $black !important;
+            }
+
+            &-white-color {
+                color: black !important;
+            }
+        }
+
+        &.has-background {
+            &.has {
+                &-black-background-color {
+                    background-color: $black;
+                }
+
+                &-white-background-color {
+                    background-color: white;
+                }
+            }
+        }
+    }
+
+}

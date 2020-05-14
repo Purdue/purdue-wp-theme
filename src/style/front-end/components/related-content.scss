@@ -1,0 +1,22 @@
+.related-content-item {
+    &.media {
+        flex-direction: column;
+
+        &+.media {
+            margin-top: 0;
+        }
+    }
+
+    .media {
+        &-left {
+            margin: 0 0 1.5rem 0;
+
+            .image {
+                width: 160px;
+            }
+        }
+        &-content{
+            font-weight: 600;
+        }
+    }
+}

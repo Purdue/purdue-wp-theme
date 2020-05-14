@@ -1,0 +1,26 @@
+.breadcrumbs{
+    background-color:#ededed;
+    padding:0.9rem 3.15rem;
+    @include touch{
+        padding:0.9rem 1.5rem; 
+    }
+    ul{
+        font-family: $acumin-pro;
+        font-size: 0.875rem;
+        display:flex;
+        flex-direction:row;
+        flex-wrap:wrap;
+        li{
+            a{
+                color:#000 !important;
+                &:hover{
+                    text-decoration:underline;
+                }
+            }
+            &:not(:last-child):after{
+                content:">";
+                padding: 0 0.3rem;
+            }
+        }
+    }
+}

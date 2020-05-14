@@ -1,0 +1,18 @@
+.center-onMobile{
+    @include mobile{
+        text-align:center;
+    }
+}
+.column-reverse-onMobile{
+    display:flex;
+    flex-direction:row;
+    @include mobile{
+        flex-direction:column-reverse;
+    }
+}
+.gsc-control-cse{
+    padding:0;
+}
+.columns.no-marginTop{
+    margin-top:-1.5rem;
+}

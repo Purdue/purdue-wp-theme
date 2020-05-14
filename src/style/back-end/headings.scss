@@ -1,0 +1,72 @@
+@import "../../../node_modules/bulma/sass/utilities/all";
+@import '../front-end/overides/variables';
+@import '../front-end/overides/colors';
+
+.editor-styles-wrapper {
+
+    .wp-block {
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $acumin-pro-semicondensed;
+            font-weight: 600;
+        }
+
+        editor-post-title__input {
+            font-family: $united-sans;
+            font-weight: bold;
+            font-size: 1.875rem; //mobile
+
+            @include tablet {
+                font-size: 2.3125rem;
+            }
+        }
+
+        h2 {
+            font-size: 1.6875rem; //mobile
+
+            @include tablet {
+                font-size: 2rem;
+            }
+        }
+
+        h3 {
+            font-size: 1.375rem; //mobile
+
+            @include tablet {
+                font-size: 1.5625rem;
+            }
+        }
+
+        h4 {
+            color: $cool-gray;
+            font-weight: bold;
+            font-size: 1.375rem;
+        }
+
+        h5 {
+            font-weight: 400;
+            font-size: 1.375rem;
+        }
+
+        h6 {
+            font-weight: 400;
+            font-size: 1.1875rem;
+        }
+
+        h2,
+        h5 {
+            color: $aged-gold;
+        }
+
+        h1,
+        h3,
+        h6 {
+            color: $black;
+        }
+
+    }
+}
