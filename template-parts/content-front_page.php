@@ -8,5 +8,19 @@
  * @package purdue-wp-theme
  */
 ?>
-<?php the_content(); ?>
 
+<?php if (!has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
+
+<section class="section">
+    <div class="container">
+        <div class="content">
+  <?php purdueBrand_the_title('is-1', false); ?>
+        </div>
+    </div>
+</section>
+
+<?php } ?>
+
+<?php
+the_content();
+?>

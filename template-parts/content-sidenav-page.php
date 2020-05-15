@@ -8,16 +8,15 @@
  */
 ?>
 
-<section class="content">
 	<!-- <div class="columns is-centered" >
         <div class="content column is-full"> -->
-            <?php if (!is_front_page()) { ?>
+            <?php if (!is_front_page() && !has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
 
                 <section class="section">
                     <div class="container">
-                    
-					    <?php purdueBrand_the_title('is-1', False); ?>
-                    
+                        <div class="content">
+					        <?php purdueBrand_the_title('is-1', false); ?>
+                        </div>
                     </div>
                 </section>
 				
@@ -28,4 +27,3 @@
             ?>
         <!-- </div>
 	</div> -->
-</section>
