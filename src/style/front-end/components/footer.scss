@@ -4,6 +4,10 @@
     z-index:0;
     grid-row: 2/3;
     grid-column:2/3;
+    color:#fff;
+    h2,h3,h4,h5,h6,p{
+        color:#fff;
+    }
     @include touch{
       margin-left:0;
       grid-row: auto;
@@ -210,6 +214,10 @@
 //footer without sidenav
 .footer{
     padding:0;
+    color:#fff;
+    h2,h3,h4,h5,h6,p{
+        color:#fff;
+    }
     .footer__resources{
       padding:2.375rem 1.5rem !important;
       @include touch{
