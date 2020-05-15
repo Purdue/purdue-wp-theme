@@ -8,6 +8,14 @@
     h2,h3,h4,h5,h6,p{
         color:#fff;
     }
+    a {
+        color: #fff;
+        text-decoration: underline;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+        }
+    }
     @include touch{
       margin-left:0;
       grid-row: auto;
@@ -217,6 +225,14 @@
     color:#fff;
     h2,h3,h4,h5,h6,p{
         color:#fff;
+    }
+    a {
+        color: #fff;
+        text-decoration: underline;
+        &:hover{
+            color: #fff;
+            text-decoration: none;
+        }
     }
     .footer__resources{
       padding:2.375rem 1.5rem !important;

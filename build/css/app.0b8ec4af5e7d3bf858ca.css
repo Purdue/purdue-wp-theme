@@ -7672,7 +7672,16 @@ label.panel-block {
 .narrow-footer {
   z-index: 0;
   grid-row: 2/3;
-  grid-column: 2/3; }
+  grid-column: 2/3;
+  color: #fff; }
+  .narrow-footer h2, .narrow-footer h3, .narrow-footer h4, .narrow-footer h5, .narrow-footer h6, .narrow-footer p {
+    color: #fff; }
+  .narrow-footer a {
+    color: #fff;
+    text-decoration: underline; }
+    .narrow-footer a:hover {
+      color: #fff;
+      text-decoration: none; }
   @media screen and (max-width: 1023px) {
     .narrow-footer {
       margin-left: 0;
@@ -7823,7 +7832,16 @@ label.panel-block {
         text-decoration: none; }
 
 .footer {
-  padding: 0; }
+  padding: 0;
+  color: #fff; }
+  .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer p {
+    color: #fff; }
+  .footer a {
+    color: #fff;
+    text-decoration: underline; }
+    .footer a:hover {
+      color: #fff;
+      text-decoration: none; }
   .footer .footer__resources {
     padding: 2.375rem 1.5rem !important; }
     @media screen and (max-width: 1023px) {
@@ -8916,7 +8934,7 @@ a {
   text-decoration: underline; }
   a:hover {
     text-decoration: none;
-    color: #000; }
+    color: #8e6f3e; }
 
 blockquote {
   background: transparent;
