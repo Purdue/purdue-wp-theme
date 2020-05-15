@@ -8308,7 +8308,8 @@ ul.alm-paging {
       .year-list .columns .column .card:hover, .year-list .columns .column .card:focus {
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
         .year-list .columns .column .card:hover .card-content .content, .year-list .columns .column .card:focus .card-content .content {
-          text-decoration: underline; }
+          text-decoration: underline;
+          color: #000; }
 
 .post__subheading {
   font-weight: 600;

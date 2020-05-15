@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Template Name: Faculty page
  *
  * @package purdue-wp-theme
  */

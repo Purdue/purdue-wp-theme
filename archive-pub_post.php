@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Template Name: Publication Archive Page
  *
  * @package purdue-wp-theme
  */
@@ -24,7 +23,7 @@
 	</div>
 
 	<?php
-	dynamic_sidebar('pubs-dept-page');
+	dynamic_sidebar('pubs-all-page');
 	?>
 
 </main><!-- #site-content -->

@@ -42,7 +42,15 @@ if (!function_exists('purdueBrand_widgets_init')) {
         // check alm installed
         
         if (is_plugin_active('ajax-load-more-pro/ajax-load-more-pro.php')) {
-
+            // register_sidebar(array(
+            //     'name'          => esc_html__('Posts List on Front Page', 'purdueBrand'),
+            //     'id'            => 'posts-front-page',
+            //     'description'   => esc_html__('Add the Front Page Posts widget here to show a list of posts with filters on the front page.', 'purdueBrand'),
+            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            //     'after_widget'  => '</div>',
+            //     'before_title'  => '<h2>',
+            //     'after_title'   => '</h2>',
+            // ));
             register_sidebar(array(
                 'name'          => esc_html__('Posts List on Publication Posts', 'purdueBrand'),
                 'id'            => 'posts-pub-post',
@@ -56,6 +64,15 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'name'          => esc_html__('Publications List on Department Pages', 'purdueBrand'),
                 'id'            => 'pubs-dept-page',
                 'description'   => esc_html__('Add the Department Publications widget here to show a list of publications related to the department on department pages.', 'purdueBrand'),
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</div>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
+            ));
+            register_sidebar(array(
+                'name'          => esc_html__('Publications List on pub. archive Page', 'purdueBrand'),
+                'id'            => 'pubs-all-page',
+                'description'   => esc_html__('Add the All Publications widget here to show a list of publications on publication archive pages.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
                 'before_title'  => '<h2>',
@@ -113,6 +130,7 @@ if (!function_exists('register_relatedContent_widget')) {
             register_widget('Front_Page_Posts');
             register_widget('Publication_Posts');
             register_widget('Department_Publications');
+            register_widget('All_Publications');
         }
 
         register_widget('LinksColumn_Widget');
@@ -430,6 +448,68 @@ if (is_plugin_active('ajax-load-more-pro/ajax-load-more-pro.php')) {
             echo ('<section class="post-container">');
 
             echo do_shortcode('[ajax_load_more theme_repeater="year-list.php" order="ASC" post_type="pub_post" taxonomy="' . $tax . '" taxonomy_terms="' . $tax_term . '" taxonomy_operator="IN" container_type="div" css_classes="container year-list" posts_per_page="6" transition_container_classes="columns is-multiline"]');
+
+            echo ('</section>');
+        }
+
+        /**
+         * The widget update handler.
+         *
+         * @see WP_Widget::update()
+         *
+         * @param array $new_instance The new instance of the widget.
+         * @param array $old_instance The old instance of the widget.
+         * @return array The updated instance of the widget.
+         */
+        function update($new_instance, $old_instance)
+        {
+            return $new_instance;
+        }
+
+        /**
+         * Output the admin widget options form HTML.
+         *
+         * @param array $instance The current widget settings.
+         * @return string The HTML markup for the form.
+         */
+        function form($instance)
+        {
+            return '';
+        }
+    }
+    class All_Publications extends WP_Widget
+    {
+
+        /**
+         * Constructs the new widget.
+         *
+         * @see WP_Widget::__construct()
+         */
+        function __construct()
+        {
+            // Instantiate the parent object.
+            $widget_options = array(
+                'classname' => 'allPubs_widget',
+                'description' => 'This widgets adds a list of all publications on publication archive pages.',
+            );
+            parent::__construct('allPubs_widget', 'All Publications', $widget_options);
+        }
+
+        /**
+         * The widget's HTML output.
+         *
+         * @see WP_Widget::widget()
+         *
+         * @param array $args     Display arguments including before_title, after_title,
+         *                        before_widget, and after_widget.
+         * @param array $instance The settings for the particular instance of the widget.
+         */
+        function widget($args, $instance)
+        {
+
+            echo ('<section class="post-container">');
+
+            echo do_shortcode('[ajax_load_more theme_repeater="year-list.php" order="ASC" post_type="pub_post" container_type="div" css_classes="container year-list" posts_per_page="6" transition_container_classes="columns is-multiline"]');
 
             echo ('</section>');
         }

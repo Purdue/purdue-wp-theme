@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Template Name: Print Publication
  *
  * @package purdue-wp-theme
  */

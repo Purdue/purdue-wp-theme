@@ -1,7 +1,6 @@
 <?php
 
 /**
- * Template Name: Publication Post Archive Page
  *
  * @package purdue-wp-theme
  */
