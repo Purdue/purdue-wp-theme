@@ -44,36 +44,42 @@ $includeDate = "";
 $includeSocialTop = "";
 $includeSocialbottom = "";
 
+if (get_theme_mod('date_setting') == '1') {
+	$includeDate = '1';
+}
+if (get_theme_mod('social_setting') == '1') {
+	$includeSocialTop = '1';
+}
 if (function_exists('get_field')) {	
 	$subheading = get_field('post-subheading');
-	if(is_array(get_field('date'))){
-		if(sizeof(get_field('date'))>0){
-			$includeDate = get_field('date')[0];
-		}
-	}
-	else{
-		$includeDate = "";
-	}
-	if(is_array(get_field('social_header'))){
-		if(sizeof(get_field('social_header'))>0){
-			$includeSocialTop = get_field('social_header')[0];
-		}
-	}else{
-		$includeSocialTop = "";
-	}
-	if(is_array(get_field('social_bottom'))){
-		if(sizeof(get_field('social_bottom'))>0){
-			$includeSocialbottom = get_field('social_bottom')[0];
-		}
-	}else{
-		$includeSocialbottom = "";
-	}
+	// if(is_array(get_field('date'))){
+	// 	if(sizeof(get_field('date'))>0){
+	// 		$includeDate = get_field('date')[0];
+	// 	}
+	// }
+	// else{
+	// 	$includeDate = "";
+	// }
+	// if(is_array(get_field('social_header'))){
+	// 	if(sizeof(get_field('social_header'))>0){
+	// 		$includeSocialTop = get_field('social_header')[0];
+	// 	}
+	// }else{
+	// 	$includeSocialTop = "";
+	// }
+	// if(is_array(get_field('social_bottom'))){
+	// 	if(sizeof(get_field('social_bottom'))>0){
+	// 		$includeSocialbottom = get_field('social_bottom')[0];
+	// 	}
+	// }else{
+	// 	$includeSocialbottom = "";
+	// }
 	
 } else {	
 	$subheading = "";
-	$includeDate = "Yes";
-	$includeSocialTop = "Yes";
-	$includeSocialbottom = "";
+	// $includeDate = "Yes";
+	// $includeSocialTop = "Yes";
+	// $includeSocialbottom = "";
 }
 
 ?>
@@ -89,14 +95,14 @@ if (function_exists('get_field')) {
 					</p>
 
 					<?php while (have_posts()) : the_post(); ?>
-						<?php if($includeDate=="Yes" || $includeSocialTop=="Yes"){ ?>
+						<?php if($includeDate=='1' || $includeSocialTop=='1'){ ?>
 							<div class="post__date-line">
-								<?php if($includeDate=="Yes"){ ?>
+								<?php if($includeDate=='1'){ ?>
 									<div class="post__date-line--date">
 										<?php echo get_the_date("F j, Y"); ?>
 									</div>
 								<?php } ?>
-								<?php if($includeSocialTop=="Yes"){ ?>
+								<?php if($includeSocialTop=='1'){ ?>
 									<div class="post__date-line--share">
 										<p>Share: </p>
 										<div class="level is-mobile">
@@ -120,7 +126,7 @@ if (function_exists('get_field')) {
 							</div>
 						<?php } ?>
 							<?php the_content(); ?>
-						<?php if($includeSocialbottom=="Yes"){ ?>
+						<?php if($includeSocialbottom=='1'){ ?>
 						<div class="post__date-line share-button-bottom">	
 							<div class="post__date-line--share">
 								<p>Share: </p>
@@ -161,14 +167,14 @@ if (function_exists('get_field')) {
 						</p>
 
 						<?php while (have_posts()) : the_post(); ?>
-						<?php if($includeDate=="Yes" || $includeSocialTop=="Yes"){ ?>
+						<?php if($includeDate=='1' || $includeSocialTop=='1'){ ?>
 							<div class="post__date-line">
-							<?php if($includeDate=="Yes"){ ?>
+							<?php if($includeDate=='1'){ ?>
 								<div class="post__date-line--date">
 									<?php echo get_the_date("F j, Y"); ?>
 								</div>
 							<?php } ?>
-							<?php if($includeSocialTop=="Yes"){ ?>
+							<?php if($includeSocialTop=='1'){ ?>
 								<div class="post__date-line--share">
 									<p>Share: </p>
 									<div class="level is-mobile">
@@ -192,7 +198,7 @@ if (function_exists('get_field')) {
 							</div>
 							<?php } ?>
 								<?php the_content(); ?>
-							<?php if($includeSocialbottom=="Yes"){ ?>
+							<?php if($includeSocialbottom=='1'){ ?>
 								<div class="post__date-line share-button-bottom">	
 									<div class="post__date-line--share">
 										<p>Share: </p>

@@ -227,9 +227,12 @@ ul.alm-paging {
       font-size: 1rem;
       text-transform: uppercase;
       padding-right: 1.25rem;
-      border-right: 1px solid black;
+      margin-right:1.25rem;
       flex: 0 0 auto;
       color:$aged-gold;
+      &:not(:last-child) {
+        border-right: 1px solid black;
+      }
       @include mobile {
         border-right: none;
         margin-bottom: 1rem;
@@ -237,7 +240,6 @@ ul.alm-paging {
     }
 
     &--share {
-      padding-left: 1.25rem;
       display: flex;
       justify-content: flex-start;
       align-items: center;

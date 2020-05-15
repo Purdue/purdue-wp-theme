@@ -85,6 +85,47 @@ function purdue_header_options($wp_customize)
             'global'=>_('Global')
         )
     ));
+
+    //add new section
+    $wp_customize->add_section('dateline_option', array(
+        'title'       => __( 'Dateline Options' ), //Visible title of section
+        'priority'    => 50, //Determines what order this appears in
+        'capability'  => 'edit_theme_options', //Capability needed to tweak
+        'description' => __('Choose to include a date and/or social share buttons under the header of post.', 'purdue-wp-theme'), //Descriptive tooltip
+        ) 
+    );
+    $wp_customize->add_setting('date_setting', array(
+        'default'    => '1',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'show_dateline',
+            array(
+                'label'     => __('Show Date', 'purdue-wp-theme'),
+                'section'   => 'dateline_option',
+                'settings'  => 'date_setting',
+                'type'      => 'checkbox',
+            )
+        )
+    );
+    $wp_customize->add_setting('social_setting', array(
+        'default'    => '1',
+        'capability' => 'edit_theme_options'
+    ));
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'show_social',
+            array(
+                'label'     => __('Show Social Share Buttons', 'purdue-wp-theme'),
+                'section'   => 'dateline_option',
+                'settings'  => 'social_setting',
+                'type'      => 'checkbox',
+            )
+        )
+    );
 }
 add_action('customize_register', 'purdue_header_options');
 
@@ -128,25 +169,6 @@ function purdueBrand_default_colors()
     ));
 }
 add_action('after_setup_theme', 'purdueBrand_default_colors');
-
-
-
-//add bulma to gtb editor only, not whole admin side
-// add_theme_support( 'editor-styles' );
-// $cssFilePath = glob(get_template_directory() . '/build/css/app.*.css');
-// add_editor_style('build/css/' . basename($cssFilePath[0]));
-
-// add_action('after_setup_theme', 'gutenberg_css');
-
-// function gutenberg_css()
-// {
-//     $cssFilePath = glob(get_template_directory() . '/build/css/app.*.css');
-//     $cssFileURI = get_template_directory_uri() . '/build/css/' . basename($cssFilePath[0]);
-
-//     add_theme_support('editor-styles');
-//     add_editor_style('build/css/' . basename($cssFilePath[0]));
-//     // add_editor_style('node_modules/bulma/css/bulma.min.css');
-// }
 
 
 // add acf hero image upload field
@@ -195,117 +217,117 @@ if (function_exists('acf_add_local_field_group')) :
         'description' => '',
     ));
       //Dateline line on posts
-  acf_add_local_field_group(array(
-    'key' => 'group_5ea9cbe1bfa6d',
-    'title' => 'Date line with social share buttons',
-    'fields' => array(
-        array(
-            'key' => 'field_5ea9cc2e54212',
-            'label' => 'Include Date?',
-            'name' => 'date',
-            'type' => 'checkbox',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'choices' => array(
-                'Yes' => 'Yes',
-            ),
-            'allow_custom' => 0,
-            'default_value' => array(
-                0 => 'Yes',
-            ),
-            'layout' => 'vertical',
-            'toggle' => 0,
-            'return_format' => 'value',
-            'save_custom' => 0,
-        ),
-        array(
-            'key' => 'field_5ea9cc6354213',
-            'label' => 'Include social share buttons below the header?',
-            'name' => 'social_header',
-            'type' => 'checkbox',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'choices' => array(
-                'Yes' => 'Yes',
-            ),
-            'allow_custom' => 0,
-            'default_value' => array(
-                0 => 'Yes',
-            ),
-            'layout' => 'vertical',
-            'toggle' => 0,
-            'return_format' => 'value',
-            'save_custom' => 0,
-        ),
+//   acf_add_local_field_group(array(
+//     'key' => 'group_5ea9cbe1bfa6d',
+//     'title' => 'Date line with social share buttons',
+//     'fields' => array(
+//         array(
+//             'key' => 'field_5ea9cc2e54212',
+//             'label' => 'Include Date?',
+//             'name' => 'date',
+//             'type' => 'checkbox',
+//             'instructions' => '',
+//             'required' => 0,
+//             'conditional_logic' => 0,
+//             'wrapper' => array(
+//                 'width' => '',
+//                 'class' => '',
+//                 'id' => '',
+//             ),
+//             'choices' => array(
+//                 'Yes' => 'Yes',
+//             ),
+//             'allow_custom' => 0,
+//             'default_value' => array(
+//                 0 => 'Yes',
+//             ),
+//             'layout' => 'vertical',
+//             'toggle' => 0,
+//             'return_format' => 'value',
+//             'save_custom' => 0,
+//         ),
+//         array(
+//             'key' => 'field_5ea9cc6354213',
+//             'label' => 'Include social share buttons below the header?',
+//             'name' => 'social_header',
+//             'type' => 'checkbox',
+//             'instructions' => '',
+//             'required' => 0,
+//             'conditional_logic' => 0,
+//             'wrapper' => array(
+//                 'width' => '',
+//                 'class' => '',
+//                 'id' => '',
+//             ),
+//             'choices' => array(
+//                 'Yes' => 'Yes',
+//             ),
+//             'allow_custom' => 0,
+//             'default_value' => array(
+//                 0 => 'Yes',
+//             ),
+//             'layout' => 'vertical',
+//             'toggle' => 0,
+//             'return_format' => 'value',
+//             'save_custom' => 0,
+//         ),
         
-        array(
-            'key' => 'field_5ea9cca054214',
-            'label' => 'Include social share button at the bottom?',
-            'name' => 'social_bottom',
-            'type' => 'checkbox',
-            'instructions' => '',
-            'required' => 0,
-            'conditional_logic' => 0,
-            'wrapper' => array(
-                'width' => '',
-                'class' => '',
-                'id' => '',
-            ),
-            'choices' => array(
-                'Yes' => 'Yes',
-            ),
-            'allow_custom' => 0,
-            'default_value' => array(
-            ),
-            'layout' => 'vertical',
-            'toggle' => 0,
-            'return_format' => 'value',
-            'save_custom' => 0,
-        ),
-    ),
-    'location' => array(
-        array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'post',
-            ),
-        ),
-        array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'faculty_post',
-            ),
-        ),
-        array(
-            array(
-                'param' => 'post_type',
-                'operator' => '==',
-                'value' => 'page',
-            ),
-        ),
-    ),
-    'menu_order' => 0,
-    'position' => 'side',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => true,
-    'description' => '',
-));
+//         array(
+//             'key' => 'field_5ea9cca054214',
+//             'label' => 'Include social share button at the bottom?',
+//             'name' => 'social_bottom',
+//             'type' => 'checkbox',
+//             'instructions' => '',
+//             'required' => 0,
+//             'conditional_logic' => 0,
+//             'wrapper' => array(
+//                 'width' => '',
+//                 'class' => '',
+//                 'id' => '',
+//             ),
+//             'choices' => array(
+//                 'Yes' => 'Yes',
+//             ),
+//             'allow_custom' => 0,
+//             'default_value' => array(
+//             ),
+//             'layout' => 'vertical',
+//             'toggle' => 0,
+//             'return_format' => 'value',
+//             'save_custom' => 0,
+//         ),
+//     ),
+//     'location' => array(
+//         array(
+//             array(
+//                 'param' => 'post_type',
+//                 'operator' => '==',
+//                 'value' => 'post',
+//             ),
+//         ),
+//         array(
+//             array(
+//                 'param' => 'post_type',
+//                 'operator' => '==',
+//                 'value' => 'faculty_post',
+//             ),
+//         ),
+//         array(
+//             array(
+//                 'param' => 'post_type',
+//                 'operator' => '==',
+//                 'value' => 'page',
+//             ),
+//         ),
+//     ),
+//     'menu_order' => 0,
+//     'position' => 'side',
+//     'style' => 'default',
+//     'label_placement' => 'top',
+//     'instruction_placement' => 'label',
+//     'hide_on_screen' => '',
+//     'active' => true,
+//     'description' => '',
+// ));
 
 endif;
