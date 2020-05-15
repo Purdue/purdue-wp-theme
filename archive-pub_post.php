@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+  * The template for displaying an archive of publications
  * @package purdue-wp-theme
  */
 ?>

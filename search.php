@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Search page
+ *  The template for displaying search pages
  *
  * @package purdue-wp-theme
  */

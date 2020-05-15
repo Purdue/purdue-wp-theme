@@ -1,7 +1,7 @@
 <?php
 
 /**
- *
+* The template for displaying faculty post (Not Found)
  * @package purdue-wp-theme
  */
 ?>

@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * The template for displaying publication posts
  *
  * @package purdue-wp-theme
  */

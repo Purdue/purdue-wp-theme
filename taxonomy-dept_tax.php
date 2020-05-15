@@ -2,6 +2,8 @@
 
 /**
  *
+ * The template for displaying department archive pages.
+ * 
  * @package purdue-wp-theme
  */
 ?>
