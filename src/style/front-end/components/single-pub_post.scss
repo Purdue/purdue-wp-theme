@@ -14,6 +14,7 @@
             font-family: $acumin-pro-semicondensed;
             font-weight: 700;
             align-self: center;
+            color:#000;
         }
 
         .category-filter {
@@ -29,6 +30,7 @@
             font-family: $acumin-pro-semicondensed;
             font-weight: 700;
             text-align:center;
+            color:#000;
             @include mobile {
                 font-size: 1.875rem;
             }

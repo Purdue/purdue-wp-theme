@@ -1,4 +1,8 @@
 .related-content-item {
+    text-decoration:none;
+    &:hover{
+        text-decoration:underline;
+    }
     &.media {
         flex-direction: column;
 

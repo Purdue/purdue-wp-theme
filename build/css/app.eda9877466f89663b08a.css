@@ -3,16 +3,6 @@
 .main-content {
   display: block; }
 
-.content p {
-  font-size: 1.125rem; }
-
-.content a {
-  color: #8e6f3e;
-  text-decoration: underline; }
-  .content a:hover {
-    text-decoration: none;
-    color: #000; }
-
 .home .content {
   margin-bottom: 0 !important; }
 
@@ -44,7 +34,7 @@ aside.is-active {
 .purdue-navbar-white.is-active {
   display: block; }
 
-.content figure {
+figure {
   margin: 0 !important; }
 
 .clearfix {
@@ -7240,7 +7230,8 @@ label.panel-block {
         padding: 0 0.75rem;
         color: inherit;
         font-family: acumin-pro, "Franklin Gothic", sans-serif;
-        font-size: 1.125rem; }
+        font-size: 1.125rem;
+        text-decoration: none; }
         .purdue-navbar-black .navbar-end ul li a:hover {
           color: #CEB991; }
         @media screen and (max-width: 1023px) {
@@ -7470,7 +7461,8 @@ label.panel-block {
           background-color: #fff; } }
     .purdue-navbar-white .navbar-item a {
       color: #000;
-      font-size: 1.125rem; }
+      font-size: 1.125rem;
+      text-decoration: none; }
       .purdue-navbar-white .navbar-item a:hover {
         background: white; }
       @media screen and (max-width: 1023px) {
@@ -8049,7 +8041,8 @@ label.panel-block {
         .site-content-sidenav .side-nav .navbar-menu .navbar-item a {
           color: #000;
           padding: 0.5rem 1.5rem;
-          display: block; }
+          display: block;
+          text-decoration: none; }
         .site-content-sidenav .side-nav .navbar-menu .navbar-item.active {
           color: #000;
           background-color: #ededed; }
@@ -8063,7 +8056,8 @@ label.panel-block {
             .site-content-sidenav .side-nav .navbar-menu .navbar-item.active > .navbar-dropdown .navbar-item {
               background-color: #ededed; }
         .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-link {
-          width: 100%; }
+          width: 100%;
+          text-decoration: none; }
           .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-link:after {
             border-color: #000 !important;
             transform: rotate(225deg); }
@@ -8102,7 +8096,7 @@ label.panel-block {
           .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .active a {
             color: #000; }
           .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .active .navbar-dropdown-submenu .navbar-item a {
-            background-color: #fafafa !important; }
+            padding-left: 4rem !important; }
           .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown a {
             color: #000;
             width: 100%;
@@ -8116,10 +8110,9 @@ label.panel-block {
             text-transform: capitalize;
             font-size: 1rem; }
             .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .submenu:hover .navbar-dropdown-submenu .navbar-item a {
-              background-color: #fafafa;
               color: #000; }
-            .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .submenu:hover .navbar-dropdown-submenu .navbar-item:hover a {
-              text-decoration: underline; }
+              .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .submenu:hover .navbar-dropdown-submenu .navbar-item a:hover {
+                text-decoration: underline; }
             .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .submenu .navbar-dropdown-submenu {
               width: 100%; }
               .site-content-sidenav .side-nav .navbar-menu .navbar-item .navbar-dropdown .submenu .navbar-dropdown-submenu .navbar-item {
@@ -8763,7 +8756,8 @@ ul.alm-paging {
       font-family: acumin-pro-semi-condensed, "Franklin Gothic", sans-serif;
       font-size: 1.375rem;
       font-weight: 700;
-      margin-bottom: 1.75rem; }
+      margin-bottom: 1.75rem;
+      color: #000; }
     .with-sideContent .column .side-content .media {
       padding: 1.75rem 0;
       border-top: solid 1px #000;
@@ -8788,7 +8782,8 @@ ul.alm-paging {
           margin-left: 1.5rem; }
           .with-sideContent .column .side-content .resources-widget div ul li a {
             color: #000;
-            font-weight: 600; }
+            font-weight: 600;
+            text-decoration: none; }
             .with-sideContent .column .side-content .resources-widget div ul li a:hover {
               text-decoration: underline; }
 
@@ -8805,7 +8800,8 @@ ul.alm-paging {
     flex-direction: row;
     flex-wrap: wrap; }
     .breadcrumbs ul li a {
-      color: #000 !important; }
+      color: #000 !important;
+      text-decoration: none; }
       .breadcrumbs ul li a:hover {
         text-decoration: underline; }
     .breadcrumbs ul li:not(:last-child):after {
@@ -8853,54 +8849,54 @@ ul.alm-paging {
 .wp-block .has-text-color.has-background.has-white-background-color {
   background-color: white; }
 
-.content h2,
-.content h3,
-.content h4,
-.content h5,
-.content h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: acumin-pro-semi-condensed, "Franklin Gothic", sans-serif;
   font-weight: 600; }
 
-.content h1 {
+h1 {
   font-family: "United Sans", Impact, "Arial Black", "sans serif";
   font-weight: bold;
   font-size: 1.875rem; }
   @media screen and (min-width: 768px), print {
-    .content h1 {
+    h1 {
       font-size: 2.3125rem; } }
 
-.content h2 {
+h2 {
   font-size: 1.6875rem; }
   @media screen and (min-width: 768px), print {
-    .content h2 {
+    h2 {
       font-size: 2rem; } }
 
-.content h3 {
+h3 {
   font-size: 1.375rem; }
   @media screen and (min-width: 768px), print {
-    .content h3 {
+    h3 {
       font-size: 1.5625rem; } }
 
-.content h4 {
+h4 {
   color: #6f727b;
   font-weight: bold;
   font-size: 1.375rem; }
 
-.content h5 {
+h5 {
   font-weight: 400;
   font-size: 1.375rem; }
 
-.content h6 {
+h6 {
   font-weight: 400;
   font-size: 1.1875rem; }
 
-.content h2,
-.content h5 {
+h2,
+h5 {
   color: #8e6f3e; }
 
-.content h1,
-.content h3,
-.content h6 {
+h1,
+h3,
+h6 {
   color: #000; }
 
 h1.title.is-1 {
@@ -8911,16 +8907,26 @@ h1.title.is-1 {
     h1.title.is-1 {
       font-size: 2.3125rem; } }
 
-.content blockquote {
+p {
+  font-size: 1.125rem; }
+
+a {
+  color: #8e6f3e;
+  text-decoration: underline; }
+  a:hover {
+    text-decoration: none;
+    color: #000; }
+
+blockquote {
   background: transparent;
   border-left: 4px solid #8e6f3e;
   padding: 0 0 0.75rem 2rem; }
-  .content blockquote p {
+  blockquote p {
     font-family: farnham-headline, serif;
     font-weight: 700;
     font-size: 1.875rem;
     margin-bottom: 0.5rem !important; }
-  .content blockquote cite {
+  blockquote cite {
     font-size: 1rem;
     font-family: "United Sans", Impact, "Arial Black", "sans serif";
     font-weight: 700;
@@ -8941,7 +8947,8 @@ h1.title.is-1 {
     font-size: 2.8125rem;
     font-family: acumin-pro-semi-condensed, "Franklin Gothic", sans-serif;
     font-weight: 700;
-    align-self: center; }
+    align-self: center;
+    color: #000; }
   .print-publication-articles .articles-heading .category-filter {
     padding: 1rem 0 0; }
 
@@ -8951,7 +8958,8 @@ h1.title.is-1 {
     font-size: 2.8125rem;
     font-family: acumin-pro-semi-condensed, "Franklin Gothic", sans-serif;
     font-weight: 700;
-    text-align: center; }
+    text-align: center;
+    color: #000; }
     @media screen and (max-width: 767px) {
       .print-publication-articles-themed .articles-heading h2 {
         font-size: 1.875rem; } }
@@ -9462,25 +9470,27 @@ h1.title.is-1 {
   position: relative !important;
   float: right; }
 
-.related-content-item.media {
-  flex-direction: column; }
-  .related-content-item.media + .media {
-    margin-top: 0; }
-
-.related-content-item .media-left {
-  margin: 0 0 1.5rem 0; }
-  .related-content-item .media-left .image {
-    width: 160px; }
-
-.related-content-item .media-content {
-  font-weight: 600; }
+.related-content-item {
+  text-decoration: none; }
+  .related-content-item:hover {
+    text-decoration: underline; }
+  .related-content-item.media {
+    flex-direction: column; }
+    .related-content-item.media + .media {
+      margin-top: 0; }
+  .related-content-item .media-left {
+    margin: 0 0 1.5rem 0; }
+    .related-content-item .media-left .image {
+      width: 160px; }
+  .related-content-item .media-content {
+    font-weight: 600; }
 
 .pagination {
   justify-content: center;
   padding: 0 0 2rem 0 !important; }
   .pagination .page-numbers {
     display: inline-block;
-    padding: 3px 8px;
+    padding: 0px 8px;
     border-radius: 2px;
     color: #666;
     border: 1px solid #f1f1f1;
@@ -9491,7 +9501,8 @@ h1.title.is-1 {
   .pagination .page-numbers.current {
     color: #fff;
     border-color: #8e6f3e;
-    background-color: #8e6f3e; }
+    background-color: #8e6f3e;
+    text-decoration: none; }
   .pagination a.page-numbers:hover {
     color: #222;
     border-color: #e1e1e1;

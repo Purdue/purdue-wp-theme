@@ -1,24 +1,22 @@
-.content {
-    blockquote {
-        background: transparent;
-        border-left: 4px solid $aged-gold;
-        padding: 0 0 0.75rem 2rem;
+blockquote {
+    background: transparent;
+    border-left: 4px solid $aged-gold;
+    padding: 0 0 0.75rem 2rem;
 
-        p {
-            font-family: $farnham-headline;
-            font-weight: 700;
-            font-size: 1.875rem;
-            margin-bottom: 0.5rem !important;
-        }
+    p {
+        font-family: $farnham-headline;
+        font-weight: 700;
+        font-size: 1.875rem;
+        margin-bottom: 0.5rem !important;
+    }
 
-        cite {
-            font-size: 1rem;
-            font-family: $united-sans;
-            font-weight: 700;
-            color: black;
-            font-style: normal;
-            text-transform: uppercase;
-            line-height: 1;
-        }
+    cite {
+        font-size: 1rem;
+        font-family: $united-sans;
+        font-weight: 700;
+        color: black;
+        font-style: normal;
+        text-transform: uppercase;
+        line-height: 1;
     }
 }

@@ -1,69 +1,64 @@
-.content {
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $acumin-pro-semicondensed;
+    font-weight: 600;
+}
 
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: $acumin-pro-semicondensed;
-        font-weight: 600;
-    }
+h1 {
+    font-family: $united-sans;
+    font-weight: bold;
+    font-size: 1.875rem; //mobile
 
-    h1 {
-        font-family: $united-sans;
-        font-weight: bold;
-        font-size: 1.875rem; //mobile
-
-        @include tablet {
-            font-size: 2.3125rem;
-        }
-    }
-
-    h2 {
-        font-size: 1.6875rem; //mobile
-
-        @include tablet {
-            font-size: 2rem;
-        }
-    }
-
-    h3 {
-        font-size: 1.375rem; //mobile
-
-        @include tablet {
-            font-size: 1.5625rem;
-        }
-    }
-
-    h4 {
-        color: $cool-gray;
-        font-weight: bold;
-        font-size: 1.375rem;
-    }
-
-    h5 {
-        font-weight: 400;
-        font-size: 1.375rem;
-    }
-
-    h6 {
-        font-weight: 400;
-        font-size: 1.1875rem;
-    }
-
-    h2,
-    h5 {
-        color: $aged-gold;
-    }
-
-    h1,
-    h3,
-    h6 {
-        color: $black;
+    @include tablet {
+        font-size: 2.3125rem;
     }
 }
 
+h2 {
+    font-size: 1.6875rem; //mobile
 
+    @include tablet {
+        font-size: 2rem;
+    }
+}
+
+h3 {
+    font-size: 1.375rem; //mobile
+
+    @include tablet {
+        font-size: 1.5625rem;
+    }
+}
+
+h4 {
+    color: $cool-gray;
+    font-weight: bold;
+    font-size: 1.375rem;
+}
+
+h5 {
+    font-weight: 400;
+    font-size: 1.375rem;
+}
+
+h6 {
+    font-weight: 400;
+    font-size: 1.1875rem;
+}
+
+h2,
+h5 {
+    color: $aged-gold;
+}
+
+h1,
+h3,
+h6 {
+    color: $black;
+}
 
 h1 {
     &.title {
@@ -76,5 +71,16 @@ h1 {
                 font-size: 2.3125rem;
             }
         }
+    }
+}
+p {
+    font-size: 1.125rem;
+}
+a{
+    color:$aged-gold;
+    text-decoration:underline;
+    &:hover{
+        text-decoration:none;
+        color:#000;
     }
 }

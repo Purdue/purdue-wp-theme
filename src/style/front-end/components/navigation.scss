@@ -70,6 +70,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           color: inherit;
           font-family: $acumin-pro;
           font-size: 1.125rem;
+          text-decoration: none;
           &:hover {
             color: $boiler-gold;
           }
@@ -370,6 +371,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     a {
       color: $black;
       font-size: 1.125rem;
+      text-decoration: none;
       &:hover {
         background: white;
       }

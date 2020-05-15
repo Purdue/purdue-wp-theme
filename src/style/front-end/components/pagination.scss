@@ -3,7 +3,7 @@
     padding: 0 0 2rem 0 !important;
     .page-numbers {
         display: inline-block;
-        padding: 3px 8px;
+        padding: 0px 8px;
         border-radius: 2px;
         color: #666;
         border: 1px solid #f1f1f1;
@@ -16,6 +16,7 @@
         color: #fff;
         border-color: $aged-gold;
         background-color: $aged-gold;
+        text-decoration: none;
     }
     a.page-numbers:hover {
         color: #222;

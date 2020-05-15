@@ -44,19 +44,6 @@ sans-serif;
     display: block;
 }
 
-.content {
-    p {
-        font-size: 1.125rem;
-    }
-    a{
-        color:$aged-gold;
-        text-decoration:underline;
-        &:hover{
-            text-decoration:none;
-            color:#000;
-        }
-    }
-}
 .home{
     .content{
         margin-bottom: 0 !important;
@@ -66,50 +53,3 @@ sans-serif;
 hr.wp-block-separator {
     height: 1px !important;
 }
-
-
-// .has-background-black {
-//     .google_bar_chart {
-//         svg {
-
-//             &>g:not(:nth-last-of-type(1)) {
-//                 text {
-//                     fill: #fff;
-//                 }
-//             }
-
-//             &>g:nth-child(3) {
-//                 &>g:nth-child(2) {
-//                     &>g:nth-child(3) {
-//                         rect:nth-child(1) {
-//                             fill: white;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }
-
-// .has-background-black-ter {
-//     .google_bar_chart {
-//         svg {
-
-//             &>g:not(:nth-last-of-type(1)) {
-//                 text {
-//                     fill: #fff;
-//                 }
-//             }
-
-//             &>g:nth-child(3) {
-//                 &>g:nth-child(2) {
-//                     &>g:nth-child(3) {
-//                         rect:nth-child(1) {
-//                             fill: white;
-//                         }
-//                     }
-//                 }
-//             }
-//         }
-//     }
-// }

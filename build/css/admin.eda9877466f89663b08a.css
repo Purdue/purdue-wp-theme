@@ -8,16 +8,6 @@
 .main-content {
   display: block; }
 
-.content p {
-  font-size: 1.125rem; }
-
-.content a {
-  color: #8e6f3e;
-  text-decoration: underline; }
-  .content a:hover {
-    text-decoration: none;
-    color: #000; }
-
 .home .content {
   margin-bottom: 0 !important; }
 
