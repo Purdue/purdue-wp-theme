@@ -10,7 +10,6 @@
 
 <aside class="side-nav">
 	<div class="aside-wrapper">
-	<h2 class="title is-5">Side Navigation Area</h2>
 	<ul class="navbar-menu">
 		<?php purdueBrand_sideNav();?>	
 	</ul>
