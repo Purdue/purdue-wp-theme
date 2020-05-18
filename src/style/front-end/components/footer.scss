@@ -5,7 +5,14 @@
     grid-row: 2/3;
     grid-column:2/3;
     color:#fff;
-    h2,h3,h4,h5,h6,p{
+    h2,h3,h4,h5,h6{
+        color: $boiler-gold;
+        font-weight: 700;
+    }
+    h3{
+        font-size: 1.1875rem;
+    }
+    p{
         color:#fff;
     }
     a {
@@ -79,21 +86,23 @@
                 flex-direction:column;
                 align-items:flex-start;
                 @media (max-width:$stickySideNav-desktop){
-                    padding-top:0;
-                    padding-bottom:0;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
                     border-top:1px solid #2e2e2e;
                     align-items:flex-start;
                 }
                 h3{
+                    padding:0 0 1.3rem 0;
                     @media (max-width: $stickySideNav-desktop){
                         width:100%;
+                        padding:0;
                     }
                     .accordion__heading--footer{
                         width:100%;
                         font-size: 1.1875rem;
                         font-weight: 700;
                         color:$boiler-gold;
-                        padding:0 0 1.3rem 0;
+                        padding:0;
                         margin:0;
                         border:0;
                         background-color:#000000;
@@ -108,7 +117,7 @@
                             pointer-events: none;
                         }       
                         @media (max-width: $stickySideNav-desktop){
-                            padding: 1rem 0;
+                            padding: 0;
                             pointer-events: all;
                             &:hover{
                                 cursor:pointer;
@@ -131,7 +140,7 @@
                         overflow:hidden;
                     }
                     li{
-                        padding:0 0 0.8rem 0;
+                        padding:0.4rem 0;
                         a{
                             color:#fff;
                             font-size:0.9375rem;
@@ -140,9 +149,15 @@
                                 text-decoration: none;
                             }
                         }
+                        &:first-child {
+                            padding-top: 0;
+                        }
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
                         @media (max-width: $stickySideNav-desktop){
-                            &:last-child {
-                                padding-bottom: 1rem;
+                            &:first-child {
+                                padding-top: 0.8rem;
                               }
                         }
                     }
@@ -223,7 +238,14 @@
 .footer{
     padding:0;
     color:#fff;
-    h2,h3,h4,h5,h6,p{
+    h2,h3,h4,h5,h6{
+        color: $boiler-gold;
+        font-weight: 700;
+    }
+    h3{
+        font-size: 1.1875rem;
+    }
+    p{
         color:#fff;
     }
     a {
@@ -304,21 +326,23 @@
                 flex-direction:column;
                 align-items:flex-start;
                 @include touch{
-                    padding-top:0;
-                    padding-bottom:0;
+                    padding-top: 1rem;
+                    padding-bottom: 1rem;
                     border-top:1px solid #2e2e2e;
                     align-items:flex-start;
                 }
                 h3{
+                    padding:0 0 1.3rem 0;
                     @include touch{
                         width:100%;
+                        padding:0;
                     }
                     .accordion__heading--footer{
                         width:100%;
                         font-size: 1.1875rem;
                         font-weight: 700;
                         color:$boiler-gold;
-                        padding:0 0 1.3rem 0;
+                        padding:0;
                         margin:0;
                         border:0;
                         background-color:#000000;
@@ -333,8 +357,8 @@
                             pointer-events: none;
                         }       
                         @include touch{
-                            padding: 1rem 0;
                             pointer-events: all;
+                            padding:0;
                             &:hover{
                                 cursor:pointer;
                             }
@@ -356,7 +380,7 @@
                         overflow:hidden;
                     }
                     li{
-                        padding:0 0 0.8rem 0;
+                        padding:0.4rem 0;
                         a{
                             color:#fff;
                             font-size:0.9375rem;
@@ -365,10 +389,16 @@
                                 text-decoration: none;
                             }
                         }
+                        &:first-child {
+                            padding-top: 0;
+                        }
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
                         @include touch{
-                            &:last-child {
-                                padding-bottom: 1rem;
-                              }
+                            &:first-child {
+                                padding-top: 0.8rem;
+                            }
                         }
                     }
                 }

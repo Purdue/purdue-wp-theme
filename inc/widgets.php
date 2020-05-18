@@ -96,8 +96,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">',
-            'after_title'   => '<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h3>',
+            'before_title'  => '<h3>',
+            'after_title'   => '</h3>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
@@ -105,8 +105,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">',
-            'after_title'   => '<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h3>',
+            'before_title'  => '<h3>',
+            'after_title'   => '</h3>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
@@ -114,8 +114,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion3id" aria-controls="sect3">',
-            'after_title'   => '<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h3>',
+            'before_title'  => '<h3>',
+            'after_title'   => '</h3>',
         ));
     }
 }
@@ -577,13 +577,15 @@ class LinksColumn_Widget extends WP_Widget {
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+        $title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+        $no = substr($args['id'], -1);
         echo $args['before_widget'];
 		
 		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
+           
+			echo $args['before_title'] .'<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$no.'id" aria-controls="sect'.$no.'">'. $title .'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button>'. $args['after_title'];
         }
-        $no = substr($args['id'], -1);
+
         echo '<ul class="accordion__content--footer" id="sect'.$no.'" aria-labelledby="accordion'.$no.'id">';
 		$nav_menu_args = array(
 			'fallback_cb' => '',
