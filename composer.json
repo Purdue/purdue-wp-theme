@@ -10,7 +10,15 @@
     ],
     "license": "GPLv3",
     "type": "wordpress-theme",
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "https://purdue.github.io"
+        }
+    ],
     "require": {
-        "php": ">=7.0"
+        "php": ">=7.0",
+        "purdue/bulma-blocks": ">=1.2.1",
+        "purdue/purdue-blocks": ">=1.2.0"
     }
 }
