@@ -9,7 +9,7 @@
  */
 ?>
 
-<?php if (!is_front_page() && !has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
+<?php if (!is_front_page() && !is_page() && !has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
 
 <section class="section">
     <div class="container">
