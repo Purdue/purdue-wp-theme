@@ -166,7 +166,8 @@
             .footer__social{
                 display:flex !important;
                 flex-direction:row;
-                justify-content: flex-start;;
+                justify-content: center;
+                align-items: flex-start;
                 @media (max-width:$stickySideNav-desktop){
                     justify-content:center;
                     align-items:center; 
@@ -406,7 +407,8 @@
             .footer__social{
                 display:flex !important;
                 flex-direction:row;
-                justify-content: flex-start;;
+                justify-content: center;
+                align-items: flex-start;
                 @include touch{
                     justify-content:center;
                     align-items:center; 

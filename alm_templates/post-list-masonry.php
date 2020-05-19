@@ -1,5 +1,5 @@
 <li class="grid-item">
-	<div class="card">
+	<div class="card listed-post">
 		<a href="<?php the_permalink(); ?>">
 
 
