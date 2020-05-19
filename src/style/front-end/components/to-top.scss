@@ -19,17 +19,17 @@
     }
 
     &.to-top-hidden {
-        transform: translatey(300%);
+        transform: translateY(300%);
     }
 
     &.to-top-shown {
         transform: translateX(0);
     }
 
-    @media (max-width: 329px) {
+    @media (max-width: 414px) {
         font-size: 0.9rem;
-        bottom: 2rem;
         right: 2rem;
+        padding: 1.2rem;
     }
 }
 .to-top-relative{

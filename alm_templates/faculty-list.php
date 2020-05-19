@@ -1,5 +1,5 @@
 <div class="column is-full">
-    <div class="card">
+    <div class="card listed-faculty">
         <div class="media">
             <?php if (has_post_thumbnail()) { ?>
                 <div class="media-left">
