@@ -5,12 +5,82 @@
  */
 ?>
 <?php get_header(); ?>
+<?php
+$taxonomy = "pub_tax";
+$terms = wp_get_object_terms(get_the_ID(), $taxonomy);
+echo '<section class="breadcrumbs">
+<ul>';
+echo '<li><a href="' . home_url() . '">Home</a></li>';
+$out = '';
 
-<?php if(function_exists('bcn_display')) : ?>
-<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
-    <?php bcn_display();	?>
-</div>
-<?php endif; ?>
+foreach ($terms as $term){
+	wp_reset_query();
+	$args = array('post_type' => 'pub_post',
+		'tax_query' => array(
+			array(
+				'taxonomy' => $taxonomy,
+				'field' => 'slug',
+				'terms' => $term->slug,
+			),
+		),
+	);	
+	$loop = new WP_Query($args);		
+	if($loop->have_posts()) {
+		while($loop->have_posts()) : $loop->the_post();
+		$out.='<li><a href="'.get_permalink().'">'.$term->name.'</a></li>';
+		endwhile;
+	}
+}
+$out.='<li>Current Article</li>';
+
+echo $out;
+echo '</ul>
+</section>';
+wp_reset_query();
+$subheading = "";
+$includeDate = "";
+$includeSocialTop = "";
+$includeSocialbottom = "";
+
+if (get_theme_mod('date_setting') == '1') {
+	$includeDate = '1';
+}
+if (get_theme_mod('social_setting') == '1') {
+	$includeSocialTop = '1';
+}
+if (function_exists('get_field')) {	
+	$subheading = get_field('post-subheading');
+	// if(is_array(get_field('date'))){
+	// 	if(sizeof(get_field('date'))>0){
+	// 		$includeDate = get_field('date')[0];
+	// 	}
+	// }
+	// else{
+	// 	$includeDate = "";
+	// }
+	// if(is_array(get_field('social_header'))){
+	// 	if(sizeof(get_field('social_header'))>0){
+	// 		$includeSocialTop = get_field('social_header')[0];
+	// 	}
+	// }else{
+	// 	$includeSocialTop = "";
+	// }
+	// if(is_array(get_field('social_bottom'))){
+	// 	if(sizeof(get_field('social_bottom'))>0){
+	// 		$includeSocialbottom = get_field('social_bottom')[0];
+	// 	}
+	// }else{
+	// 	$includeSocialbottom = "";
+	// }
+	
+} else {	
+	$subheading = "";
+	// $includeDate = "Yes";
+	// $includeSocialTop = "Yes";
+	// $includeSocialbottom = "";
+}
+
+?>
 
 <main id="site-content" role="main">
 	<section class="container section-container">
@@ -82,7 +152,7 @@
 				</div>
 				<aside class="column is-one-quarter-desktop is-full-tablet is-full-mobile">
 					<div class="side-content">
-						<?php dynamic_sidebar('right-sidebar'); ?>
+						<?php dynamic_sidebar('post-related-content'); ?>
 					</div>
 				</aside>
 			<?php else : ?>

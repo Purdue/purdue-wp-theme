@@ -21,6 +21,15 @@ if (!function_exists('purdueBrand_widgets_init')) {
     function purdueBrand_widgets_init()
     {
         register_sidebar(array(
+            'name'          => esc_html__('Right Sidebar', 'purdueBrand'),
+            'id'            => 'right-sidebar',
+            'description'   => esc_html__('Widgets displayed on the right sidebar.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h4 class="title is-4">',
+            'after_title'   => '</h4>',
+        ));
+        register_sidebar(array(
             'name'          => esc_html__('Related Content on Posts', 'purdueBrand'),
             'id'            => 'post-related-content',
             'description'   => esc_html__('Add the related content widget here to show related content on posts.', 'purdueBrand'),
