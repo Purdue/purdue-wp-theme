@@ -1,7 +1,5 @@
 <?php
-
 /**
- * Template Name: Single Post
  *
  * @package Purdue-brand
  */

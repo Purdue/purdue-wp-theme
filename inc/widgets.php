@@ -87,8 +87,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add an address widget here to show your address on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s footer__address">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
@@ -96,8 +96,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3>',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
@@ -105,8 +105,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3>',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
@@ -114,8 +114,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h3>',
-            'after_title'   => '</h3>',
+            'before_title'  => '<h5>',
+            'after_title'   => '</h5>',
         ));
     }
 }

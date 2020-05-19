@@ -15,10 +15,13 @@
                 </div>
                 <div class="middle">
                     <p>					
-                        <?php 
-					if(sizeof(the_excerpt())!==0){
+                    <?php 
+                    $bio = (get_field('short_bio'));
+                    if ($bio) {
+                        echo $bio;
+                    } elseif(sizeof(the_excerpt())!==0) {
 						the_excerpt();
-					}else{
+					} else {
 						echo wp_trim_words(get_the_content(), 40, '...'); 
 					}
                     ?>

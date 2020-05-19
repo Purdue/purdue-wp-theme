@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Front Page
+ * Front Page design template
  *
  * @package purdue-wp-theme
  */
