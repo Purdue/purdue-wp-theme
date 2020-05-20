@@ -26,44 +26,76 @@
 				$args = array( 'post_type' => 'post',  'paged' => $paged);
 				$wp_query = new WP_Query($args);
 				*/
-				while ( have_posts() ) : the_post(); ?>
-				<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-					<div class="card listed-post">
-						<a href="<?php the_permalink(); ?>">
-						<?php if (has_post_thumbnail()) { ?>
-							<div class="card-image">
-								<figure class="card-bg-image image is-2by1" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
-								</figure>
-							</div>
-						<?php } ?>
-						<div class="card-content">
-							<div class="media">
+				global $more;
+				while ( have_posts() ) : the_post(); 
+				
+					if (is_sticky()) {	?>
+						<div class="column is-full">
+							<div class="card listed-post">
+							<?php if (has_post_thumbnail()) { ?>
+								<div class="card-image">
+									<figure class="card-bg-image image is-2by1" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
+									</figure>
+								</div>
+							<?php } ?>
+								<div class="card-content">
+									<div class="media">
 
-								<div class="media-content">
-									<p class="subtitle">
-										<?php the_time('F j, Y'); ?>
-									</p>
-									<p class="title is-4">
-										<?php the_title(); ?>
-									</p>
+										<div class="media-content">
+											<p class="subtitle">
+												<?php the_modified_time('F j, Y'); ?>
+											</p>
+											<h4 class="title is-4">
+												<?php the_title(); ?>
+											</h4>
+										</div>
+									</div>
+									<div class="content">
+										<?php $more = false; echo get_the_content(); ?>
+									</div>
 								</div>
 							</div>
-							<div class="content-text">
-								<?php 
-									if(sizeof(the_excerpt())!==0){
-										the_excerpt();
-									}else{
-										echo wp_trim_words(get_the_content(), 40, '...'); 
-									}
-									?>
-							</div>
-							<div class="read-more-button">
-								<span>Read More</span>
-							</div>
 						</div>
-						</a>
-					</div>
-				</div>	
+				<?php } else { ?>
+						<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
+							<div class="card listed-post">
+								<a href="<?php the_permalink(); ?>">
+								<?php if (has_post_thumbnail()) { ?>
+									<div class="card-image">
+										<figure class="card-bg-image image is-2by1" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
+										</figure>
+									</div>
+								<?php } ?>
+								<div class="card-content">
+									<div class="media">
+
+										<div class="media-content">
+											<p class="subtitle">
+												<?php the_time('F j, Y'); ?>
+											</p>
+											<p class="title is-4">
+												<?php the_title(); ?>
+											</p>
+										</div>
+									</div>
+									<div class="content-text">
+										<?php 
+											$more = true;
+											if(sizeof(the_excerpt())!==0){
+												the_excerpt();
+											}else{
+												echo wp_trim_words(get_the_content(), 40, '...'); 
+											}
+											?>
+									</div>
+									<div class="read-more-button">
+										<span>Read More</span>
+									</div>
+								</div>
+								</a>
+							</div>
+						</div>	
+					<?php } ?>
 				<?php endwhile; ?>
 			</div>
 			<div class="section navigation">
