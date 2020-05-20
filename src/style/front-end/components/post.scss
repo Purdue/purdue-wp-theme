@@ -374,9 +374,11 @@ ul.alm-listing{
       color:$aged-gold;
       &:not(:last-child) {
         border-right: 1px solid black;
+        @include mobile {
+          border-right: none;
+        }
       }
       @include mobile {
-        border-right: none;
         margin-bottom: 1rem;
       }
     }
