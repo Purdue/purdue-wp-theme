@@ -11,29 +11,19 @@
 <main id="site-content" role="main" class="main-content">
 	<section class="section container">
 		<div class="content">
-			<?php 
-			if ( ! is_home() ) {
-				$archive_title    = get_the_archive_title();
-				$archive_subtitle = get_the_archive_description();
-			} else {
-				$archive_title    = get_bloginfo( 'name' );
-				$archive_subtitle = get_bloginfo( 'description' );
-			}
-			?>
-			<h1><?php echo $archive_title; ?></h1>
-			<?php if( $archive_subtitle ){
-						echo '<p>'.$archive_subtitle.'</p>'; 
+			<h1><?php echo get_bloginfo( 'name' ); ?></h1>
+			<?php if(get_bloginfo( 'description' )){
+						echo '<p>'.get_bloginfo( 'description' ).'</p>'; 
 					} 
 			?>
 		</div>
 	</section>
-
 	<div class="section post-container">
 		<div class="container">
 			<div class="columns is-multiline post-list">
 				<?php 
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-				$args = array( 'post_type' => 'post', 'paged' => $paged);
+				$args = array( 'post_type' => 'post', 'posts_per_page' => 6, 'paged' => $paged);
 				$wp_query = new WP_Query($args);
 				while ( have_posts() ) : the_post(); ?>
 				<div class="column is-one-third-desktop is-half-tablet is-full-mobile">
