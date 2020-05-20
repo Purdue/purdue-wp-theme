@@ -66,13 +66,17 @@
 				</div>	
 				<?php endwhile; ?>
 			</div>
-			<?php 
-			the_posts_pagination( array(
-				'mid_size' => 2,
-				'prev_text' => __( 'Prev', 'textdomain' ),
-				'next_text' => __( 'Next', 'textdomain' ),
-				) );
-			?>
+			<div class="section navigation">
+				<div class="container">
+				<?php 
+				the_posts_pagination( array(
+					'mid_size' => 2,
+					'prev_text' => __( 'Prev', 'textdomain' ),
+					'next_text' => __( 'Next', 'textdomain' ),
+					) );
+				?>
+				</div>
+			</div>
 		</div>
 	</div>
 	
