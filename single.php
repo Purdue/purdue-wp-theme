@@ -14,7 +14,7 @@
 
 <main id="site-content" role="main">
 	<section class="container section-container">
-		<?php if (is_active_sidebar('post-related-content')) : ?>
+		<?php if (is_active_sidebar('right-sidebar')) : ?>
 			<div class="columns is-multiline with-sideContent">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
 					<?php purdueBrand_the_title('is-1', False); ?>
@@ -157,6 +157,9 @@
 			</div>
 	</section>
 
+	<button id="to-top" class="to-top-hidden">
+		<i class="fas fa-chevron-up" aria-hidden="true"></i>
+	</button>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

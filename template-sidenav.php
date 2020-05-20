@@ -6,7 +6,15 @@
  */
 ?>
 
-<?php get_header('sidenav'); ?>
+<?php get_header(); ?>
+
+<?php if(function_exists('bcn_display')) : ?>
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
+    <?php bcn_display();	?>
+</div>
+<?php endif; ?>
+
+<div id="content" class="site-content-sidenav">
 
 <aside class="side-nav">
 	<div class="aside-wrapper">
@@ -31,6 +39,11 @@
 
 	?>
 
+	<button id="to-top" class="to-top-hidden">
+		<i class="fas fa-chevron-up" aria-hidden="true"></i>
+	</button>
 </main><!-- #site-content -->
 
-<?php get_footer('sidenav'); ?>
+</div>
+
+<?php get_footer(); ?>
