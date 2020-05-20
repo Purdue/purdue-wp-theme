@@ -28,7 +28,7 @@
                     </p>
                 </div>
                 <div class="bottom">
-                    <p class="phone"><?php echo(get_field('phone')); ?></p>
+                    <p class="phone"><?php echo(get_field('phone_number')); ?></p>
                     <p class="email"><?php echo(get_field('email')); ?></p>
                 </div>
             </div>
