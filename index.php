@@ -35,6 +35,9 @@
 
 	?>
 
+	<button id="to-top" class="to-top-hidden">
+		<i class="fas fa-chevron-up" aria-hidden="true"></i>
+	</button>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
