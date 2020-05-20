@@ -22,15 +22,19 @@
 						<?php echo ($subheading); ?>
 					</p>
 
-					<?php while (have_posts()) : the_post(); ?>
-						<?php if($includeDate=='1' || $includeSocialTop=='1'){ ?>
+					<?php 
+					$incDate = get_theme_mod('date_setting',false);
+					$incShare = get_theme_mod('social_setting',false);
+
+					while (have_posts()) : the_post(); 
+						if($incDate || $incShare){ ?>
 							<div class="post__date-line">
-								<?php if($includeDate=='1'){ ?>
+								<?php if($incDate){ ?>
 									<div class="post__date-line--date">
 										<?php echo get_the_date("F j, Y"); ?>
 									</div>
 								<?php } ?>
-								<?php if($includeSocialTop=='1'){ ?>
+								<?php if($incShare){ ?>
 									<div class="post__date-line--share">
 										<p>Share: </p>
 										<div class="level is-mobile">
@@ -54,7 +58,7 @@
 							</div>
 						<?php } ?>
 							<?php the_content(); ?>
-						<?php if($includeSocialbottom=='1'){ ?>
+						<?php if($incShare){ ?>
 						<div class="post__date-line share-button-bottom">	
 							<div class="post__date-line--share">
 								<p>Share: </p>
