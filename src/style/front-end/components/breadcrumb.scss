@@ -4,6 +4,15 @@
     @include touch{
         padding:0.9rem 1.5rem; 
     }
+    a{
+        font-family: $acumin-pro;
+        font-size: 0.875rem;
+        color:#000 !important;
+        text-decoration: none;
+        &:hover{
+            text-decoration:underline;
+        }
+    }
     ul{
         font-family: $acumin-pro;
         font-size: 0.875rem;

@@ -26,8 +26,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'description'   => esc_html__('Widgets displayed on the right sidebar.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
-            'before_title'  => '<h4 class="title is-4">',
-            'after_title'   => '</h4>',
+            'before_title'  => '<h2 class="title is-4">',
+            'after_title'   => '</h2>',
         ));
         register_sidebar(array(
             'name'          => esc_html__('Related Content on Posts', 'purdueBrand'),
