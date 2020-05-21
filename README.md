@@ -19,4 +19,4 @@ The prefered method of using this theme is by including it in the composer.json 
 composer require purdue/purdue-wp-theme
 ```
 
-If your project does not use composer for dependancy management, the theme can be installed by adding the folder to the wp-content/themes folder in your WordPress install.  For the best experience, you should also install [Bulma Blocks](https://github.com/Purdue/bulma-blocks) and [Purdue Blocks](https://github.com/Purdue/purdue-blocks) plugins.
+If your project does not use composer for dependency management, the theme can be installed by adding the folder to the wp-content/themes folder in your WordPress install.  For the best experience, you should also install [Bulma Blocks](https://github.com/Purdue/bulma-blocks) and [Purdue Blocks](https://github.com/Purdue/purdue-blocks) plugins.
