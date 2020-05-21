@@ -43,11 +43,13 @@
 
 										<div class="media-content">
 											<p class="subtitle">
-												<?php the_modified_time('F j, Y'); ?>
+												Last Update: <?php the_modified_time('F j, Y'); ?>
 											</p>
+											<?php /* Hide for now
 											<h4 class="title is-4">
 												<?php the_title(); ?>
 											</h4>
+											*/ ?>
 										</div>
 									</div>
 									<div class="content">
