@@ -131,7 +131,7 @@ function purdue_header_options($wp_customize)
         'title'       => __( 'Search Options' ), //Visible title of section
         'priority'    => 55, //Determines what order this appears in
         'capability'  => 'edit_theme_options', //Capability needed to tweak
-        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue.', 'purdue-wp-theme'), //Descriptive tooltip
+        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue. Please note if you select Google Custom Seach, you will need to create an empty page on your site, name it Search and select the Search template as its template', 'purdue-wp-theme'), //Descriptive tooltip
         ) 
     );   
     $wp_customize->add_setting('search_option_settings', array(
