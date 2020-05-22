@@ -21,16 +21,25 @@ if (!function_exists('purdueBrand_widgets_init')) {
     function purdueBrand_widgets_init()
     {
         register_sidebar(array(
-            'name'          => esc_html__('Right Sidebar', 'purdueBrand'),
+            'name'          => esc_html__('Right Sidebar', 'purdue'),
             'id'            => 'right-sidebar',
-            'description'   => esc_html__('Widgets displayed on the right sidebar.', 'purdueBrand'),
+            'description'   => esc_html__('Widgets displayed on the right sidebar of Posts.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
             'after_widget'  => '</div>',
             'before_title'  => '<h2 class="title is-4">',
             'after_title'   => '</h2>',
         ));
         register_sidebar(array(
-            'name'          => esc_html__('Related Content on Posts', 'purdueBrand'),
+            'name'          => esc_html__('Page Sidebar', 'purdue'),
+            'id'            => 'page-sidebar',
+            'description'   => esc_html__('Widgets displayed on the right sidebar of Pages.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2 class="title is-4">',
+            'after_title'   => '</h2>',
+        ));
+        register_sidebar(array(
+            'name'          => esc_html__('Related Content on Posts', 'purdue'),
             'id'            => 'post-related-content',
             'description'   => esc_html__('Add the related content widget here to show related content on posts.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -39,7 +48,7 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'after_title'   => '</h2>',
         ));
         register_sidebar(array(
-            'name'          => esc_html__('Resources', 'purdueBrand'),
+            'name'          => esc_html__('Resources', 'purdue'),
             'id'            => 'post-resources',
             'description'   => esc_html__('Show Resources on posts.', 'purdueBrand'),
             'before_widget' => '<div id="%1$s" class="widget resources-widget %2$s">',
