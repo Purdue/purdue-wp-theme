@@ -96,3 +96,25 @@
     border: 1px solid #DAAA00;
     background-color: #EBD99F;
 }
+
+.search-post{
+  padding:2rem 0;
+  &:not(:last-child){
+    border-bottom:0.5px solid #C4BFC0;;
+  }
+  &-title{
+    color: #8e6f3e !important;
+    font-size: 1.25rem !important;
+    font-weight:400 !important;
+  }
+  &-link{
+    word-break: break-all;
+    font-size: 0.875rem;
+    color: #555960 !important;
+  }
+  &-noresult{
+    padding-top:2rem;
+    font-size:1.5rem;
+    color:$aged-gold;
+  }
+}

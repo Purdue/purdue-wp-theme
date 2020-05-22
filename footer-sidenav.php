@@ -18,7 +18,10 @@
 			<div class="columns is-desktop is-multiline">
 				<div class="column is-4">	
 					<div class="footer__motto">
-						<?php purdueBrand_footer_logo();?>
+						<?php 
+							echo '<a href="' . esc_url(home_url('/')) . '" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>';
+
+						?>
 					</div>
 					<?php if (is_active_sidebar('footer-address')) {dynamic_sidebar('footer-address');} ?>
 				</div>

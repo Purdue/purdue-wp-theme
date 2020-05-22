@@ -126,9 +126,47 @@ function purdue_header_options($wp_customize)
             )
         )
     );
+    //add new section
+    $wp_customize->add_section('search_option', array(
+        'title'       => __( 'Search Options' ), //Visible title of section
+        'priority'    => 55, //Determines what order this appears in
+        'capability'  => 'edit_theme_options', //Capability needed to tweak
+        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue.', 'purdue-wp-theme'), //Descriptive tooltip
+        ) 
+    );   
+    $wp_customize->add_setting('search_option_settings', array(
+        'default'=>'wordpress',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'purdue_header_radio_search'
+    ));
+    $wp_customize->add_control('search_option_radio', array(
+        'type'=>'radio',
+        'priority'=>'15',
+        'section'=>'search_option',
+        'settings'=>'search_option_settings',
+        'Label'=>'Select search option',
+        'choices'=>array(
+            'wordpress'=>_('Wordpress Default'),
+            'google'=>_('Google Custom Search')
+        )
+    ));
 }
 add_action('customize_register', 'purdue_header_options');
 
+function purdue_header_radio_search($input, $setting)
+{
+    // list of valid choices
+    $valid = array(
+        'wordpress'=>_('Wordpress Default'),
+        'google'=>_('Google Custom Search')
+    );
+    // Ensure input is a slug.
+    $input = sanitize_key($input);
+
+    // If the input is a valid key, return it; otherwise, return the default.
+    return (array_key_exists($input, $valid) ? $input : 'wordpress');
+}
 function purdue_header_radio_select($input, $setting)
 {
     // list of valid choices

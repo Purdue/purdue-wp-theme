@@ -91,7 +91,7 @@
 						echo('</nav>');
 						echo('<nav class="navbar has-shadow purdue-navbar-white navbar--global" data-menu="global-nav">');
 							echo('<div class="navbar-brand">');
-							purdueBrand_home_link('navbar-item');
+							echo '<a href="' . esc_url(home_url('/')) . '" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H-light.svg" alt="Purdue Logo"></a>'; 
 								echo('<button class="icon is-large navbar-burger" data-target="global-nav">');
 									echo('<i class="fas fa-bars fa-2x burger-icon"></i><i class="fas fa-times close-icon"></i>');
 								echo('</button>');

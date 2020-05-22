@@ -1,28 +1,53 @@
 <?php
 /**
- *  The template for displaying search pages
- *
+ * Template Name: Search
  * @package purdue-wp-theme
  */
 ?>
 
-<?php get_header(); ?>
+<?php 
+	get_header(); 
+	$searchOption = get_theme_mod( 'search_option_settings' )?get_theme_mod( 'search_option_settings' ):"wordpress";
+?>
 
 <main id="site-content" role="main" class="main-content">
 	<section class="section container">
 		<div class="columns is-centered">
 			<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
 				<div class="content">
-					<h1>Search <?php echo get_bloginfo( 'name' ); ?></h1>
+					<h1>Search <?php if($searchOption=="wordpress"){
+										echo get_bloginfo( 'name' );
+					 					}else{
+										echo "All Purdue";	 
+										 } ?></h1>
 					<div class="form-group search-box search-box-fullwidth">
-						<form action="<?php echo esc_url( home_url( '/' ) );?>/search" id="cse-search-box-fullwidth" method="get">
-							<span class="sr-only">Search for:</span>
-							<input type="search" class="search-field" placeholder="Google Custom Search" name="q" value='<?php echo isset($_GET['q']) ? $_GET['q'] : ""; ?>'>
-							<button type="submit" class="search-button"><span class="sr-only">Submit</span>
-								<i class="fas fa-search search-icon"></i>
-							</button>
-						</form>
+						<?php get_search_form();?>
 					</div>
+					<?php if($searchOption=="wordpress"){
+						
+							if ( have_posts() ){ 
+								while ( have_posts() ) : the_post(); ?>
+
+							<article class="search-post">
+								<h2 class="search-post-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
+								<p class="search-post-link"><?php the_permalink() ?></p>
+								<p  class="search-post-content">
+									<?php 					
+									if(sizeof(the_excerpt())!==0){
+										the_excerpt();
+									}else{
+										echo wp_trim_words(get_the_content(), 40, '...'); 
+									} 
+									?>
+								</p>
+							</article>
+	
+					<?php 
+				 endwhile;
+				}else {
+					echo '<p class="search-post-noresult">No search results found!</p>';
+				 
+				}}else{ ?>
 					<script>
 						(function() {
 							var cx = '000644513606665216020:olj7bswxyxf';
@@ -35,11 +60,11 @@
 						})();
 					</script>
 					<gcse:searchresults-only></gcse:searchresults-only>
+					<?php }?>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<button id="to-top" class="to-top-hidden">
 		<i class="fas fa-chevron-up" aria-hidden="true"></i>
 	</button>
