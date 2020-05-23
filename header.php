@@ -49,13 +49,7 @@
 							echo('<div class="navbar-end">');
 							purdueBrand_headerButtons();
 								echo('<div class="form-group search-box">');
-									echo('<form action="'. esc_url(home_url('/')) .'/search" id="cse-search-box" method="get">');
-										echo('<span class="sr-only">Search for:</span>');
-										echo('<input type="search" class="search-field" placeholder="Google Custom Search" name="q" value="'. (isset($_GET['q']) ? $_GET['q'] : "") .'">');
-										echo('<button type="submit" class="search-button"><span class="sr-only">Submit</span>');
-											echo('<i class="fas fa-search search-icon"></i>');
-										echo('</button>');
-									echo('</form>');
+									get_search_form();
 								echo('</div>');
 							echo('</div>');
 
@@ -80,13 +74,7 @@
 								echo('</ul>');
 								echo('<div class="navbar-end">');
 									echo('<div class="form-group search-box">');
-										echo('<form action="'. esc_url(home_url('/')) .'/search" id="cse-search-box" method="get">');
-											echo('<span class="sr-only">Search for:</span>');
-											echo('<input type="search" class="search-field" placeholder="What are you looking for?" name="q" value="'. (isset($_GET['q']) ? $_GET['q'] : "") .'">');
-											echo('<button type="submit" class="search-button icon is-large"><span class="sr-only">Submit</span>');
-												echo('<i class="fas fa-search search-icon"></i>');
-											echo('</button>');
-										echo('</form>');
+										get_search_form();
 									echo('</div>');
 								echo('</div>');
 							echo('</div>');
