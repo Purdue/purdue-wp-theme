@@ -12,8 +12,8 @@
 		<div class="columns is-mobile is-gapless">
 			<div class="column is-half-desktop is-half-widescreen is-half-fullhd">
 				<div class="section content">
-					<h1>Publications</h1>
-					<p>This page lists all Purdue publications.</p>
+					<h1>Annual Reports</h1>
+					<p>This page lists all Purdue Executive Vice President for Research and Partnerships publications.</p>
 				</div>
 			</div>
 			<div class="column is-half-desktop is-half-widescreen is-half-fullhd">
