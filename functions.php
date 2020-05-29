@@ -39,19 +39,19 @@ endif;
 add_action('after_setup_theme', 'purdueBrand_setup');
 
 // add second logo
-function purdue_customizer_footer_mark($wp_customize)
-{
-    // add a setting
-    $wp_customize->add_setting('footer_mark');
-    // Add a control to upload the hover logo
-    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_mark', array(
-            'label' => 'Footer Mark',
-            'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
-            'settings' => 'footer_mark',
-            'priority' => 8 // show it just below the custom-logo
-        )));
-}
-add_action('customize_register', 'purdue_customizer_footer_mark');
+// function purdue_customizer_footer_mark($wp_customize)
+// {
+//     // add a setting
+//     $wp_customize->add_setting('footer_mark');
+//     // Add a control to upload the hover logo
+//     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_mark', array(
+//             'label' => 'Footer Mark',
+//             'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
+//             'settings' => 'footer_mark',
+//             'priority' => 8 // show it just below the custom-logo
+//         )));
+// }
+// add_action('customize_register', 'purdue_customizer_footer_mark');
 
 // add header layout options
 function purdue_header_options($wp_customize)

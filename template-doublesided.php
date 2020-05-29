@@ -25,7 +25,7 @@
 </aside>
 
 <main id="site-content" role="main" class="main-content">
-    <section class="container section-container">
+    <section class="container">
         <div class="columns is-multiline with-sideContent">
             <div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
             <?php
