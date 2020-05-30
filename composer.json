@@ -18,6 +18,7 @@
     ],
     "require": {
         "php": ">=7.0",
+        "purdue/boilerup-wp": "1.*",
         "purdue/bulma-blocks": ">=1.2.1",
         "purdue/purdue-blocks": ">=1.2.0"
     }
