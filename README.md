@@ -16,7 +16,27 @@ In order to effectively use this theme please become familar with the following 
 The prefered method of using this theme is by including it in the composer.json file of your project.
 
 ```
-composer require purdue/purdue-wp-theme
+
+"require": {
+    "purdue/purdue-wp-theme": "1.0.*",
+},
+
 ```
 
-If your project does not use composer for dependency management, the theme can be installed by adding the folder to the wp-content/themes folder in your WordPress install.  For the best experience, you should also install [Bulma Blocks](https://github.com/Purdue/bulma-blocks) and [Purdue Blocks](https://github.com/Purdue/purdue-blocks) plugins.
+You will also need to add the Purdue repository to your composer.json file 
+
+```
+"repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    },
+    {
+      "type": "composer",
+      "url": "https://purdue.github.io"
+    }
+  ],
+
+```
+
+If your project does not use composer for dependency management, the theme can be installed by adding the folder to the wp-content/themes folder in your WordPress install.  For the best experience, you should also install [BoilerUp WP](https://github.com/Purdue/boilerup-wp), [Bulma Blocks](https://github.com/Purdue/bulma-blocks) and [Purdue Blocks](https://github.com/Purdue/purdue-blocks) plugins.
