@@ -28,8 +28,10 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.1",
     "bulma": "^0.8.2",
     "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.5",
     "postcss-preset-env": "^6.7.0"
   }
 }
