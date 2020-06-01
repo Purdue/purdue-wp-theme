@@ -637,7 +637,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   }
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .purdue-navbar-white .navbar-item.has-dropdown::after {
-        margin-top:-5px !important;
-      }
-  }
+  .purdue-navbar-white {
+    .navbar-item {
+      .has-dropdown::after {
+margin-top: -5px;}
+    }
+  }  
+}
