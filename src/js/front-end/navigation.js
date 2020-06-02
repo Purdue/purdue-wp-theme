@@ -145,15 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
 				$dropdown_li.addEventListener('mouseover',function hoverListener(){
 					const $distance_to_top=$dropdown_link_closed.getBoundingClientRect().top;
           const $distance_to_bottom=window.innerHeight-$distance_to_top;
-          console.log($distance_to_top)
           // const $relative=$distance_to_top-$aside.getBoundingClientRect().top;
           const $relative=0;
-					const $relative_bottom=$relative-$dropdown_content.offsetHeight+$dropdown_li.offsetHeight;
-					if($distance_to_bottom<300){
-						$dropdown_content.style.top=$relative_bottom + "px";
-					}else{
-						$dropdown_content.style.top=$relative + "px";
-					}
+					// const $relative_bottom=$relative-$dropdown_content.offsetHeight+$dropdown_li.offsetHeight;
+					// if($distance_to_bottom<300){
+					// 	$dropdown_content.style.top=$relative_bottom + "px";
+					// }else{
+					// 	$dropdown_content.style.top=$relative + "px";
+          // }
+          $dropdown_content.style.top=$relative + "px";
 				})
 			}
 			if(width < 1023){
