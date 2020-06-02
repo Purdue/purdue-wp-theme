@@ -112,7 +112,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         input[type='search'] {
           width: 200px;
           font-size: 1rem;
-          line-height: 2rem;
           border-radius: 0;
           height: 2rem;
           border: none;
@@ -636,4 +635,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       }
     }
   }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .purdue-navbar-white {
+    .navbar-item {
+      .has-dropdown::after {
+margin-top: -5px;}
+    }
+  }  
 }
