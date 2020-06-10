@@ -53,3 +53,11 @@ sans-serif;
 hr.wp-block-separator {
     height: 1px !important;
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.columns.is-multiline{
+		flex-wrap:none;
+	}
+	.column{
+		flex-basis:auto;
+	} 
+  }
