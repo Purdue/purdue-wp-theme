@@ -195,14 +195,24 @@ function purdueBrand_default_colors()
     add_theme_support('disable-custom-colors');
     add_theme_support('editor-color-palette', array(
         array(
-            'name' => __('White', 'purdue-wp-theme'),
-            'slug' => 'white',
-            'color' => '#ffffff',
-        ),
-        array(
             'name' => __('Black', 'purdue-wp-theme'),
             'slug' => 'black',
             'color' => '#000000',
+        ),
+        array(
+            'name' => __('Boiler Gold', 'purdue-wp-theme'),
+            'slug' => 'boiler-gold',
+            'color' => '#cfb991',
+        ),
+        array(
+            'name' => __('Opaque', 'purdue-wp-theme'),
+            'slug' => 'opaque',
+            'color' => 'rgba(0,0,0,0.65',
+        ),
+        array(
+            'name' => __('Transparent', 'purdue-wp-theme'),
+            'slug' => 'transparent',
+            'color' => 'rgba(0,0,0,0',
         )
     ));
 }
