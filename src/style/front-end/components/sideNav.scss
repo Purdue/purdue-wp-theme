@@ -8,7 +8,7 @@
 
 .site-content-sidenav{
   display: grid;
-  grid-template-columns: 288px auto;
+  grid-template-columns: 288px 1fr;
   grid-template-rows: auto auto;
   @include touch{
     display:block;
