@@ -24,6 +24,7 @@ if(toTop){
     } else {
       toTop.classList.remove('to-top-shown')
       toTop.classList.add('to-top-hidden')
+      toTop.classList.remove('to-top-relative')
     } 
   })
 }
