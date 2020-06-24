@@ -86,3 +86,12 @@
     }
 
 }
+.collapsed-section{
+    p{
+        .collapsed-button{
+            cursor: pointer;
+            font-weight:700;
+            color:$aged-gold;
+        }
+    }
+}
