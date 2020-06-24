@@ -9,6 +9,7 @@ import "./hideAjaxLoadMoreButton";
 import "./google-graph-spacing.js";
 import "./to-top.js";
 import "./currentPage";
+import "./themeSelector";
 import "./collapseSection";
 
 if (!Element.prototype.matches) {
