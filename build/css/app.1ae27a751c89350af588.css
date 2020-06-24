@@ -7773,7 +7773,7 @@ label.panel-block {
   .narrow-footer h2, .narrow-footer h3, .narrow-footer h4, .narrow-footer h5, .narrow-footer h6 {
     color: #CEB991;
     font-weight: 700; }
-  .narrow-footer h3 {
+  .narrow-footer h5 {
     font-size: 1.1875rem; }
   .narrow-footer p {
     color: #fff; }
@@ -7837,13 +7837,13 @@ label.panel-block {
           padding-bottom: 1rem;
           border-top: 1px solid #2e2e2e;
           align-items: flex-start; } }
-      .narrow-footer .footer__resources .container .columns .footer__links h3 {
+      .narrow-footer .footer__resources .container .columns .footer__links h5 {
         padding: 0 0 1.3rem 0; }
         @media (max-width: 1322px) {
-          .narrow-footer .footer__resources .container .columns .footer__links h3 {
+          .narrow-footer .footer__resources .container .columns .footer__links h5 {
             width: 100%;
             padding: 0; } }
-        .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer {
+        .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer {
           width: 100%;
           font-size: 1.1875rem;
           font-weight: 700;
@@ -7858,18 +7858,18 @@ label.panel-block {
           align-items: baseline;
           text-transform: uppercase;
           pointer-events: none; }
-          .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-plus, .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-minus {
+          .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-plus, .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-minus {
             display: none;
             pointer-events: none; }
           @media (max-width: 1322px) {
-            .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer {
+            .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer {
               padding: 0;
               pointer-events: all; }
-              .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer:hover {
+              .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer:hover {
                 cursor: pointer; }
-              .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-plus {
+              .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-plus {
                 display: block; }
-              .narrow-footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-minus {
+              .narrow-footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-minus {
                 display: none; } }
       .narrow-footer .footer__resources .container .columns .footer__links ul {
         font-family: acumin-pro, "Franklin Gothic", sans-serif; }
@@ -7948,7 +7948,7 @@ label.panel-block {
   .footer h2, .footer h3, .footer h4, .footer h5, .footer h6 {
     color: #CEB991;
     font-weight: 700; }
-  .footer h3 {
+  .footer h5 {
     font-size: 1.1875rem; }
   .footer p {
     color: #fff; }
@@ -8013,13 +8013,13 @@ label.panel-block {
           padding-bottom: 1rem;
           border-top: 1px solid #2e2e2e;
           align-items: flex-start; } }
-      .footer .footer__resources .container .columns .footer__links h3 {
+      .footer .footer__resources .container .columns .footer__links h5 {
         padding: 0 0 1.3rem 0; }
         @media screen and (max-width: 1023px) {
-          .footer .footer__resources .container .columns .footer__links h3 {
+          .footer .footer__resources .container .columns .footer__links h5 {
             width: 100%;
             padding: 0; } }
-        .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer {
+        .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer {
           width: 100%;
           font-size: 1.1875rem;
           font-weight: 700;
@@ -8034,18 +8034,18 @@ label.panel-block {
           align-items: baseline;
           text-transform: uppercase;
           pointer-events: none; }
-          .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-plus, .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-minus {
+          .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-plus, .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-minus {
             display: none;
             pointer-events: none; }
           @media screen and (max-width: 1023px) {
-            .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer {
+            .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer {
               pointer-events: all;
               padding: 0; }
-              .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer:hover {
+              .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer:hover {
                 cursor: pointer; }
-              .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-plus {
+              .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-plus {
                 display: block; }
-              .footer .footer__resources .container .columns .footer__links h3 .accordion__heading--footer .fa-minus {
+              .footer .footer__resources .container .columns .footer__links h5 .accordion__heading--footer .fa-minus {
                 display: none; } }
       .footer .footer__resources .container .columns .footer__links ul {
         font-family: acumin-pro, "Franklin Gothic", sans-serif; }
