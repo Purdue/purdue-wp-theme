@@ -45,6 +45,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     display: flex;
     align-items: center !important;
     flex-direction: row;
+    padding-left: 3rem;
     @include touch {
       flex-direction: column-reverse;
       margin-top: 1rem;
@@ -71,6 +72,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           font-family: $acumin-pro;
           font-size: 1.125rem;
           text-decoration: none;
+          display:block;
           &:hover {
             color: $boiler-gold;
           }
