@@ -7291,7 +7291,8 @@ label.panel-block {
   .purdue-navbar-black .navbar-end {
     display: flex;
     align-items: center !important;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-left: 3rem; }
     @media screen and (max-width: 1023px) {
       .purdue-navbar-black .navbar-end {
         flex-direction: column-reverse;
@@ -7316,7 +7317,8 @@ label.panel-block {
         color: inherit;
         font-family: acumin-pro, "Franklin Gothic", sans-serif;
         font-size: 1.125rem;
-        text-decoration: none; }
+        text-decoration: none;
+        display: block; }
         .purdue-navbar-black .navbar-end ul li a:hover {
           color: #CEB991; }
         @media screen and (max-width: 1023px) {
