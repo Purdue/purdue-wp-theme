@@ -6,6 +6,9 @@
 .home .content {
   margin-bottom: 0 !important; }
 
+.content p {
+  max-width: 100%; }
+
 hr.wp-block-separator {
   height: 1px !important; }
 
@@ -47,7 +50,9 @@ aside.is-active {
   display: none; }
 
 figure {
-  margin: 0 !important; }
+  margin: 0 !important;
+  max-width: 100%;
+  min-height: 1px; }
 
 .clearfix {
   zoom: 1; }
@@ -9924,7 +9929,8 @@ blockquote {
     .related-content-item .media-left .image {
       width: 160px; }
   .related-content-item .media-content {
-    font-weight: 600; }
+    font-weight: 600;
+    max-width: 100%; }
 
 .pagination {
   justify-content: center;
