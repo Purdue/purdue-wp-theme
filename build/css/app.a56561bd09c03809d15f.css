@@ -7763,12 +7763,12 @@ label.panel-block {
 
 .narrow-footer {
   z-index: 0;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 1;
-  grid-row: 2/3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2/3;
+  -ms-grid-row: 2 !important;
+  -ms-grid-row-span: 1 !important;
+  grid-row: 2/3 !important;
+  -ms-grid-column: 2 !important;
+  -ms-grid-column-span: 1 !important;
+  grid-column: 2/3 !important;
   color: #fff; }
   .narrow-footer h2, .narrow-footer h3, .narrow-footer h4, .narrow-footer h5, .narrow-footer h6 {
     color: #CEB991;
@@ -8165,12 +8165,12 @@ label.panel-block {
     display: block;
     bottom: 0;
     z-index: 10;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    grid-row: 1/3;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1/2; }
+    -ms-grid-row: 1 !important;
+    -ms-grid-row-span: 2 !important;
+    grid-row: 1/3 !important;
+    -ms-grid-column: 1 !important;
+    -ms-grid-column-span: 1 !important;
+    grid-column: 1/2 !important; }
     @media screen and (max-width: 1023px) {
       .site-content-sidenav .side-nav {
         display: none;
@@ -8308,12 +8308,12 @@ label.panel-block {
     padding: 2rem 0;
     box-shadow: 3px 3px 6px rgba(0,0,0,0.28235); }
   .site-content-sidenav .main-content {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1/2;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2/3; }
+    -ms-grid-row: 1 !important;
+    -ms-grid-row-span: 1 !important;
+    grid-row: 1/2 !important;
+    -ms-grid-column: 2 !important;
+    -ms-grid-column-span: 1 !important;
+    grid-column: 2/3 !important; }
     @media screen and (max-width: 1023px) {
       .site-content-sidenav .main-content {
         margin-left: 0; } }
@@ -9887,7 +9887,8 @@ blockquote {
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-  border-radius: 100%; }
+  border-radius: 100%;
+  z-index: 1000; }
   #to-top:hover {
     cursor: pointer; }
   #to-top.to-top-hidden {

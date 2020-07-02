@@ -13,7 +13,7 @@
     border: none;
     transition: transform 0.2s ease;
     border-radius: 100%;
-
+    z-index:1000;
     &:hover {
         cursor: pointer;
     }
