@@ -6,6 +6,9 @@
 .home .content {
   margin-bottom: 0 !important; }
 
+.content p {
+  max-width: 100%; }
+
 hr.wp-block-separator {
   height: 1px !important; }
 
@@ -47,7 +50,15 @@ aside.is-active {
   display: none; }
 
 figure {
-  margin: 0 !important; }
+  margin: 0 !important;
+  max-width: 100%;
+  min-height: 1px; }
+
+.wp-block-image .aligncenter, .wp-block-image .alignleft, .wp-block-image .alignright, .wp-block-image.is-resized {
+  display: block; }
+
+.wp-block-image .aligncenter > figcaption, .wp-block-image .alignleft > figcaption, .wp-block-image .alignright > figcaption, .wp-block-image.is-resized > figcaption {
+  display: block; }
 
 .clearfix {
   zoom: 1; }
@@ -7291,7 +7302,8 @@ label.panel-block {
   .purdue-navbar-black .navbar-end {
     display: flex;
     align-items: center !important;
-    flex-direction: row; }
+    flex-direction: row;
+    padding-left: 3rem; }
     @media screen and (max-width: 1023px) {
       .purdue-navbar-black .navbar-end {
         flex-direction: column-reverse;
@@ -7316,7 +7328,8 @@ label.panel-block {
         color: inherit;
         font-family: acumin-pro, "Franklin Gothic", sans-serif;
         font-size: 1.125rem;
-        text-decoration: none; }
+        text-decoration: none;
+        display: block; }
         .purdue-navbar-black .navbar-end ul li a:hover {
           color: #CEB991; }
         @media screen and (max-width: 1023px) {
@@ -9922,7 +9935,8 @@ blockquote {
     .related-content-item .media-left .image {
       width: 160px; }
   .related-content-item .media-content {
-    font-weight: 600; }
+    font-weight: 600;
+    max-width: 100%; }
 
 .pagination {
   justify-content: center;
