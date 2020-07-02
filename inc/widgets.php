@@ -229,8 +229,7 @@ class Related_Content extends WP_Widget
                 echo '">';
                 if (has_post_thumbnail()) {
                     echo '<div class="media-left">';
-                    echo '<figure class="image is-2by1">';
-                    echo ('<img src="' . wp_get_attachment_url(get_post_thumbnail_id($post->ID)) . '" alt="" />');
+                    echo '<figure class="image is-2by1" style="background-image:url('.wp_get_attachment_url(get_post_thumbnail_id($post->ID)).')">';
                     echo '</figure>';
                     echo '</div>';
                 }
