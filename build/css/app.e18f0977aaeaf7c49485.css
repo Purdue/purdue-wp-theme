@@ -9933,7 +9933,12 @@ blockquote {
   .related-content-item .media-left {
     margin: 0 0 1.5rem 0; }
     .related-content-item .media-left .image {
-      width: 160px; }
+      width: 160px;
+      display: block;
+      box-sizing: border-box;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; }
   .related-content-item .media-content {
     font-weight: 600;
     max-width: 100%; }
