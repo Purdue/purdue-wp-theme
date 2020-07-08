@@ -29,7 +29,7 @@
 					<?php if (is_active_sidebar('footer-column-2')) {dynamic_sidebar('footer-column-2');} ?>
 
 					<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
-			<?php if(purdueBrand_footerSocial()){?>
+			<?php if(has_nav_menu( 'footer-social' )){?>
 				<div class="column is-2 footer__social">	
 					<?php purdueBrand_footerSocial(); ?>
 				</div>

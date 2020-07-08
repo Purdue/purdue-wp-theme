@@ -37,6 +37,9 @@
         .columns{
             @media (max-width:$stickySideNav-desktop){
                 display:block;
+                &:last-child{
+                    margin-bottom: 0;
+                }
             }
             .column{
                 @media (max-width:$stickySideNav-desktop){
@@ -173,7 +176,7 @@
                     align-items:center; 
                     border-top:1px solid #2e2e2e;
                     padding-top:1.375rem;
-                    padding-bottom:2.375rem;
+                    padding-bottom:1.625rem;
                 }
                 a{
                     margin: 0;
@@ -266,6 +269,9 @@
         .columns{
             @include touch{
                 display:block;
+                &:last-child{
+                    margin-bottom: 0;
+                }
             }
             .column{
                 @include touch{
@@ -417,7 +423,7 @@
                     align-items:center; 
                     border-top:1px solid #2e2e2e;
                     padding-top:1.375rem;
-                    padding-bottom:2.375rem;
+                    padding-bottom:1.625rem;
                 }
                 a{
                     margin: 0;
