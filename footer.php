@@ -29,10 +29,11 @@
 					<?php if (is_active_sidebar('footer-column-2')) {dynamic_sidebar('footer-column-2');} ?>
 
 					<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
-	
+			<?php if(purdueBrand_footerSocial()){?>
 				<div class="column is-2 footer__social">	
 					<?php purdueBrand_footerSocial(); ?>
 				</div>
+			<?php }?>
 			</div> 
 		</div><!-- .container -->
 	</div>
