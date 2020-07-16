@@ -50,6 +50,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       flex-direction: column-reverse;
       margin-top: 1rem;
       display: none;
+      padding-left: 0;
     }
     ul {
       display: flex;

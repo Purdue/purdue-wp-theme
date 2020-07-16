@@ -24,9 +24,9 @@
 						<?php get_search_form();?>
 					</div>
 					<?php if($searchOption=="wordpress"){
-						
-							if ( have_posts() ){ 
-								while ( have_posts() ) : the_post(); ?>
+						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						if ( have_posts() ){ 
+							while ( have_posts() ) : the_post(); ?>
 
 							<article class="search-post">
 								<h2 class="search-post-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
@@ -36,7 +36,7 @@
 									if(sizeof(the_excerpt())!==0){
 										the_excerpt();
 									}else{
-										echo wp_trim_words(get_the_content(), 40, '...'); 
+										echo wp_trim_words(strip_shortcodes(get_the_content()), 40, '...');
 									} 
 									?>
 								</p>
@@ -44,6 +44,11 @@
 	
 					<?php 
 				 endwhile;
+				 the_posts_pagination( array(
+					'mid_size' => 2,
+					'prev_text' => __( 'Prev', 'textdomain' ),
+					'next_text' => __( 'Next', 'textdomain' ),
+				));
 				}else {
 					echo '<p class="search-post-noresult">No search results found!</p>';
 				 
