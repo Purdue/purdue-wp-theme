@@ -86,7 +86,7 @@
 											if(sizeof(the_excerpt())!==0){
 												the_excerpt();
 											}else{
-												echo wp_trim_words(get_the_content(), 40, '...'); 
+												echo wp_trim_words(strip_shortcodes(get_the_content()), 40, '...'); 
 											}
 											?>
 									</div>
@@ -100,17 +100,13 @@
 					<?php } ?>
 				<?php endwhile; ?>
 			</div>
-			<div class="section navigation">
-				<div class="container">
-				<?php 
-				the_posts_pagination( array(
-					'mid_size' => 2,
-					'prev_text' => __( 'Prev', 'textdomain' ),
-					'next_text' => __( 'Next', 'textdomain' ),
-					) );
-				?>
-				</div>
-			</div>
+			<?php 
+			the_posts_pagination( array(
+				'mid_size' => 2,
+				'prev_text' => __( 'Prev', 'textdomain' ),
+				'next_text' => __( 'Next', 'textdomain' ),
+				) );
+			?>
 		</div>
 	</div>
 	
