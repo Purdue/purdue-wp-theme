@@ -7308,7 +7308,8 @@ label.panel-block {
       .purdue-navbar-black .navbar-end {
         flex-direction: column-reverse;
         margin-top: 1rem;
-        display: none; } }
+        display: none;
+        padding-left: 0; } }
     .purdue-navbar-black .navbar-end ul {
       display: flex;
       flex-direction: row; }
@@ -9949,7 +9950,7 @@ blockquote {
 
 .pagination {
   justify-content: center;
-  padding: 0 0 2rem 0 !important; }
+  padding: 2.5rem 0 2rem 0 !important; }
   .pagination .page-numbers {
     display: inline-block;
     padding: 0px 8px;
