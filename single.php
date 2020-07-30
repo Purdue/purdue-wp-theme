@@ -17,8 +17,8 @@ if (function_exists('get_field')) {
 } else {	
 	$subheading = "";
 }
-$incDate="";
-$incShare="";
+$incDate = get_theme_mod('date_setting',false);
+$incShare = get_theme_mod('social_setting',false);
 ?>
 
 <main id="site-content" role="main">
@@ -32,9 +32,6 @@ $incShare="";
 					</p>
 
 					<?php 
-					$incDate = get_theme_mod('date_setting',false);
-					$incShare = get_theme_mod('social_setting',false);
-
 					while (have_posts()) : the_post(); 
 						if($incDate || $incShare){ ?>
 							<div class="post__date-line">
