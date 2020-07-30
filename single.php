@@ -10,7 +10,16 @@
 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
     <?php bcn_display();	?>
 </div>
-<?php endif; ?>
+<?php endif; 
+if (function_exists('get_field')) {	
+	$subheading = get_field('post-subheading');
+	
+} else {	
+	$subheading = "";
+}
+$incDate="";
+$incShare="";
+?>
 
 <main id="site-content" role="main">
 	<section class="container section-container">
