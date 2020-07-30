@@ -10,7 +10,16 @@
 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
     <?php bcn_display();	?>
 </div>
-<?php endif; ?>
+<?php endif; 
+if (function_exists('get_field')) {	
+	$subheading = get_field('post-subheading');
+	
+} else {	
+	$subheading = "";
+}
+$incDate = get_theme_mod('date_setting',false);
+$incShare = get_theme_mod('social_setting',false);
+?>
 
 <main id="site-content" role="main">
 	<section class="container section-container">
@@ -23,9 +32,6 @@
 					</p>
 
 					<?php 
-					$incDate = get_theme_mod('date_setting',false);
-					$incShare = get_theme_mod('social_setting',false);
-
 					while (have_posts()) : the_post(); 
 						if($incDate || $incShare){ ?>
 							<div class="post__date-line">
