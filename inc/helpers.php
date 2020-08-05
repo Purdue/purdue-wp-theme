@@ -21,6 +21,13 @@ if ( ! function_exists( 'purdueBrand_home_link' ) ) {
 		echo $output;
 	}
 }
+if ( ! function_exists( 'purdue_get_excerpt' ) ) {
+	function purdue_get_excerpt($content) {
+		$output=preg_replace('/<figure[^>]*>.*?<\/figure>/i', ' ', $content);
+		$output=strip_shortcodes($output);
+		return wp_trim_words($output, 40, '...');	
+	}
+}
 if ( ! function_exists( 'purdueBrand_footer_logo' ) ) {
 	function purdueBrand_footer_logo()
 	{

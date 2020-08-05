@@ -22,7 +22,7 @@
                     } elseif(sizeof(the_excerpt())!==0) {
 						the_excerpt();
 					} else {
-						echo wp_trim_words(strip_shortcodes(get_the_content()), 40, '...'); 
+						echo purdue_get_excerpt(get_the_content()); 
 					}
                     ?>
                     </p>
