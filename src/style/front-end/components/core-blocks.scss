@@ -263,3 +263,9 @@ $colorHollowText_hover: (
     }
   }
 }
+.wp-block-button.full-width{
+  width:100%;
+  .wp-block-button__link{
+    width:100%;
+  }
+}
