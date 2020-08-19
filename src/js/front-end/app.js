@@ -11,6 +11,7 @@ import "./to-top.js";
 import "./currentPage";
 import "./themeSelector";
 import "./collapseSection";
+import "./table";
 
 if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector ||
