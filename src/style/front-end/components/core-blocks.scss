@@ -73,6 +73,96 @@
     }
 }
 
+//table block
+.wp-block-table-mobile{
+  display:none;
+  @include touch{
+    display:block;
+    width:100%;
+  }
+  margin-bottom:1.875rem;
+  font-family:$acumin-pro;
+  font-size:1rem;
+  text-align:center;
+  .table-header{
+    border-top:1px solid #000 !important;
+    background-color:#000;
+    color:$boiler-gold !important;
+    padding:1.25rem;
+    line-height:1.5;
+    font-weight:700;
+  }
+  .table-body{
+    border-top:1px solid #000 !important;
+    background-color:#ededed;
+    color:#000;
+    padding:1.25rem;
+    line-height:1.5;
+  }
+  .table-footer{
+    border-top:1px solid #000 !important;
+    background-color:$boiler-gold;
+    color:#000;
+    padding:1.25rem;
+    line-height:1.5;
+  }
+}
+.wp-block-table{
+  border-bottom:none !important; 
+  font-family:$acumin-pro;
+  table{
+    font-size:1rem;
+    @include touch{
+      display:none;
+    }
+    thead{
+      tr{
+        th{
+          border:1px solid #000 !important;
+          background-color:#000;
+          color:$boiler-gold !important;
+          padding:1.25rem;
+          line-height:1.5;
+          strong{
+            color:$boiler-gold !important;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        &:nth-child(even){
+          background-color: #ededed !important;
+        }
+        &:nth-child(odd){
+          background-color: #fff !important;
+        }
+        td{
+          border:1px solid #000 !important;
+          padding:1.25rem;
+          line-height:1.5;
+        }
+      }  
+    }
+    tfoot{
+      tr{
+        td{
+          border:1px solid #000 !important;
+          background-color:$boiler-gold;
+          color:#000 !important;
+          padding:1.25rem;
+          line-height:1.5;
+        }
+      }  
+    }
+  }
+  figcaption{
+    font-size:1.125rem;
+    font-style:normal !important;
+    text-align:left;
+  }
+}
+
 //button block
 .wp-block-button__link,.gform_button {
 	border-radius: 0;
@@ -171,5 +261,11 @@ $colorHollowText_hover: (
       background-color:  map_get( $colorHollowBg_hover, $name );
       color:map_get( $colorHollowText_hover, $name );
     }
+  }
+}
+.wp-block-button.full-width{
+  width:100%;
+  .wp-block-button__link{
+    width:100%;
   }
 }
