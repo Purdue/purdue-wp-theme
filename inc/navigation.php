@@ -91,16 +91,17 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 				$menu_obj = purdue_get_menu_by_location($location); 
 			}
 		}
-		
-		wp_nav_menu( array( 
-			'menu'  => $menu_obj,
-			'depth'             => 4,
-			'container'         => false,
-			'items_wrap'    	=> '%3$s',
-			'menu_class'        => '',
-			'fallback_cb'       => 'purdueBrand_nav_sidenav::fallback',
-			'walker'            => new purdueBrand_nav_sidenav()
-			)); 
+		if ($menu_obj){
+			wp_nav_menu( array( 
+				'menu'  => $menu_obj,
+				'depth'             => 4,
+				'container'         => false,
+				'items_wrap'    	=> '%3$s',
+				'menu_class'        => '',
+				'fallback_cb'       => 'purdueBrand_nav_sidenav::fallback',
+				'walker'            => new purdueBrand_nav_sidenav()
+				)); 
+		}
 	}
 }
 
