@@ -72,6 +72,7 @@ if ( ! function_exists( 'purdueBrand_navigation' ) ) {
 if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 	function purdueBrand_sideNav()
 	{
+		global $post;
 		$location = 'side-nav';
 		if (has_nav_menu($location)) :
 			$menu_obj = false;
@@ -80,7 +81,7 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 				$menu_obj = get_field( "subnav_menu" );
 
 				if( ! $menu_obj ) {
-					$parentID = wp_get_post_parent_id();
+					$parentID = wp_get_post_parent_id($post->ID);
 					if ($parentID) {
 						$menu_obj = get_field( "subnav_menu", $parentID );
 					}
