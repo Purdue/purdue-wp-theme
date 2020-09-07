@@ -76,7 +76,7 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 		if (has_nav_menu($location)) :
 			$menu_obj = false;
 
-			if ( plugin_is_active('advanced-custom-fields-pro/acf.php') ) {
+			if ( is_plugin_active('advanced-custom-fields-pro/acf.php') ) {
 				$menu_obj = get_field( "subnav_menu" );
 
 				if( ! $menu_obj ) {
