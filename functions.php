@@ -264,118 +264,17 @@ if (function_exists('acf_add_local_field_group')) :
         'active' => true,
         'description' => '',
     ));
-      //Dateline line on posts
-//   acf_add_local_field_group(array(
-//     'key' => 'group_5ea9cbe1bfa6d',
-//     'title' => 'Date line with social share buttons',
-//     'fields' => array(
-//         array(
-//             'key' => 'field_5ea9cc2e54212',
-//             'label' => 'Include Date?',
-//             'name' => 'date',
-//             'type' => 'checkbox',
-//             'instructions' => '',
-//             'required' => 0,
-//             'conditional_logic' => 0,
-//             'wrapper' => array(
-//                 'width' => '',
-//                 'class' => '',
-//                 'id' => '',
-//             ),
-//             'choices' => array(
-//                 'Yes' => 'Yes',
-//             ),
-//             'allow_custom' => 0,
-//             'default_value' => array(
-//                 0 => 'Yes',
-//             ),
-//             'layout' => 'vertical',
-//             'toggle' => 0,
-//             'return_format' => 'value',
-//             'save_custom' => 0,
-//         ),
-//         array(
-//             'key' => 'field_5ea9cc6354213',
-//             'label' => 'Include social share buttons below the header?',
-//             'name' => 'social_header',
-//             'type' => 'checkbox',
-//             'instructions' => '',
-//             'required' => 0,
-//             'conditional_logic' => 0,
-//             'wrapper' => array(
-//                 'width' => '',
-//                 'class' => '',
-//                 'id' => '',
-//             ),
-//             'choices' => array(
-//                 'Yes' => 'Yes',
-//             ),
-//             'allow_custom' => 0,
-//             'default_value' => array(
-//                 0 => 'Yes',
-//             ),
-//             'layout' => 'vertical',
-//             'toggle' => 0,
-//             'return_format' => 'value',
-//             'save_custom' => 0,
-//         ),
-        
-//         array(
-//             'key' => 'field_5ea9cca054214',
-//             'label' => 'Include social share button at the bottom?',
-//             'name' => 'social_bottom',
-//             'type' => 'checkbox',
-//             'instructions' => '',
-//             'required' => 0,
-//             'conditional_logic' => 0,
-//             'wrapper' => array(
-//                 'width' => '',
-//                 'class' => '',
-//                 'id' => '',
-//             ),
-//             'choices' => array(
-//                 'Yes' => 'Yes',
-//             ),
-//             'allow_custom' => 0,
-//             'default_value' => array(
-//             ),
-//             'layout' => 'vertical',
-//             'toggle' => 0,
-//             'return_format' => 'value',
-//             'save_custom' => 0,
-//         ),
-//     ),
-//     'location' => array(
-//         array(
-//             array(
-//                 'param' => 'post_type',
-//                 'operator' => '==',
-//                 'value' => 'post',
-//             ),
-//         ),
-//         array(
-//             array(
-//                 'param' => 'post_type',
-//                 'operator' => '==',
-//                 'value' => 'faculty_post',
-//             ),
-//         ),
-//         array(
-//             array(
-//                 'param' => 'post_type',
-//                 'operator' => '==',
-//                 'value' => 'page',
-//             ),
-//         ),
-//     ),
-//     'menu_order' => 0,
-//     'position' => 'side',
-//     'style' => 'default',
-//     'label_placement' => 'top',
-//     'instruction_placement' => 'label',
-//     'hide_on_screen' => '',
-//     'active' => true,
-//     'description' => '',
-// ));
 
 endif;
+
+//image in rss feed
+function rss_post_thumbnail($content) {
+    global $post;
+    if(has_post_thumbnail($post->ID)) {
+    $content = '<figure>' . get_the_post_thumbnail($post->ID) .
+    '</figure>' . get_the_content();
+    }
+    return $content;
+}
+add_filter('the_excerpt_rss', 'rss_post_thumbnail');
+add_filter('the_content_feed', 'rss_post_thumbnail');
