@@ -74,9 +74,25 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 	{
 		$location = 'side-nav';
 		if (has_nav_menu($location)) :
-			$menu_obj = purdue_get_menu_by_location($location); 
+			$menu_obj = false;
+
+			if ( plugin_is_active('advanced-custom-fields-pro/acf.php') ) {
+				$menu_obj = get_field( "subnav_menu" );
+
+				if( ! $menu_obj ) {
+					$parentID = wp_get_post_parent_id();
+					if ($parentID) {
+						$menu_obj = get_field( "subnav_menu", $parentID );
+					}
+				}
+			}
+			
+			if ($menu_obj === false) {
+				$menu_obj = purdue_get_menu_by_location($location); 
+			}
+			
 			wp_nav_menu( array( 
-				'theme_location'  => $location,
+				'menu'  => $menu_obj,
 				'depth'             => 4,
 				'container'         => false,
 				'items_wrap'    	=> '%3$s',
