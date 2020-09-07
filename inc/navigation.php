@@ -81,9 +81,8 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 				$menu_obj = get_field( "subnav_menu" );
 
 				if( ! $menu_obj ) {
-					$parentID = wp_get_post_parent_id($post->ID);
-					if ($parentID) {
-						$menu_obj = get_field( "subnav_menu", $parentID );
+					if ($post->post_parent) {
+						$menu_obj = get_field( "subnav_menu", $post->post_parent );
 					}
 				}
 			}
