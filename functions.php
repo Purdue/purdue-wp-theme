@@ -378,7 +378,7 @@ if (function_exists('acf_add_local_field_group')) :
 //     'description' => '',
 // ));
 
-if is_plugin_active('luckywp-acf-menu-field/luckywp-acf-menu-field.php') {
+if (is_plugin_active( 'luckywp-acf-menu-field/luckywp-acf-menu-field.php' )) {
     acf_add_local_field_group(array(
         'key' => 'group_5f56368fb4d9b',
         'title' => 'Side Navigation',
