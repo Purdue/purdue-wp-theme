@@ -72,11 +72,28 @@ if ( ! function_exists( 'purdueBrand_navigation' ) ) {
 if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 	function purdueBrand_sideNav()
 	{
+		global $post;
 		$location = 'side-nav';
-		if (has_nav_menu($location)) :
-			$menu_obj = purdue_get_menu_by_location($location); 
+		$menu_obj = false;
+
+		if ( class_exists('acf') ) {
+			$menu_obj = get_field( "subnav_menu" );
+
+			if( !$menu_obj ) {
+				if ($post->post_parent) {
+					$menu_obj = get_field( "subnav_menu", $post->post_parent );
+				}
+			}
+		}
+		
+		if (!$menu_obj) {
+			if (has_nav_menu($location)){
+				$menu_obj = purdue_get_menu_by_location($location); 
+			}
+		}
+		if ($menu_obj){
 			wp_nav_menu( array( 
-				'theme_location'  => $location,
+				'menu'  => $menu_obj,
 				'depth'             => 4,
 				'container'         => false,
 				'items_wrap'    	=> '%3$s',
@@ -84,7 +101,7 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 				'fallback_cb'       => 'purdueBrand_nav_sidenav::fallback',
 				'walker'            => new purdueBrand_nav_sidenav()
 				)); 
-		endif;
+		}
 	}
 }
 

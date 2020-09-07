@@ -265,7 +265,50 @@ if (function_exists('acf_add_local_field_group')) :
         'description' => '',
     ));
 
+if (is_plugin_active( 'luckywp-acf-menu-field/luckywp-acf-menu-field.php' )) {
+    acf_add_local_field_group(array(
+        'key' => 'group_5f56368fb4d9b',
+        'title' => 'Side Navigation',
+        'fields' => array(
+            array(
+                'key' => 'field_5f5636d19e862',
+                'label' => 'Sub Menu',
+                'name' => 'subnav_menu',
+                'type' => 'menu',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'return_format' => 'id',
+                'allow_null' => 1,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'template-sidenav.php',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+}
+
 endif;
+
 
 //image in rss feed
 function rss_post_thumbnail($content) {
@@ -278,3 +321,4 @@ function rss_post_thumbnail($content) {
 }
 add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
+
