@@ -13,7 +13,19 @@
 .filter-container{
     padding:1.5rem 0;
     @include touch{
-        padding:1.5rem;
+        padding:1.5rem $side-padding-tablet;
+    }
+    @include mobile{
+        padding:1.5rem $side-padding-mobile;
+    }
+}
+.section{
+    padding:3rem $side-padding-desktop !important;
+    @include touch{
+        padding:3rem $side-padding-tablet !important;
+    }
+    @include mobile{
+        padding:3rem $side-padding-mobile !important;
     }
 }
 

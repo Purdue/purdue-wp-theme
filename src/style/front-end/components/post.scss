@@ -4,7 +4,10 @@
   padding: 2rem 0;
 
   @include touch {
-    padding: 2rem 1.5rem !important;
+    padding: 2rem $side-padding-tablet !important;
+  }
+  @include mobile {
+    padding: 2rem $side-padding-mobile !important;
   }
 }
 .alm-paging-content{

@@ -40,12 +40,17 @@
         padding: 1.5rem 2rem;
         height:107px;
         @include mobile {
-            padding: 1.5rem;
+            padding: 1.5rem $side-padding-mobile;
         }
     }
     .section{
-        padding:3rem 1.5rem 1.25rem;
-
+        padding:3rem $side-padding-desktop 1.25rem;
+        @include tablet {
+            padding: 3rem $side-padding-tablet 1.25rem;
+        }
+        @include mobile {
+            padding: 3rem $side-padding-mobile 1.25rem;
+        }
         .theme-header{
             font-size: 2.1875rem;
             font-family: $acumin-pro-condensed;

@@ -22,7 +22,8 @@ if (function_exists('get_field')) {
 }
 $img = get_the_post_thumbnail_url();
 ?>
-	<section class="container section-container">
+	<section class="section">
+		<div class="container">
 	<?php if (is_active_sidebar('post-related-content')) : ?>
 		<div class="columns is-multiline with-sideContent">
 			<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
@@ -76,6 +77,7 @@ $img = get_the_post_thumbnail_url();
 				</div>
 		</div>
 			<?php endif; ?>
+	</div>
 </section>
 
 

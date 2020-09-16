@@ -33,6 +33,9 @@
       @media (max-width:$stickySideNav-desktop){
           padding:2.876rem 1.5rem 0!important;
       }
+      @include mobile{
+        padding:2.876rem $side-padding-mobile 0!important;
+    }
       .container{
         .columns{
             @media (max-width:$stickySideNav-desktop){
@@ -211,6 +214,9 @@
       @media (max-width:$stickySideNav-desktop){
         padding:1.68rem 1.5rem !important;
       }
+      @include mobile{
+        padding:1.68rem $side-padding-mobile !important;
+    }
       .container{
         div{
             display:inline-block;
@@ -261,10 +267,13 @@
         }
     }
     .footer__resources{
-      padding:2.375rem 1.5rem !important;
+      padding:2.375rem $side-padding-desktop !important;
       @include touch{
-          padding:2.876rem 1.5rem 0!important;
+          padding:2.876rem $side-padding-tablet 0!important;
       }
+      @include mobile{
+        padding:2.876rem $side-padding-mobile 0!important;
+    }
       .container{
         .columns{
             @include touch{
@@ -458,6 +467,9 @@
       @include touch{
         padding:1.68rem 1.5rem !important;
       }
+      @include mobile{
+        padding:1.68rem $side-padding-mobile !important;
+    }
       .container{
         div{
             display:inline-block;

@@ -22,7 +22,8 @@ $incShare = get_theme_mod('social_setting',false);
 ?>
 
 <main id="site-content" role="main">
-	<section class="container section-container">
+	<section class="section">
+		<div class="container">
 		<?php if (is_active_sidebar('right-sidebar')) : ?>
 			<div class="columns is-multiline with-sideContent">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
@@ -165,6 +166,7 @@ $incShare = get_theme_mod('social_setting',false);
 					
 				<?php endif; ?>
 			</div>
+		</div>
 	</section>
 
 	<button id="to-top" class="to-top-hidden">
