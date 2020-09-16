@@ -90,7 +90,7 @@ $incShare = get_theme_mod('social_setting',false);
 					<?php endwhile; // end of the loop. 
 					?>
 				</div>
-				<aside class="column is-one-third-desktop is-full-tablet is-full-mobile">
+				<aside class="column is-one-quarter-desktop is-full-tablet is-full-mobile">
 					<div class="side-content">
 						<?php dynamic_sidebar('right-sidebar'); ?>
 					</div>

@@ -43,7 +43,7 @@
             </div>
         
             <?php if (is_active_sidebar('page-sidebar')) : ?>
-            <aside class="column is-one-third-desktop is-full-tablet is-full-mobile">
+            <aside class="column is-one-quarter-desktop is-full-tablet is-full-mobile">
                 <div class="container section side-content">
                     <?php dynamic_sidebar('page-sidebar'); ?>
                 </div>
