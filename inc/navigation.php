@@ -15,6 +15,14 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		'footer-signatureLinks' => esc_html__( 'Footer Signature Links', 'purdue-wp-theme' ),	
 		'header-buttons' => esc_html__( 'Header buttons', 'purdue-wp-theme' ),	
 		) );
+		if(get_theme_mod('header_layout_settings') == 'global'){
+			register_nav_menus( array(
+				'footer-links-1' => esc_html__( 'Footer Links column 1', 'purdue-wp-theme' ),
+				'footer-links-2' => esc_html__( 'Footer Links column 2', 'purdue-wp-theme' ),
+				'footer-links-3' => esc_html__( 'Footer Links column 3', 'purdue-wp-theme' ),
+				'footer-links-4' => esc_html__( 'Footer Links column 4', 'purdue-wp-theme' ),
+			) );
+		}
 }
 
 // black bar menu
@@ -154,6 +162,67 @@ if ( ! function_exists( 'purdueBrand_headerButtons' ) ) {
 				'container'         => '',
 				'container_class' => '',
 				'items_wrap'=> '<ul>%3$s</ul>'
+			)); 
+		endif;
+	}
+}
+//Global footer links columns
+if ( ! function_exists( 'purdueBrand_footerLinks_1' ) ) {
+	function purdueBrand_footerLinks_1()
+	{
+		$location = 'footer-links-1';
+		if (has_nav_menu($location)) :
+			$menu_obj = purdue_get_menu_by_location($location); 
+			wp_nav_menu( array( 
+				'theme_location'  => $location,
+				'container'         => 'div',
+				'container_class' => 'resources__column footer__links',
+				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect1" aria-labelledby="accordion1id">%3$s</ul>'
+			)); 
+		endif;
+	}
+}
+if ( ! function_exists( 'purdueBrand_footerLinks_2' ) ) {
+	function purdueBrand_footerLinks_2()
+	{
+		$location = 'footer-links-2';
+		if (has_nav_menu($location)) :
+			$menu_obj = purdue_get_menu_by_location($location); 
+			wp_nav_menu( array( 
+				'theme_location'  => $location,
+				'container'         => 'div',
+				'container_class' => 'resources__column footer__links',
+				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect2" aria-labelledby="accordion2id">%3$s</ul>'
+			)); 
+		endif;
+	}
+}
+if ( ! function_exists( 'purdueBrand_footerLinks_3' ) ) {
+	function purdueBrand_footerLinks_3()
+	{
+		$location = 'footer-links-3';
+		if (has_nav_menu($location)) :
+			$menu_obj = purdue_get_menu_by_location($location); 
+			wp_nav_menu( array( 
+				'theme_location'  => $location,
+				'container'         => 'div',
+				'container_class' => 'resources__column footer__links',
+				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion3id" aria-controls="sect3">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect3" aria-labelledby="accordion3id">%3$s</ul>'
+			)); 
+		endif;
+	}
+}
+if ( ! function_exists( 'purdueBrand_footerLinks_4' ) ) {
+	function purdueBrand_footerLinks_4()
+	{
+		$location = 'footer-links-2';
+		if (has_nav_menu($location)) :
+			$menu_obj = purdue_get_menu_by_location($location); 
+			wp_nav_menu( array( 
+				'theme_location'  => $location,
+				'container'         => 'div',
+				'container_class' => 'resources__column footer__links',
+				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion4id" aria-controls="sect4">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect4" aria-labelledby="accordion4id">%3$s</ul>'
 			)); 
 		endif;
 	}

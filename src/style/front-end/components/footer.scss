@@ -266,6 +266,95 @@
             text-decoration: none;
         }
     }
+    .footer__links{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        @include touch{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-top:1px solid #2e2e2e;
+            align-items:flex-start;
+        }
+        h5{
+            padding:0 0 1.3rem 0;
+            @include touch{
+                width:100%;
+                padding:0;
+            }
+            .accordion__heading--footer{
+                width:100%;
+                font-size: 1.1875rem;
+                font-weight: 700;
+                color:$boiler-gold;
+                padding:0;
+                margin:0;
+                border:0;
+                text-align:left;
+                background-color:#000000;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items:baseline;         
+                text-transform: uppercase;
+                pointer-events: none;
+                .fa-plus,.fa-minus{
+                    display:none;
+                    pointer-events: none;
+                }
+                &:focus{
+                    outline:none;
+                }       
+                @include touch{
+                    pointer-events: all;
+                    padding:0;
+                    &:hover{
+                        cursor:pointer;
+                    }
+                    .fa-plus{
+                        display:block;
+                    }
+                    .fa-minus{
+                        display:none;
+                    }
+                } 
+          }
+        }
+        ul{
+            font-family: $acumin-pro;
+            @include touch{
+                display:none;
+                height:0;
+                transition: height 0.2s ease;
+                overflow:hidden;
+            }
+            li{
+                padding:0.4rem 0;
+                a{
+                    color:#fff;
+                    font-size:0.9375rem;
+                    text-decoration: underline;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                &:first-child {
+                    padding-top: 0;
+                }
+                &:last-child {
+                    padding-bottom: 0;
+                }
+                @include touch{
+                    &:first-child {
+                        padding-top: 0.8rem;
+                    }
+                }
+            }
+        }
+        .custom-html-widget{
+            width:100%;
+        }
+    }
     .footer__resources{
       padding:2.375rem $side-padding-desktop !important;
       @include touch{
@@ -273,7 +362,7 @@
       }
       @include mobile{
         padding:2.876rem $side-padding-mobile 0!important;
-    }
+      }
       .container{
         .columns{
             @include touch{
@@ -335,91 +424,6 @@
                             }
                         }
                     }
-                }
-            }
-            .footer__links{
-                display:flex;
-                flex-direction:column;
-                align-items:flex-start;
-                @include touch{
-                    padding-top: 1rem;
-                    padding-bottom: 1rem;
-                    border-top:1px solid #2e2e2e;
-                    align-items:flex-start;
-                }
-                h5{
-                    padding:0 0 1.3rem 0;
-                    @include touch{
-                        width:100%;
-                        padding:0;
-                    }
-                    .accordion__heading--footer{
-                        width:100%;
-                        font-size: 1.1875rem;
-                        font-weight: 700;
-                        color:$boiler-gold;
-                        padding:0;
-                        margin:0;
-                        border:0;
-                        background-color:#000000;
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: space-between;
-                        align-items:baseline;         
-                        text-transform: uppercase;
-                        pointer-events: none;
-                        .fa-plus,.fa-minus{
-                            display:none;
-                            pointer-events: none;
-                        }       
-                        @include touch{
-                            pointer-events: all;
-                            padding:0;
-                            &:hover{
-                                cursor:pointer;
-                            }
-                            .fa-plus{
-                                display:block;
-                            }
-                            .fa-minus{
-                                display:none;
-                            }
-                        } 
-                  }
-                }
-                ul{
-                    font-family: $acumin-pro;
-                    @include touch{
-                        display:none;
-                        height:0;
-                        transition: height 0.2s ease;
-                        overflow:hidden;
-                    }
-                    li{
-                        padding:0.4rem 0;
-                        a{
-                            color:#fff;
-                            font-size:0.9375rem;
-                            text-decoration: underline;
-                            &:hover{
-                                text-decoration: none;
-                            }
-                        }
-                        &:first-child {
-                            padding-top: 0;
-                        }
-                        &:last-child {
-                            padding-bottom: 0;
-                        }
-                        @include touch{
-                            &:first-child {
-                                padding-top: 0.8rem;
-                            }
-                        }
-                    }
-                }
-                .custom-html-widget{
-                    width:100%;
                 }
             }
             .footer__social{
@@ -502,6 +506,115 @@
                 }
         }
     }
-
+    .footer__global__logo{
+        border-bottom: 2px solid $boiler-gold;
+        padding:2.25rem $side-padding-desktop !important;
+        @include touch{
+            padding:1.5625rem $side-padding-tablet !important;
+        }
+        @include mobile{
+            padding:1.5625rem $side-padding-mobile !important;
+        }
+        .container{
+            a{
+                display:block;
+                text-align:center;
+                img{
+                    display:block;
+                    margin:0 auto;
+                    height:3.5625rem;
+                    @include touch{
+                        height:2.5rem;                }
+                }
+            }
+        }
+    }
+    .footer__global__resources{
+        padding:3.25rem $side-padding-desktop !important;
+        @include touch{
+            padding:0 !important;
+        }
+        .resources__columns{
+            display:flex;
+            flex-wrap:wrap;
+            flex-direction:row;
+            @include touch{
+                flex-direction:column;
+            }
+            .resources__column{
+                flex:1;
+                @include touch{
+                    padding-left:$side-padding-tablet;
+                    padding-right:$side-padding-tablet;
+                }
+                @include mobile{
+                    padding-left:$side-padding-mobile;
+                    padding-right:$side-padding-mobile;
+                }
+                ul{
+                    li{
+                        a{
+                            text-decoration: none;
+                            &:hover{
+                                color:$dust-gold;
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+            .resources__info{
+                display:flex;
+                flex-direction:column;
+                .title{
+                    margin-bottom:0.625rem;
+                    text-transform:uppercase;
+                }
+                .resources__contact,.resources__social{
+                    margin-top:1.5rem;
+                }
+                .resources__social{
+                    font-size:1.375rem;
+                    a{
+                        &:hover{
+                            color:$dust-gold;
+                        }
+                        &:not(:last-child){
+                            margin-right:0.8rem;
+                        }
+                    }
+                }
+                @include touch{
+                    border-top:1px solid #2e2e2e;
+                    padding-top: 3rem;
+                    padding-bottom: 3rem;
+                    flex-direction:row;
+                    justify-content:space-between;
+                    align-self: flex-start;
+                    width: 100%;
+                    .resources__address,.resources__contact,.resources__social{
+                        margin-top:0;
+                        width:32%;
+                    }
+                }
+                @include mobile{
+                    border-top:1px solid #2e2e2e;
+                    padding-top: 1.375rem;
+                    padding-bottom: 1.375rem;
+                    flex-direction:column;
+                    justify-content:flex-start;
+                    align-items:center;
+                    text-align:center;
+                    .resources__contact,.resources__social{
+                        margin-top:1.5rem;
+                    }
+                    .resources__address,.resources__contact,.resources__social{
+                        width:100%;
+                    }
+                }
+            }
+        }
+    }
 }
+
 
