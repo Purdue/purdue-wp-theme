@@ -524,7 +524,8 @@
                     margin:0 auto;
                     height:3.5625rem;
                     @include touch{
-                        height:2.5rem;                }
+                        height:2.5rem;                
+                    }
                 }
             }
         }
@@ -543,13 +544,16 @@
             }
             .resources__column{
                 flex:1;
+                &:not(:first-child){
+                    padding-left:1.5rem;
+                }
                 @include touch{
-                    padding-left:$side-padding-tablet;
-                    padding-right:$side-padding-tablet;
+                    padding-left:$side-padding-tablet !important;
+                    padding-right:$side-padding-tablet !important;
                 }
                 @include mobile{
-                    padding-left:$side-padding-mobile;
-                    padding-right:$side-padding-mobile;
+                    padding-left:$side-padding-mobile !important;
+                    padding-right:$side-padding-mobile !important;
                 }
                 ul{
                     li{
@@ -566,6 +570,17 @@
             .resources__info{
                 display:flex;
                 flex-direction:column;
+                position:relative;
+                &:before{
+                    content: "";
+                    display: block; 
+                    position:absolute;
+                    top:10%;
+                    left: 0;
+                    margin: 0 auto; 
+                    height:80%; 
+                    border-right: 1px solid #2e2e2e;
+                }
                 .title{
                     margin-bottom:0.625rem;
                     text-transform:uppercase;
@@ -585,6 +600,9 @@
                     }
                 }
                 @include touch{
+                    &:before{
+                        border-right: none;
+                    }
                     border-top:1px solid #2e2e2e;
                     padding-top: 3rem;
                     padding-bottom: 3rem;
