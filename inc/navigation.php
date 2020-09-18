@@ -215,7 +215,7 @@ if ( ! function_exists( 'purdueBrand_footerLinks_3' ) ) {
 if ( ! function_exists( 'purdueBrand_footerLinks_4' ) ) {
 	function purdueBrand_footerLinks_4()
 	{
-		$location = 'footer-links-2';
+		$location = 'footer-links-4';
 		if (has_nav_menu($location)) :
 			$menu_obj = purdue_get_menu_by_location($location); 
 			wp_nav_menu( array( 
