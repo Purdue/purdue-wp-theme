@@ -271,8 +271,6 @@
         flex-direction:column;
         align-items:flex-start;
         @include touch{
-            padding-top: 1rem;
-            padding-bottom: 1rem;
             border-top:1px solid #2e2e2e;
             align-items:flex-start;
         }
@@ -307,7 +305,7 @@
                 }       
                 @include touch{
                     pointer-events: all;
-                    padding:0;
+                    padding:1rem $side-padding-tablet;
                     &:hover{
                         cursor:pointer;
                     }
@@ -318,6 +316,9 @@
                         display:none;
                     }
                 } 
+                @include mobile{
+                    padding:1rem $side-padding-mobile;
+                }
           }
         }
         ul{
@@ -327,6 +328,11 @@
                 height:0;
                 transition: height 0.2s ease;
                 overflow:hidden;
+                width:100%;
+                padding:0 $side-padding-tablet;
+            }
+            @include mobile{
+                padding:0 $side-padding-mobile;
             }
             li{
                 padding:0.4rem 0;
@@ -343,43 +349,56 @@
                 }
                 &:last-child {
                     padding-bottom: 0;
-                }
-                @include touch{
-                    &:first-child {
-                        padding-top: 0.8rem;
+                    @include touch{
+                        padding-bottom: 1rem;
                     }
                 }
             }
         }
+
         .custom-html-widget{
             width:100%;
+        }
+    }
+    .widget_custom_html.footer__links{
+        @include touch{
+            padding:1rem $side-padding-tablet !important;
+        }
+        @include mobile{
+            padding:1rem $side-padding-mobile !important;
         }
     }
     .footer__resources{
       padding:2.375rem $side-padding-desktop !important;
       @include touch{
-          padding:2.876rem $side-padding-tablet 0!important;
-      }
-      @include mobile{
-        padding:2.876rem $side-padding-mobile 0!important;
+          padding:0!important;
       }
       .container{
         .columns{
             @include touch{
                 display:block;
+                margin-left:0;
+                margin-right:0;
                 &:last-child{
                     margin-bottom: 0;
                 }
             }
             .column{
                 @include touch{
-                    width:100%;     
+                    width:100%; 
+                    padding:0;    
                 }
                 .footer__motto{
                     @include touch{
-                        text-align:center;     
+                        text-align:center; 
+                        padding: 2.5rem $side-padding-tablet 0;   
+                        margin-bottom: 2.5rem;
+                    }
+                    @include mobile{
+                        padding: 2.5rem $side-padding-mobile 0;
                     }
                     a{
+                        display:block;
                         img{
                             width:203.68px;
                             max-width: 100%;
@@ -390,7 +409,7 @@
                         .horizontal{
                             display:none;
                         }
-                        @media (max-width: $stickySideNav-desktop){
+                        @include touch{
                             img{
                                 width:224.68px; 
                             }
@@ -404,7 +423,14 @@
                     }
                 }
                 .footer__address{
-                    padding-top:2.375rem;
+                    margin-top:2.375rem;
+                    @include touch{
+                        padding: 0 $side-padding-tablet;
+                        margin-bottom:2.5625rem;
+                    }
+                    @include mobile{
+                        padding: 0 $side-padding-mobile;
+                    }
                     p{
                         color:white;
                         font-family: $acumin-pro;
@@ -413,7 +439,7 @@
                         @include touch{
                             text-align:center;
                             &:last-child{
-                                padding-bottom:2.875rem; 
+                                margin-bottom:0; 
                             }
                         }
                         a{
@@ -425,18 +451,35 @@
                         }
                     }
                 }
+                .widget_custom_html.footer__address{
+                    @include touch{
+                        margin:0;
+                        padding:0 $side-padding-tablet 1rem !important;
+                    }
+                    @include mobile{
+                        padding:0 $side-padding-mobile 1rem !important;
+                    }
+                    p{
+                        @include touch{
+                            text-align:left;
+                        }
+                    }
+                }
             }
             .footer__social{
                 display:flex !important;
                 flex-direction:row;
-                justify-content: center;
                 align-items: flex-start;
+                flex-wrap:wrap;
+                align-self:flex-start;
                 @include touch{
                     justify-content:center;
                     align-items:center; 
                     border-top:1px solid #2e2e2e;
-                    padding-top:1.375rem;
-                    padding-bottom:1.625rem;
+                    padding:1.375rem $side-padding-tablet;
+                }
+                @include mobile{
+                    padding:1.375rem $side-padding-mobile;
                 }
                 a{
                     margin: 0;
@@ -500,6 +543,7 @@
 
     &__social {
         .navbar-item {
+            align-self:flex-start;
             padding: 0;
             &:not(:last-child){
                 margin-right:0.8rem;
@@ -548,13 +592,10 @@
                     padding-left:1.5rem;
                 }
                 @include touch{
-                    padding-left:$side-padding-tablet !important;
-                    padding-right:$side-padding-tablet !important;
+                    padding-left:0 !important;
+                    padding-right:0;
                 }
-                @include mobile{
-                    padding-left:$side-padding-mobile !important;
-                    padding-right:$side-padding-mobile !important;
-                }
+
                 ul{
                     li{
                         a{
@@ -604,8 +645,7 @@
                         border-right: none;
                     }
                     border-top:1px solid #2e2e2e;
-                    padding-top: 3rem;
-                    padding-bottom: 3rem;
+                    padding: 2.5rem $side-padding-tablet !important;
                     flex-direction:row;
                     justify-content:space-between;
                     align-self: flex-start;
@@ -617,8 +657,7 @@
                 }
                 @include mobile{
                     border-top:1px solid #2e2e2e;
-                    padding-top: 1.375rem;
-                    padding-bottom: 1.375rem;
+                    padding: 1.375rem $side-padding-mobile !important;
                     flex-direction:column;
                     justify-content:flex-start;
                     align-items:center;
