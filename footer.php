@@ -61,7 +61,7 @@
 							<h5 class="title">
 								Contact Us
 							</h5>
-							<p>765-494-4600<br>email@purdue.edu</p>
+							<p>765-494-4600</p>
 						</div>
 						<div class="resources__social">
 							<h5 class="title">Follow Us</h5>
