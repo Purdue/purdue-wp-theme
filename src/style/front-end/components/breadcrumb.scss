@@ -1,9 +1,12 @@
 .breadcrumbs{
     background-color:#ededed;
-    padding:0.9rem 3.15rem;
+    padding:0.9rem $side-padding-desktop;
     font-size: .875rem;
     @include touch{
-        padding:0.9rem 1.5rem; 
+        padding:0.9rem $side-padding-tablet; 
+    }
+    @include touch{
+        padding:0.9rem $side-padding-mobile; 
     }
     a{
         font-family: $acumin-pro;

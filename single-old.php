@@ -83,7 +83,8 @@ if (function_exists('get_field')) {
 ?>
 
 <main id="site-content" role="main">
-	<section class="container section-container">
+	<section class="section">
+		<div class="container">
 		<?php if (is_active_sidebar('post-related-content')) : ?>
 			<div class="columns is-multiline with-sideContent">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
@@ -225,6 +226,7 @@ if (function_exists('get_field')) {
 					
 				<?php endif; ?>
 			</div>
+		</div>
 	</section>
 
 </main><!-- #site-content -->

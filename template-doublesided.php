@@ -43,7 +43,7 @@
             </div>
         
             <?php if (is_active_sidebar('page-sidebar')) : ?>
-            <aside class="column is-one-third-desktop is-full-tablet is-full-mobile">
+            <aside class="column is-one-quarter-desktop is-full-tablet is-full-mobile">
                 <div class="container section side-content">
                     <?php dynamic_sidebar('page-sidebar'); ?>
                 </div>
@@ -51,9 +51,11 @@
             <?php endif; ?>
         </div>
     </section>
-	<button id="to-top" class="to-top-hidden">
-		<i class="fas fa-chevron-up" aria-hidden="true"></i>
-	</button>
+	<?php if (!has_block('purdue-blocks/anchor-link-navigation')) { ?>
+		<button id="to-top" class="to-top-hidden">
+			<i class="fas fa-chevron-up" aria-hidden="true"></i>
+		</button>
+	<?php } ?>
 </main><!-- #site-content -->
 
 </div>

@@ -35,9 +35,11 @@
 
 	?>
 
-	<button id="to-top" class="to-top-hidden">
-		<i class="fas fa-chevron-up" aria-hidden="true"></i>
-	</button>
+	<?php if (!has_block('purdue-blocks/anchor-link-navigation')) { ?>
+		<button id="to-top" class="to-top-hidden">
+			<i class="fas fa-chevron-up" aria-hidden="true"></i>
+		</button>
+	<?php } ?>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>

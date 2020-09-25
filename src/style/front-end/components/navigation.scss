@@ -3,8 +3,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   padding: 1.75rem 3.25rem;
   align-items: center !important;
   position: relative;
+  font-family: $acumin-pro-semicondensed;
   @include touch {
-    padding:1.5rem 1.5rem 1rem;
+    padding:1.5rem $side-padding-tablet 1rem;
+  }
+  @include mobile {
+    padding:1.5rem $side-padding-mobile 1rem;
   }
   .navbar-brand {
     .navbar-item {
@@ -149,6 +153,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   padding: 0 2.5rem;
   text-transform: uppercase;
   box-shadow: 0px 1px 6px 1px rgba(38, 38, 38, 0.2) !important;
+  font-family: $acumin-pro-semicondensed;
   @include touch {
     padding: 0;
     display: none;
@@ -342,9 +347,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     padding: 0.5rem 0.75rem;
     @include touch {
       border-top: 1px solid #2e2e2e;
-      padding: 0.5rem 1.5rem;
+      padding: 0.5rem $side-padding-tablet;
       flex-direction: column;
       align-items: flex-start;
+    }
+    @include mobile {
+      padding: 0.5rem $side-padding-mobile;
     }
     &.has-dropdown {
       padding-right: 2.75rem;
@@ -453,7 +461,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       background: white;
     }
     .purdue-navbar-black {
-      padding: 1rem 1.5rem;
+      padding: 1rem $side-padding-desktop;
+      @include touch {
+        padding: 1rem $side-padding-tablet;
+      }
+      @include mobile {
+        padding: 1rem $side-padding-mobile;
+      }
       #blackBarMenu {
         margin-left: -1.4rem;
         align-items: stretch;
@@ -553,12 +567,16 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       }
     }
     .purdue-navbar-white {
-      padding: 0 1.5rem;
+      padding: 0 $side-padding-desktop;
       @include touch {
         order: 1;
         display: flex;
         flex-direction: column;
         background: white !important;
+        padding: 0 $side-padding-tablet;
+      }
+      @include mobile {
+        padding: 0 $side-padding-mobile;
       }
     }
     .navbar {
