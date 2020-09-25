@@ -239,27 +239,28 @@ $colorHollowText_hover: (
   'opaque' 		: #fff !important,
 );
 @each $name, $color in $colorBg {
-
-  .has-#{$name}-background-color {
-    background-color:  $color;
-    color:map_get( $colorText, $name );
-    border: 2px solid map_get( $colorBorder, $name );
-  }
-  .has-#{$name}-background-color:hover,
-  .has-#{$name}-background-color:focus {
-    background-color:  map_get( $colorBg_hover, $name );
-    color:map_get( $colorText_hover, $name );
-  }
-  .is-style-outline{
-    .has-#{$name}-color {
-      background-color: transparent !important;
-      color:map_get( $colorHollowText, $name );
-      border: 2px solid map_get( $colorHollowBorder, $name );
+  .wp-block-button{
+    .has-#{$name}-background-color {
+      background-color:  $color;
+      color:map_get( $colorText, $name );
+      border: 2px solid map_get( $colorBorder, $name );
     }
-    .has-#{$name}-color:hover,
-    .has-#{$name}-color:focus {
-      background-color:  map_get( $colorHollowBg_hover, $name );
-      color:map_get( $colorHollowText_hover, $name );
+    .has-#{$name}-background-color:hover,
+    .has-#{$name}-background-color:focus {
+      background-color:  map_get( $colorBg_hover, $name ) !important;
+      color:map_get( $colorText_hover, $name ) !important;
+    }
+    .is-style-outline{
+      .has-#{$name}-color {
+        background-color: transparent !important;
+        color:map_get( $colorHollowText, $name );
+        border: 2px solid map_get( $colorHollowBorder, $name );
+      }
+      .has-#{$name}-color:hover,
+      .has-#{$name}-color:focus {
+        background-color:  map_get( $colorHollowBg_hover, $name ) !important;
+        color:map_get( $colorHollowText_hover, $name ) !important;
+      }
     }
   }
 }
