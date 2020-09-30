@@ -200,11 +200,11 @@
         display:block;
         &:hover{
           text-decoration:underline;
-          background-color:$boiler-gold;
+          color:$aged-gold;
         }
       }
       .wp-block-latest-posts__post-date{
-        color:$aged-gold;
+        color:$steel-gray;
         font-family:$acumin-pro;
         font-size:1.125rem;
         font-weight:600;
