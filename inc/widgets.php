@@ -221,7 +221,7 @@ class Related_Content extends WP_Widget
         $my_query = new wp_query($args);
         if ($my_query->have_posts()) {
 
-            echo '<h2>Related Content</h2>';
+            echo '<div class="related-content"><h2 class="related-content-header">Related Content</h2>';
             while ($my_query->have_posts()) {
                 $my_query->the_post();
 
@@ -239,6 +239,7 @@ class Related_Content extends WP_Widget
                 echo the_title();
                 echo '</div></a>';
             }
+            echo '</div>';
         }
         $post = $orig_post;
         wp_reset_query();

@@ -96,6 +96,20 @@
           }
         }
       }
+      .related-content{
+        background: none;
+        margin-bottom:2rem;
+        &-header{
+          font-family: $acumin-pro-semicondensed;
+          font-size: 1.375rem;
+          font-weight: 700;
+          margin-bottom: 1.5625rem !important;
+          padding:0;
+          color:#000;
+          border:none;
+          text-align:left;
+        }
+      }
       .related-content-item {
         text-decoration:none;
         &:hover{
