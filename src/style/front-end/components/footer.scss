@@ -594,6 +594,7 @@
                 @include touch{
                     padding-left:0 !important;
                     padding-right:0;
+                    flex-basis:auto;
                 }
 
                 ul{
