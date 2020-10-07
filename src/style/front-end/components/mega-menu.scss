@@ -1,0 +1,95 @@
+.mega-menu {
+    display: none;
+    position: absolute;
+    background: white;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 3rem 0;
+
+    &.show {
+        display: flex;
+    }
+
+    .mega-menu-column {
+        border-left: 1px solid #ededed;
+        display: flex;
+        flex-direction: column;
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-family: $acumin-pro-semicondensed !important;
+
+            &:hover {
+                color: $aged-gold;
+                text-decoration: underline;
+            }
+        }
+
+        .collection-title {
+            color: black;
+            font-weight: bold;
+            margin-bottom: 20px;
+
+            & + .collection-title {
+                margin-top: 10px;
+            }
+        }
+
+        .topic-title {
+            margin-bottom: 24px;
+        }
+
+        .inner-title {
+            color: #555960;
+            padding-left: 1rem;
+            margin-bottom: 22px;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+
+        .mega-menu-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0;
+            font-family: $united-sans;
+            font-weight:700;
+            font-size:1.125rem !important;
+            text-transform: uppercase;
+            padding:0.75rem 3.125rem;
+            background-color:transparent;
+            color: black;
+            border:2px solid $aged-gold;
+            letter-spacing:0.05rem;
+            height:auto;
+            &:hover {
+                text-decoration: none;
+                color:$aged-gold;
+                background-color:#fff;
+                border:2px solid #000;
+            }
+            &:not(:first-child) {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+.navbar-top-item {
+    // position: relative;
+}
+
+.navbar-top-item-link {
+    color: white;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: $acumin-pro-condensed;
+    margin-left: 2rem;
+}

@@ -1,0 +1,126 @@
+{
+    "top-level-items": [{
+        "item-title": "Prospective Students",
+        "item-link": "https://www.purdue.edu",
+        "mega-menu": true,
+        "collections": [
+            {
+                "collection-title": "Academics",
+                "collection-link": "https://www.purdue.edu/purdue/academics",
+                "topics": []
+            },
+            {
+                "collection-title": "Admissions",
+                "collection-link": "https://www.purdue.edu/purdue/admissions",
+                "topics": [{
+                        "topic-title": "Visit",
+                        "topic-link": "https://www.purdue.edu/visit/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Apply",
+                        "topic-link": "https://www.purdue.edu/purdue/apply/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Transfer",
+                        "topic-link": "https://www.admissions.purdue.edu/transfercredit/index.php",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Dates/Deadlines",
+                        "topic-link": "https://www.admissions.purdue.edu/apply/deadlines.php#transferdeadlines",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Application Status",
+                        "topic-link": "https://www.admissions.purdue.edu/apply/applicationstatus.php",
+                        "inner-pages": []
+                    }
+                ]
+            },
+            {
+                "collection-title": "Costs and Financial Aid",
+                "collection-link": "https://www.purdue.edu",
+                "topics": [{
+                        "topic-title": "Cost Estimator",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Financial Aid",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": [{
+                                "inner-title": "FAFSA",
+                                "inner-link": "https://www.purdue.edu"
+                            },
+                            {
+                                "inner-title": "Scholarships",
+                                "inner-link": "https://www.purdue.edu"
+                            }
+                        ]
+                    },
+                    {
+                        "topic-title": "Tuition and Fees",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Value (ROI)",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    }
+                ]
+            },
+            {
+                "collection-title": "Campus Life",
+                "collection-link": "https://www.purdue.edu",
+                "topics": [{
+                        "topic-title": "Diversity",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Student Orgs",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Health and Wellness",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Athletics",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    },
+                    {
+                        "topic-title": "Arts and Ideas",
+                        "topic-link": "https://www.purdue.edu/",
+                        "inner-pages": []
+                    }
+                ]
+            },
+            {
+                "collection-title": "Campus Information",
+                "collection-link": "https://www.purdue.edu",
+                "topics": []
+            }
+        ],
+        "cta-buttons": [
+            {
+                "button-text": "Call to Action",
+                "button-link": "https://www.purdue.edu"
+            },
+            {
+                "button-text": "Call to Action",
+                "button-link": "https://www.purdue.edu"
+            },
+            {
+                "button-text": "Call to Action",
+                "button-link": "https://www.purdue.edu"
+            }
+        ]
+    }]
+}

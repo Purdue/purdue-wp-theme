@@ -12,6 +12,7 @@ import "./currentPage";
 import "./themeSelector";
 import "./collapseSection";
 import "./table";
+import "./mega-menu";
 
 if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector ||

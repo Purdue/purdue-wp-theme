@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if(blackNav){
         const navbarEnd = blackNav.querySelector('.navbar-end')
-        if(navbarEnd.classList.contains('is-active')){
+        if(navbarEnd&&navbarEnd.classList.contains('is-active')){
           navbarEnd.classList.remove('is-active')
         }
       }

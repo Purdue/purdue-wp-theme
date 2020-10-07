@@ -585,6 +585,7 @@
             flex-direction:row;
             @include touch{
                 flex-direction:column;
+                flex-basis:auto;
             }
             .resources__column{
                 flex:1;

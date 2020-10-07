@@ -1,5 +1,4 @@
 // back to top button
-
 const toTop = document.querySelector('#to-top')
 if(toTop){
   toTop.addEventListener('click', () => {
