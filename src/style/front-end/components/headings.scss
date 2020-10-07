@@ -1,80 +1,85 @@
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $acumin-pro-semicondensed;
-    font-weight: 600;
-}
-
 h1 {
     font-family: $united-sans;
-    font-weight: bold;
-    font-size: 1.875rem; //mobile
-
+    font-weight: 700;
+    font-size: 2.1875rem; //mobile
+    color: $black;
+    line-height:2.5rem;
+    margin-bottom:2.1875rem;
+    &:not(:first-child) {
+        margin-top: 2.1875rem;
+    }
     @include tablet {
-        font-size: 2.3125rem;
+        font-size: 2.5rem;
+        line-height:2.8125rem;
     }
 }
 
 h2 {
-    font-size: 1.6875rem; //mobile
-
+    font-size: 1.875rem; //mobile
+    font-weight: 600;
+    font-family: $acumin-pro-semicondensed;
+    color: $aged-gold;
+    line-height:2.375rem;
+    margin-bottom:2.1875rem;
+    &:not(:first-child) {
+        margin-top: 2.1875rem;
+    }
     @include tablet {
         font-size: 2rem;
     }
 }
 
 h3 {
-    font-size: 1.375rem; //mobile
-
-    @include tablet {
-        font-size: 1.5625rem;
+    font-size: 1.5625rem; 
+    font-weight: 600;
+    font-family: $acumin-pro-semicondensed;
+    color: $black;
+    line-height:2rem;
+    margin-bottom:2.1875rem;
+    &:not(:first-child) {
+        margin-top: 2.1875rem;
     }
 }
 
 h4 {
-    color: $cool-gray;
-    font-weight: bold;
+    color: $steel-gray;
+    font-weight: 600;
     font-size: 1.375rem;
-}
-
-h5 {
-    font-weight: 400;
-    font-size: 1.375rem;
-}
-
-h6 {
-    font-weight: 400;
-    font-size: 1.1875rem;
-}
-
-h2,
-h5 {
-    color: $aged-gold;
-}
-
-h1,
-h3,
-h6 {
-    color: $black;
-}
-
-h1 {
-    &.title {
-        &.is-1 {
-            font-family: $united-sans;
-            font-weight: bold;
-            font-size: 1.875rem; //mobile
-
-            @include tablet {
-                font-size: 2.3125rem;
-            }
-        }
+    font-family: $source-serif-pro;
+    line-height:1.875rem;
+    margin-bottom:1.875rem;
+    &:not(:first-child) {
+        margin-top: 1.875rem;
     }
 }
+
+h5 {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $aged-gold;
+    font-family: $acumin-pro-semicondensed;
+    line-height:1.625rem;
+    margin-bottom:1.875rem;
+    &:not(:first-child) {
+        margin-top: 1.875rem;
+    }
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    font-family: $acumin-pro-condensed;
+    line-height:1.5625rem;
+    margin-bottom:1.875rem;
+    text-transform:uppercase;
+    &:not(:first-child) {
+        margin-top: 1.875rem;
+    }
+}
+
 p {
     font-size: 1.125rem;
+    line-height:1.875rem;
 }
 a{
     color:$aged-gold;
@@ -82,5 +87,104 @@ a{
     &:hover{
         text-decoration:none;
         color:$aged-gold;
+    }
+}
+h1+h2,h1+h3,h2+h3{
+    margin-top:-0.625rem !important;
+}
+h1+h4,h1+h5,h1+h6,h2+h4,h2+h5,h2+h6,h3+h4,h3+h5,h3+h6{
+    margin-top:-0.3125rem !important;
+}
+h4+h5,h4+h6,h5+h6{
+    margin-top:-0.625rem !important;
+}
+//overwrite bulma style
+.content{
+    h1 {
+        font-family: $united-sans;
+        font-weight: 700;
+        font-size: 2.1875rem; //mobile
+        color: $black;
+        line-height:2.5rem;
+        margin-bottom:2.1875rem;
+        &:not(:first-child) {
+            margin-top: 2.1875rem;
+        }
+        @include tablet {
+            font-size: 2.5rem;
+            line-height:2.8125rem;
+        }
+    }
+    
+    h2 {
+        font-size: 1.875rem; //mobile
+        font-weight: 600;
+        font-family: $acumin-pro-semicondensed;
+        color: $aged-gold;
+        line-height:2.375rem;
+        margin-bottom:2.1875rem;
+        &:not(:first-child) {
+            margin-top: 2.1875rem;
+        }
+        @include tablet {
+            font-size: 2rem;
+        }
+    }
+    
+    h3 {
+        font-size: 1.5625rem; 
+        font-weight: 600;
+        font-family: $acumin-pro-semicondensed;
+        color: $black;
+        line-height:2rem;
+        margin-bottom:2.1875rem;
+        &:not(:first-child) {
+            margin-top: 2.1875rem;
+        }
+    }
+    
+    h4 {
+        color: $steel-gray;
+        font-weight: 600;
+        font-size: 1.375rem;
+        font-family: $source-serif-pro;
+        line-height:1.875rem;
+        margin-bottom:1.875rem;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
+    }
+    
+    h5 {
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: $aged-gold;
+        font-family: $acumin-pro-semicondensed;
+        line-height:1.625rem;
+        margin-bottom:1.875rem;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
+    }
+    
+    h6 {
+        font-weight: 700;
+        font-size: 1.125rem;
+        font-family: $acumin-pro-condensed;
+        line-height:1.5625rem;
+        margin-bottom:1.875rem;
+        text-transform:uppercase;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
+    }
+    h1+h2,h1+h3,h2+h3{
+        margin-top:-0.625rem !important;
+    }
+    h1+h4,h1+h5,h1+h6,h2+h4,h2+h5,h2+h6,h3+h4,h3+h5,h3+h6{
+        margin-top:-0.3125rem !important;
+    }
+    h4+h5,h4+h6,h5+h6{
+        margin-top:-0.625rem !important;
     }
 }

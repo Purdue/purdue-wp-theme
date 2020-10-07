@@ -29,6 +29,8 @@ $steel-gray:#555960;
 $cool-gray:#6f727b;
 $steam-gray:#c4bfc0;
 $railway-gray:#9d9795;
+$opaque:rgba(0,0,0,0.65);
+$transparent: rgba(0,0,0,0);
 
 // Color Elements
 $white: hsl(0, 0%, 100%);;
@@ -41,3 +43,84 @@ $info: $cyan;
 $success: $green;
 $warning: $orange;
 $danger: $red;
+
+.has-white-color{
+    color:$white !important;
+}
+.has-black-color{
+    color:$black !important;
+}
+.has-aged-gold-color{
+    color:$aged-gold !important;
+}
+.has-boiler-gold-color{
+    color:$boiler-gold !important;
+}
+.has-rush-gold-color{
+    color:$rush-gold !important;
+}
+.has-field-gold-color{
+    color:$field-gold !important;
+}
+.has-dust-gold-color{
+    color:$dust-gold !important;
+}
+.has-steel-gray-color{
+    color:$steel-gray !important;
+}
+.has-cool-gray-color{
+    color:$cool-gray !important;
+}
+.has-steam-gray-color{
+    color:$steam-gray !important;
+}
+.has-railway-gray-color{
+    color:$railway-gray !important;
+}
+.has-opaque-color{
+    color:$opaque !important;
+}
+.has-transparent-color{
+    color:$transparent !important;
+}
+
+.has-white-background-color{
+    background-color:$white !important;
+}
+.has-black-background-color{
+    background-color:$black !important;
+}
+.has-aged-gold-background-color{
+    background-color:$aged-gold !important;
+}
+.has-boiler-gold-background-color{
+    background-color:$boiler-gold !important;
+}
+.has-rush-gold-background-color{
+    background-color:$rush-gold !important;
+}
+.has-field-gold-background-color{
+    background-color:$field-gold !important;
+}
+.has-dust-gold-background-color{
+    background-color:$dust-gold !important;
+}
+.has-steel-gray-background-color{
+    background-color:$steel-gray !important;
+}
+.has-cool-gray-background-color{
+    background-color:$cool-gray !important;
+}
+.has-steam-gray-background-color{
+    background-color:$steam-gray !important;
+}
+.has-railway-gray-background-color{
+    background-color:$railway-gray !important;
+}
+.has-opaque-background-color{
+    background-color:$opaque !important;
+}
+.has-transparent-background-color{
+    background-color:$transparent !important;
+}
+

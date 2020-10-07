@@ -205,6 +205,51 @@ function purdueBrand_default_colors()
             'color' => '#cfb991',
         ),
         array(
+            'name' => __('Aged Gold', 'purdue-wp-theme'),
+            'slug' => 'aged-gold',
+            'color' => '#8e6f3e',
+        ),
+        array(
+            'name' => __('White', 'purdue-wp-theme'),
+            'slug' => 'white',
+            'color' => '#ffffff',
+        ),
+        array(
+            'name' => __('Dust Gold', 'purdue-wp-theme'),
+            'slug' => 'dust-gold',
+            'color' => '#EBD99F',
+        ),
+        array(
+            'name' => __('Field Gold', 'purdue-wp-theme'),
+            'slug' => 'field-gold',
+            'color' => '#DDB945',
+        ),
+        array(
+            'name' => __('Rush Gold', 'purdue-wp-theme'),
+            'slug' => 'rush-gold',
+            'color' => '#DAAA00',
+        ),
+        array(
+            'name' => __('Steel Gray', 'purdue-wp-theme'),
+            'slug' => 'steel-gray',
+            'color' => '#555960',
+        ),
+        array(
+            'name' => __('Cool Gray', 'purdue-wp-theme'),
+            'slug' => 'cool-gray',
+            'color' => '#6F727B',
+        ),
+        array(
+            'name' => __('Railway Gray', 'purdue-wp-theme'),
+            'slug' => 'railway-gray',
+            'color' => '#9D9795',
+        ),
+        array(
+            'name' => __('Steam Gray', 'purdue-wp-theme'),
+            'slug' => 'steam-gray',
+            'color' => '#C4BFC0',
+        ),
+        array(
             'name' => __('Opaque', 'purdue-wp-theme'),
             'slug' => 'opaque',
             'color' => 'rgba(0,0,0,0.65',
