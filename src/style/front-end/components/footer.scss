@@ -98,10 +98,10 @@
                     align-items:flex-start;
                 }
                 h5{
-                    padding:0 0 1.3rem 0;
+                    margin:0 0 1.3rem 0;
                     @media (max-width: $stickySideNav-desktop){
                         width:100%;
-                        padding:0;
+                        margin:0;
                     }
                     .accordion__heading--footer{
                         width:100%;
@@ -275,10 +275,10 @@
             align-items:flex-start;
         }
         h5{
-            padding:0 0 1.3rem 0;
+            margin:0 0 1.3rem 0;
             @include touch{
                 width:100%;
-                padding:0;
+                margin:0;
             }
             .accordion__heading--footer{
                 width:100%;
