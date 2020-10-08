@@ -169,11 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if ($outerSideDropdowns.length > 0) {
 		$outerSideDropdowns.forEach(el=>{
 			const $dropdown_link=el.querySelector('.navbar-link');
-			const $dropdown_link_closed=el.querySelector('.navbar-link:not(.navbar-link-open)');
 			const $dropdown_content=el.querySelector('.navbar-dropdown');
-			const hoverListener = ()=>{
-        $dropdown_content.style.top= "0px";
-      }
       const clickListener=(e)=> {
         e.preventDefault();
         let x=e.clientX;
@@ -191,43 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
           window.location.href=$dropdown_link.href;
         }       
       }
-			if($dropdown_link_closed&&width >= 1024){		
-				el.addEventListener('mouseover', hoverListener)
-			}
-			if(width < 1024){
-				$dropdown_link.addEventListener('click', clickListener)
-			}
-      window.addEventListener('resize', ()=>{
-        const width = window.innerWidth;
-        if(width >= 1024){
-          if (el.classList.contains('active')){
-            if(!$dropdown_link.classList.contains('navbar-link-open')){
-              $dropdown_link.classList.add('navbar-link-open');
-            }
-            if(!$dropdown_content.classList.contains('is-active')){
-              $dropdown_content.classList.add('is-active');              
-            }
-            el.setAttribute('aria-expanded', 'true');
-          }else{
-            if($dropdown_link.classList.contains('navbar-link-open')){
-              $dropdown_link.classList.remove('navbar-link-open');
-            }
-            if($dropdown_content.classList.contains('is-active')){
-              $dropdown_content.classList.remove('is-active');            
-            }
-            el.setAttribute('aria-expanded', 'false')
-          }
-          if($dropdown_link_closed){
-            el.addEventListener('mouseover', hoverListener);
-          }
-          $dropdown_link.removeEventListener('click', clickListener);
-        }else{
-          if($dropdown_link_closed){
-            el.removeEventListener('mouseover', hoverListener);
-          }
-          $dropdown_link.addEventListener('click', clickListener);
-        }
-      })
+      $dropdown_link.addEventListener('click', clickListener)
 		})
 	}	
 	}
