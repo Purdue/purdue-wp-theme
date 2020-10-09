@@ -586,6 +586,14 @@
             @include touch{
                 flex-direction:column;
             }
+            .widget_custom_html.footer__links{
+                @include touch{
+                    padding:1rem $side-padding-tablet !important;
+                }
+                @include mobile{
+                    padding:1rem $side-padding-mobile !important;
+                }
+            }
             .resources__column{
                 flex:1;
                 &:not(:first-child){
@@ -627,12 +635,23 @@
                     margin-bottom:0.625rem;
                     text-transform:uppercase;
                 }
+                .resources__contact a{
+                    text-decoration:none;
+                    &:hover{
+                        color:$dust-gold;
+                        text-decoration: underline;
+                    }
+                }
                 .resources__contact,.resources__social{
                     margin-top:1.5rem;
                 }
                 .resources__social{
                     font-size:1.375rem;
-                    a{
+                    .navbar-item{
+                        padding:0;
+                    }
+                    a,.navbar-item{
+                        display:inline;
                         &:hover{
                             color:$dust-gold;
                         }
