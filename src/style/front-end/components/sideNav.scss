@@ -100,7 +100,6 @@
             border-color: $black !important;
             transform: rotate(-45deg);
             @include touch{
-              transform: rotate(135deg);
               top: 55%;
             }
           }
