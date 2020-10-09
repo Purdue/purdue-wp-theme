@@ -58,7 +58,8 @@
 					<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
 					<?php if (is_active_sidebar('footer-column-4')) {dynamic_sidebar('footer-column-4');} ?>
 					<div class="resources__column resources__info">
-						<!-- <div class="resources__address">
+					<?php if(get_theme_mod('header_layout_settings') == 'oldglobalfooter') {?>
+						<div class="resources__address">
 							<h5 class="title">Address</h5>
 							<p>610 Purdue Mall<br>West Lafayette, IN 47906</p>
 						</div>
@@ -67,7 +68,8 @@
 								Contact Us
 							</h5>
 							<p>765-494-4600</p>
-						</div> -->
+						</div>
+					<?php } ?>
 						<?php if (is_active_sidebar('footer-address')) { ?>
 							<div class="resources__address">
 								<h5 class="title">Address</h5>
@@ -86,7 +88,8 @@
 								<ul class="social">
 									<?php purdueBrand_footerSocial(); ?>
 								</ul>
-								<!-- <div class="social">                          
+								<?php if(get_theme_mod('header_layout_settings') == 'oldglobalfooter') {?>
+								<div class="social">                          
 									<a href="https://www.facebook.com/PurdueUniversity/" rel="noopener" target="_blank"><span class="sr-only">Facebook</span><span aria-hidden="true" class="fa fa-facebook"></span></a>                      
 									<a href="https://twitter.com/lifeatpurdue" rel="noopener" target="_blank"><span class="sr-only">Twitter</span><span aria-hidden="true" class="fa fa-twitter"></span></a>                             
 									<a href="https://www.youtube.com/user/PurdueUniversity" rel="noopener" target="_blank"><span class="sr-only">YouTube</span><span aria-hidden="true" class="fa fa-youtube"></span></a>                             
@@ -94,7 +97,8 @@
 									<a href="https://www.pinterest.com/lifeatpurdue/" rel="noopener" target="_blank"><span class="sr-only">Pinterest</span><span aria-hidden="true" class="fa fa-pinterest"></span></a>                           
 									<a href="https://www.snapchat.com/add/lifeatpurdue" rel="noopener" target="_blank"><span class="sr-only">Snapchat</span><span aria-hidden="true" class="fa fa-snapchat-ghost"></span></a>                         
 									<a href="https://www.linkedin.com/edu/purdue-university-18357" rel="noopener" target="_blank"><span class="sr-only">LinkedIn</span><span aria-hidden="true" class="fa fa-linkedin"></span></a>
-								</div> -->
+								</div>
+								<?php } ?>
 							</div>
 						<?php }?>
 					</div>
