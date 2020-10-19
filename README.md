@@ -18,7 +18,7 @@ The prefered method of using this theme is by including it in the composer.json 
 ```
 
 "require": {
-    "purdue/purdue-wp-theme": "1.3.*",
+    "purdue/purdue-wp-theme": "1.4.*",
 },
 
 ```
