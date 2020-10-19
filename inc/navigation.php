@@ -15,7 +15,7 @@ if ( function_exists( 'register_nav_menus' ) ) {
 		'footer-signatureLinks' => esc_html__( 'Footer Signature Links', 'purdue-wp-theme' ),	
 		'header-buttons' => esc_html__( 'Header buttons', 'purdue-wp-theme' ),	
 		) );
-		if(get_theme_mod('header_layout_settings') == 'global'){
+		if(get_theme_mod('header_layout_settings') == 'oldglobalfooter'){
 			register_nav_menus( array(
 				'footer-links-1' => esc_html__( 'Footer Links column 1', 'purdue-wp-theme' ),
 				'footer-links-2' => esc_html__( 'Footer Links column 2', 'purdue-wp-theme' ),

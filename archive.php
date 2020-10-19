@@ -9,18 +9,20 @@
 <?php get_header(); ?>
 
 <main id="site-content" role="main" class="main-content">
-	<section class="section container">
-		<div class="content">
-			<h1><?php echo get_bloginfo( 'name' ); ?></h1>
-			<?php if(get_bloginfo( 'description' )){
-						echo '<p>'.get_bloginfo( 'description' ).'</p>'; 
-					} 
-			?>
+	<section class="section">
+		<div class="container">
+			<div class="content">
+				<h1><?php echo get_bloginfo( 'name' ); ?></h1>
+				<?php if(get_bloginfo( 'description' )){
+							echo '<p>'.get_bloginfo( 'description' ).'</p>'; 
+						} 
+				?>
+			</div>
 		</div>
 	</section>
 	<div class="section post-container">
 		<div class="container">
-			<div class="columns is-multiline post-list">
+			<div class="columns is-multiline">
 				<?php 
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 				$args = array( 'post_type' => 'post', 'posts_per_page' => 6, 'paged' => $paged);
