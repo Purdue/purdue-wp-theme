@@ -361,8 +361,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         font-size: 12px;
         font-weight: 900;
         content: '\f078';
-        position: absolute;
-        right: 1.75rem;
+        position: relative;
+        right: -0.4rem;
         margin-top: 3px;
         color: black !important;
         @include touch {
@@ -657,11 +657,4 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     }
   }
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .purdue-navbar-white {
-    .navbar-item {
-      .has-dropdown::after {
-margin-top: -5px;}
-    }
-  }  
-}
+
