@@ -4,7 +4,7 @@
     z-index:0;
     grid-row: 2/3 !important;
     grid-column:2/3 !important;
-    color:#fff;
+    color:$railway-gray;
     h2,h3,h4,h5,h6{
         color: $boiler-gold;
         font-weight: 700;
@@ -13,13 +13,13 @@
         font-size: 1.1875rem;
     }
     p{
-        color:#fff;
+        color:$railway-gray;
     }
     a {
-        color: #fff;
-        text-decoration: underline;
+        color: $railway-gray;
+        text-decoration: none;
         &:hover{
-            color: #fff;
+            color:$white;
             text-decoration: none;
         }
     }
@@ -67,7 +67,7 @@
                 .footer__address{
                     padding-top:2.375rem;
                     p{
-                        color:white;
+                        color:$railway-gray;
                         font-family: $acumin-pro;
                         font-size:0.9375rem;
                         line-height: 1.3;
@@ -148,11 +148,12 @@
                     li{
                         padding:0.4rem 0;
                         a{
-                            color:#fff;
+                            color:$railway-gray;
                             font-size:0.9375rem;
-                            text-decoration: underline;
+                            text-decoration: none;
                             &:hover{
                                 text-decoration: none;
+                                color:$white;
                             }
                         }
                         &:first-child {
@@ -183,7 +184,7 @@
                 }
                 a{
                     margin: 0;
-                    color: #fff;
+                    color: $railway-gray;
                     font-weight: 700;
                     font-size:1.375rem;
                     text-decoration: none;  
@@ -196,7 +197,7 @@
                         }
                     }  
                     &:hover{
-                        color:$boiler-gold;
+                        color:$dust-gold;
                     } 
                 }
                 
@@ -208,8 +209,8 @@
   .footer__signature{
       padding:1.68rem 3.25rem!important;
       text-align:center;
-      background-color: #1e1e1e !important;
-      color: #fff;
+      background-color:$gray-footer !important;
+      color:$steam-gray;
       font-size:0.9375rem;
       @media (max-width:$stickySideNav-desktop){
         padding:1.68rem 1.5rem !important;
@@ -233,11 +234,11 @@
       }
 
       a{
-          color:#fff;
-          text-decoration: underline; 
-          &:hover{
-            text-decoration: none; 
-          }
+        color:$steam-gray;
+        text-decoration: underline; 
+        &:hover{
+          color:$dust-gold;
+        }
       }
   }
   
@@ -247,7 +248,7 @@
 //footer without sidenav
 .footer{
     padding:0;
-    color:#fff;
+    color:$railway-gray;
     h2,h3,h4,h5,h6{
         color: $boiler-gold;
         font-weight: 700;
@@ -256,13 +257,13 @@
         font-size: 1.1875rem;
     }
     p{
-        color:#fff;
+        color:$railway-gray;
     }
     a {
-        color: #fff;
+        color:$railway-gray;
         text-decoration: underline;
         &:hover{
-            color: #fff;
+            color:$dust-gold;
             text-decoration: none;
         }
     }
@@ -337,11 +338,12 @@
             li{
                 padding:0.4rem 0;
                 a{
-                    color:#fff;
+                    color:$railway-gray;
                     font-size:0.9375rem;
-                    text-decoration: underline;
+                    text-decoration: none;
                     &:hover{
                         text-decoration: none;
+                        color:$white;
                     }
                 }
                 &:first-child {
@@ -483,7 +485,7 @@
                 }
                 a{
                     margin: 0;
-                    color: #fff;
+                    color: $railway-gray;
                     font-weight: 700;
                     font-size:1.375rem;
                     text-decoration: none;  
@@ -496,7 +498,7 @@
                         }
                     }  
                     &:hover{
-                        color:$boiler-gold;
+                        color:$dust-gold;
                     } 
                 }
                 
@@ -508,8 +510,8 @@
     .footer__signature{
       padding:1.68rem 3.25rem!important;
       text-align:center;
-      background-color: #1e1e1e !important;
-      color: #fff;
+      background-color: $gray-footer !important;
+      color:$steam-gray;
       font-size:0.9375rem;
       @include touch{
         padding:1.68rem 1.5rem !important;
@@ -533,10 +535,10 @@
       }
 
       a{
-          color:#fff;
+          color:$steam-gray;
           text-decoration: underline; 
           &:hover{
-            text-decoration: none; 
+            color:$dust-gold;
           }
       }
     }
@@ -608,10 +610,11 @@
                 ul{
                     li{
                         a{
+                            color:$railway-gray;
                             text-decoration: none;
                             &:hover{
-                                color:$dust-gold;
-                                text-decoration: underline;
+                                color:$white;
+                                text-decoration: none;
                             }
                         }
                     }
