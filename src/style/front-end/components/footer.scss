@@ -197,7 +197,7 @@
                         }
                     }  
                     &:hover{
-                        color:$dust-gold;
+                        color:$white;
                     } 
                 }
                 
@@ -498,7 +498,7 @@
                         }
                     }  
                     &:hover{
-                        color:$dust-gold;
+                        color:$white;
                     } 
                 }
                 
@@ -641,8 +641,7 @@
                 .resources__contact a{
                     text-decoration:none;
                     &:hover{
-                        color:$dust-gold;
-                        text-decoration: underline;
+                        color:$white;
                     }
                 }
                 .resources__contact,.resources__social{
@@ -656,7 +655,7 @@
                     a,.navbar-item{
                         display:inline;
                         &:hover{
-                            color:$dust-gold;
+                            color:$white;
                         }
                         &:not(:last-child){
                             margin-right:0.8rem;
