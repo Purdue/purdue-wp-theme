@@ -1,21 +1,27 @@
 .breadcrumbs{
     background-color:#ededed;
-    padding:0.9rem $side-padding-desktop;
+    padding:0.9375rem $side-padding-desktop;
     font-size: .875rem;
+    color:$steel-gray;
     @include touch{
-        padding:0.9rem $side-padding-tablet; 
+        padding:0.9375rem $side-padding-tablet; 
     }
     @include touch{
-        padding:0.9rem $side-padding-mobile; 
+        padding:0.9375rem $side-padding-mobile; 
     }
     a{
         font-family: $acumin-pro;
         font-size: 0.875rem;
-        color:#000 !important;
+        color:$steel-gray;
         text-decoration: none;
+        font-weight:400;
         &:hover{
             text-decoration:underline;
+            color:$steel-gray;
         }
+    }
+    .current-item{
+        font-weight:700;
     }
     ul{
         font-family: $acumin-pro;
@@ -24,13 +30,6 @@
         flex-direction:row;
         flex-wrap:wrap;
         li{
-            a{
-                color:#000 !important;
-                text-decoration: none;
-                &:hover{
-                    text-decoration:underline;
-                }
-            }
             &:not(:last-child):after{
                 content:">";
                 padding: 0 0.3rem;
