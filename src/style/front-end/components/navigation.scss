@@ -10,6 +10,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   @include mobile {
     padding:1.5rem $side-padding-mobile 1rem;
   }
+  a{
+    font-weight:400;
+  }
   .navbar-brand {
     .navbar-item {
       padding: 0;
@@ -175,6 +178,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
       }
     }
+  }
+  a{
+    font-weight:400;
   }
   .navbar-menu {
     @include touch {
@@ -454,6 +460,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 }
 
 .header {
+  a{
+    font-weight:400;
+  }
   &--global {
     @include touch {
       display: flex;
