@@ -1,0 +1,18 @@
+a{
+    color:$aged-gold;
+    text-decoration:underline;
+    font-weight:700;
+    &:hover{
+        text-decoration:none;
+        color:$aged-gold;
+    }
+}
+.has-background-black a,.has-background-black-ter a{
+    color:$dust-gold;
+}
+.has-background-grey-lighter a{
+    color:$aged-gold;
+}
+.has-background-boiler-gold a{
+    color:$steel-gray;
+}

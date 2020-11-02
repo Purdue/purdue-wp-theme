@@ -81,14 +81,7 @@ p {
     font-size: 1.125rem;
     line-height:1.875rem;
 }
-a{
-    color:$aged-gold;
-    text-decoration:underline;
-    &:hover{
-        text-decoration:none;
-        color:$aged-gold;
-    }
-}
+
 h1+h2,h1+h3,h2+h3{
     margin-top:-0.625rem !important;
 }
