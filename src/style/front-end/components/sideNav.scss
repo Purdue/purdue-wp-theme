@@ -13,9 +13,6 @@
   @include touch{
     display:block;
   }
-  a{
-    font-weight:400;
-  }
   .side-nav{
     width:288px;
     font-size: 1rem;
@@ -35,6 +32,9 @@
       float:none;
       padding-bottom:0;
       // height:100vh;
+    }
+    a{
+      font-weight:400;
     }
     h2{
       padding:1rem 1.5rem;

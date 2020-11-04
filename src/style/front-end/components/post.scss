@@ -24,6 +24,11 @@ ul.alm-paging li.active a {
 }
 ul.alm-paging {
   padding:0 0.75rem !important;
+  li{
+    a{
+      font-weight:400;
+    }
+  }
 }
 .ajax-load-more-wrap ul.alm-listing li.grid-item {
   width: 33.333%;
@@ -107,7 +112,7 @@ ul.alm-listing{
       text-overflow: ellipsis;
       overflow: hidden;
       color: #707070;
-
+      font-weight:400;  
       @media (-webkit-min-device-pixel-ratio: 0) {
         display: -webkit-box;
         -webkit-line-clamp: 3;
@@ -184,6 +189,7 @@ ul.alm-listing{
     .content {
       font-family: $acumin-pro-condensed;
       font-size: 1.875rem;
+      font-weight:400;
       line-height: 1.5;
       text-align: center;
     }
@@ -212,6 +218,7 @@ ul.alm-listing{
   border-top:0.5rem solid #90713C;
   p{
     margin-bottom:0;
+    font-weight:400;
   }
   .media{
         @include mobile{
