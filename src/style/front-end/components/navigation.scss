@@ -361,7 +361,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       padding: 0.5rem $side-padding-mobile;
     }
     &.has-dropdown {
-      padding-right: 2.75rem;
       &:after {
         font-family: 'Font Awesome 5 Free';
         font-size: 12px;
