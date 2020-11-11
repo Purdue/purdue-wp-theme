@@ -1,10 +1,17 @@
-.alm-filters-container .alm-filter {
-    display: inline-block !important;
-    padding: 0 !important;
+
+.alm-filters-container{
     margin-bottom:0 !important;
-    @include mobile{
-        padding: 0.5rem 0 !important;
-        display: block !important;
+    .alm-filter--inner{
+        padding-bottom:0 !important;
+    }
+    .alm-filter {
+        display: inline-block !important;
+        padding: 0 !important;
+        margin-bottom:0 !important;
+        @include mobile{
+            padding: 0.5rem 0 !important;
+            display: block !important;
+        }
     }
 }
 .filter{

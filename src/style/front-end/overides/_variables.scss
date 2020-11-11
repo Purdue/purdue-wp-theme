@@ -52,7 +52,7 @@ sans-serif;
         margin-bottom: 0 !important;
     }
 }
-.content:not(:last-child){
+.main-content>.content:not(:last-child){
     margin-bottom: 0 !important;
 }
 .content p{
