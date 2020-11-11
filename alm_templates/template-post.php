@@ -1,5 +1,5 @@
 <div class="column is-one-third-desktop is-half-tablet is-full-mobile">
-	<div class="card listed-post">
+	<div class="card listed-post listed-template">
 	<a href="<?php the_permalink(); ?>">
 		<?php if (has_post_thumbnail()) { ?>
 			<div class="card-image">
