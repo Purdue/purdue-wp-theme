@@ -52,6 +52,9 @@ sans-serif;
         margin-bottom: 0 !important;
     }
 }
+.main-content>.content:not(:last-child){
+    margin-bottom: 0 !important;
+}
 .content p{
     max-width:100%;
 }
