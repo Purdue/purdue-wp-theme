@@ -40,31 +40,31 @@
 									} 
 									?>
 								</p>
-							</article>
-	
-					<?php 
-				 endwhile;
-				 the_posts_pagination( array(
-					'mid_size' => 2,
-					'prev_text' => __( 'Prev', 'textdomain' ),
-					'next_text' => __( 'Next', 'textdomain' ),
-				));
-				}else {
-					echo '<p class="search-post-noresult">No search results found!</p>';
-				 
-				}}else{ ?>
-					<script>
-						(function() {
-							var cx = '000644513606665216020:olj7bswxyxf';
-							var gcse = document.createElement('script');
-							gcse.type = 'text/javascript';
-							gcse.async = true;
-							gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-							var s = document.getElementsByTagName('script')[0];
-							s.parentNode.insertBefore(gcse, s);
-						})();
-					</script>
-					<gcse:searchresults-only></gcse:searchresults-only>
+							</article>	
+						<?php 
+						endwhile;
+						the_posts_pagination( array(
+							'mid_size' => 2,
+							'prev_text' => __( 'Prev', 'textdomain' ),
+							'next_text' => __( 'Next', 'textdomain' ),
+						));
+						}else {
+							echo '<p class="search-post-noresult">No search results found!</p>';
+						
+						}
+					}else{ ?>
+						<script>
+							(function() {
+								var cx = '000644513606665216020:olj7bswxyxf';
+								var gcse = document.createElement('script');
+								gcse.type = 'text/javascript';
+								gcse.async = true;
+								gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+								var s = document.getElementsByTagName('script')[0];
+								s.parentNode.insertBefore(gcse, s);
+							})();
+						</script>
+						<gcse:searchresults-only></gcse:searchresults-only>
 					<?php }?>
 				</div>
 			</div>
