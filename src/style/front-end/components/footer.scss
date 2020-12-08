@@ -9,8 +9,9 @@
         color: $boiler-gold;
         font-weight: 700;
     }
-    h5{
+    h2{
         font-size: 1.1875rem;
+        line-height: 1.625rem;
     }
     p{
         color:$railway-gray;
@@ -98,7 +99,7 @@
                     border-top:1px solid #2e2e2e;
                     align-items:flex-start;
                 }
-                h5{
+                h2{
                     margin:0 0 1.3rem 0;
                     @media (max-width: $stickySideNav-desktop){
                         width:100%;
@@ -254,8 +255,9 @@
         color: $boiler-gold;
         font-weight: 700;
     }
-    h5{
+    h2{
         font-size: 1.1875rem;
+        line-height: 1.625rem;
     }
     p{
         color:$railway-gray;
@@ -276,7 +278,7 @@
             border-top:1px solid #2e2e2e;
             align-items:flex-start;
         }
-        h5{
+        h2{
             margin:0 0 1.3rem 0;
             @include touch{
                 width:100%;
@@ -639,7 +641,7 @@
                     height:80%; 
                     border-right: 1px solid #2e2e2e;
                 }
-                .title{
+                h2,.title{
                     margin-bottom:0.625rem;
                     text-transform:uppercase;
                 }
@@ -650,8 +652,8 @@
                         color:$white;
                     }
                 }
-                .resources__contact,.resources__social{
-                    margin-top:1.5rem;
+                .resources__address,.resources__contact{
+                    margin-bottom:1.5rem;
                 }
                 .resources__social{
                     font-size:1.375rem;

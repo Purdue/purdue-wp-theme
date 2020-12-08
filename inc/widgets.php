@@ -105,8 +105,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add an address widget here to show your address on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s footer__address">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
@@ -114,8 +114,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
@@ -123,8 +123,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
@@ -132,8 +132,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
         }else{
             register_sidebar(array(
@@ -142,8 +142,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add an Footer Address widget here to show your address on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
-                'before_title'  => '',
-                'after_title'   => '',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Contact Info on footer', 'purdueBrand'),
@@ -151,8 +151,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add an Footer Contact Us widget here to show your contact info on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</div>',
-                'before_title'  => '',
-                'after_title'   => '',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
@@ -160,8 +160,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s resources__column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
@@ -169,8 +169,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s resources__column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
@@ -178,8 +178,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s resources__column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 4', 'purdueBrand'),
@@ -187,8 +187,8 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'description'   => esc_html__('Add a Footer Links Column widget here for the fourth link column on footer.', 'purdueBrand'),
                 'before_widget' => '<div id="%1$s" class="widget %2$s resources__column footer__links">',
                 'after_widget'  => '</div>',
-                'before_title'  => '<h5>',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2>',
+                'after_title'   => '</h2>',
             ));
         }
     }
@@ -929,6 +929,7 @@ class AddressGlobal_Widget extends WP_Widget {
         $zip = apply_filters( 'widget_text', $instance['zipG'], $instance );
         echo $before_widget;
         ?>
+        <h2 class="title">Address</h2>
         <p>
         <?php 
             if($street !=""){
@@ -1021,6 +1022,7 @@ class ContactGlobal_Widget extends WP_Widget {
         $contact = apply_filters( 'widget_text', $instance['contact'], $instance );
         echo $before_widget;
         ?>
+         <h2 class="title">Contact Us</h2>
         <p>
         <?php 
             if($phone!=""){

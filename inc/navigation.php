@@ -177,7 +177,7 @@ if ( ! function_exists( 'purdueBrand_footerLinks_1' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect1" aria-labelledby="accordion1id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect1" aria-labelledby="accordion1id">%3$s</ul>'
 			)); 
 		endif;
 	}
@@ -192,7 +192,7 @@ if ( ! function_exists( 'purdueBrand_footerLinks_2' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect2" aria-labelledby="accordion2id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect2" aria-labelledby="accordion2id">%3$s</ul>'
 			)); 
 		endif;
 	}
@@ -207,7 +207,7 @@ if ( ! function_exists( 'purdueBrand_footerLinks_3' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion3id" aria-controls="sect3">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect3" aria-labelledby="accordion3id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion3id" aria-controls="sect3">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect3" aria-labelledby="accordion3id">%3$s</ul>'
 			)); 
 		endif;
 	}
@@ -222,7 +222,7 @@ if ( ! function_exists( 'purdueBrand_footerLinks_4' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h5><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion4id" aria-controls="sect4">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h5><ul class="accordion__content--footer" id="sect4" aria-labelledby="accordion4id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion4id" aria-controls="sect4">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect4" aria-labelledby="accordion4id">%3$s</ul>'
 			)); 
 		endif;
 	}
