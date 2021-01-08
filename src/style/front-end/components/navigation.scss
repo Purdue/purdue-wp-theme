@@ -664,5 +664,30 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       }
     }
   }
+  &--lp {
+    .navbar {
+      &--lp {
+        align-items: center;
+        justify-content: center;
+
+        .navbar{
+
+          &-brand {
+            @include touch {
+              align-items: center;
+              justify-content: center;
+            }
+          }
+
+          &-item {
+            &:hover {
+              background: none !important;
+            }
+          }
+        }
+
+      }
+    }
+  }
 }
 

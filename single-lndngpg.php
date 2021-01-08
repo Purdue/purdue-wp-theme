@@ -30,4 +30,4 @@
 
 </div>
 
-<?php get_footer("lp"); ?>
+<?php get_footer(); ?>
