@@ -35,5 +35,13 @@
 	<div id="page" class="site">
 		<?php purdueBrand_skip_link_screen_reader_text(); ?>
 
+		<header id="header" class="header--lp">
+			<nav class="navbar is-white purdue-navbar-black navbar--lp" role="navigation">
+				<div class="navbar-brand">
+					<a href="https://www.purdue.edu" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H-light.svg" alt="Purdue Logo"></a>
+				</div>
+			</nav>
+		</header>
+
 
 		<div id="content" class="site-content">
