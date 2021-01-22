@@ -429,14 +429,24 @@ ul.alm-listing{
   padding-bottom:0;
 }
 .card.listed-template .card-content{
-  padding: 1.25rem 1.375rem;
+  padding: 0.9375rem;
   .media {
     margin-bottom: 0 !important;
     .media-content{
       .title{
-        font-size: 1.25rem !important;
+        font-size: 1rem !important;
         font-family: $acumin-pro-semicondensed;
         font-weight: 600;
+        margin-bottom:0;
+      }
+      .sub-title{
+        margin-top:0.625rem;
+        color:$cool-gray;
+        font-weight:400;
+        font-style:italic;
+        font-size:1rem;
+        font-family:$acumin-pro-semicondensed;
+        line-height:1.2;
       }
     }
   }
