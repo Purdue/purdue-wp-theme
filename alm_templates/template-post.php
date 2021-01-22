@@ -3,7 +3,7 @@
 	<a href="<?php the_permalink(); ?>">
 		<?php if (has_post_thumbnail()) { ?>
 			<div class="card-image">
-				<figure class="card-bg-image image is-4by3" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
+				<figure class="card-bg-image image is-2by1" style="background-image:url('<?php echo wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>');">
 				</figure>
 			</div>
 		<?php } ?>
