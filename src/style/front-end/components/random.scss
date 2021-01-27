@@ -1,0 +1,9 @@
+.video-feature-block-text__padding-left{
+    padding-left:3rem;
+    @include touch{
+        padding-left:1.5rem;
+    }
+    @include mobile{
+        padding-left:0;
+    }
+}
