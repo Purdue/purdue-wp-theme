@@ -1,6 +1,7 @@
 <?php
 /**
  *
+ * Template Name: Landing Page
  * @package purdue-wp-theme
  */
 ?>
