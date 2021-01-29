@@ -154,6 +154,214 @@ function purdue_header_options($wp_customize)
 }
 add_action('customize_register', 'purdue_header_options');
 
+// add footer address options
+function purdue_footer_options($wp_customize)
+{
+    //add new section
+    $wp_customize->add_section('contact_information', array(
+        'title' => 'Footer Contact Information',
+        'description' => 'Set custom contact information for the site. If fields are left blank they will default to the Purdue University defaults.',
+        'priority' => 32
+    ));
+
+    // Address Line 1
+    $wp_customize->add_setting( 'address_line_1', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'address_line_1', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Address Line 1' ),
+        'description' => __( '' ),
+    ) );
+
+    // Address Line 2
+    $wp_customize->add_setting( 'address_line_2', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'address_line_2', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Address Line 2' ),
+        'description' => __( '' ),
+    ) );
+
+    // City
+    $wp_customize->add_setting( 'city', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'city', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'City' ),
+        'description' => __( '' ),
+    ) );
+
+    // State
+    $wp_customize->add_setting( 'state', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'state', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'State' ),
+        'description' => __( '' ),
+    ) );
+
+    // Zipcode
+    $wp_customize->add_setting( 'zipcode', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'zipcode', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Zipcode' ),
+        'description' => __( '' ),
+    ) );
+
+    // Phone Number
+    $wp_customize->add_setting( 'phone_number', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'phone_number', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Phone Number' ),
+        'description' => __( '' ),
+    ) );
+
+
+
+
+    //add new section
+    $wp_customize->add_section('social_medias', array(
+        'title' => 'Footer Social Media Link Options',
+        'description' => 'Set custom Social Media URLs for the site. If fields are left blank they will default to the Purdue University defaults.',
+        'priority' => 33
+    ));
+
+    // Facebook
+    $wp_customize->add_setting( 'facebook', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'facebook', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'Facebook' ),
+        'description' => __( '' ),
+    ) );
+
+    // Twitter
+    $wp_customize->add_setting( 'twitter', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'twitter', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'Twitter' ),
+        'description' => __( '' ),
+    ) );
+
+    // Instagram
+    $wp_customize->add_setting( 'instagram', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'instagram', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'Instagram' ),
+        'description' => __( '' ),
+    ) );
+
+    // Snapchat
+    $wp_customize->add_setting( 'snapchat', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'snapchat', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'Snapchat' ),
+        'description' => __( '' ),
+    ) );
+
+    // LinkedIn
+    $wp_customize->add_setting( 'linkedin', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'linkedin', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'LinkedIn' ),
+        'description' => __( '' ),
+    ) );
+
+
+
+    //add footer layout section section
+    $wp_customize->add_section('footer_layout', array(
+        'title' => 'Footer Layout',
+        'description' => 'Select between the different Footer column layout options. The three columns layout only applies when the "Simple" headfer layout option is selected.',
+        'priority' => 31
+    ));
+
+    $wp_customize->add_setting('footer_layout_settings', array(
+        'type'=>'theme_mod',
+        'default'=>'four',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'purdue_footer_radio_select'
+    ));
+
+
+    //add controls to header options section
+    $wp_customize->add_control('footer_layout_radio', array(
+        'type'=>'radio',
+        'priority'=>'10',
+        'section'=>'footer_layout',
+        'settings'=>'footer_layout_settings',
+        'Label'=>'Layout',
+        'choices'=>array(
+            'three'=>_('Three Columns'),
+            'four'=>_('Four Columns')
+        )
+    ));
+    
+}
+add_action('customize_register', 'purdue_footer_options');
+
 function purdue_header_radio_search($input, $setting)
 {
     // list of valid choices
@@ -173,6 +381,20 @@ function purdue_header_radio_select($input, $setting)
     $valid = array(
         'simple'=>_('Simple'),
         'global'=>_('Global')
+    );
+    // Ensure input is a slug.
+    $input = sanitize_key($input);
+
+    // If the input is a valid key, return it; otherwise, return the default.
+    return (array_key_exists($input, $valid) ? $input : 'global');
+}
+
+function purdue_footer_radio_select($input, $setting)
+{
+    // list of valid choices
+    $valid = array(
+        'three'=>_('Three Columns'),
+        'four'=>_('Four Columns')
     );
     // Ensure input is a slug.
     $input = sanitize_key($input);
@@ -353,6 +575,69 @@ if (is_plugin_active( 'luckywp-acf-menu-field/luckywp-acf-menu-field.php' )) {
 }
 
 endif;
+
+// add the landing page header options dropdown
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_6010742c75630',
+        'title' => 'Landing Page Header Options',
+        'fields' => array(
+            array(
+                'key' => 'field_60107502938b2',
+                'label' => 'Select Header Style',
+                'name' => 'select_header_style',
+                'type' => 'select',
+                'instructions' => '',
+                'required' => 1,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'standard' => 'Standard',
+                    'white' => 'White',
+                    'transparent' => 'Transparent',
+                    'reverse' => 'Reverse',
+                ),
+                'default_value' => 'standard',
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'return_format' => 'value',
+                'ajax' => 0,
+                'placeholder' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'single-lndngpg.php',
+                ),
+            ),
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'lndngpg',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+    ));
+    
+    endif;
 
 
 //image in rss feed

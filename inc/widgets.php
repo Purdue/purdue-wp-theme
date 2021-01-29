@@ -136,24 +136,24 @@ if (!function_exists('purdueBrand_widgets_init')) {
                 'after_title'   => '</h2>',
             ));
         }else{
-            register_sidebar(array(
-                'name'          => esc_html__('Address on footer', 'purdueBrand'),
-                'id'            => 'footer-address',
-                'description'   => esc_html__('Add an Footer Address widget here to show your address on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Contact Info on footer', 'purdueBrand'),
-                'id'            => 'footer-contact',
-                'description'   => esc_html__('Add an Footer Contact Us widget here to show your contact info on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
+            // register_sidebar(array(
+            //     'name'          => esc_html__('Address on footer', 'purdueBrand'),
+            //     'id'            => 'footer-address',
+            //     'description'   => esc_html__('Add an Footer Address widget here to show your address on footer.', 'purdueBrand'),
+            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            //     'after_widget'  => '</div>',
+            //     'before_title'  => '<h2>',
+            //     'after_title'   => '</h2>',
+            // ));
+            // register_sidebar(array(
+            //     'name'          => esc_html__('Contact Info on footer', 'purdueBrand'),
+            //     'id'            => 'footer-contact',
+            //     'description'   => esc_html__('Add an Footer Contact Us widget here to show your contact info on footer.', 'purdueBrand'),
+            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
+            //     'after_widget'  => '</div>',
+            //     'before_title'  => '<h2>',
+            //     'after_title'   => '</h2>',
+            // ));
             register_sidebar(array(
                 'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
                 'id'            => 'footer-column-1',

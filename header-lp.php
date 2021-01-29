@@ -35,10 +35,41 @@
 	<div id="page" class="site">
 		<?php purdueBrand_skip_link_screen_reader_text(); ?>
 
+		<?php
+			$postId = get_the_ID();
+			$headerSelect = get_field('select_header_style', $postId);
+
+			echo('<script>');
+				$consoleLog = "console.log('post id: ". $postId .", header select value: ". $headerSelect ."')";
+				echo $consoleLog;
+			echo('</script>');
+
+			if ($headerSelect == 'standard') 
+			{
+				$classes = "navbar is-black purdue-navbar-black navbar--lp";
+				$logo = "https://www.purdue.edu/purdue/images/PU-H.svg";
+			} 
+			elseif ($headerSelect == "white") 
+			{
+				$classes = "navbar is-white purdue-navbar-black navbar--lp";
+				$logo = "https://www.purdue.edu/purdue/images/PU-H-light.svg";
+			} 
+			elseif ($headerSelect == "transparent") 
+			{
+				$classes = "navbar is-transparent purdue-navbar-black navbar--lp";
+				$logo = "https://www.purdue.edu/purdue/images/PU-H.svg";
+			} 
+			else // headerSelect == "reverse
+			{
+				$classes = "navbar is-transparent purdue-navbar-black navbar--lp";
+				$logo = "https://www.purdue.edu/purdue/images/PU-H-light.svg";
+			}
+		?>
+		
 		<header id="header" class="header--lp">
-			<nav class="navbar is-white purdue-navbar-black navbar--lp" role="navigation">
+			<nav class="<?php echo $classes; ?>" role="navigation">
 				<div class="navbar-brand">
-					<a href="https://www.purdue.edu" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H-light.svg" alt="Purdue Logo"></a>
+					<a href="https://www.purdue.edu" class="navbar-item" rel="home"><img src="<?php echo $logo; ?>" alt="Purdue Logo"></a>
 				</div>
 			</nav>
 		</header>
