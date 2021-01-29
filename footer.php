@@ -66,7 +66,7 @@
 
 					<?php
 					// ------------- Address ---------------- //
-						if (get_theme_mod('address_line_1') !== '' && get_theme_mod('address_line_2') !== '' && get_theme_mod('city') !== '' && get_theme_mod('state') !== '' && get_theme_mod('zipcode') !== '') {
+						if (get_theme_mod('address_line_1') !== '' && get_theme_mod('city') !== '' && get_theme_mod('state') !== '' && get_theme_mod('zipcode') !== '') {
 					?>
 
 						<div class="resources__column resources__info">
@@ -76,8 +76,10 @@
 									<?php
 										echo(get_theme_mod('address_line_1'));
 										echo('<br>');
-										echo(get_theme_mod('address_line_2'));
-										echo('<br>');
+										if (get_theme_mod('address_line_2') !== '') {
+											echo(get_theme_mod('address_line_2'));
+											echo('<br>');
+										}
 										$address_last_line = get_theme_mod('city') . ", " . get_theme_mod('state') . " " . get_theme_mod('zipcode');
 										echo($address_last_line);
 									?>
