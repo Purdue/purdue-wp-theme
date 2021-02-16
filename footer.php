@@ -66,7 +66,7 @@
 
 					<?php
 					// ------------- Address ---------------- //
-						if (get_theme_mod('address_line_1') !== '' && get_theme_mod('city') !== '' && get_theme_mod('state') !== '' && get_theme_mod('zipcode') !== '') {
+						if ((get_theme_mod('address_line_1', '') !== '' && get_theme_mod('address_line_1', '') !== undefined && get_theme_mod('address_line_1', '') !== null) && (get_theme_mod('city', '') !== '' && get_theme_mod('city', '') !== undefined && get_theme_mod('city', '') !== null) && (get_theme_mod('state', '') !== '' && get_theme_mod('state', '') !== undefined && get_theme_mod('state', '') !== null) && (get_theme_mod('zipcode', '') !== '' && get_theme_mod('zipcode', '') !== undefined && get_theme_mod('zipcode', '') !== null)) {
 					?>
 
 						<div class="resources__column resources__info">
@@ -76,7 +76,7 @@
 									<?php
 										echo(get_theme_mod('address_line_1'));
 										echo('<br>');
-										if (get_theme_mod('address_line_2') !== '') {
+										if (get_theme_mod('address_line_2', '') !== '') {
 											echo(get_theme_mod('address_line_2'));
 											echo('<br>');
 										}
@@ -104,7 +104,7 @@
 						}
 
 						// ---------  Contact Us -------------//
-						if (get_theme_mod('phone_number') !== '') {
+						if ((get_theme_mod('phone_number', '') !== '' && get_theme_mod('phone_number', '') !== undefined && get_theme_mod('phone_number', '') !== null)) {
 					?>
 
 							<div class="resources__contact">
@@ -139,31 +139,31 @@
 								<h2 class="title">Follow Us</h2>
 								<ul class="social">
 									<li class="navbar-item">
-										<a title="Facebook" href="<?php echo(get_theme_mod('facebook') !== '' ? get_theme_mod('facebook') : "https://www.facebook.com/PurdueUniversity/");?>">
+										<a title="Facebook" href="<?php echo((get_theme_mod('facebook', '') !== '' && get_theme_mod('facebook', '') !== undefined && get_theme_mod('facebook', '') !== null) ? get_theme_mod('facebook') : "https://www.facebook.com/PurdueUniversity/");?>">
 											<i class="fab fa-facebook" aria-hidden="true"></i> 
 										</a>
 									</li>
 									
 									<li class="navbar-item">
-										<a title="Twitter" href="<?php echo(get_theme_mod('twitter') !== '' ? get_theme_mod('twitter') : "https://www.twitter.com/LifeAtPurdue");?>">
+										<a title="Twitter" href="<?php echo((get_theme_mod('twitter', '') !== '' && get_theme_mod('twitter', '') !== undefined && get_theme_mod('twitter', '') !== null) ? get_theme_mod('twitter') : "https://www.twitter.com/LifeAtPurdue");?>">
 											<i class="fab fa-twitter" aria-hidden="true"></i> 
 										</a>
 									</li>
 									
 									<li class="navbar-item">
-										<a title="Instagram" href="<?php echo(get_theme_mod('instagram') !== '' ? get_theme_mod('instagram') : "https://www.instagram.com/lifeatpurdue/");?>">
+										<a title="Instagram" href="<?php echo((get_theme_mod('instagram', '') !== '' && get_theme_mod('instagram', '') !== undefined && get_theme_mod('instagram', '') !== null) ? get_theme_mod('instagram') : "https://www.instagram.com/lifeatpurdue/");?>">
 											<i class="fab fa-instagram" aria-hidden="true"></i> 
 										</a>
 									</li>
 									
 									<li class="navbar-item">
-										<a title="Snapchat" href="<?php echo(get_theme_mod('snapchat') !== '' ? get_theme_mod('snapchat') : "https://www.snapchat.com/add/lifeatpurdue");?>">
+										<a title="Snapchat" href="<?php echo((get_theme_mod('snapchat', '') !== '' && get_theme_mod('snapchat', '') !== undefined && get_theme_mod('snapchat', '') !== null) ? get_theme_mod('snapchat') : "https://www.snapchat.com/add/lifeatpurdue");?>">
 											<i class="fab fa-snapchat" aria-hidden="true"></i> 
 										</a>
 									</li>
 									
 									<li class="navbar-item">
-										<a title="LinkedIn" href="<?php echo(get_theme_mod('linkedin') !== '' ? get_theme_mod('linkedin') : "https://www.linkedin.com/edu/purdue-university-18357");?>">
+										<a title="LinkedIn" href="<?php echo((get_theme_mod('linkedin', '') !== '' && get_theme_mod('linkedin', '') !== undefined && get_theme_mod('linkedin', '') !== null) ? get_theme_mod('linkedin') : "https://www.linkedin.com/edu/purdue-university-18357");?>">
 											<i class="fab fa-linkedin" aria-hidden="true"></i> 
 										</a>
 									</li>
