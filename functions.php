@@ -248,6 +248,20 @@ function purdue_footer_options($wp_customize)
         'description' => __( '' ),
     ) );
 
+    // Email Address
+    $wp_customize->add_setting( 'email_address', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'email_address', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Email Address' ),
+        'description' => __( '' ),
+    ) );
+
 
 
 
@@ -325,6 +339,20 @@ function purdue_footer_options($wp_customize)
         'type' => 'text',
         'section' => 'social_medias', // Add a default or your own section
         'label' => __( 'LinkedIn' ),
+        'description' => __( '' ),
+    ) );
+
+    // YouTube
+    $wp_customize->add_setting( 'youtube', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'youtube', array(
+        'type' => 'text',
+        'section' => 'social_medias', // Add a default or your own section
+        'label' => __( 'YouTube' ),
         'description' => __( '' ),
     ) );
 

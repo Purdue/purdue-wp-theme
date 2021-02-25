@@ -90,10 +90,12 @@
                 }
             }
             .footer__links{
+                margin-bottom: 1rem; 
                 display:flex;
                 flex-direction:column;
                 align-items:flex-start;
                 @media (max-width:$stickySideNav-desktop){
+                    margin-bottom: 0; 
                     padding-top: 1rem;
                     padding-bottom: 1rem;
                     border-top:1px solid #2e2e2e;
@@ -271,12 +273,15 @@
         }
     }
     .footer__links{
+        margin-bottom: 1rem;
         display:flex;
         flex-direction:column;
         align-items:flex-start;
         @include touch{
             border-top:1px solid #2e2e2e;
             align-items:flex-start;
+            margin-bottom: 0;
+            padding: 0 1.5rem;
         }
         h2{
             margin:0 0 1.3rem 0;
@@ -368,10 +373,7 @@
     }
     .widget_custom_html.footer__links{
         @include touch{
-            padding:1rem $side-padding-tablet !important;
-        }
-        @include mobile{
-            padding:1rem $side-padding-mobile !important;
+            padding:1rem 3rem !important;
         }
     }
     .footer__resources{
@@ -596,10 +598,7 @@
             }
             .widget_custom_html.footer__links{
                 @include touch{
-                    padding:1rem $side-padding-tablet !important;
-                }
-                @include mobile{
-                    padding:1rem $side-padding-mobile !important;
+                    padding:1rem 3rem !important;
                 }
             }
             .resources__column{
@@ -704,4 +703,96 @@
     }
 }
 
+.resources {
+    &__info {
+        position:relative;
+        padding: 0.75rem 0 0.75rem 1.5rem;
+        &:before{
+            content: "";
+            display: block; 
+            position:absolute;
+            top:10%;
+            left: 0;
+            margin: 0 auto; 
+            height:80%; 
+            border-right: 1px solid #2e2e2e;
+        }
+        @include touch {
+            padding: 2.5rem 2.25rem !important;
+            border-top: 1px solid #2e2e2e;
+            display: flex;
+            justify-content: space-between;
+        }
+        @include mobile {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &__address {
+        margin-bottom: 1.5rem;
+        h2.title {
+            margin-bottom: 0.625rem;
+            text-transform: uppercase;
+        }
+        @include mobile {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+    }
+    &__contact {
+        margin-bottom: 1.5rem;
+        h2.title {
+            margin-bottom: 0.625rem;
+            text-transform: uppercase;
+        }
+        a {
+            &:hover {
+                color: $white;
+            }
+        }
+        @include mobile {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+    }
+    &__social {
+        h2.title {
+            margin-bottom: 0.625rem;
+            text-transform: uppercase;
+        }
+        .social {
+            font-size:1.375rem;
+            display: flex;
+            .navbar-item {
+                padding: 0;
+                display:inline;
+                a {
+                    &:hover{
+                        color:$white;
+                    }
+                }
+                &:not(:last-child){
+                    margin-right:0.8rem;
+                }
+            }
+        }
+        @include mobile {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
 
+.footer {
+    .column {
+        @include touch {
+            padding: 0;
+        }
+    }
+    .columns {
+        @include touch {
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+}
