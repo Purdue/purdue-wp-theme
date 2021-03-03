@@ -93,6 +93,9 @@
 .has-transparent-background-color {
   background-color: rgba(0, 0, 0, 0) !important; }
 
+.has-background-black-ter {
+  background-color: #555960 !important; }
+
 .main-content {
   display: block; }
 
@@ -198,6 +201,9 @@ strong {
 
 .has-transparent-background-color {
   background-color: rgba(0, 0, 0, 0) !important; }
+
+.has-background-black-ter {
+  background-color: #555960 !important; }
 
 .editor-styles-wrapper .wp-block h2,
 .editor-styles-wrapper .wp-block h3,

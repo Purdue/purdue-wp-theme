@@ -2,24 +2,7 @@
 
 // Colors
 $black:	hsl(0, 0%, 0%);
-$black-bis:	hsl(0, 0%, 7%);
-$black-ter:	hsl(0, 0%, 14%);
-$grey-darker:	hsl(0, 0%, 21%);
-$grey-dark:	hsl(0, 0%, 29%);
-$grey: hsl(0, 0%, 48%);
-$grey-light:	hsl(0, 0%, 71%);
-$grey-lighter:	#ededed;
-$white-ter:	hsl(0, 0%, 96%);
-$white-bis:	hsl(0, 0%, 98%);
 $white:	hsl(0, 0%, 100%);
-$orange: hsl(14, 100%, 53%);
-$yellow: hsl(48, 100%, 67%);
-$green:	hsl(141, 71%, 48%);
-$turquoise:	hsl(171, 100%, 41%);
-$cyan:	hsl(204, 86%, 53%);
-$blue:	hsl(217, 71%, 53%);
-$purple: hsl(271, 100%, 71%);
-$red: hsl(348, 100%, 61%);
 $boiler-gold:#CFB991;
 $aged-gold:#8e6f3e;
 $rush-gold:#daaa00;
@@ -32,18 +15,14 @@ $railway-gray:#9d9795;
 $opaque:rgba(0,0,0,0.65);
 $transparent: rgba(0,0,0,0);
 $gray-footer:#2e2e2e;
+$black-ter:$steel-gray;
+$grey-lighter:#ededed;
 
 // Color Elements
-$white: hsl(0, 0%, 100%);;
-$black: hsl(0, 0%, 0%);
-$light: $white-ter;
-$dark: $grey-darker;
-$primary: $turquoise;
-$link: $blue;
-$info: $cyan;
-$success: $green;
-$warning: $orange;
-$danger: $red;
+$link: $aged-gold;
+$success: $aged-gold;
+$warning: $rush-gold;
+$danger: $rush-gold;
 
 .has-white-color{
     color:$white !important;
@@ -124,4 +103,6 @@ $danger: $red;
 .has-transparent-background-color{
     background-color:$transparent !important;
 }
-
+.has-background-black-ter{
+    background-color:$steel-gray !important;
+}
