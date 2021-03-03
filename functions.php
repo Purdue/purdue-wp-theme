@@ -38,21 +38,6 @@ if (!function_exists('purdueBrand_setup')) :
 endif;
 add_action('after_setup_theme', 'purdueBrand_setup');
 
-// add second logo
-// function purdue_customizer_footer_mark($wp_customize)
-// {
-//     // add a setting
-//     $wp_customize->add_setting('footer_mark');
-//     // Add a control to upload the hover logo
-//     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'footer_mark', array(
-//             'label' => 'Footer Mark',
-//             'section' => 'title_tagline', //this is the section where the custom-logo from WordPress is
-//             'settings' => 'footer_mark',
-//             'priority' => 8 // show it just below the custom-logo
-//         )));
-// }
-// add_action('customize_register', 'purdue_customizer_footer_mark');
-
 // add header layout options
 function purdue_header_options($wp_customize)
 {
@@ -167,7 +152,7 @@ function purdue_footer_options($wp_customize)
     // Address Line 1
     $wp_customize->add_setting( 'address_line_1', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'Purdue University',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -181,7 +166,7 @@ function purdue_footer_options($wp_customize)
     // Address Line 2
     $wp_customize->add_setting( 'address_line_2', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => '610 Purdue Mall',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -195,7 +180,7 @@ function purdue_footer_options($wp_customize)
     // City
     $wp_customize->add_setting( 'city', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'West Lafayette',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -209,7 +194,7 @@ function purdue_footer_options($wp_customize)
     // State
     $wp_customize->add_setting( 'state', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'IN',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -223,7 +208,7 @@ function purdue_footer_options($wp_customize)
     // Zipcode
     $wp_customize->add_setting( 'zipcode', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => '47906',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -237,7 +222,7 @@ function purdue_footer_options($wp_customize)
     // Phone Number
     $wp_customize->add_setting( 'phone_number', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => '765-494-4600',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -251,7 +236,7 @@ function purdue_footer_options($wp_customize)
     // Email Address
     $wp_customize->add_setting( 'email_address', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.purdue.edu/purdue/contact-us/index.php',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -275,7 +260,7 @@ function purdue_footer_options($wp_customize)
     // Facebook
     $wp_customize->add_setting( 'facebook', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.facebook.com/PurdueUniversity/',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -289,7 +274,7 @@ function purdue_footer_options($wp_customize)
     // Twitter
     $wp_customize->add_setting( 'twitter', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.twitter.com/LifeAtPurdue',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -303,7 +288,7 @@ function purdue_footer_options($wp_customize)
     // Instagram
     $wp_customize->add_setting( 'instagram', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.instagram.com/lifeatpurdue/',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -317,7 +302,7 @@ function purdue_footer_options($wp_customize)
     // Snapchat
     $wp_customize->add_setting( 'snapchat', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.snapchat.com/add/lifeatpurdue',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -331,7 +316,7 @@ function purdue_footer_options($wp_customize)
     // LinkedIn
     $wp_customize->add_setting( 'linkedin', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.linkedin.com/edu/purdue-university-18357',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
@@ -345,7 +330,7 @@ function purdue_footer_options($wp_customize)
     // YouTube
     $wp_customize->add_setting( 'youtube', array(
         'capability' => 'edit_theme_options',
-        'default' => '',
+        'default' => 'https://www.youtube.com/purdueuniversity',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         

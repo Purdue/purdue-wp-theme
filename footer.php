@@ -69,22 +69,21 @@
 							}
 							
 
-						$ftr_add1 = get_theme_mod('address_line_1', 'Purdue University');
-						$ftr_add2 = get_theme_mod('address_line_2', '610 Purdue Mall');
-						$ftr_city = get_theme_mod('city', 'West Lafayette');
-						$ftr_state = get_theme_mod('state', 'IN');
-						$ftr_zip = get_theme_mod('zipcode', '47906');
-						$ftr_phone = get_theme_mod('phone_number', '765-494-4600');
-						$ftr_email = get_theme_mod('email_address', 'https://www.purdue.edu/purdue/contact-us/index.php');
+						$ftr_add1 = get_theme_mod('address_line_1');
+						$ftr_add2 = get_theme_mod('address_line_2');
+						$ftr_city = get_theme_mod('city');
+						$ftr_state = get_theme_mod('state');
+						$ftr_zip = get_theme_mod('zipcode');
+						$ftr_phone = get_theme_mod('phone_number');
+						$ftr_email = get_theme_mod('email_address');
 
 
-						$ftr_facebook = get_theme_mod('facebook', 'https://www.facebook.com/PurdueUniversity/');
-						$ftr_twitter = get_theme_mod('twitter', 'https://www.twitter.com/LifeAtPurdue');
-						$ftr_linkedin = get_theme_mod('linkedin', 'https://www.linkedin.com/edu/purdue-university-18357');
-						$ftr_instagram = get_theme_mod('instagram', 'https://www.instagram.com/lifeatpurdue/');
-						$ftr_youtube = get_theme_mod('youtube', 'https://www.youtube.com/purdueuniversity');
-						$ftr_snapchat = get_theme_mod('snapchat', 'https://www.snapchat.com/add/lifeatpurdue');
-
+						$ftr_facebook = get_theme_mod('facebook');
+						$ftr_twitter = get_theme_mod('twitter');
+						$ftr_linkedin = get_theme_mod('linkedin');
+						$ftr_instagram = get_theme_mod('instagram');
+						$ftr_youtube = get_theme_mod('youtube');
+						$ftr_snapchat = get_theme_mod('snapchat');
 						?>
 
 					</div>
