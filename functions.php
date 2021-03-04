@@ -38,17 +38,15 @@ if (!function_exists('purdueBrand_setup')) :
 endif;
 add_action('after_setup_theme', 'purdueBrand_setup');
 
-// add header layout options
-function purdue_header_options($wp_customize)
-{
+//Layout options
+function purdue_layout_options($wp_customize){
 
-    //add new section
-    $wp_customize->add_section('header_layout', array(
-        'title' => 'Header Layout',
-        'description' => 'Select between the different Header layout options.',
+    $wp_customize->add_section('layout', array(
+        'title' => 'Layout Options',
+        'description' => 'Select between the different Header layout, Footer layout, and Dateline options.',
         'priority' => 30
     ));
-
+    //add header layout section
     $wp_customize->add_setting('header_layout_settings', array(
         'type'=>'theme_mod',
         'default'=>'global',
@@ -56,29 +54,41 @@ function purdue_header_options($wp_customize)
         'transport'=>'refresh',
         'sanitize_callback'=>'purdue_header_radio_select'
     ));
-
-
-    //add controls to header options section
+        //add controls to header options section
     $wp_customize->add_control('header_layout_radio', array(
         'type'=>'radio',
         'priority'=>'10',
-        'section'=>'header_layout',
+        'section'=>'layout',
         'settings'=>'header_layout_settings',
-        'Label'=>'Layout',
+        'label'=>'Header Layout',
         'choices'=>array(
             'simple'=>_('Simple'),
             'global'=>_('Global')
         )
     ));
 
-    //add new section
-    $wp_customize->add_section('dateline_option', array(
-        'title'       => __( 'Dateline Options' ), //Visible title of section
-        'priority'    => 50, //Determines what order this appears in
-        'capability'  => 'edit_theme_options', //Capability needed to tweak
-        'description' => __('Choose to include a date and/or social share buttons under the header of post.', 'purdue-wp-theme'), //Descriptive tooltip
-        ) 
-    );
+    $wp_customize->add_setting('footer_layout_settings', array(
+        'type'=>'theme_mod',
+        'default'=>'four',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'purdue_footer_radio_select'
+    ));
+
+    //add controls to footer options section
+    $wp_customize->add_control('footer_layout_radio', array(
+        'type'=>'radio',
+        'priority'=>'10',
+        'section'=>'layout',
+        'settings'=>'footer_layout_settings',
+        'label'=>'Footer Layout',
+        'choices'=>array(
+            'three'=>_('Three Columns'),
+            'four'=>_('Four Columns')
+        )
+    ));
+
+
     $wp_customize->add_setting('date_setting', array(
         'default'    => '1',
         'capability' => 'edit_theme_options'
@@ -88,8 +98,8 @@ function purdue_header_options($wp_customize)
             $wp_customize,
             'show_dateline',
             array(
-                'label'     => __('Show Date', 'purdue-wp-theme'),
-                'section'   => 'dateline_option',
+                'label'     => __('Show Date Under the Header', 'purdue-wp-theme'),
+                'section'   => 'layout',
                 'settings'  => 'date_setting',
                 'type'      => 'checkbox',
             )
@@ -105,12 +115,21 @@ function purdue_header_options($wp_customize)
             'show_social',
             array(
                 'label'     => __('Show Social Share Buttons', 'purdue-wp-theme'),
-                'section'   => 'dateline_option',
+                'section'   => 'layout',
                 'settings'  => 'social_setting',
                 'type'      => 'checkbox',
             )
         )
     );
+}
+add_action('customize_register', 'purdue_layout_options');
+add_action( 'customize_render_control_show_dateline', function(){
+    printf( '<span class="customize-control-title">Dateline Options for Posts</span>');
+});
+
+// add search options
+function purdue_search_options($wp_customize)
+{
     //add new section
     $wp_customize->add_section('search_option', array(
         'title'       => __( 'Search Options' ), //Visible title of section
@@ -137,16 +156,26 @@ function purdue_header_options($wp_customize)
         )
     ));
 }
-add_action('customize_register', 'purdue_header_options');
+add_action('customize_register', 'purdue_search_options');
 
 // add footer address options
-function purdue_footer_options($wp_customize)
+function purdue_contact_options($wp_customize)
 {
+    //add a new panel
+    $wp_customize->add_panel( 'contact_details', 
+        array(
+            'priority'       => 100,
+            'title'            => 'Contact Details',
+            'description'      => 'Contact Details displayed on the footer'
+        ) 
+    );
+
     //add new section
     $wp_customize->add_section('contact_information', array(
         'title' => 'Footer Contact Information',
         'description' => 'Set custom contact information for the site. If fields are left blank they will default to the Purdue University defaults.',
-        'priority' => 32
+        'priority' => 1,
+        'panel'         => 'contact_details'
     ));
 
     // Address Line 1
@@ -247,14 +276,12 @@ function purdue_footer_options($wp_customize)
         'description' => __( '' ),
     ) );
 
-
-
-
     //add new section
     $wp_customize->add_section('social_medias', array(
         'title' => 'Footer Social Media Link Options',
         'description' => 'Set custom Social Media URLs for the site. If fields are left blank they will default to the Purdue University defaults.',
-        'priority' => 33
+        'priority' => 33,
+        'panel'         => 'contact_details'
     ));
 
     // Facebook
@@ -340,40 +367,10 @@ function purdue_footer_options($wp_customize)
         'label' => __( 'YouTube' ),
         'description' => __( '' ),
     ) );
-
-
-
-    //add footer layout section section
-    $wp_customize->add_section('footer_layout', array(
-        'title' => 'Footer Layout',
-        'description' => 'Select between the different Footer column layout options. The three columns layout only applies when the "Simple" headfer layout option is selected.',
-        'priority' => 31
-    ));
-
-    $wp_customize->add_setting('footer_layout_settings', array(
-        'type'=>'theme_mod',
-        'default'=>'four',
-        'capability'=>'edit_theme_options',
-        'transport'=>'refresh',
-        'sanitize_callback'=>'purdue_footer_radio_select'
-    ));
-
-
-    //add controls to header options section
-    $wp_customize->add_control('footer_layout_radio', array(
-        'type'=>'radio',
-        'priority'=>'10',
-        'section'=>'footer_layout',
-        'settings'=>'footer_layout_settings',
-        'Label'=>'Layout',
-        'choices'=>array(
-            'three'=>_('Three Columns'),
-            'four'=>_('Four Columns')
-        )
-    ));
     
 }
-add_action('customize_register', 'purdue_footer_options');
+add_action('customize_register', 'purdue_contact_options');
+
 
 function purdue_header_radio_search($input, $setting)
 {

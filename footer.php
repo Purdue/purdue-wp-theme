@@ -36,7 +36,7 @@
 					</div>
 
 					<?php
-						if (get_theme_mod('footer_layout_settings') !== "three" && get_theme_mod('header_layout_settings') == "simple") {
+						if ((get_theme_mod('footer_layout_settings') !== "three" && get_theme_mod('header_layout_settings') == "simple") || get_theme_mod('header_layout_settings') == "global") {
 							echo('<div class="column">');
 							if (is_active_sidebar('footer-column-4')) {dynamic_sidebar('footer-column-4');}
 							echo('</div>');
