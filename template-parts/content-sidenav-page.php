@@ -8,22 +8,18 @@
  */
 ?>
 
-	<!-- <div class="columns is-centered" >
-        <div class="content column is-full"> -->
-            <?php if (!is_front_page() && !has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
+<?php if (!is_front_page() && !has_block('purdue-blocks/cta-hero') && !has_block('purdue-blocks/site-hero') && !has_block('purdue-blocks/title-hero')) { ?>
 
-                <section class="section">
-                    <div class="container">
-                        <div class="content">
-					        <?php purdueBrand_the_title('is-1', false); ?>
-                        </div>
-                    </div>
-                </section>
-				
-            <?php } ?>
+    <section class="section">
+        <div class="container">
+            <div class="content">
+                <?php purdueBrand_the_title('is-1', false); ?>
+            </div>
+        </div>
+    </section>
+    
+<?php } ?>
 
-            <?php
-                the_content();
-            ?>
-        <!-- </div>
-	</div> -->
+<?php
+    the_content();
+?>
