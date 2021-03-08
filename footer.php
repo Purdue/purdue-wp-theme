@@ -24,7 +24,7 @@
 		<div class="container is-fullhd">
 			<div class="columns is-desktop">
 				<div class="column is-four-fifths-desktop columns is-desktop">
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-half' :'') ?>">
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-half-desktop' :'') ?>">
 						<?php 
 							if(get_theme_mod('header_layout_settings') == "global"){
 								purdueBrand_footer_links("global-footer-1.json");
@@ -33,7 +33,7 @@
 							}
 						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php 
 							if(get_theme_mod('header_layout_settings') == "global"){
 								purdueBrand_footer_links("global-footer-2.json");
@@ -42,7 +42,7 @@
 							}
 						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
 					</div>
 
