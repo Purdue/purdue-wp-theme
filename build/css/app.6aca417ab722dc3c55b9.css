@@ -9501,6 +9501,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     .resources__address {
       text-align: center;
       margin-bottom: 2.5rem; } }
+  .resources__address a:hover {
+    color: white; }
 
 .resources__contact {
   margin-bottom: 1.5rem; }

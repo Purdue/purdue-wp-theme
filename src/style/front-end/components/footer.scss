@@ -487,6 +487,11 @@
             text-align: center;
             margin-bottom: 2.5rem;
         }
+        a {
+            &:hover {
+                color: $white;
+            }
+        }
     }
     &__contact {
         margin-bottom: 1.5rem;
