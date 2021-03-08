@@ -15,8 +15,7 @@
 	<div class="footer footer__global__logo">
 		<div class="container is-fullhd">
 			<?php 
-				$ftr_link = (get_theme_mod('header_layout_settings') !== "global") ? esc_url(home_url('/')) : "https://www.purdue.edu/";
-
+				$ftr_link = "https://www.purdue.edu/";
 				echo '<a href="' . $ftr_link . '" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>';
 			?>
 		</div>
@@ -25,13 +24,25 @@
 		<div class="container is-fullhd">
 			<div class="columns is-desktop">
 				<div class="column is-four-fifths-desktop columns is-desktop">
-					<div class="column<?php echo(get_theme_mod('footer_layout_settings') == "three" ? ' is-half' :'') ?>">
-						<?php if (is_active_sidebar('footer-column-1')) {dynamic_sidebar('footer-column-1');} ?>
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-half' :'') ?>">
+						<?php 
+							if(get_theme_mod('header_layout_settings') == "global"){
+								purdueBrand_footer_links("global-footer-1.json");
+							}elseif(is_active_sidebar('footer-column-1')){
+								dynamic_sidebar('footer-column-1');
+							}
+						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
-						<?php if (is_active_sidebar('footer-column-2')) {dynamic_sidebar('footer-column-2');} ?>
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
+						<?php 
+							if(get_theme_mod('header_layout_settings') == "global"){
+								purdueBrand_footer_links("global-footer-2.json");
+							}elseif(is_active_sidebar('footer-column-2')){
+								dynamic_sidebar('footer-column-2');
+							}
+						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
+					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter' :'') ?>">
 						<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
 					</div>
 
@@ -67,13 +78,33 @@
 						<p>
 							<?php
 							if (($ftr_add1 == '') || ($ftr_city == '') || ($ftr_state == '') || ($ftr_zip == '')) {
+								echo('<a href="https://www.google.com/maps/search/?api=1&query=610+Purdue+Mall%2CWest+Lafayette%2CIN%2C47907" target="_blank">');
 								echo ('Purdue University<br/>');
 								echo ('610 Purdue Mall<br/>');
 								echo ('West Lafayette, IN 47906');
+								echo('</a>');
 							} else {
+								$add1=str_replace(" ", "+", $ftr_add1);
+								if(strpos($add1, ',')!== false){
+									$add1=str_replace(",", "%2C", $add1);
+								}
+								$add1=$add1."%2C";
+								if($ftr_add2 != ''){
+									$add2=str_replace(" ", "+", $ftr_add2);
+									if(strpos($add1, ',')!== false){
+										$add2=str_replace(",", "%2C", $add2);
+									}
+									$add2=$add2."%2C";
+								}else{
+									$add2="";
+								}
+								$city=str_replace(" ", "+", $ftr_city)."%2C";
+								$query=$add1.$add2.$city.$ftr_state;
+								echo('<a href="https://www.google.com/maps/search/?api=1&query='.$query.'" target="_blank">');
 								echo (($ftr_add1 == '') ? '' : $ftr_add1 . '<br/>');
 								echo (($ftr_add2 == '') ? '' : $ftr_add2 . '<br/>');
 								echo (($ftr_city == '') ? '' : $ftr_city . ', ' . $ftr_state . ' ' . $ftr_zip);
+								echo('</a>');
 							}
 
 							?>
@@ -85,7 +116,15 @@
 						<div class="resources__contact">
 							<h2 class="title">Contact Us</h2>
 							<?php
-								echo (($ftr_phone == '') ? '' : '<p>' . $ftr_phone . '</p>');
+								if(strpos($ftr_phone, '-')!== false){
+									$phone=str_replace("-", "", $ftr_phone);
+								}else{
+									$phone=$ftr_phone;
+								}
+								echo (($ftr_phone == '') ? '' : '<p><a href="tel://' . $phone . '">' . $ftr_phone . '</a></p>');
+								if(filter_var($ftr_email, FILTER_VALIDATE_EMAIL)){
+									$ftr_email="mailto:".$ftr_email;
+								}
 								echo (($ftr_email == '') ? '' : '<p><a href="' . $ftr_email . '">Email Us</a></p>');
 							?>
 						</div>
@@ -174,8 +213,9 @@
 	</div>
 	<div class="footer footer__signature">
 		<div class="container is-fullhd">
-		Copyright &copy; 2020-<?php echo date('Y'); ?> Purdue University. All Rights Reserved.<br /> 
-		<?php purdueBrand_signatureLinks(); ?> 
+		<a href="https://www.purdue.edu/purdue/disclaimer.php" target="_blank">Copyright</a>
+		 &copy; <?php echo date('Y'); ?> Purdue University. All Rights Reserved.<br /> 
+		 <a href="https://www.purdue.edu/accessibilityresources/" target="_blank">Accessibility</a> | <a href="https://www.purdue.edu/purdue/ea_eou_statement.php" target="_blank">EA/EO Univeristy</a> | <a href="https://www.purdue.edu/purdue/about/integrity_statement.php" target="_blank">Integrety Statement</a> | <a href="https://www.purdue.edu/securepurdue/security-programs/copyright-policies/reporting-alleged-copyright-infringement.php" target="_blank">Privacy Policy</a>
 		</div>
 	</div>
 </footer><!-- #colophon -->

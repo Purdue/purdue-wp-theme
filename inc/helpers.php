@@ -61,5 +61,28 @@ if ( ! function_exists( 'purdueBrand_get_comments' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'purdueBrand_footer_links' ) ) {
+	function purdueBrand_footer_links($file)
+	{
+		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+		$url = $directory . $file;
+		$request = wp_remote_get( "$url" );
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+		$output='<div class="footer__links">';
+		$output.='<h2>
+					<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$data->column.'id" aria-controls="sect'.$data->column.'">'.$data->header.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i>
+					</button>
+				</h2>';
+		$output.='<ul class="accordion__content--footer" id="sect'.$data->column.'" aria-labelledby="accordion'.$data->column.'id">';
+		foreach ($data->links as $link) {  
+			$output.='<li><a href="'.$link->link_url.'">'.$link->link_text.'</a></li>';
+		}
+		$output.='</ul>';
+		$output.='</div>';
+		echo $output;
+	}
+}
 	
 

@@ -1,0 +1,30 @@
+{
+    "column" : "1",
+    "header" : "CAMPUS",
+    "links" : [
+        {
+            "link_text": "Careers",
+            "link_url": "https://careers.purdue.edu/"
+        },
+        {
+            "link_text": "Colleges and Schools",
+            "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
+        },
+        {
+            "link_text": "Faculty and Staff",
+            "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
+        },
+        {
+            "link_text": "Human Resources",
+            "link_url": "https://www.purdue.edu/hr/"
+        },
+        {
+            "link_text": "Directory",
+            "link_url": "https://www.purdue.edu/directory/"
+        },
+        {
+            "link_text": "Campus Map",
+            "link_url": "https://www.purdue.edu/campus-map/index.html"
+        }
+    ]
+}

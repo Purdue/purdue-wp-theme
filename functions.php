@@ -126,6 +126,12 @@ add_action('customize_register', 'purdue_layout_options');
 add_action( 'customize_render_control_show_dateline', function(){
     printf( '<span class="customize-control-title">Dateline Options for Posts</span>');
 });
+function hide_footer_layout_script() {
+    $jsFilePath = glob( get_template_directory() . '/build/js/customizer.*.js' );
+    $jsFileURI = get_template_directory_uri() . '/build/js/' . basename($jsFilePath[0]);
+    wp_enqueue_script( 'footer-customize',$jsFileURI, array( 'jquery', 'customize-controls' ), false, true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'hide_footer_layout_script' );
 
 // add search options
 function purdue_search_options($wp_customize)

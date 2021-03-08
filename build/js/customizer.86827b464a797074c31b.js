@@ -81,41 +81,30 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/back-end/admin.js":
-/*!**********************************!*\
-  !*** ./src/js/back-end/admin.js ***!
-  \**********************************/
+/***/ "./src/js/back-end/customizer.js":
+/*!***************************************!*\
+  !*** ./src/js/back-end/customizer.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("//Hide/show footer layout options\n(function ($) {\n  wp.customize.bind('ready', function () {\n    // hide control at first load\n    if ($('input[name=\"_customize-radio-header_layout_radio\"]:checked').val() === \"global\") {\n      $('#customize-control-footer_layout_radio').hide();\n    } else {\n      $('#customize-control-footer_layout_radio').show();\n    }\n\n    $(document).on('click', 'input[name=\"_customize-radio-header_layout_radio\"]', function () {\n      if ($(this).val() === \"global\") {\n        $('#customize-control-footer_layout_radio').hide();\n      } else {\n        $('#customize-control-footer_layout_radio').show();\n      }\n    });\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./src/js/back-end/admin.js?");
+eval("//Hide/show footer layout options\n(function ($) {\n  wp.customize.bind('ready', function () {\n    // hide control at first load\n    if ($('input[name=\"_customize-radio-header_layout_radio\"]:checked').val() === \"global\") {\n      $('#customize-control-footer_layout_radio').hide();\n    } else {\n      $('#customize-control-footer_layout_radio').show();\n    }\n\n    $(document).on('click', 'input[name=\"_customize-radio-header_layout_radio\"]', function () {\n      if ($(this).val() === \"global\") {\n        $('#customize-control-footer_layout_radio').hide();\n      } else {\n        $('#customize-control-footer_layout_radio').show();\n      }\n    });\n  });\n})(jQuery);\n\n//# sourceURL=webpack:///./src/js/back-end/customizer.js?");
 
 /***/ }),
 
-/***/ "./src/style/back-end/admin.scss":
-/*!***************************************!*\
-  !*** ./src/style/back-end/admin.scss ***!
-  \***************************************/
+/***/ 2:
+/*!*********************************************!*\
+  !*** multi ./src/js/back-end/customizer.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/style/back-end/admin.scss?");
-
-/***/ }),
-
-/***/ 1:
-/*!************************************************************************!*\
-  !*** multi ./src/js/back-end/admin.js ./src/style/back-end/admin.scss ***!
-  \************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("__webpack_require__(/*! ./src/js/back-end/admin.js */\"./src/js/back-end/admin.js\");\nmodule.exports = __webpack_require__(/*! ./src/style/back-end/admin.scss */\"./src/style/back-end/admin.scss\");\n\n\n//# sourceURL=webpack:///multi_./src/js/back-end/admin.js_./src/style/back-end/admin.scss?");
+eval("module.exports = __webpack_require__(/*! ./src/js/back-end/customizer.js */\"./src/js/back-end/customizer.js\");\n\n\n//# sourceURL=webpack:///multi_./src/js/back-end/customizer.js?");
 
 /***/ })
 
