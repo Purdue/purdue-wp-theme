@@ -483,6 +483,9 @@
             margin-bottom: 0.625rem;
             text-transform: uppercase;
         }
+        @include touch {
+            margin-bottom: 0;
+        }
         @include mobile {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -504,6 +507,9 @@
                 color: $white;
             }
         }
+        @include touch {
+            margin-bottom: 0;
+        }
         @include mobile {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -517,6 +523,9 @@
         .social {
             font-size:1.375rem;
             display: flex;
+            @include mobile {
+                justify-content: center;
+            }
             .navbar-item {
                 padding: 0;
                 display:inline;
@@ -532,7 +541,6 @@
         }
         @include mobile {
             text-align: center;
-            margin-bottom: 2.5rem;
         }
     }
 }

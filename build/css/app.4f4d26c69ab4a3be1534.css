@@ -9497,6 +9497,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .resources__address h2.title {
     margin-bottom: 0.625rem;
     text-transform: uppercase; }
+  @media screen and (max-width: 1023px) {
+    .resources__address {
+      margin-bottom: 0; } }
   @media screen and (max-width: 767px) {
     .resources__address {
       text-align: center;
@@ -9511,6 +9514,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     text-transform: uppercase; }
   .resources__contact a:hover {
     color: white; }
+  @media screen and (max-width: 1023px) {
+    .resources__contact {
+      margin-bottom: 0; } }
   @media screen and (max-width: 767px) {
     .resources__contact {
       text-align: center;
@@ -9524,6 +9530,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   font-size: 1.375rem;
   display: -webkit-box;
   display: flex; }
+  @media screen and (max-width: 767px) {
+    .resources__social .social {
+      -webkit-box-pack: center;
+              justify-content: center; } }
   .resources__social .social .navbar-item {
     padding: 0;
     display: inline; }
@@ -9534,8 +9544,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 @media screen and (max-width: 767px) {
   .resources__social {
-    text-align: center;
-    margin-bottom: 2.5rem; } }
+    text-align: center; } }
 
 @media screen and (max-width: 1023px) {
   .footer .column {
