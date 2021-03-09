@@ -53,6 +53,42 @@ if ( ! function_exists( 'purdueBrand_the_title' ) ) {
 	}
 }
 
+if ( ! function_exists( '_purdueBrand_convert_heading' ) ) {
+	function _purdueBrand_convert_heading($class)
+	{
+		switch ($class) {
+			case 'is-1':
+			$heading = 'h1';
+			break;
+
+			case 'is-2':
+			$heading = 'h2';
+			break;
+
+			case 'is-3':
+			$heading = 'h3';
+			break;
+
+			case 'is-4':
+			$heading = 'h4';
+			break;
+
+			case 'is-5':
+			$heading = 'h5';
+			break;
+
+			case 'is-6':
+			$heading = 'h6';
+			break;
+
+			default:
+			$heading = 'h3';
+			break;
+		}
+		return $heading;
+	}
+}
+
 if ( ! function_exists( 'purdueBrand_get_comments' ) ) {
 	function purdueBrand_get_comments()
 	{
