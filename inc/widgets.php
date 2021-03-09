@@ -98,99 +98,43 @@ if (!function_exists('purdueBrand_widgets_init')) {
         }
         
         //Footer widgets
-        if(get_theme_mod('header_layout_settings') == 'oldsimplefooter'){
-            register_sidebar(array(
-                'name'          => esc_html__('Address on footer', 'purdueBrand'),
-                'id'            => 'footer-address',
-                'description'   => esc_html__('Add an address widget here to show your address on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s footer__address">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
-                'id'            => 'footer-column-1',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
-                'id'            => 'footer-column-2',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
-                'id'            => 'footer-column-3',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s column footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-        }else{
-            // register_sidebar(array(
-            //     'name'          => esc_html__('Address on footer', 'purdueBrand'),
-            //     'id'            => 'footer-address',
-            //     'description'   => esc_html__('Add an Footer Address widget here to show your address on footer.', 'purdueBrand'),
-            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            //     'after_widget'  => '</div>',
-            //     'before_title'  => '<h2>',
-            //     'after_title'   => '</h2>',
-            // ));
-            // register_sidebar(array(
-            //     'name'          => esc_html__('Contact Info on footer', 'purdueBrand'),
-            //     'id'            => 'footer-contact',
-            //     'description'   => esc_html__('Add an Footer Contact Us widget here to show your contact info on footer.', 'purdueBrand'),
-            //     'before_widget' => '<div id="%1$s" class="widget %2$s">',
-            //     'after_widget'  => '</div>',
-            //     'before_title'  => '<h2>',
-            //     'after_title'   => '</h2>',
-            // ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
-                'id'            => 'footer-column-1',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
-                'id'            => 'footer-column-2',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
-                'id'            => 'footer-column-3',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-            register_sidebar(array(
-                'name'          => esc_html__('Footer links column 4', 'purdueBrand'),
-                'id'            => 'footer-column-4',
-                'description'   => esc_html__('Add a Footer Links Column widget here for the fourth link column on footer.', 'purdueBrand'),
-                'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-                'after_widget'  => '</div>',
-                'before_title'  => '<h2>',
-                'after_title'   => '</h2>',
-            ));
-        }
+
+        register_sidebar(array(
+            'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
+            'id'            => 'footer-column-1',
+            'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>',
+        ));
+        register_sidebar(array(
+            'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
+            'id'            => 'footer-column-2',
+            'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>',
+        ));
+        register_sidebar(array(
+            'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
+            'id'            => 'footer-column-3',
+            'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>',
+        ));
+        register_sidebar(array(
+            'name'          => esc_html__('Footer links column 4', 'purdueBrand'),
+            'id'            => 'footer-column-4',
+            'description'   => esc_html__('Add a Footer Links Column widget here for the fourth link column on footer.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
+            'after_widget'  => '</div>',
+            'before_title'  => '<h2>',
+            'after_title'   => '</h2>',
+        ));
     }
 }
 add_action('widgets_init', 'purdueBrand_widgets_init');
@@ -784,284 +728,3 @@ class LinksColumn_Widget extends WP_Widget {
 	}
 }
 
-class Address_Widget extends WP_Widget {
-
-    /**
-     * Constructs the new widget.
-     *
-     * @see WP_Widget::__construct()
-     */
-    function __construct()
-    {
-        // Instantiate the parent object.
-        $widget_options = array(
-            // 'classname' => 'footer__address',
-            'description' => 'This widget adds your address and contact information on the footer.',
-        );
-        parent::__construct('address_widget', 'Footer address and contact us', $widget_options);
-    }
-    function widget( $args, $instance ) {
-        extract($args);
-        $street = apply_filters( 'widget_text', $instance['street'], $instance );
-        $street2 = apply_filters( 'widget_text', $instance['street2'], $instance );
-        $city = apply_filters( 'widget_text', $instance['city'], $instance );
-        $state = apply_filters( 'widget_text', $instance['state'], $instance );
-        $zip = apply_filters( 'widget_text', $instance['zip'], $instance );
-        $phone = apply_filters( 'widget_text', $instance['phone'], $instance );
-        $contact = apply_filters( 'widget_text', $instance['contact'], $instance );
-        echo $before_widget;
-        ?>
-        <p>
-        <?php 
-            if($street !=""){
-                echo $street.'<br>';
-            }
-            if($street2 !=""){
-                echo $street2.'<br>';
-            }
-            if($city !=""){
-                echo $city.', ';
-             }
-            if($state!=""){
-                echo $state.' ';
-            }
-            if($zip!=""){
-                echo $zip.'<br>';
-            }
-            if($phone!=""){
-                echo $phone.'<br>';
-            }
-        ?></p>
-        <br />
-        <?php 
-            if($contact !=""){
-                echo '<p><a href="'.$contact.'" rel="noopener" target="_blank">Contact Us</a></p>';
-            }   
-        ?>                                  
-        <?php
-        echo $after_widget;
-    }
-
-    function update( $new_instance, $old_instance ) {
-        $instance = $old_instance;
-        if ( current_user_can('unfiltered_html') )
-            $instance['street'] =  $new_instance['street'];
-        else
-            $instance['street'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['street']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['street2'] =  $new_instance['street2'];
-        else
-            $instance['street2'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['street2']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['city'] =  $new_instance['city'];
-        else
-            $instance['city'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['city']) ) ); // wp_filter_post_kses() expects slashed
-
-        if ( current_user_can('unfiltered_html') )
-            $instance['state'] =  $new_instance['state'];
-        else
-            $instance['state'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['state']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['zip'] =  $new_instance['zip'];
-        else
-            $instance['zip'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['zip']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['phone'] =  $new_instance['phone'];
-        else
-            $instance['phone'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['phone']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['contact'] =  $new_instance['contact'];
-        else
-            $instance['contact'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['contact']) ) ); // wp_filter_post_kses() expects slashed
-            return $instance;
-    }
-
-    function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'street' => '' ) );
-        $street = format_to_edit($instance['street']);
-        $street2 = format_to_edit($instance['street2']);
-        $city = format_to_edit($instance['city']);
-        $state = format_to_edit($instance['state']);
-        $zip = format_to_edit($instance['zip']);
-        $phone = format_to_edit($instance['phone']);
-        $contact = format_to_edit($instance['contact']);
-?>
-        
-        <label for="<?php echo $this->get_field_id( 'street' ); ?>">Street</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'street' ); ?>" name="<?php echo $this->get_field_name( 'street' ); ?>" type="text" value="<?php echo $street; ?>" />
-        <label for="<?php echo $this->get_field_id( 'street2' ); ?>">Street 2</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'street2' ); ?>" name="<?php echo $this->get_field_name( 'street2' ); ?>" type="text" value="<?php echo $street2; ?>" />
-        <label for="<?php echo $this->get_field_id( 'city' ); ?>">City</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'city' ); ?>" name="<?php echo $this->get_field_name( 'city' ); ?>" type="text" value="<?php echo $city; ?>" />
-        <label for="<?php echo $this->get_field_id( 'state' ); ?>">State</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'state' ); ?>" name="<?php echo $this->get_field_name( 'state' ); ?>" type="text" value="<?php echo $state; ?>" />
-        <label for="<?php echo $this->get_field_id( 'zip' ); ?>">Zip Code</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'zip' ); ?>" name="<?php echo $this->get_field_name( 'zip' ); ?>" type="text" value="<?php echo $zip; ?>" />
-        <label for="<?php echo $this->get_field_id( 'phone' ); ?>">Phone</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" type="text" value="<?php echo $phone; ?>" />
-        <label for="<?php echo $this->get_field_id( 'contact' ); ?>">Contact us link (URL or mailto:youremailaddress)</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'contact' ); ?>" name="<?php echo $this->get_field_name( 'contact' ); ?>" type="text" value="<?php echo $contact; ?>" />
-<?php
-    }
-}
-class AddressGlobal_Widget extends WP_Widget {
-
-    /**
-     * Constructs the new widget.
-     *
-     * @see WP_Widget::__construct()
-     */
-    function __construct()
-    {
-        // Instantiate the parent object.
-        $widget_options = array(
-            // 'classname' => 'footer__address',
-            'description' => 'This widget adds your address on the footer.',
-        );
-        parent::__construct('addressGlobal_widget', 'Footer Address', $widget_options);
-    }
-    function widget( $args, $instance ) {
-        extract($args);
-        $street = apply_filters( 'widget_text', $instance['streetG'], $instance );
-        $street2 = apply_filters( 'widget_text', $instance['streetG2'], $instance );
-        $city = apply_filters( 'widget_text', $instance['cityG'], $instance );
-        $state = apply_filters( 'widget_text', $instance['stateG'], $instance );
-        $zip = apply_filters( 'widget_text', $instance['zipG'], $instance );
-        echo $before_widget;
-        ?>
-        <h2 class="title">Address</h2>
-        <p>
-        <?php 
-            if($street !=""){
-                echo $street.'<br>';
-            }
-            if($street2 !=""){
-                echo $street2.'<br>';
-            }
-            if($city !=""){
-                echo $city.', ';
-             }
-            if($state!=""){
-                echo $state.' ';
-            }
-            if($zip!=""){
-                echo $zip;
-            }
-        ?></p>                                
-        <?php
-        echo $after_widget;
-    }
-
-    function update( $new_instance, $old_instance ) {
-        $instance = $old_instance;
-        if ( current_user_can('unfiltered_html') )
-            $instance['streetG'] =  $new_instance['streetG'];
-        else
-            $instance['streetG'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['streetG']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['streetG2'] =  $new_instance['streetG2'];
-        else
-            $instance['streetG2'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['street2']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['cityG'] =  $new_instance['cityG'];
-        else
-            $instance['cityG'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['cityG']) ) ); // wp_filter_post_kses() expects slashed
-
-        if ( current_user_can('unfiltered_html') )
-            $instance['stateG'] =  $new_instance['stateG'];
-        else
-            $instance['stateG'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['stateG']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['zipG'] =  $new_instance['zipG'];
-        else
-            $instance['zipG'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['zipG']) ) ); // wp_filter_post_kses() expects slashed
-            return $instance;
-        }
-
-    function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'streetG' => '' ) );
-        $street = format_to_edit($instance['streetG']);
-        $street2 = format_to_edit($instance['streetG2']);
-        $city = format_to_edit($instance['cityG']);
-        $state = format_to_edit($instance['stateG']);
-        $zip = format_to_edit($instance['zipG']);
-?>
-        
-        <label for="<?php echo $this->get_field_id( 'streetG' ); ?>">Street</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'streetG' ); ?>" name="<?php echo $this->get_field_name( 'streetG' ); ?>" type="text" value="<?php echo $street; ?>" />
-        <label for="<?php echo $this->get_field_id( 'streetG2' ); ?>">Street 2</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'streetG2' ); ?>" name="<?php echo $this->get_field_name( 'streetG2' ); ?>" type="text" value="<?php echo $street2; ?>" />
-        <label for="<?php echo $this->get_field_id( 'cityG' ); ?>">City</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'cityG' ); ?>" name="<?php echo $this->get_field_name( 'cityG' ); ?>" type="text" value="<?php echo $city; ?>" />
-        <label for="<?php echo $this->get_field_id( 'stateG' ); ?>">State</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'stateG' ); ?>" name="<?php echo $this->get_field_name( 'stateG' ); ?>" type="text" value="<?php echo $state; ?>" />
-        <label for="<?php echo $this->get_field_id( 'zipG' ); ?>">Zip Code</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'zipG' ); ?>" name="<?php echo $this->get_field_name( 'zipG' ); ?>" type="text" value="<?php echo $zip; ?>" />
-<?php
-    }
-}
-class ContactGlobal_Widget extends WP_Widget {
-
-    /**
-     * Constructs the new widget.
-     *
-     * @see WP_Widget::__construct()
-     */
-    function __construct()
-    {
-        // Instantiate the parent object.
-        $widget_options = array(
-            // 'classname' => 'footer__address',
-            'description' => 'This widget adds your contact information on the footer.',
-        );
-        parent::__construct('contactGlobal_widget', 'Footer Contact Us', $widget_options);
-    }
-    function widget( $args, $instance ) {
-        extract($args);
-        $phone = apply_filters( 'widget_text', $instance['phone'], $instance );
-        $contact = apply_filters( 'widget_text', $instance['contact'], $instance );
-        echo $before_widget;
-        ?>
-         <h2 class="title">Contact Us</h2>
-        <p>
-        <?php 
-            if($phone!=""){
-                echo $phone;
-            }
-        ?>
-        <?php 
-            if($contact !=""){
-                echo '<br><a href="mailto:'.$contact.'" rel="noopener" target="_blank">'.$contact.'</a>';
-            }   
-        ?> 
-        </p>                                 
-        <?php
-        echo $after_widget;
-    }
-
-    function update( $new_instance, $old_instance ) {
-        $instance = $old_instance;
-        if ( current_user_can('unfiltered_html') )
-            $instance['phone'] =  $new_instance['phone'];
-        else
-            $instance['phone'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['phone']) ) ); // wp_filter_post_kses() expects slashed
-        if ( current_user_can('unfiltered_html') )
-            $instance['contact'] =  $new_instance['contact'];
-        else
-            $instance['contact'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['contact']) ) ); // wp_filter_post_kses() expects slashed
-            return $instance;
-    }
-
-    function form( $instance ) {
-        $instance = wp_parse_args( (array) $instance, array( 'phone' => '' ) );
-        $phone = format_to_edit($instance['phone']);
-        $contact = format_to_edit($instance['contact']);
-?>
-        
-       <label for="<?php echo $this->get_field_id( 'phone' ); ?>">Phone</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" type="text" value="<?php echo $phone; ?>" />
-        <label for="<?php echo $this->get_field_id( 'contact' ); ?>">Contact us email</label>
-        <input class="widefat" id="<?php echo $this->get_field_id( 'contact' ); ?>" name="<?php echo $this->get_field_name( 'contact' ); ?>" type="text" value="<?php echo $contact; ?>" />
-<?php
-    }
-}
