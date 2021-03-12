@@ -491,8 +491,9 @@
             margin-bottom: 2.5rem;
         }
         a {
+            text-decoration:none;
             &:hover {
-                color: $white;
+                color: $railway-gray;
             }
         }
     }
@@ -503,8 +504,9 @@
             text-transform: uppercase;
         }
         a {
+            text-decoration:none;
             &:hover {
-                color: $white;
+                color: $railway-gray;
             }
         }
         @include touch {
