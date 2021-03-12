@@ -9,7 +9,7 @@
  * @since 1.0.0
  */
 
-// require get_template_directory() . '/inc/customizer.php';
+include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
 require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/helpers.php';
