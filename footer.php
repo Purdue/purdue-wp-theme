@@ -64,7 +64,7 @@
 					$ftr_city = get_theme_mod('city', 'West Lafayette');
 					$ftr_state = get_theme_mod('state', 'IN');
 					$ftr_zip = get_theme_mod('zipcode', '47906');
-					$ftr_phone = get_theme_mod('phone_number', 'tel://765-494-4600');
+					$ftr_phone = get_theme_mod('phone_number', '765-494-4600');
 					$ftr_email = get_theme_mod('email_address', 'https://www.purdue.edu/purdue/contact-us/index.php');
 
 
