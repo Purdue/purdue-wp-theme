@@ -11,6 +11,11 @@
 ?>
 
 </div><!-- #content -->
+
+<?php
+	$header_option = get_theme_mod('header_layout_settings', 'global');
+	$footer_option = get_theme_mod('footer_layout_settings', 'four');
+?>
 <footer id="colophon" role="contentinfo" class="footer">
 	<div class="footer footer__global__logo">
 		<div class="container is-fullhd">
@@ -24,51 +29,51 @@
 		<div class="container is-fullhd">
 			<div class="columns is-desktop">
 				<div class="column is-four-fifths-desktop columns is-desktop">
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-half-desktop' :'') ?>">
+					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-half-desktop' :'') ?>">
 						<?php 
-							if(get_theme_mod('header_layout_settings') == "global"){
+							if($header_option == "global"){
 								purdueBrand_footer_links("global-footer-1.json");
 							}elseif(is_active_sidebar('footer-column-1')){
 								dynamic_sidebar('footer-column-1');
 							}
 						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter-desktop' :'') ?>">
+					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php 
-							if(get_theme_mod('header_layout_settings') == "global"){
+							if($header_option == "global"){
 								purdueBrand_footer_links("global-footer-2.json");
 							}elseif(is_active_sidebar('footer-column-2')){
 								dynamic_sidebar('footer-column-2');
 							}
 						?>
 					</div>
-					<div class="column<?php echo(get_theme_mod('header_layout_settings') == "simple"&&get_theme_mod('footer_layout_settings') == "three" ? ' is-one-quarter-desktop' :'') ?>">
+					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
 					</div>
 
 					<?php
-						if ((get_theme_mod('footer_layout_settings') !== "three" && get_theme_mod('header_layout_settings') == "simple") || get_theme_mod('header_layout_settings') == "global") {
+						if (($footer_option !== "three" && $header_option == "simple") || $header_option == "global") {
 							echo('<div class="column">');
 							if (is_active_sidebar('footer-column-4')) {dynamic_sidebar('footer-column-4');}
 							echo('</div>');
 						}
 						
 
-					$ftr_add1 = get_theme_mod('address_line_1');
-					$ftr_add2 = get_theme_mod('address_line_2');
-					$ftr_city = get_theme_mod('city');
-					$ftr_state = get_theme_mod('state');
-					$ftr_zip = get_theme_mod('zipcode');
-					$ftr_phone = get_theme_mod('phone_number');
-					$ftr_email = get_theme_mod('email_address');
+					$ftr_add1 = get_theme_mod('address_line_1', 'Purdue University');
+					$ftr_add2 = get_theme_mod('address_line_2', '610 Purdue Mall');
+					$ftr_city = get_theme_mod('city', 'West Lafayette');
+					$ftr_state = get_theme_mod('state', 'IN');
+					$ftr_zip = get_theme_mod('zipcode', '47906');
+					$ftr_phone = get_theme_mod('phone_number', 'tel://765-494-4600');
+					$ftr_email = get_theme_mod('email_address', 'https://www.purdue.edu/purdue/contact-us/index.php');
 
 
-					$ftr_facebook = get_theme_mod('facebook');
-					$ftr_twitter = get_theme_mod('twitter');
-					$ftr_linkedin = get_theme_mod('linkedin');
-					$ftr_instagram = get_theme_mod('instagram');
-					$ftr_youtube = get_theme_mod('youtube');
-					$ftr_snapchat = get_theme_mod('snapchat');
+					$ftr_facebook = get_theme_mod('facebook', 'https://www.facebook.com/PurdueUniversity/');
+					$ftr_twitter = get_theme_mod('twitter', 'https://www.twitter.com/LifeAtPurdue');
+					$ftr_linkedin = get_theme_mod('linkedin', 'https://www.linkedin.com/edu/purdue-university-18357');
+					$ftr_instagram = get_theme_mod('instagram', 'https://www.instagram.com/lifeatpurdue/');
+					$ftr_youtube = get_theme_mod('youtube', 'https://www.youtube.com/purdueuniversity');
+					$ftr_snapchat = get_theme_mod('snapchat', 'https://www.snapchat.com/add/lifeatpurdue');
 					?>
 
 				</div>
