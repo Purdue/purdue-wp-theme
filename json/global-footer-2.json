@@ -1,0 +1,30 @@
+{
+    "column" : "2",
+    "header" : "COMMUNICATION",
+    "links" : [
+        {
+            "link_text": "OneCampus Portal",
+            "link_url": "https://one.purdue.edu/"
+        },
+        {
+            "link_text": "Brightspace",
+            "link_url": "https://purdue.brightspace.com/d2l/login"
+        },
+        {
+            "link_text": "BoilerConnect",
+            "link_url": "https://www.purdue.edu/boilerconnect/"
+        },
+        {
+            "link_text": "Office 365",
+            "link_url": "http://portal.office.com/"
+        },
+        {
+            "link_text": "Outlook",
+            "link_url": "https://exchange.purdue.edu"
+        },
+        {
+            "link_text": "myPurdue",
+            "link_url": "https://mypurdue.purdue.edu"
+        }
+    ]
+}

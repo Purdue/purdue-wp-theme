@@ -11,6 +11,7 @@ module.exports = {
   entry: {
       app:['./src/js/front-end/app.js', './src/style/front-end/app.scss'],
       admin:['./src/js/back-end/admin.js', './src/style/back-end/admin.scss'],
+      customizer:['./src/js/back-end/customizer.js'],
   },
   output: {
     filename: './build/js/[name].[hash].js',

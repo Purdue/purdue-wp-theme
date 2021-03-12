@@ -37,7 +37,11 @@
 
 		<?php
 			$postId = get_the_ID();
-			$headerSelect = get_field('select_header_style', $postId);
+			if (function_exists('get_field')) {	
+				$headerSelect = get_field('select_header_style', $postId);				
+			} else {	
+				$headerSelect = "";
+			}
 
 			echo('<script>');
 				$consoleLog = "console.log('post id: ". $postId .", header select value: ". $headerSelect ."')";
