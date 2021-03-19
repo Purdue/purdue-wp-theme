@@ -59,7 +59,6 @@
 								echo('<ul class="navbar-start">');
 									purdueBrand_navigation();
 								echo('</ul>');
-								echo('</div>');
 							echo('</div>');
 						echo('</nav>');
 					echo('</header>');
