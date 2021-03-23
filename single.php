@@ -96,24 +96,50 @@ $incShare = get_theme_mod('social_setting',false);
 						<?php dynamic_sidebar('right-sidebar'); ?>
 					</div>
 				</aside>
-			<?php else : ?>
-				<div class="columns is-centered">
-					<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
-						<?php purdueBrand_the_title('is-1', False); ?>
+			</div>
+		<?php else : ?>
+			<div class="columns is-centered">
+				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
+					<?php purdueBrand_the_title('is-1', False); ?>
 
-						<p class="post__subheading">
-							<?php echo ($subheading); ?>
-						</p>
+					<p class="post__subheading">
+						<?php echo ($subheading); ?>
+					</p>
 
-						<?php while (have_posts()) : the_post(); ?>
-						<?php if($incDate || $incShare){ ?>
-							<div class="post__date-line">
-							<?php if($incDate){ ?>
-								<div class="post__date-line--date">
-									<?php echo get_the_date("F j, Y"); ?>
+					<?php while (have_posts()) : the_post(); ?>
+					<?php if($incDate || $incShare){ ?>
+						<div class="post__date-line">
+						<?php if($incDate){ ?>
+							<div class="post__date-line--date">
+								<?php echo get_the_date("F j, Y"); ?>
+							</div>
+						<?php } ?>
+						<?php if($incShare){ ?>
+							<div class="post__date-line--share">
+								<p>Share: </p>
+								<div class="level is-mobile">
+									<div class="level-left">
+										<div class="level-item">
+											<a class="icon is-medium" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-lg fa-facebook-f"></i></a>
+										</div>
+										<div class="level-item">
+											<a class="icon is-medium" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-twitter"></i></a>
+										</div>
+										<div class="level-item">
+											<a class="icon is-medium" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-linkedin-in"></i></a>
+										</div>
+										<div class="level-item">
+											<a class="icon is-medium" href="mailto:placeholder@placeholder.com?body=<?php the_permalink(); ?>"><i class="fas fa-lg fa-envelope"></i></a>
+										</div>
+									</div>
 								</div>
-							<?php } ?>
-							<?php if($incShare){ ?>
+							</div>
+						<?php } ?>
+						</div>
+						<?php } ?>
+							<?php the_content(); ?>
+						<?php if($incShare){ ?>
+							<div class="post__date-line share-button-bottom">	
 								<div class="post__date-line--share">
 									<p>Share: </p>
 									<div class="level is-mobile">
@@ -132,40 +158,15 @@ $incShare = get_theme_mod('social_setting',false);
 											</div>
 										</div>
 									</div>
-								</div>
-							<?php } ?>
+								</div>							
 							</div>
 							<?php } ?>
-								<?php the_content(); ?>
-							<?php if($incShare){ ?>
-								<div class="post__date-line share-button-bottom">	
-									<div class="post__date-line--share">
-										<p>Share: </p>
-										<div class="level is-mobile">
-											<div class="level-left">
-												<div class="level-item">
-													<a class="icon is-medium" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-lg fa-facebook-f"></i></a>
-												</div>
-												<div class="level-item">
-													<a class="icon is-medium" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-twitter"></i></a>
-												</div>
-												<div class="level-item">
-													<a class="icon is-medium" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-linkedin-in"></i></a>
-												</div>
-												<div class="level-item">
-													<a class="icon is-medium" href="mailto:placeholder@placeholder.com?body=<?php the_permalink(); ?>"><i class="fas fa-lg fa-envelope"></i></a>
-												</div>
-											</div>
-										</div>
-									</div>							
-								</div>
-								<?php } ?>
-						<?php endwhile; // end of the loop. 
-						?>
-					</div>
-					
-				<?php endif; ?>
+					<?php endwhile; // end of the loop. 
+					?>
+				</div>
 			</div>
+		<?php endif; ?>
+			
 		</div>
 	</section>
 

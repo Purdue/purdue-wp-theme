@@ -29,6 +29,4 @@
 	<?php } ?>
 </main><!-- #site-content -->
 
-</div>
-
 <?php get_footer(); ?>
