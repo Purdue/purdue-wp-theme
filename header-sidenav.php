@@ -38,7 +38,7 @@
 					echo('<header id="header" class="header--simple">');
 						echo('<nav class="navbar is-black purdue-navbar-black" role="navigation">');
 							echo('<div class="navbar-brand">');
-								echo '<a href="/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>'; 
+								echo '<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>'; 
 								echo('<button class="icon is-large navbar-burger" data-target="simple-nav">');
 									echo('<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>');
 								echo('</button>');
