@@ -7,6 +7,10 @@ tables.forEach((t)=>{
     let trlength;
     const trs=tbody[0].getElementsByTagName("tr")
 
+    let ths;
+    if(thead.length>0){
+        ths=thead[0].getElementsByTagName("th");
+    }
     if(trs.length>0){
         trlength=trs[0].getElementsByTagName("td").length;
     }
@@ -17,13 +21,12 @@ tables.forEach((t)=>{
             let newtb = document.createElement("div");
             const tbs=tr.getElementsByTagName("td");
             if(tbs[i].innerText){
-                if(i===0){
-                    newtb.classList.add('table-header')
-                }else{
-                    newtb.classList.add('table-body')
-                }
-               
-                newtb.innerHTML = tbs[i].innerHTML;
+                let newth = document.createElement("b");
+                newtb.classList.add('table-body')
+                newth.innerHTML = ths[i].innerHTML;
+                newtb.appendChild(newth)  
+                let newContent =  ": "+tbs[i].innerHTML;          
+                newtb.insertAdjacentHTML('beforeend', newContent);
                 newt.appendChild(newtb)
             }
             t.parentElement.insertBefore(newt, t);
