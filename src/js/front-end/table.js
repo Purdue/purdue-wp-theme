@@ -23,9 +23,12 @@ tables.forEach((t)=>{
             if(tbs[i].innerText){
                 let newth = document.createElement("b");
                 newtb.classList.add('table-body')
-                newth.innerHTML = ths[i].innerHTML;
-                newtb.appendChild(newth)  
-                let newContent =  ": "+tbs[i].innerHTML;          
+                if(thead&&thead.length>0&&ths[i].innerText!==""){
+                    newth.innerHTML = ths[i].innerHTML;
+                    newtb.appendChild(newth) 
+                    newtb.insertAdjacentText('beforeend', ": ");
+                } 
+                let newContent =  tbs[i].innerHTML;          
                 newtb.insertAdjacentHTML('beforeend', newContent);
                 newt.appendChild(newtb)
             }
