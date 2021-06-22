@@ -16,6 +16,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   .navbar-brand {
     .navbar-item {
       padding: 0;
+      margin:0;
       img {
         width: 243.47px;
         max-height: 44.18px;
@@ -351,6 +352,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     display: flex;
     align-items: center;
     padding: 0.5rem 0.75rem;
+    margin:0;
     @include touch {
       border-top: 1px solid #2e2e2e;
       padding: 0.5rem $side-padding-tablet;
@@ -491,6 +493,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
         .navbar-item {
           padding: 0.5rem 1.4rem;
+          margin:0;
           &:not(:last-child) {
             &:after {
               content: '';
