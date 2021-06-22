@@ -94,6 +94,7 @@
             }
             li{
                 padding:0.4rem 0;
+                margin:0;
                 a{
                     color:$railway-gray;
                     font-size:0.9375rem;
@@ -304,6 +305,7 @@
         .navbar-item {
             align-self:flex-start;
             padding: 0;
+            margin:0;
             &:not(:last-child){
                 margin-right:0.8rem;
                 }
@@ -407,6 +409,7 @@
                     font-size:1.375rem;
                     .navbar-item{
                         padding:0;
+                        margin:0;
                     }
                     a,.navbar-item{
                         display:inline;
@@ -531,6 +534,7 @@
             }
             .navbar-item {
                 padding: 0;
+                margin:0;
                 display:inline;
                 a {
                     &:hover{
