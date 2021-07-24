@@ -45,14 +45,12 @@
 							<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>
 						</button>
 					</div>
-
 					<div class="navbar-end">
-					<?php purdueBrand_headerButtons(); ?>
+						<?php purdueBrand_headerButtons(); ?>
 						<div class="form-group search-box">
 							<?php get_search_form(); ?>
 						</div>
 					</div>
-
 				</nav>
 				<nav id="site-navigation" class="navbar has-shadow purdue-navbar-white" data-menu="simple-nav" role="navigation">
 					<div class="navbar-menu" id="navMenu">
@@ -65,29 +63,92 @@
 
         <?php } else if (get_theme_mod( 'header_layout_settings' ) == 'global') { ?>
 			<header id="header" class="header--global">
-				<nav class="navbar is-black purdue-navbar-black" role="navigation" data-menu="global-nav">
-					<div class="navbar-menu" id="blackBarMenu">
-						<span class="sr-only-lg">Quick Links</span>
-						<ul class="navbar-start">
-							<?php purdueBrand_blackBarMenu(); ?>
-						</ul>
+				<nav class="navbar is-black purdue-navbar-black" role="navigation">
+					<div class="navbar-brand">
+						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
+						<button class="icon is-large navbar-burger" data-target="navbar-find-info" aria-expanded="false">
+							<span class="icon__button-text">Purdue Menu</span>	
+							<img src="<?php echo get_template_directory_uri() ?>/icons/search-menu-icon.png" arial-hidden="true" class="burger-icon"><img src="<?php echo get_template_directory_uri() ?>/icons/close-icon.png" class="close-icon">
+						</button>
+					</div>
+					<div class="navbar-menu">
 						<div class="navbar-end">
-							<div class="form-group search-box">
-								<?php get_search_form(); ?>
-							</div>
+							<ul class="navbar-end__quick-links">
+								<li>
+									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
+								</li>
+								<li>
+									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
+								</li>
+								<li>
+									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</nav>
-				<nav class="navbar has-shadow purdue-navbar-white navbar--global" data-menu="global-nav">
-					<div class="navbar-brand">
-						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H-light.svg" alt="Purdue Logo"></a>
-						<button class="icon is-large navbar-burger" data-target="global-nav">
-							<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>
-						</button>
+				<div class="navbar-find-info"  data-menu="navbar-find-info">
+					<div class="navbar-find-info__panel">	
+						<div class="navbar-find-info__items">
+							<div class="form-group search-box">
+								<?php get_search_form(); ?>
+							</div>	
+							<ul class="navbar-find-info__quick-links">
+								<li>
+									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
+								</li>
+								<li>
+									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
+								</li>
+								<li>
+									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
+								</li>
+							</ul>	
+							<div class="navbar-find-info__item">
+								<button class="accordion__heading" aria-expanded="true" id="findInfoItem-button-1" aria-controls="findInfoItem-list-1">Why Purdue
+							</button>
+								<ul class="accordion__content hide" id="findInfoItem-list-1" aria-labelledby="findInfoItem-button-1">
+									<li><a href="#">Test</a></li>
+									<li><a href="#">Test</a></li>
+									<li><a href="#">Test</a></li>
+								</ul>
+							</div>
+							<div class="navbar-find-info__item navbar-find-info__item-highlighted">
+								<button class="accordion__heading" aria-expanded="true" id="findInfoItem-button-2" aria-controls="findInfoItem-list-2">Information For:
+								</button>
+								<ul class="accordion__content hide" id="findInfoItem-list-2" aria-labelledby="findInfoItem-button-2">
+									<li><a href="#">Test</a></li>
+									<li><a href="#">Test</a></li>
+									<li><a href="#">Test</a></li>
+								</ul>
+							</div>
+							<p class="navbar-find-info__item-intro">Impactful sentence with brand language here ollicitudin aliquam.</p> 
+							<a href="#" class="navbar-find-info__item-link">Purdue’s Stories</a>
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+						</div>
 					</div>
-					<ul class="navbar-start" data-menu="global-nav">
-						<?php purdueBrand_globalMenu(); ?>
-					</ul>
+				</div>
+				<nav class="navbar has-shadow purdue-navbar-white navbar--global" data-menu="global-nav">
+					<div class="navbar-menu" id="navMenu">
+						<ul class="navbar-start" data-menu="global-nav">
+							<?php purdueBrand_globalMenu(); ?>
+						</ul>
+					</div>
 				</nav>
 			</header>
 		<?php	}	?>

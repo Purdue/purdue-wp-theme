@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const expanded = el.getAttribute('aria-expanded') === 'false' ? true : false
         const hamburgerIcon = el.querySelector('.burger-icon')
         const closeIcon = el.querySelector('.close-icon')
+        const window = document.querySelector('html')
         el.setAttribute('aria-expanded', expanded)
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
         el.classList.toggle('is-active')
@@ -38,10 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if ($target) {
           $target.forEach((t) => {
-            if (t !== $navBar) {
               t.classList.toggle('is-active')
-            }
+              if(t.classList.contains('navbar-find-info')){
+                // t.style.height="100vh"
+                if(t.classList.contains('is-active')){
+                  t.style.height=window.scrollHeight + "px";
+                }else{
+                  t.style.height=0
+                }
+              }
           })
+ 
           window.addEventListener(
             'resize',
             (removeActive = (e) => {
@@ -52,9 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
               }
             })
           )
-        }
-        if ($navBar) {
-          $navBar.classList.toggle('is-active')
         }
         if ($button) {
           $button.classList.toggle('is-active')
@@ -68,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const width = window.innerWidth;
     const navbarWhite = document.querySelector('.purdue-navbar-white')
     const blackNav = document.querySelector('.purdue-navbar-black')
+    const findInfo = document.querySelector('.navbar-find-info')
+
     if (width >= 1024) {
       if($aside&&$aside.classList.contains('is-active')){
         $aside.classList.remove('is-active')
@@ -79,6 +86,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const navbarEnd = blackNav.querySelector('.navbar-end')
         if(navbarEnd&&navbarEnd.classList.contains('is-active')){
           navbarEnd.classList.remove('is-active')
+        }
+      }
+      if(findInfo){
+        if(findInfo&&findInfo.classList.contains('is-active')){
+          findInfo.classList.remove('is-active')
         }
       }
       if ($navbarBurgers.length > 0) {
@@ -192,6 +204,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}	
 	}
 })
+
 
 
 

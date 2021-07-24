@@ -67,9 +67,12 @@ const toggle = (e) => {
                 const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
                 clicked.setAttribute('aria-expanded', expanded);
                 if (currAttr && currAttr !== 'none' && content.getAttribute('state-animating') === null) {
-                    icons.forEach((icon) => {
-                        swapIcon(icon)
-                    })
+                    if(icons && icons.length>0){
+                        icons.forEach((icon) => {
+                            swapIcon(icon)
+                        })
+                    }
+                    clicked.classList.remove('is-open')
                     content.style.height = 0;
                     content.setAttribute('state-animating', 'true')
                     setTimeout(() => {
@@ -77,14 +80,16 @@ const toggle = (e) => {
                         content.removeAttribute('state-animating')
                     }, 200)
                 } else if (content.getAttribute('state-animating') === null) {
-                    icons.forEach((icon) => {
-                        swapIcon(icon)
-                    })
+                    if(icons && icons.length>0){
+                        icons.forEach((icon) => {
+                            swapIcon(icon)
+                        })
+                    }
+                    clicked.classList.add('is-open')
                     showFooter(content);
                     content.setAttribute('state-animating', 'true')
                     setTimeout(() => {
                         content.removeAttribute('state-animating')
-                        content.style.height = 'auto'
                     }, 200)
                     content.style.height = content.scrollHeight + "px";
                 }     
