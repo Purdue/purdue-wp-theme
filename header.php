@@ -34,7 +34,7 @@
 } ?>
 	<div id="page" class="site">
 		<?php purdueBrand_skip_link_screen_reader_text(); ?>
-
+		<?php dynamic_sidebar('top-alert'); ?>
 		<?php
         if (get_theme_mod('header_layout_settings') == 'simple') {	?>
 			<header id="header" class="header--simple">
@@ -104,51 +104,19 @@
 									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
 								</li>
 							</ul>	
-							<div class="navbar-find-info__item">
-								<button class="accordion__heading" aria-expanded="true" id="findInfoItem-button-1" aria-controls="findInfoItem-list-1">Why Purdue
-							</button>
-								<ul class="accordion__content hide" id="findInfoItem-list-1" aria-labelledby="findInfoItem-button-1">
-									<li><a href="#">Test</a></li>
-									<li><a href="#">Test</a></li>
-									<li><a href="#">Test</a></li>
-								</ul>
-							</div>
-							<div class="navbar-find-info__item navbar-find-info__item-highlighted">
-								<button class="accordion__heading" aria-expanded="true" id="findInfoItem-button-2" aria-controls="findInfoItem-list-2">Information For:
-								</button>
-								<ul class="accordion__content hide" id="findInfoItem-list-2" aria-labelledby="findInfoItem-button-2">
-									<li><a href="#">Test</a></li>
-									<li><a href="#">Test</a></li>
-									<li><a href="#">Test</a></li>
-								</ul>
-							</div>
-							<p class="navbar-find-info__item-intro">Impactful sentence with brand language here ollicitudin aliquam.</p> 
-							<a href="#" class="navbar-find-info__item-link">Purdue’s Stories</a>
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
-							<p>Impactful sentence with brand language here ollicitudin aliquam. <br><a href="#">Purdue’s Stories</a></p>
+							<?php purdueBrand_header_links("global-header.json");?>
 						</div>
 					</div>
 				</div>
-				<nav class="navbar has-shadow purdue-navbar-white navbar--global" data-menu="global-nav">
-					<div class="navbar-menu" id="navMenu">
-						<ul class="navbar-start" data-menu="global-nav">
-							<?php purdueBrand_globalMenu(); ?>
-						</ul>
-					</div>
+				<div class="navbar-site-name">
+					<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="global-nav-button" aria-controls="global-nav">
+						<?php echo get_bloginfo( 'name' ); ?>
+					</button>
+				</div>
+				<nav id="global-nav" class="navbar has-shadow purdue-navbar-white navbar--global accordion__content" aria-labelledby="global-nav-button" data-menu="global-nav">					
+					<ul class="navbar-start" data-menu="global-nav">
+						<?php purdueBrand_globalMenu(); ?>
+					</ul>					
 				</nav>
 			</header>
 		<?php	}	?>

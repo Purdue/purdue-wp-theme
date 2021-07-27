@@ -194,14 +194,16 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
          * @param string $output Passed by reference. Used to append additional content.
          * @param int $depth Depth of page. Used for padding.
          */
+        private $curItem;
         public function start_lvl(&$output, $depth = 0, $args = [])
         {
             // Depth
             $indent = ($depth ? str_repeat("\t", $depth) : '');
             // Class
             $class = ($depth == 1 ? 'navbar-dropdown-submenu' : 'navbar-dropdown');
+            $id = 'navbar-dropdown-' . $this->curItem->ID;
             // Output
-            $output .= $indent . '<ul class="' . $class . '">';
+            $output .= $indent . '<ul id="' . $id . '" class="' . $class . '">';
         }
         /**
          * @see Walker::start_el()
@@ -215,6 +217,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
+            $this->curItem = $item;
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
             /**
              * Dividers, Headers or Disabled
@@ -240,9 +243,6 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                 if ($args->walker->has_children) {
                     $class_names .= ' has-dropdown is-hoverable';
                 }
-                // if (in_array('current-menu-item', $classes)) {
-                //     $class_names .= ' active';
-				// }
 				if($depth === 1){
 					$class_names .= ' submenu';
 				}
@@ -254,6 +254,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                 $atts['title']  = ! empty($item->title)	? $item->title	: '';
                 $atts['target'] = ! empty($item->target)	? $item->target	: '';
                 $atts['rel']    = ! empty($item->xfn)		? $item->xfn	: '';
+                $atts['id']     = 'menu-item-link-' . $item->ID;
                 // If item has_children add atts to a.
                 if ($args->walker->has_children && $depth === 0) {
                     $atts['class']			= 'navbar-link';

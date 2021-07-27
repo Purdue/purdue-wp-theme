@@ -8644,7 +8644,11 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
             .purdue-navbar-black .navbar-end .search-box form .search-button {
               background: #fff; } }
           .purdue-navbar-black .navbar-end .search-box form .search-button .search-icon {
-            cursor: pointer; }
+            cursor: pointer;
+            -webkit-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                    transform: rotate(90deg);
+            color: #555960; }
 
 .purdue-navbar-white {
   padding: 0 2.5rem;
@@ -8994,9 +8998,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .header--global .navbar-find-info {
   display: none;
   position: absolute;
-  top: 0;
   left: 0;
-  margin-top: 6.75rem;
   height: 0;
   z-index: 1001;
   background-color: rgba(0, 0, 0, 0.75);
@@ -9007,8 +9009,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   border-top: 1px solid #8e6f3e; }
   @media screen and (max-width: 1023px) {
     .header--global .navbar-find-info {
-      margin-top: 5.0625rem;
-      border-top: none; } }
+      position: absolute;
+      border-top: none;
+      margin-top: 81px; } }
   .header--global .navbar-find-info.is-active {
     display: -webkit-box;
     display: flex;
@@ -9025,23 +9028,32 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   .header--global .navbar-find-info__items {
     background: white;
     padding: 4rem 3.25rem;
-    min-width: 464px; }
+    min-width: 464px;
+    min-height: 100vh; }
     @media screen and (max-width: 1023px) {
       .header--global .navbar-find-info__items {
         margin-bottom: 1.25rem;
         min-width: 0;
-        padding: 2rem 1.5rem 2rem; } }
+        padding: 2rem 1.5rem 2rem;
+        box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0px 0 1px rgba(0, 0, 0, 0.02);
+        min-height: 0; } }
     @media screen and (max-width: 767px) {
       .header--global .navbar-find-info__items {
         padding: 2rem 1.25rem 2rem; } }
     .header--global .navbar-find-info__items .search-box {
-      width: 100%;
-      margin-bottom: 3rem; }
+      width: 100%; }
+      .header--global .navbar-find-info__items .search-box:not(:last-child) {
+        margin-bottom: 3rem; }
       .header--global .navbar-find-info__items .search-box form input[type=search] {
         width: 100%;
         height: 3rem; }
+      .header--global .navbar-find-info__items .search-box .search-icon {
+        -webkit-transform: rotate(90deg);
+            -ms-transform: rotate(90deg);
+                transform: rotate(90deg);
+        color: #555960; }
       @media screen and (max-width: 1023px) {
-        .header--global .navbar-find-info__items .search-box {
+        .header--global .navbar-find-info__items .search-box:not(:last-child) {
           margin-bottom: 1.25rem; } }
   .header--global .navbar-find-info__quick-links {
     display: none; }
@@ -9176,86 +9188,176 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
           .header--global .navbar-find-info__item-highlighted .accordion__content li a:hover {
             color: #000; }
 
-.header--global .purdue-navbar-white {
-  padding: 0 3.25rem; }
+.header--global .navbar-site-name button {
+  background: white;
+  border: none;
+  font-family: acumin-pro-semi-condensed, "Franklin Gothic", sans-serif;
+  color: #8e6f3e;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.875rem;
+  line-height: 1.2;
+  width: 100%;
+  padding: 1.2rem 3.25rem 0;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  z-index: 50;
+  position: relative; }
   @media screen and (max-width: 1023px) {
-    .header--global .purdue-navbar-white {
-      -webkit-box-ordinal-group: 2;
-              order: 1;
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-              flex-direction: column;
-      background: white !important;
-      padding: 0 1.5rem; } }
+    .header--global .navbar-site-name button {
+      font-size: 1.25rem;
+      line-height: 1.25;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0px 0 1px rgba(0, 0, 0, 0.02); }
+      .header--global .navbar-site-name button:after {
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f067";
+        margin-left: 1rem;
+        display: inline-block;
+        text-decoration: none;
+        font-style: normal; } }
   @media screen and (max-width: 767px) {
-    .header--global .purdue-navbar-white {
-      padding: 0 1.25rem; } }
+    .header--global .navbar-site-name button {
+      padding: 1rem 1.25rem; } }
+  @media screen and (max-width: 1023px) {
+    .header--global .navbar-site-name button.is-open:after {
+      content: "\f068"; } }
 
 .header--global .navbar--global {
-  z-index: 1; }
-  .header--global .navbar--global .navbar-brand {
-    margin-right: 3.375rem; }
-    .header--global .navbar--global .navbar-brand .navbar-item {
-      padding: 1.5rem 0;
-      border: none; }
-      .header--global .navbar--global .navbar-brand .navbar-item img {
-        max-height: 3rem;
-        height: 3rem; }
-    .header--global .navbar--global .navbar-brand .icon {
-      display: none;
-      background: none;
-      border: none; }
-      @media screen and (max-width: 1023px) {
-        .header--global .navbar--global .navbar-brand .icon {
-          display: block; }
-          .header--global .navbar--global .navbar-brand .icon:hover {
-            cursor: pointer; } }
-      .header--global .navbar--global .navbar-brand .icon .burger-icon {
-        display: block;
-        font-size: 2em;
-        width: 1.5em; }
-      .header--global .navbar--global .navbar-brand .icon .close-icon {
-        display: none;
-        font-size: 2.2em;
-        width: 1.5em; }
-    @media screen and (max-width: 1023px) {
-      .header--global .navbar--global .navbar-brand {
-        margin: 0;
-        display: -webkit-box;
-        display: flex;
-        -webkit-box-align: center;
-                align-items: center;
-        -webkit-box-pack: justify;
-                justify-content: space-between; } }
-  .header--global .navbar--global .navbar-start .navbar-item a {
-    font-family: acumin-pro-condensed, "Franklin Gothic", sans-serif;
-    font-weight: 700; }
-    @media screen and (max-width: 1023px) {
-      .header--global .navbar--global .navbar-start .navbar-item a {
-        color: black;
-        font-weight: 400;
-        font-size: 1.5rem; }
-        .header--global .navbar--global .navbar-start .navbar-item a.navbar-link:after {
-          display: none; } }
-  @media screen and (max-width: 1023px) {
-    .header--global .navbar--global .navbar-start .navbar-item {
-      border: none;
-      padding: 0.6rem 0;
-      position: relative;
-      display: -webkit-box;
-      display: flex;
-      -webkit-box-align: center;
-              align-items: center; } }
-  @media screen and (max-width: 1023px) {
-    .header--global .navbar--global .navbar-start {
-      display: none; }
-      .header--global .navbar--global .navbar-start.is-active {
-        display: block; } }
+  -webkit-transition: height 0.2s ease-in;
+  transition: height 0.2s ease-in;
+  width: 100%;
+  flex-wrap: wrap; }
   @media screen and (max-width: 1023px) {
     .header--global .navbar--global {
-      padding: 0 1rem; } }
+      margin-top: 0;
+      height: 0;
+      overflow: hidden;
+      background: #f7f7f7 !important;
+      padding-bottom: 1.5rem; } }
+  .header--global .navbar--global .navbar-start {
+    width: 100%;
+    flex-wrap: wrap; }
+    .header--global .navbar--global .navbar-start .navbar-item {
+      border: none; }
+      @media screen and (max-width: 1023px) {
+        .header--global .navbar--global .navbar-start .navbar-item {
+          padding: 0;
+          overflow: hidden; }
+          .header--global .navbar--global .navbar-start .navbar-item:hover {
+            background: none; }
+            .header--global .navbar--global .navbar-start .navbar-item:hover a {
+              background: none; } }
+      @media screen and (max-width: 767px) {
+        .header--global .navbar--global .navbar-start .navbar-item {
+          padding: 0; } }
+      .header--global .navbar--global .navbar-start .navbar-item.active > a {
+        font-weight: 700 !important; }
+      .header--global .navbar--global .navbar-start .navbar-item a {
+        font-size: 15px;
+        text-transform: uppercase;
+        background: none; }
+        @media screen and (max-width: 1023px) {
+          .header--global .navbar--global .navbar-start .navbar-item a {
+            font-size: 1rem;
+            text-transform: none;
+            color: #000;
+            padding: 1.5rem 1.5rem 0; } }
+        @media screen and (max-width: 767px) {
+          .header--global .navbar--global .navbar-start .navbar-item a {
+            padding: 1.5rem 1.25rem 0; } }
+        .header--global .navbar--global .navbar-start .navbar-item a:hover {
+          background: none;
+          color: #8e6f3e; }
+      .header--global .navbar--global .navbar-start .navbar-item.has-dropdown:hover:after {
+        content: '\f106';
+        font-family: 'Font Awesome 5 Free';
+        font-size: 1.125rem;
+        font-weight: 900;
+        position: relative;
+        right: -0.4rem;
+        margin-top: 3px;
+        color: #8e6f3e !important; }
+      .header--global .navbar--global .navbar-start .navbar-item.has-dropdown:hover > a {
+        font-style: italic;
+        color: #8e6f3e;
+        font-weight: 700; }
+      @media screen and (max-width: 1023px) {
+        .header--global .navbar--global .navbar-start .navbar-item.has-dropdown:hover > a {
+          font-style: normal;
+          font-weight: 400; }
+          .header--global .navbar--global .navbar-start .navbar-item.has-dropdown:hover > a:after {
+            font-style: normal; } }
+      @media screen and (max-width: 1023px) {
+        .header--global .navbar--global .navbar-start .navbar-item a.navbar-link {
+          width: 100%; }
+          .header--global .navbar--global .navbar-start .navbar-item a.navbar-link:after {
+            content: '\f067';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            border: none;
+            -webkit-transform: none;
+                -ms-transform: none;
+                    transform: none;
+            display: inline-block;
+            right: 1.7rem;
+            margin: 0; }
+          .header--global .navbar--global .navbar-start .navbar-item a.navbar-link:hover:after {
+            font-style: normal; } }
+      @media screen and (max-width: 767px) {
+        .header--global .navbar--global .navbar-start .navbar-item a.navbar-link:after {
+          right: 1.5rem; } }
+      .header--global .navbar--global .navbar-start .navbar-item a.navbar-link.navbar-link-open {
+        font-weight: 700; }
+        @media screen and (max-width: 1023px) {
+          .header--global .navbar--global .navbar-start .navbar-item a.navbar-link.navbar-link-open:after {
+            content: '\f068'; } }
+    .header--global .navbar--global .navbar-start .navbar-dropdown {
+      margin-left: 0.75rem;
+      border-radius: 0; }
+      @media screen and (max-width: 1023px) {
+        .header--global .navbar--global .navbar-start .navbar-dropdown {
+          display: none;
+          height: 0;
+          margin-left: 1.25rem;
+          margin-top: 1.25rem;
+          -webkit-transition: height 0.2s ease;
+          transition: height 0.2s ease; }
+          .header--global .navbar--global .navbar-start .navbar-dropdown.is-active {
+            display: block;
+            height: auto;
+            border-left: solid 1px #8e6f3e; } }
+      .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item {
+        padding: 0.5rem 1.5rem; }
+        .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item:last-child {
+          padding-bottom: 1.5rem; }
+        .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item:first-child {
+          padding-top: 1.5rem; }
+        @media screen and (max-width: 1023px) {
+          .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item:first-child {
+            padding-top: 0 !important; } }
+        .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item a {
+          font-size: 1rem;
+          text-transform: none;
+          font-weight: 400; }
+          @media screen and (max-width: 1023px) {
+            .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item a {
+              font-weight: 300;
+              padding: 0.5rem 0; } }
+          .header--global .navbar--global .navbar-start .navbar-dropdown .navbar-item a:hover {
+            background: none; }
+    @media screen and (max-width: 1023px) {
+      .header--global .navbar--global .navbar-start .navbar-dropdown-submenu {
+        font-weight: 300; }
+        .header--global .navbar--global .navbar-start .navbar-dropdown-submenu .navbar-item:first-child {
+          padding-top: 0.5rem; } }
 
 .header--lp .navbar--lp {
   -webkit-box-align: center;
@@ -12268,4 +12370,43 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list {
   @media screen and (max-width: 767px) {
     .video-feature-block-text__padding-left {
       padding-left: 0; } }
+
+.alert-widget {
+  background: #daaa00;
+  font-family: acumin-pro, "Franklin Gothic", sans-serif;
+  font-weight: 600;
+  line-height: 1.4;
+  font-size: 1.125rem;
+  color: #000;
+  padding: 1.25rem 3.25rem;
+  text-align: center;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+          flex-direction: row;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center; }
+  .alert-widget:before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f071";
+    margin-right: 1rem;
+    display: inline-block;
+    text-decoration: none; }
+  @media screen and (max-width: 1023px) {
+    .alert-widget {
+      padding: 1rem 1.5rem;
+      font-size: 1rem; } }
+  @media screen and (max-width: 767px) {
+    .alert-widget {
+      padding: 1rem 1.25rem; } }
+  .alert-widget a {
+    color: #000;
+    text-decoration: underline; }
+    .alert-widget a:hover {
+      color: #000;
+      text-decoration: none; }
 

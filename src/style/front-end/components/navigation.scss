@@ -150,6 +150,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           }
           .search-icon {
             cursor: pointer;
+            transform:rotate(90deg);
+            color:$steel-gray;
           }
         }
       }
@@ -590,9 +592,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     .navbar-find-info{
       display:none;
       position:absolute;
-      top:0;
       left:0;
-      margin-top:6.75rem;
       height:0;
       z-index:1001;
       background-color:rgba(0, 0, 0, 0.75);
@@ -601,8 +601,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       transition: height 0.5s ease-out;
       border-top: 1px solid $aged-gold;
       @include touch{
-       margin-top:5.0625rem;
+        position:absolute;
         border-top: none;
+        margin-top:81px;
       }
 
       &.is-active{
@@ -620,23 +621,35 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         background:$white;
         padding:4rem 3.25rem;
         min-width:464px;
+        min-height: 100vh;
         @include touch{
           margin-bottom:1.25rem;
           min-width:0;
           padding:2rem $side-padding-tablet 2rem;
+          box-shadow:$box-shadow;
+          min-height: 0;
         }
         @include mobile{
           padding:2rem $side-padding-mobile 2rem;
         }
         .search-box{
           width:100%;
-          margin-bottom:3rem;
+          &:not(:last-child){
+            margin-bottom:3rem;
+          }
+        
           form input[type=search]{
             width:100%;
             height:3rem;
           }
+          .search-icon{
+            transform: rotate(90deg);
+            color:$steel-gray;
+          }
           @include touch{
-            margin-bottom:1.25rem;
+            &:not(:last-child){
+              margin-bottom:1.25rem;
+            }
           }
 
         }
@@ -796,93 +809,223 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
       }
     }
-    .purdue-navbar-white {
-      padding: 0 $side-padding-desktop;
-      @include touch {
-        order: 1;
-        display: flex;
-        flex-direction: column;
-        background: white !important;
-        padding: 0 $side-padding-tablet;
-      }
-      @include mobile {
-        padding: 0 $side-padding-mobile;
+    .navbar-site-name{
+      button{
+        background:$white;
+        border:none;
+        font-family:$acumin-pro-semicondensed;
+        color:$aged-gold;
+        font-weight:400;
+        font-style:italic;
+        font-size:1.875rem;
+        line-height:1.2;
+        width:100%;
+        padding:1.2rem $side-padding-desktop 0;
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index:50;
+        position:relative;
+        @include touch{
+          font-size:1.25rem;
+          line-height:1.25;
+          padding:1rem $side-padding-tablet;
+          box-shadow: $box-shadow;
+          &:after{
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            content: "\f067";
+            margin-left:1rem;
+            display:inline-block;
+            text-decoration: none;
+            font-style: normal;
+          }
+        }
+        @include mobile{
+          padding:1rem $side-padding-mobile;
+        }
+        &.is-open{
+          @include touch{
+            &:after{
+              content: "\f068";
+            }
+          }
+        }
       }
     }
     .navbar {
       &--global {
-        z-index:1;
-        .navbar-brand {
-          margin-right: 3.375rem;
-          .navbar-item {
-            padding: 1.5rem 0;
-            img {
-              max-height: 3rem;
-              height: 3rem;
-            }
-            border: none;
-          }
-          .icon {
-            display: none;
-            background: none;
-            border: none;
-            @include touch {
-              display: block;
-              &:hover {
-                cursor: pointer;
-              }
-            }
-            .burger-icon{
-              display:block;
-              font-size:2em;
-              width:1.5em;
-            }
-            .close-icon{
-              display:none;
-              font-size:2.2em;
-              width:1.5em;
-            }
-          }
-          @include touch {
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-          }
+        transition: height 0.2s ease-in;
+        width:100%;
+        flex-wrap: wrap;
+        @include touch{
+          margin-top:0;
+          height:0;
+          overflow: hidden;
+          background:$grey-secondary !important;
+          padding-bottom:1.5rem;
+
         }
         .navbar-start {
-          .navbar-item {
-            a {
-              font-family: $acumin-pro-condensed;
-              font-weight: 700;
-              @include touch {
-                color: black;
-                font-weight: 400;
-                font-size: 1.5rem;
-                &.navbar-link {
-                  &:after {
-                    display: none;
+          width: 100%;
+          flex-wrap: wrap;
+          .navbar-item{
+            border:none;
+            @include touch{
+              padding:0;
+              overflow: hidden;
+              &:hover{
+                background:none;
+                a{
+                  background:none;
+                }
+              }
+            }
+            @include mobile{
+              padding:0;
+            }
+            &.active{
+              &>a{
+                font-weight:700 !important;
+              }
+
+            }
+            a{
+              font-size: 15px;
+              text-transform:uppercase;
+              background:none;
+              @include touch{
+                font-size: 1rem;
+                text-transform:none;
+                color: $black;
+                padding:1.5rem $side-padding-tablet 0;
+              }
+              @include mobile{
+                padding:1.5rem $side-padding-mobile 0;
+              }
+              &:hover{
+                background:none;
+                color:$aged-gold;
+              }
+            }
+            &.has-dropdown{
+              &:hover{
+                &:after{
+                  content: '\f106';
+                  font-family: 'Font Awesome 5 Free';
+                  font-size: 1.125rem;
+                  font-weight: 900;
+                  position: relative;
+                  right: -0.4rem;
+                  margin-top: 3px;
+                  color: $aged-gold !important;
+                }
+                &>a{
+                  font-style: italic;
+                  color:$aged-gold;
+                  font-weight:700;
+                }
+              }
+              @include touch{
+                &:hover{
+                  &>a{
+                    font-style: normal;
+                    font-weight:400;
+                    &:after{
+                      font-style: normal;
+                    }
                   }
                 }
               }
             }
-            @include touch {
-              border: none;
-              padding: 0.6rem 0;
-              position: relative;
-              display: flex;
-              align-items: center;
+            a.navbar-link{
+              @include touch{
+                width:100%;
+                &:after{
+                  content: '\f067';
+                  font-family: 'Font Awesome 5 Free';
+                  font-weight: 900;
+                  position: absolute;
+                  border:none;
+                  transform: none;
+                  display:inline-block;
+                  right:1.7rem;
+                  margin:0;
+                }
+                &:hover{
+                  &:after{
+                    font-style: normal;
+                  }
+                }
+              }
+              @include mobile{
+                &:after{
+                  right:1.5rem;
+                }
+              }
+              &.navbar-link-open{
+                font-weight:700;
+                @include touch{
+                  &:after{
+                    content: '\f068';
+                  }
+                }
+              }
             }
           }
-          @include touch {
-            display: none;
-            &.is-active {
-              display: block;
+          .navbar-dropdown{
+            margin-left:0.75rem;
+            border-radius: 0;            
+            @include touch{
+              display:none;
+              height:0;
+              margin-left:1.25rem;
+              margin-top:1.25rem;
+              transition: height 0.2s ease;
+              &.is-active{
+                display:block;
+                height:auto;
+                border-left: solid 1px $aged-gold;
+              }
+            }
+
+            .navbar-item{
+              padding:0.5rem 1.5rem;
+              &:last-child{
+                padding-bottom:1.5rem;
+              }
+              &:first-child{
+                padding-top:1.5rem;
+              }
+              @include touch{
+                &:first-child{
+                  padding-top:0 !important;
+                }
+              }
+              a{
+                font-size: 1rem;
+                text-transform:none;
+                font-weight:400;
+                @include touch{
+                  font-weight:300;
+                  padding:0.5rem 0;
+                }
+                &:hover{
+                  background:none;
+                }
+              }
             }
           }
-        }
-        @include touch {
-          padding: 0 1rem;
+          .navbar-dropdown-submenu{
+            @include touch{
+              font-weight:300;
+              .navbar-item{
+                &:first-child{
+                  padding-top:0.5rem;
+                }
+              }
+            }
+          }
         }
       }
     }

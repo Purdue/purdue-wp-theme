@@ -13,16 +13,22 @@ const toggle = (e) => {
             document.querySelectorAll('.accordion__heading--footer').forEach((el) => {
                 const contentId = el.getAttribute('aria-controls');
                 let icons = el.querySelectorAll('.accordion__icon');
-                let plusIcon = el.querySelector('.accordion__icon__plus');
-				let minusIcon = el.querySelector('.accordion__icon__minus');
+                let plusIcon;
+				let minusIcon;
+                if(icons&&icons.length>0){
+                    plusIcon = el.querySelector('.accordion__icon__plus');
+                    minusIcon = el.querySelector('.accordion__icon__minus');
+                }
 
                 const content = document.querySelector('#' + contentId);
                 const currAttr = getCurrDisplay(content)
                 if (el.getAttribute('aria-expanded') && el !== clicked) {
                     el.setAttribute('aria-expanded', 'false');
                     if (content.getAttribute('state-animating') === null) {
-                        hideFooter(minusIcon)
-                        showFooter(plusIcon)
+                        if(icons&&icons.length>0){
+                            hideFooter(minusIcon)
+                            showFooter(plusIcon)
+                        }
 						content.style.height = 0;
 						hideFooter(content)
                         content.setAttribute('state-animating', 'true')
@@ -36,9 +42,11 @@ const toggle = (e) => {
                     const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
                     clicked.setAttribute('aria-expanded', expanded);
                     if (currAttr && currAttr !== 'none' && content.getAttribute('state-animating') === null) {
-                        icons.forEach((icon) => {
-                            swapIcon(icon);
-                        })
+                        if(icons&&icons.length>0){
+                            icons.forEach((icon) => {
+                                swapIcon(icon);
+                            })
+                        }
                         content.style.height = 0;
                         content.setAttribute('state-animating', 'true')
                         setTimeout(() => {
@@ -46,9 +54,11 @@ const toggle = (e) => {
                             content.removeAttribute('state-animating')
                         }, 200)
                     } else if (content.getAttribute('state-animating') === null) {
-                        icons.forEach((icon) => {
-                            swapIcon(icon)
-                        })
+                        if(icons&&icons.length>0){
+                            icons.forEach((icon) => {
+                                swapIcon(icon)
+                            })
+                        }
                         showFooter(content);
                         content.setAttribute('state-animating', 'true')
                         setTimeout(() => {
@@ -58,42 +68,37 @@ const toggle = (e) => {
                     }
                 }
             })          
-            break
-            case checkClassName(clicked, 'accordion__heading'): // accordion
-                const contentId = clicked.getAttribute('aria-controls');
-                let icons = clicked.querySelectorAll('.accordion__icon');
-                const content = document.querySelector('#' + contentId);
-                const currAttr = getCurrDisplay(content)
-                const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
-                clicked.setAttribute('aria-expanded', expanded);
-                if (currAttr && currAttr !== 'none' && content.getAttribute('state-animating') === null) {
-                    if(icons && icons.length>0){
-                        icons.forEach((icon) => {
-                            swapIcon(icon)
-                        })
-                    }
-                    clicked.classList.remove('is-open')
-                    content.style.height = 0;
-                    content.setAttribute('state-animating', 'true')
-                    setTimeout(() => {
-                        hideFooter(content)
-                        content.removeAttribute('state-animating')
-                    }, 200)
-                } else if (content.getAttribute('state-animating') === null) {
-                    if(icons && icons.length>0){
-                        icons.forEach((icon) => {
-                            swapIcon(icon)
-                        })
-                    }
-                    clicked.classList.add('is-open')
-                    showFooter(content);
-                    content.setAttribute('state-animating', 'true')
-                    setTimeout(() => {
-                        content.removeAttribute('state-animating')
-                    }, 200)
-                    content.style.height = content.scrollHeight + "px";
-                }     
-            break
+            break;
+        case checkClassName(clicked, 'accordion__heading'): // accordion
+            const contentId = clicked.getAttribute('aria-controls');
+            let icons = clicked.querySelectorAll('.accordion__icon');
+            const content = document.querySelector('#' + contentId);
+            const currAttr = getCurrDisplay(content)
+            const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
+            clicked.setAttribute('aria-expanded', expanded);
+            if (currAttr && currAttr !== 'none') {
+                if(icons && icons.length>0){
+                    icons.forEach((icon) => {
+                        swapIcon(icon)
+                    })
+                }
+                clicked.classList.remove('is-open')
+                content.style.height = 0;
+                setTimeout(() => {
+                    hideFooter(content)
+                }, 200)
+                
+            } else{
+                if(icons && icons.length>0){
+                    icons.forEach((icon) => {
+                        swapIcon(icon)
+                    })
+                }
+                clicked.classList.add('is-open')
+                showFooter(content);
+                content.style.height = content.scrollHeight + "px";
+            }     
+        break;
     }
 }
 // Hide an element
@@ -166,51 +171,13 @@ const swapIcon = (el) => {
 }
 //Collapse footer  and show icon at the beginning on small screen
 const width = document.body.clientWidth;
-const narrowFooter = document.querySelector('.narrow-footer');
 const footer = document.querySelector('.footer');
-if(narrowFooter){
-    narrowFooter.querySelectorAll('.accordion__heading--footer').forEach((el) => {
-        if (width < 1322) {
-            el.setAttribute('aria-expanded', false);
-            el.setAttribute('aria-disabled', false);
-        }
-    });
-    narrowFooter.querySelectorAll('.narrow-footer>.accordion__content--footer').forEach((el) => {
-        if (width < 1322) {
-            hideFooter(el);
-        }
-    });
-    narrowFooter.querySelectorAll('.narrow-footer>.accordion__heading--footer>.accordion__icon__plus').forEach((el) => {
-        if (width < 1322) {
-            showFooter(el)
-        }
-    });
-    narrowFooter.querySelectorAll('.narrow-footer>.accordion__heading--footer>.accordion__icon__minus').forEach((el) => {
-        if (width < 1322) {
-            hideFooter(el)
-        }
-    });
-}
+
 if(footer){
     footer.querySelectorAll('.accordion__heading--footer').forEach((el) => {
-        if (width < 1023) {
+        if (width < 1024) {
             el.setAttribute('aria-expanded', false);
             el.setAttribute('aria-disabled', false);
-        }
-    });
-    footer.querySelectorAll('.narrow-footer>.accordion__content--footer').forEach((el) => {
-        if (width < 1023) {
-            hideFooter(el);
-        }
-    });
-    footer.querySelectorAll('.narrow-footer>.accordion__heading--footer>.accordion__icon__plus').forEach((el) => {
-        if (width < 1023) {
-            showFooter(el)
-        }
-    });
-    footer.querySelectorAll('.narrow-footer>.accordion__heading--footer>.accordion__icon__minus').forEach((el) => {
-        if (width < 1023) {
-            hideFooter(el)
         }
     });
 }
@@ -224,19 +191,21 @@ if(footer){
 const assignListeners = () => {
     document.addEventListener('click', (event) => {
         const e = event.target
-        if (e.classList && e.classList.contains('.narrow-footer>accordion__heading--footer')&&narrowFooter) {
-            let width = document.body.clientWidth;
-            if (width <= 1322) {
-                toggle(e);
-            }
-        } else if (e.classList && e.classList.contains('.footer>accordion__heading--footer')&&footer) {
+        if(e.classList && e.classList.contains('.footer>accordion__heading--footer')&&footer) {
             let width = document.body.clientWidth;
             if (width <= 1023) {
                 toggle(e);
             }
         }else if(e.classList && e.classList.contains('accordion__heading')) {
-            toggle(e);
-        } 
+            if(e.classList.contains('accordion__heading--nav')){
+                let width = document.body.clientWidth;
+                if (width <= 1023) {
+                    toggle(e);
+                }
+            }else{
+                toggle(e);
+            }
+        }
     })
 }
 
@@ -244,39 +213,12 @@ const assignListeners = () => {
 //Reset
 window.addEventListener('resize', () => {
     const width = document.body.clientWidth;
-    if(narrowFooter){
-        narrowFooter.querySelectorAll('.accordion__heading--footer').forEach((el) => {
-            let content = document.querySelector('#' + el.getAttribute('aria-controls'));
-            let icons = el.querySelectorAll('.accordion__icon');
-            const currAttr = window.getComputedStyle(content).getPropertyValue('display');
-            if (width >= 1322) {
-                el.setAttribute('aria-expanded', true);
-                el.setAttribute('aria-disabled', true);
-                icons.forEach((el) => {
-                    if(el.getAttribute('class').indexOf('hide') > -1){
-                        el.setAttribute('class', el.getAttribute('class').replace('hide', ''));
-                    }   
-                    if(el.getAttribute('class').indexOf('show') > -1){
-                        el.setAttribute('class', el.getAttribute('class').replace('show', ''));
-                    }             
-                });
-                content.classList.remove('hide', 'show')
-                content.removeAttribute('style');
-            } else if (currAttr !== "none") {
-                el.setAttribute('aria-expanded', true);
-                el.setAttribute('aria-disabled', false);
-            } else {
-                el.setAttribute('aria-expanded', false);
-                el.setAttribute('aria-disabled', false);
-            }
-        });
-    }
     if(footer){
         footer.querySelectorAll('.accordion__heading--footer').forEach((el) => {
             let content = document.querySelector('#' + el.getAttribute('aria-controls'));
             let icons = el.querySelectorAll('.accordion__icon');
             const currAttr = window.getComputedStyle(content).getPropertyValue('display');
-            if (width >= 1023) {
+            if (width >= 1024) {
                 el.setAttribute('aria-expanded', true);
                 el.setAttribute('aria-disabled', true);
                 icons.forEach((el) => {

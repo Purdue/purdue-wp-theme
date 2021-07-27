@@ -55,6 +55,15 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'before_title'  => '<h2>',
             'after_title'   => '</h2>',
         ));
+        register_sidebar(array(
+            'name'          => esc_html__('Page Top Alert', 'purdue'),
+            'id'            => 'top-alert',
+            'description'   => esc_html__('Show alert at page top.', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="widget alert-widget %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '',
+            'after_title'   => '',
+        ));
 
         // check alm installed
         

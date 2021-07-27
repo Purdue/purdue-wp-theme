@@ -121,4 +121,43 @@ if ( ! function_exists( 'purdueBrand_footer_links' ) ) {
 	}
 }
 	
+if ( ! function_exists( 'purdueBrand_header_links' ) ) {
+	function purdueBrand_header_links($file)
+	{
+		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+		$url = $directory . $file;
+		$request = wp_remote_get( "$url" );
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+		$linkGroups=$data->linkGroups;
+		$featuredStory=$data->featuredStory;
+		if(($linkGroups && sizeof($linkGroups)>0)){
+			foreach ($data->linkGroups as $key=>$linkGroup) {  
+				if($linkGroup->type=="normal"){
+					$output='<div class="navbar-find-info__item">';
+				}else{
+					$output='<div class="navbar-find-info__item navbar-find-info__item-highlighted">';
+				}
+				$output.='<button class="accordion__heading" aria-expanded="false" id="findInfoItem-button-'.$key.'" aria-controls="findInfoItem-list-'.$key.'">
+							'.$linkGroup->header.'
+							</button>';
+				$output.='<ul class="accordion__content hide" id="findInfoItem-list-'.$key.'" aria-labelledby="findInfoItem-button-'.$key.'">';
+				foreach ($linkGroup->links as $link) {  
+					$output.='<li><a href="'.$link->link_url.'">'.$link->link_text.'</a></li>';
+				}
+				$output.='</ul>';
+				$output.='</div>';
+			}
+		}
+		if($featuredStory && $featuredStory->is_included){
+			if($featuredStory->description){
+				$output.='<p class="navbar-find-info__item-intro">'.$featuredStory->description.'</p>';
+			}
+			if($featuredStory->link_url){
+				$output.='<a href="'.$featuredStory->link_url.'" class="navbar-find-info__item-link">'.$featuredStory->link_text.'</a>';
+			}
+		}
+		echo $output;
+	}
+}
 
