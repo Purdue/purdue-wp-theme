@@ -46,7 +46,11 @@ document.addEventListener('DOMContentLoaded', () => {
               }, 500)
             }else{
               t.classList.add('is-active')
-              t.style.height=window.scrollHeight + "px";
+              if(t.classList.contains("navbar-find-info")){
+                t.style.height=window.scrollHeight + "px";
+              }else{
+                t.style.height=t.scrollHeight + "px";
+              }
             }
           })
  
@@ -55,7 +59,9 @@ document.addEventListener('DOMContentLoaded', () => {
             (removeActive = (e) => {
               let width = window.innerWidth
               if (width >= 1024) {
-                $target.forEach((t) => t.classList.remove('is-active'))
+                $target.forEach((t) => {
+                  t.classList.remove('is-active')
+                })
                 window.removeEventListener('resize', removeActive)
               }
             })
@@ -71,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const siteName = document.querySelector('.navbar-site-name');
   let siteNameButton;
   let globalNavContent;
-  let navLinks;
-  let navSublinks;
-  let navContents;
+  let navLinks=[];
+  let navSublinks=[];
+  let navContents=[];
   let width = window.innerWidth
   if(siteName){
     siteNameButton=siteName.querySelector('.accordion__heading')
@@ -112,11 +118,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const findInfo = document.querySelector('.navbar-find-info')
    
     if (width >= 1024) {
-      if($aside&&$aside.classList.contains('is-active')){
-        $aside.classList.remove('is-active')
+      if($aside){
+        const content = $aside.querySelector('.accordion__content')
+        const button =$aside.querySelector('.accordion__heading')
+        content.classList.remove('show', 'hide')
+        content.removeAttribute('style');
+        button.classList.remove('is-open')
+        button.setAttribute('aria-expanded', true);
+        button.setAttribute('aria-disabled', true);
       }
+
       if(navbarWhite&&navbarWhite.classList.contains('is-active')){
         navbarWhite.classList.remove('is-active')
+        navbarWhite.removeAttribute('style')
       }
       if(siteName){
           siteNameButton.setAttribute('aria-expanded', true);
@@ -193,6 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
           if (currAttr !== "none") {
             siteNameButton.setAttribute('aria-expanded', true);
             siteNameButton.setAttribute('aria-disabled', false);
+            globalNavContent.style.height="auto"
+
           }else{
             siteNameButton.setAttribute('aria-expanded', false);
             siteNameButton.setAttribute('aria-disabled', false);
@@ -226,6 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
             content.style.height="auto";
           }
         }
+        if($aside){
+          const sidenavContentn= $aside.querySelector('.accordion__content')
+          sidenavContentn.style.height="auto"
+        }
     }
   })
 
@@ -245,7 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
   var $navbar_topitems =[];
   var $navbar_subitems=[];
   var $outerSideDropdowns=[];
+  var $sideButton;
   if ($aside) {
+    $sideButton = $aside.querySelector('.accordion__heading')
     const $sidenav = $aside.querySelector('.navbar-menu')
     //top level menu
     const topitems = Array.prototype.slice.call($sidenav.querySelectorAll('.navbar-item:not(.submenu)'), 0)
@@ -255,6 +277,10 @@ document.addEventListener('DOMContentLoaded', () => {
     $navbar_topitems=topitems
     $navbar_subitems=subitems
     $outerSideDropdowns=$dropdowns
+    if(width<1024){
+      $sideButton.setAttribute('aria-expanded', false);
+      $sideButton.setAttribute('aria-disabled', false);
+    }
   }
   if (siteName) {
     //top level menu
@@ -320,8 +346,8 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         let x=e.clientX;
         const width=parseInt(window.getComputedStyle($dropdown_link).getPropertyValue('width'),10);
-        const left=parseInt(window.getComputedStyle($dropdown_link).getPropertyValue('left'),10);
-        let start=width+left-40;
+        const left=parseInt($dropdown_link.getBoundingClientRect().left,10);
+        let start=width+left-50;
         let end=width+left;
 
         if(x>start&&x<end){
@@ -339,8 +365,8 @@ document.addEventListener('DOMContentLoaded', () => {
             $dropdown_link.classList.add('navbar-link-open');
           }
 
-          // $dropdown_link.classList.toggle('navbar-link-open');
-          globalNavContent.style.height="auto"	
+          globalNavContent?globalNavContent.style.height="auto":""	
+          $aside?$aside.querySelector('.navbar-menu').style.height="auto":""	
         }else{
           window.location.href=$dropdown_link.href;
         }       

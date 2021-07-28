@@ -858,13 +858,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         transition: height 0.2s ease-in;
         width:100%;
         flex-wrap: wrap;
+        padding-bottom:0.7rem;
         @include touch{
           margin-top:0;
           height:0;
           overflow: hidden;
           background:$grey-secondary !important;
           padding-bottom:1.5rem;
-
         }
         .navbar-start {
           width: 100%;
@@ -898,10 +898,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 font-size: 1rem;
                 text-transform:none;
                 color: $black;
-                padding:1.5rem $side-padding-tablet 0;
+                padding:1.25rem 2.4rem 0 $side-padding-tablet;
               }
               @include mobile{
-                padding:1.5rem $side-padding-mobile 0;
+                padding:1.25rem 2rem 0 $side-padding-mobile;
               }
               &:hover{
                 background:none;
@@ -979,7 +979,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             @include touch{
               display:none;
               height:0;
-              margin-left:1.25rem;
+              margin-left:1.5rem;
               margin-top:1.25rem;
               transition: height 0.2s ease;
               &.is-active{
@@ -988,7 +988,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 border-left: solid 1px $aged-gold;
               }
             }
-
+            @include mobile{
+              margin-left:1.25rem;
+            }
             .navbar-item{
               padding:0.5rem 1.5rem;
               &:last-child{
@@ -998,8 +1000,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 padding-top:1.5rem;
               }
               @include touch{
+                padding:0.5rem 1.5rem 0 !important;
                 &:first-child{
-                  padding-top:0 !important;
+                  
+                    padding-top:0 !important;
+                  
                 }
               }
               a{
@@ -1008,7 +1013,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 font-weight:400;
                 @include touch{
                   font-weight:300;
-                  padding:0.5rem 0;
+                  padding:0;
                 }
                 &:hover{
                   background:none;
@@ -1019,11 +1024,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           .navbar-dropdown-submenu{
             @include touch{
               font-weight:300;
-              .navbar-item{
-                &:first-child{
-                  padding-top:0.5rem;
-                }
-              }
+              padding-top:0.5rem;
             }
           }
         }

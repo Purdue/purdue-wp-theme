@@ -197,14 +197,7 @@ const assignListeners = () => {
                 toggle(e);
             }
         }else if(e.classList && e.classList.contains('accordion__heading')) {
-            if(e.classList.contains('accordion__heading--nav')){
-                let width = document.body.clientWidth;
-                if (width <= 1023) {
-                    toggle(e);
-                }
-            }else{
-                toggle(e);
-            }
+            toggle(e);
         }
     })
 }

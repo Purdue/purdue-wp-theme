@@ -18,9 +18,7 @@
 
 <aside class="side-nav">
 	<div class="aside-wrapper">
-	<ul class="navbar-menu">
 		<?php purdueBrand_sideNav();?>	
-	</ul>
 </div>
 </aside>
 

@@ -620,11 +620,11 @@ if ( ! class_exists( 'purdueBrand_nav_sidenav' ) ) {
                 // If item has_children add atts to a.
                 if ($args->walker->has_children && $depth === 0) {
                     $atts['class']			= 'navbar-link';
-                    $atts['aria-haspopup']	= 'true';
+                    $atts['aria-haspopup']	= 'false';
 				}
 				if ($args->walker->has_children && $depth === 1) {
                     $atts['class']			= 'navbar-link-submenu';
-                    $atts['aria-haspopup']	= 'true';
+                    $atts['aria-haspopup']	= 'false';
                 }
                 $atts['href'] = ! empty($item->url) ? $item->url : '';
                 $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);

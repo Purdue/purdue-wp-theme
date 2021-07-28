@@ -7,12 +7,12 @@
 
 if ( function_exists( 'register_nav_menus' ) ) {
 	register_nav_menus( array(
-		'black-bar-menu' => esc_html__( 'Black Bar Menu', 'purdue-wp-theme' ),
+		// 'black-bar-menu' => esc_html__( 'Black Bar Menu', 'purdue-wp-theme' ),
 		'global-menu' => esc_html__( 'Global Header Primary', 'purdue-wp-theme' ),
 		'top-nav' => esc_html__( 'Simple Header Primary', 'purdue-wp-theme' ),
 		'side-nav' => esc_html__( 'Side Navigation', 'purdue-wp-theme' ),
-		'footer-social' => esc_html__( 'Footer Social Links', 'purdue-wp-theme' ),	
-		'footer-signatureLinks' => esc_html__( 'Footer Signature Links', 'purdue-wp-theme' ),	
+		// 'footer-social' => esc_html__( 'Footer Social Links', 'purdue-wp-theme' ),	
+		// 'footer-signatureLinks' => esc_html__( 'Footer Signature Links', 'purdue-wp-theme' ),	
 		'header-buttons' => esc_html__( 'Header buttons', 'purdue-wp-theme' ),	
 		) );
 		if(get_theme_mod('header_layout_settings') == 'oldglobalfooter'){
@@ -104,7 +104,7 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 				'menu'  => $menu_obj,
 				'depth'             => 4,
 				'container'         => false,
-				'items_wrap'    	=> '%3$s',
+				'items_wrap'        => '<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="side-nav-button" aria-controls="side-nav">'.$menu_obj->name.'</button><ul class="accordion__content navbar-menu" id="side-nav" aria-labelledby="side-nav-button">%3$s</ul>',
 				'menu_class'        => '',
 				'fallback_cb'       => 'purdueBrand_nav_sidenav::fallback',
 				'walker'            => new purdueBrand_nav_sidenav()
