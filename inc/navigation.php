@@ -83,10 +83,10 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 		global $post;
 		$location = 'side-nav';
 		$menu_obj = false;
-
+		$menu_name = false;
 		if ( class_exists('acf') ) {
 			$menu_obj = get_field( "subnav_menu" );
-
+			$menu_name = wp_get_nav_menu_object($menu_obj)->name;
 			if( !$menu_obj ) {
 				if ($post->post_parent) {
 					$menu_obj = get_field( "subnav_menu", $post->post_parent );
@@ -97,14 +97,16 @@ if ( ! function_exists( 'purdueBrand_sideNav' ) ) {
 		if (!$menu_obj) {
 			if (has_nav_menu($location)){
 				$menu_obj = purdue_get_menu_by_location($location); 
+				$menu_name = $menu_obj->name;
 			}
-		}
+		}	
+
 		if ($menu_obj){
 			wp_nav_menu( array( 
 				'menu'  => $menu_obj,
 				'depth'             => 4,
 				'container'         => false,
-				'items_wrap'        => '<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="side-nav-button" aria-controls="side-nav">'.$menu_obj->name.'</button><ul class="accordion__content navbar-menu" id="side-nav" aria-labelledby="side-nav-button">%3$s</ul>',
+				'items_wrap'        => '<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="side-nav-button" aria-controls="side-nav">'.$menu_name.'</button><ul class="accordion__content navbar-menu" id="side-nav" aria-labelledby="side-nav-button">%3$s</ul>',
 				'menu_class'        => '',
 				'fallback_cb'       => 'purdueBrand_nav_sidenav::fallback',
 				'walker'            => new purdueBrand_nav_sidenav()

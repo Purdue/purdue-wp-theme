@@ -197,7 +197,14 @@ const assignListeners = () => {
                 toggle(e);
             }
         }else if(e.classList && e.classList.contains('accordion__heading')) {
-            toggle(e);
+            if(e.id==="global-nav-button"||e.id==="side-nav-button"){
+                if (width <= 1023) {
+                    toggle(e);
+                }
+            }else{
+                toggle(e);
+            }
+
         }
     })
 }

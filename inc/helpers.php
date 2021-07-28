@@ -131,12 +131,14 @@ if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 		$data = json_decode( $body );
 		$linkGroups=$data->linkGroups;
 		$featuredStory=$data->featuredStory;
+		$output='';
+
 		if(($linkGroups && sizeof($linkGroups)>0)){
 			foreach ($data->linkGroups as $key=>$linkGroup) {  
-				if($linkGroup->type=="normal"){
-					$output='<div class="navbar-find-info__item">';
+				if($linkGroup->type == "normal"){					
+					$output.='<div class="navbar-find-info__item">';
 				}else{
-					$output='<div class="navbar-find-info__item navbar-find-info__item-highlighted">';
+					$output.='<div class="navbar-find-info__item navbar-find-info__item-highlighted">';
 				}
 				$output.='<button class="accordion__heading" aria-expanded="false" id="findInfoItem-button-'.$key.'" aria-controls="findInfoItem-list-'.$key.'">
 							'.$linkGroup->header.'

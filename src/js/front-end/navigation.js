@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
           $dropdown_link.setAttribute('aria-expanded', 'true')
           $dropdown_content.classList.add('is-active')	
           is_topLevel=true;		
-        }else{
+        }else if(el.parentElement.classList.contains('navbar-dropdown-submenu')){
           el.parentElement.parentElement.parentElement.parentElement.firstChild.classList.add('navbar-link-open')
           el.parentElement.parentElement.parentElement.classList.add('is-active')
           el.parentElement.parentElement.parentElement.parentElement.firstChild.setAttribute('aria-expanded', "true")
