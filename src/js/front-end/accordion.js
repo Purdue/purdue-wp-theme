@@ -191,8 +191,8 @@ if(footer){
 const assignListeners = () => {
     document.addEventListener('click', (event) => {
         const e = event.target
+        let width = document.body.clientWidth;
         if(e.classList && e.classList.contains('.footer>accordion__heading--footer')&&footer) {
-            let width = document.body.clientWidth;
             if (width <= 1023) {
                 toggle(e);
             }
