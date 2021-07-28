@@ -911,9 +911,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             &.has-dropdown{
               &:hover{
                 &:after{
-                  content: '\f106';
+                  content: '\f077';
                   font-family: 'Font Awesome 5 Free';
-                  font-size: 1.125rem;
+                  font-size: 12px;
                   font-weight: 900;
                   position: relative;
                   right: -0.4rem;
