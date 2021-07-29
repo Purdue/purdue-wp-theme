@@ -975,7 +975,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           }
           .navbar-dropdown{
             margin-left:0.75rem;
-            border-radius: 0;            
+            border-radius: 0;  
+            @include desktop{
+              top:calc(100% + 11.2px);
+            }          
             @include touch{
               display:none;
               height:0;
