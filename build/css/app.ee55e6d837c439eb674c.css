@@ -9011,6 +9011,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   -webkit-animation: faeInRGBA 1s linear;
           animation: faeInRGBA 1s linear;
   background-color: rgba(0, 0, 0, 0);
+  -webkit-animation: fadeInRGBA 0.5s linear;
+          animation: fadeInRGBA 0.5s linear;
   width: 100%;
   overflow: hidden;
   border-top: 1px solid #8e6f3e;
@@ -9026,9 +9028,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
       .header--global .navbar-find-info.has-alert {
         padding-top: 134.98px; } }
   .header--global .navbar-find-info.is-active {
+    z-index: 1001;
     -webkit-animation: fadeOutRGBA 0.5s linear;
             animation: fadeOutRGBA 0.5s linear;
-    z-index: 1001;
     background-color: rgba(0, 0, 0, 0.75);
     overflow: auto; }
     .header--global .navbar-find-info.is-active .navbar-find-info__panel {
@@ -9053,7 +9055,8 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     transition: -webkit-transform .5s ease;
     transition: transform .5s ease;
     transition: transform .5s ease, -webkit-transform .5s ease;
-    width: 500px; }
+    width: 500px;
+    height: 100%; }
     @media screen and (max-width: 1023px) {
       .header--global .navbar-find-info__panel {
         width: 100%; } }
@@ -9061,14 +9064,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
     background: white;
     padding: 4rem 3.25rem;
     min-width: 464px;
-    min-height: 100vh; }
+    min-height: 100%; }
     @media screen and (max-width: 1023px) {
       .header--global .navbar-find-info__items {
         margin-bottom: 1.25rem;
         min-width: 0;
         padding: 2rem 1.5rem 2rem;
-        box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0px 0 1px rgba(0, 0, 0, 0.02);
-        min-height: 0; } }
+        box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0px 0 1px rgba(0, 0, 0, 0.02); } }
     @media screen and (max-width: 767px) {
       .header--global .navbar-find-info__items {
         padding: 2rem 1.25rem 2rem; } }
@@ -9415,19 +9417,40 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .no-scroll {
   position: fixed;
-  width: 100%; }
+  width: 100%;
+  overflow-x: hidden; }
 
 @-webkit-keyframes fadeOutRGBA {
   0% {
-    background-color: rgba(0, 0, 0, 0); }
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 0; }
   100% {
-    background-color: rgba(0, 0, 0, 0.75); } }
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001; } }
 
 @keyframes fadeOutRGBA {
   0% {
-    background-color: rgba(0, 0, 0, 0); }
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 0; }
   100% {
-    background-color: rgba(0, 0, 0, 0.75); } }
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001; } }
+
+@-webkit-keyframes fadeInRGBA {
+  0% {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001; }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 0; } }
+
+@keyframes fadeInRGBA {
+  0% {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 1001; }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 0; } }
 
 .footer {
   padding: 0;

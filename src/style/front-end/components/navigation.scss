@@ -600,6 +600,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       z-index:0;
       animation: faeInRGBA 1s linear;
       background-color: rgba(0, 0, 0, 0);
+      animation: fadeInRGBA 0.5s linear;
       width:100%;
       overflow:hidden;
       border-top: 1px solid $aged-gold;
@@ -616,8 +617,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
       }
       &.is-active{
-        animation: fadeOutRGBA 0.5s linear;
         z-index:1001;
+        animation: fadeOutRGBA 0.5s linear;
         background-color: rgba(0, 0, 0, 0.75);
         overflow:auto;
         .navbar-find-info__panel{
@@ -634,6 +635,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         transform: translateX(100%);
         transition: transform .5s ease;
         width:500px;
+        height:100%;
         @include touch{
           width:100%;
         }
@@ -642,13 +644,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         background:$white;
         padding:4rem 3.25rem;
         min-width:464px;
-        min-height: 100vh;
+        min-height: 100%;
         @include touch{
           margin-bottom:1.25rem;
           min-width:0;
           padding:2rem $side-padding-tablet 2rem;
           box-shadow:$box-shadow;
-          min-height: 0;
         }
         @include mobile{
           padding:2rem $side-padding-mobile 2rem;
@@ -1085,12 +1086,25 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 .no-scroll {
   position: fixed; 
   width: 100%;
+  overflow-x: hidden;
 }
 @keyframes fadeOutRGBA {
   0% {
     background-color: rgba(0, 0, 0, 0);
+    z-index:0;
   }
   100% {
     background-color: rgba(0, 0, 0, 0.75);
+    z-index:1001;
+  }
+}
+@keyframes fadeInRGBA {
+  0% {
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index:1001;
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0);
+    z-index:0;
   }
 }
