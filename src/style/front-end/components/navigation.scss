@@ -885,6 +885,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         transition: height 0.2s ease-in;
         width:100%;
         flex-wrap: wrap;
+        @include desktop{
+          min-height:2.375rem;
+        }
         @include touch{
           margin-top:0;
           height:0;
