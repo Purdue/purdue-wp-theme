@@ -603,7 +603,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       animation: fadeInRGBA 0.5s linear;
       width:100%;
       overflow:hidden;
-      border-top: 1px solid $aged-gold;
       padding-top:91.03px;
       @include touch{
         border-top: none;
@@ -621,13 +620,19 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         animation: fadeOutRGBA 0.5s linear;
         background-color: rgba(0, 0, 0, 0.75);
         overflow:auto;
+        &:after{
+          content: "";
+          width: 100%;
+          position: absolute;
+          border-top: 1px solid $aged-gold; 
+        }
         .navbar-find-info__panel{
           transform: translateX(0);
         }
         @include touch{
-                  display:flex;
-        flex-direction:row;
-        justify-content: flex-end;
+          &:after{
+            content: none;
+          }
         }
       }
       &__panel{
@@ -842,7 +847,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         font-size:1.875rem;
         line-height:1.2;
         width:100%;
-        padding:1.2rem $side-padding-desktop 0.5rem;
+        padding:1rem $side-padding-desktop 0.5rem;
         display:flex;
         flex-direction: row;
         justify-content: space-between;
