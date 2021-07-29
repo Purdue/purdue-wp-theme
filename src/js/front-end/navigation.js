@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0)
   const $aside = document.querySelector('.side-nav')
+  const body= document.querySelector('body')
   // Check if there are any navbar burgers
   if ($navbarBurgers.length > 0) {
     // Add a click event on each of them
@@ -20,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const expanded = el.getAttribute('aria-expanded') === 'false' ? true : false
         const hamburgerIcon = el.querySelector('.burger-icon')
         const closeIcon = el.querySelector('.close-icon')
-        const window = document.querySelector('html')
         el.setAttribute('aria-expanded', expanded)
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
         el.classList.toggle('is-active')
@@ -39,15 +39,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         if ($target) {
           $target.forEach((t) => {
+
             if(t.classList.contains('is-active')){
-              t.style.height=0
-              setTimeout(() => {
+              if(t.classList.contains("navbar-find-info")){
+                body.classList.remove('no-scroll');
                 t.classList.remove('is-active')
-              }, 500)
+              }else{
+                t.style.height=0
+                setTimeout(() => {
+                  t.classList.remove('is-active')
+                }, 500)              
+              }
+
             }else{
               t.classList.add('is-active')
               if(t.classList.contains("navbar-find-info")){
-                t.style.height=window.scrollHeight + "px";
+                body.classList.add('no-scroll')
               }else{
                 t.style.height=t.scrollHeight + "px";
               }
@@ -73,6 +80,21 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
   }
+  //global header blackbar
+  const global=document.querySelector(".header--global")
+
+  if(global){
+    const findInfo=global.querySelector('.navbar-find-info')
+    const blackBar=global.querySelector('.purdue-navbar-black')
+    const alert= document.querySelector(".alert-widget")
+    console.log(alert)
+    if(alert){
+      findInfo.classList.add('has-alert')
+    }else{
+      findInfo.classList.remove('has-alert')
+    }
+  }
+
   //global header top nav
   const siteName = document.querySelector('.navbar-site-name');
   let siteNameButton;
@@ -116,8 +138,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbarWhite = document.querySelector('.purdue-navbar-white')
     const blackNav = document.querySelector('.purdue-navbar-black')
     const findInfo = document.querySelector('.navbar-find-info')
-   
+
     if (width >= 1024) {
+      body.classList.remove('no-scroll');
       if($aside){
         const content = $aside.querySelector('.accordion__content')
         const button =$aside.querySelector('.accordion__heading')

@@ -68,7 +68,8 @@
 						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
 						<button class="icon is-large navbar-burger" data-target="navbar-find-info" aria-expanded="false">
 							<span class="icon__button-text">Purdue Menu</span>	
-							<img src="<?php echo get_template_directory_uri() ?>/icons/search-menu-icon.png" arial-hidden="true" class="burger-icon"><img src="<?php echo get_template_directory_uri() ?>/icons/close-icon.png" class="close-icon">
+							<img src="<?php echo get_template_directory_uri() ?>/icons/search-menu-icon.png" aria-hidden="true" alt="" class="burger-icon">
+							<img src="<?php echo get_template_directory_uri() ?>/icons/close-icon.png" aria-hidden="true" alt="" class="close-icon">
 						</button>
 					</div>
 					<div class="navbar-menu">
@@ -105,6 +106,18 @@
 								</li>
 							</ul>	
 							<?php purdueBrand_header_links("global-header.json");?>
+							<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
+<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
+<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
+<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
+<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
+<p>The example image above shows a scrollbar and an offsetHeight which fits on the window. However, non-scrollable elements may have large offsetHeight values, much larger than the visible content. These elements are typically contained within scrollable elements; consequently, these non-scrollable elements may be completely or partly invisible, depending on the scrollTop setting of the scrollable container.
+</p>
 						</div>
 					</div>
 				</div>

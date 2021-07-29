@@ -10,7 +10,7 @@
 ?>
 <form action="<?php echo esc_url( home_url( '/' ) );?>" name="searchform" method="get">
 	<span class="sr-only">Search for:</span>
-	<input type="search" class="search-field" placeholder="Search This Site" name="s" value='<?php echo isset($_GET['s']) ? $_GET['s'] : ""; ?>'>	
+	<input type="search" title="search" class="search-field" placeholder="Search This Site" name="s" value='<?php echo isset($_GET['s']) ? $_GET['s'] : ""; ?>'>	
 	<button type="submit" class="search-button"><span class="sr-only">Submit</span>
 		<i class="fas fa-search search-icon"></i>
 	</button>
@@ -18,7 +18,7 @@
 <?php }else{ ?>
 	<form action="<?php echo esc_url( home_url( '/' ) );?>/search" name="searchform" method="get">
 	<span class="sr-only">Search for:</span>
-	<input type="search" class="search-field" placeholder="Search All Purdue" name="q" value='<?php echo isset($_GET['q']) ? $_GET['q'] : ""; ?>'>
+	<input type="search" title="search" class="search-field" placeholder="Search All Purdue" name="q" value='<?php echo isset($_GET['q']) ? $_GET['q'] : ""; ?>'>
 	<button type="submit" class="search-button"><span class="sr-only">Submit</span>
 		<i class="fas fa-search search-icon"></i>
 	</button>

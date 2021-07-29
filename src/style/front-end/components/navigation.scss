@@ -1,6 +1,6 @@
 $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 .purdue-navbar-black {
-  padding: 1.75rem 3.25rem;
+  padding: 1.22rem 3.25rem;
   align-items: center !important;
   position: relative;
   font-family: $acumin-pro-semicondensed;
@@ -21,8 +21,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       padding: 0;
       margin:0;
       img {
-        width: 243.47px;
-        max-height: 44.18px;
+        width: 223px;
+        max-height: 40.45px;
         @include touch {
           max-height: 33px;
           width: 181.89px;
@@ -590,29 +590,50 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 
     }
     .navbar-find-info{
-      display:none;
+      display:flex;
+      flex-direction:row;
+      justify-content: flex-end;
       position:absolute;
       left:0;
-      height:0;
-      z-index:1001;
-      background-color:rgba(0, 0, 0, 0.75);
+      top:0;
+      height:100vh;
+      z-index:0;
+      animation: faeInRGBA 1s linear;
+      background-color: rgba(0, 0, 0, 0);
       width:100%;
-      overflow:auto;
-      transition: height 0.5s ease-out;
+      overflow:hidden;
       border-top: 1px solid $aged-gold;
+      padding-top:91.03px;
       @include touch{
-        position:absolute;
         border-top: none;
-        margin-top:81px;
+        padding-top:80.98px;
+        overflow:auto;
       }
-
+      &.has-alert{
+        padding-top:156.03px;
+        @include touch{
+          padding-top:134.98px;
+        }
+      }
       &.is-active{
-        display:flex;
-        flex-direction:1;
+        animation: fadeOutRGBA 0.5s linear;
+        z-index:1001;
+        background-color: rgba(0, 0, 0, 0.75);
+        overflow:auto;
+        .navbar-find-info__panel{
+          transform: translateX(0);
+        }
+        @include touch{
+                  display:flex;
+        flex-direction:row;
         justify-content: flex-end;
+        }
       }
       &__panel{
-        overflow:hidden;
+        overflow:auto;
+        transform: translateX(100%);
+        transition: transform .5s ease;
+        width:500px;
         @include touch{
           width:100%;
         }
@@ -820,7 +841,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         font-size:1.875rem;
         line-height:1.2;
         width:100%;
-        padding:1.2rem $side-padding-desktop 0;
+        padding:1.2rem $side-padding-desktop 0.5rem;
         display:flex;
         flex-direction: row;
         justify-content: space-between;
@@ -870,9 +891,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           flex-wrap: wrap;
           .navbar-item{
             border:none;
+            padding:0 0.75rem 1rem;
             @include touch{
               padding:0;
               overflow: hidden;
+              font-weight:700;
               &:hover{
                 background:none;
                 a{
@@ -885,7 +908,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             }
             &.active{
               &>a{
-                font-weight:700 !important;
+                text-decoration: underline;
               }
 
             }
@@ -896,6 +919,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               @include touch{
                 font-size: 1rem;
                 text-transform:none;
+                font-weight:700;
                 color: $black;
                 padding:1.25rem 2.4rem 0 $side-padding-tablet;
               }
@@ -904,7 +928,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               }
               &:hover{
                 background:none;
-                color:$aged-gold;
+                text-decoration: underline;
               }
             }
             &.has-dropdown{
@@ -917,25 +941,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                   position: relative;
                   right: -0.4rem;
                   margin-top: 3px;
-                  color: $aged-gold !important;
                 }
                 &>a{
-                  font-style: italic;
-                  color:$aged-gold;
-                  font-weight:700;
+                  color:$black;
                 }
               }
-              @include touch{
-                &:hover{
-                  &>a{
-                    font-style: normal;
-                    font-weight:400;
-                    &:after{
-                      font-style: normal;
-                    }
-                  }
-                }
-              }
+
             }
             a.navbar-link{
               @include touch{
@@ -963,10 +974,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 }
               }
               &.navbar-link-open{
-                font-weight:700;
                 @include touch{
+                  font-style: italic;
+                  color:$aged-gold;
                   &:after{
                     content: '\f068';
+                    color:$black;
                   }
                 }
               }
@@ -1005,13 +1018,19 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                     padding-top:0 !important;
                   
                 }
+                &:hover{
+                  &>a{
+                    color:$steel-gray;
+                  }
+                }
               }
               a{
                 font-size: 1rem;
                 text-transform:none;
                 font-weight:400;
                 @include touch{
-                  font-weight:300;
+                  font-weight:400;
+                  color:$steel-gray;
                   padding:0;
                 }
                 &:hover{
@@ -1022,7 +1041,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           }
           .navbar-dropdown-submenu{
             @include touch{
-              font-weight:300;
+              font-weight:400;
+              color:$steel-gray;
               padding-top:0.5rem;
             }
           }
@@ -1064,6 +1084,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 }
 .no-scroll {
   position: fixed; 
-  overflow-y: scroll;
   width: 100%;
+}
+@keyframes fadeOutRGBA {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
 }

@@ -11,6 +11,8 @@
     flex-direction:row;
     justify-content: center;
     align-items:center;
+    z-index: 1002;
+    position: relative;
     &:before{
         font-family: "Font Awesome 5 Free"; 
         font-weight: 900; 
