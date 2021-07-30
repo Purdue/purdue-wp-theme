@@ -43,7 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if(t.classList.contains('is-active')){
               if(t.classList.contains("navbar-find-info")){
                 body.classList.remove('no-scroll');
-                t.classList.remove('is-active')
+                  t.style.display="flex"
+                  t.classList.remove('is-active')
+                setTimeout(() => {
+                  t.removeAttribute('style');
+                }, 500) 
               }else{
                 t.style.height=0
                 setTimeout(() => {

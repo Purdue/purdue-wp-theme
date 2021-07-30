@@ -100,7 +100,8 @@
         }
         &.active{
           &>a{
-            font-weight:700;
+            font-weight:600; 
+            text-decoration: underline;
           }
         }
         &>a{
@@ -113,6 +114,7 @@
           padding: 0.75rem 1.5rem 0.75rem $side-padding-desktop;
           display:block;
           text-decoration: none;
+          font-weight:600;
           @include touch{
             padding: 0.5rem 2rem 0.5rem $side-padding-mobile;
           }
@@ -122,23 +124,35 @@
           text-decoration: none;
           background:none;
           &:after{
-            border-color: $white !important;
-            transform: rotate(-45deg);
-            @include touch{
-              top: 55%;
-            }
+            content: '\f067';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            border:none;
+            transform: none;
+            display:inline-block;
+            right:1rem;
+            margin:0;
+            top: auto;
           }
           &:hover{
             background:none;
+          }
+          @include touch{
+            &:after{
+              right:1.7rem;
+            }
           }
         }
         .navbar-link-open{
           width:100%;
           background:none;
-          font-weight:700;
+          font-style:italic;
+          font-weight:600; 
+          color:$boiler-gold;
           &:after{
-            transform: rotate(135deg);
-            top:50%;
+            content: '\f068';
+            color:$white;
           }
         }
         .navbar-dropdown{
@@ -168,11 +182,11 @@
             }
           }
           .navbar-item{
-            border-left: solid 1px $aged-gold;
+            border-left: solid 1px $boiler-gold;
             padding:0.5rem 0 0 1rem;
             &.active{
               &>a{
-                font-weight:700;
+                text-decoration: underline;   
               }
             }
             &:hover{
@@ -186,9 +200,9 @@
           }
 
           a{
-            color:$white;
+            color:$steam-gray;
             width:100%;
-            font-weight:300;
+            font-weight:400;
             white-space: break-spaces;
             padding:0 1.5rem 0 0;
           }
@@ -215,11 +229,6 @@
               .navbar-item{
                 width:100%;
                 border:none;
-                &.active{
-                  &>a{
-                    font-weight:700;
-                  }
-                }
               }
             }
           }

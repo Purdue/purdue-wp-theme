@@ -590,7 +590,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 
     }
     .navbar-find-info{
-      display:flex;
+      display:none;
       flex-direction:row;
       justify-content: flex-end;
       position:absolute;
@@ -616,6 +616,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
       }
       &.is-active{
+        display:flex;
         z-index:1001;
         animation: fadeOutRGBA 0.5s linear;
         background-color: rgba(0, 0, 0, 0.75);
@@ -628,6 +629,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
         .navbar-find-info__panel{
           transform: translateX(0);
+          animation: fadeIn 0.5s linear;
         }
         @include touch{
           &:after{
@@ -638,7 +640,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       &__panel{
         overflow:auto;
         transform: translateX(100%);
-        transition: transform .5s ease;
+        animation: fadeOut 0.5s linear;
         width:500px;
         height:100%;
         @include touch{
@@ -651,7 +653,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         min-width:464px;
         min-height: 100%;
         @include touch{
-          margin-bottom:1.25rem;
+          width:100%;
           min-width:0;
           padding:2rem $side-padding-tablet 2rem;
           box-shadow:$box-shadow;
@@ -730,6 +732,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             margin-left:1rem;
             display:inline-block;
             text-decoration: none;
+            vertical-align: middle;
           }
           &:hover{
             color:$aged-gold;
@@ -1114,5 +1117,21 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   100% {
     background-color: rgba(0, 0, 0, 0);
     z-index:0;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
