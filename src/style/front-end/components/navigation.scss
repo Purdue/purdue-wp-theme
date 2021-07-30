@@ -847,7 +847,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         color:$aged-gold;
         font-weight:400;
         font-style:italic;
-        font-size:1.875rem;
+        font-size:1.5625rem;
         line-height:1.2;
         width:100%;
         padding:1rem $side-padding-desktop 0.5rem;
@@ -904,6 +904,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           .navbar-item{
             border:none;
             padding:0 0.75rem 1rem;
+            position:relative;
+            &:hover{
+              &>a:before{
+                visibility: visible;
+                transform: scaleX(1);
+              }
+            }
             @include touch{
               padding:0;
               overflow: hidden;
@@ -920,30 +927,62 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             }
             &.active{
               &>a{
-                text-decoration: underline;
+                &:before{      
+                  visibility: visible;
+                  transform: scaleX(1);         
+                }
+                @include touch{
+                  text-decoration: underline;
+                  &:before{
+                    content:none;
+                  }
+                }
               }
-
             }
             a{
               font-size: 15px;
               text-transform:uppercase;
               background:none;
+              font-weight: 500;
+              position: relative;
+              &:before{
+                content: "";
+                height: 2px;
+                width: 100%;
+                position: absolute;
+                display:block;
+                bottom: 0;
+                left: 0;
+                visibility: hidden;
+                background: $black;
+                transform: scaleX(0);
+                transition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+              }
+              &:hover{
+                background:none;
+              }
               @include touch{
                 font-size: 1rem;
                 text-transform:none;
                 font-weight:700;
                 color: $black;
                 padding:1.25rem 2.4rem 0 $side-padding-tablet;
+                &:before{
+                  content:none;
+                }
+                &:hover{
+                  text-decoration: underline;
+                }
               }
               @include mobile{
                 padding:1.25rem 2rem 0 $side-padding-mobile;
               }
-              &:hover{
-                background:none;
-                text-decoration: underline;
-              }
             }
             &.has-dropdown{
+              &:after{
+                color:$steel-gray !important;
+                vertical-align: middle;
+              }
               &:hover{
                 &:after{
                   content: '\f077';
@@ -953,9 +992,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                   position: relative;
                   right: -0.4rem;
                   margin-top: 3px;
-                }
-                &>a{
-                  color:$black;
                 }
               }
 
@@ -1023,27 +1059,47 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               &:first-child{
                 padding-top:1.5rem;
               }
+              &.has-dropdown{
+                &:after{
+                  position: absolute;
+                  right: 1rem;
+                }
+              }
+              &:hover{
+                &>a{
+                  text-decoration:none;
+                }
+              }
               @include touch{
                 padding:0.5rem 1.5rem 0 !important;
-                &:first-child{
-                  
-                    padding-top:0 !important;
-                  
+                &:first-child{                  
+                    padding-top:0 !important;                  
                 }
                 &:hover{
                   &>a{
                     color:$steel-gray;
+                    text-decoration:underline;
                   }
                 }
               }
               a{
-                font-size: 1rem;
+                font-size: 0.9375rem;
                 text-transform:none;
-                font-weight:400;
+                color:$steel-gray;
+                font-weight:600; 
+                width:auto;
+                padding-right: 0;
+                margin-right: 1rem;
+                // &:before{
+                //   content:none;
+                // }
                 @include touch{
-                  font-weight:400;
-                  color:$steel-gray;
+                  font-weight:400;                  
                   padding:0;
+                  width:100%;
+                  &:before{
+                    content:none;
+                  }
                 }
                 &:hover{
                   background:none;
