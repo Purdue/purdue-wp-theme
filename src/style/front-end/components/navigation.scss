@@ -947,7 +947,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               position: relative;
               &:before{
                 content: "";
-                height: 2px;
+                height: 1px;
                 width: 100%;
                 position: absolute;
                 display:block;
