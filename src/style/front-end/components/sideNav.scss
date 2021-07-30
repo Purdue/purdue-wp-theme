@@ -189,11 +189,6 @@
                 text-decoration: underline;   
               }
             }
-            &:hover{
-              &>a{
-                text-decoration: underline;                
-              }
-            }
             &:first-child{
               padding-top:0;
             }
@@ -205,6 +200,9 @@
             font-weight:400;
             white-space: break-spaces;
             padding:0 1.5rem 0 0;
+            &:hover{
+              text-decoration: underline;   
+            }
           }
           .submenu{
             display:flex;

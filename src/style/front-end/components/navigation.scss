@@ -199,31 +199,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       flex-wrap: wrap;
       & > li {
         & > a {
+          position:relative;
           &:before {
             content: '';
             height: 2px;
-            width: calc(100% - 25px);
-            position: absolute;
-            bottom: 12px;
-            left: 12.5px;
-            visibility: hidden;
-            background: $aged-gold;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transition: $thetransition;
-            transition: $thetransition;
-          }
-          @include touch {
-            &:before {
-              height: 0 !important;
-            }
-          }
-        }
-        & > a.navbar-link{
-          &:before {
-            content: '';
-            height: 2px;
-            width: calc(100% - 0px);
+            width: 100%;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -233,10 +213,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             transform: scaleX(0);
             -webkit-transition: $thetransition;
             transition: $thetransition;
-            @include touch {
-              &:before {
-                height: 0 !important;
-              }
+          }
+          @include touch {
+            &:before {
+              content: none;
             }
           }
         }
@@ -244,42 +224,14 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           & > a {
             &:before {
               visibility: visible;
-              -webkit-transform: scaleX(1);
               transform: scaleX(1);
             }
           }
         }
         & > a.is-active-page {
           &:before {
-            content: '';
-            height: 2px;
-            width: calc(100% - 25px);
-            position: absolute;
             visibility: visible;
-            -webkit-transform: scaleX(1);
             transform: scaleX(1);
-            bottom: 12px;
-            left: 12.5px;
-            background: $aged-gold;
-          }
-          @include touch {
-            &:before {
-              height: 0;
-            }
-          }
-        }
-        & > a.navbar-link.is-active-page {
-          &:before {
-            content: '';
-            height: 2px;
-            width: calc(100% - 0px);
-            position: absolute;
-            visibility: visible;
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-            bottom: 0;
-            left: 0;
-            background: $aged-gold;
           }
           @include touch {
             &:before {
@@ -419,9 +371,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         & > a {
           background-color: #fff;
         }
-        // .navbar-dropdown {
-        //   display: none;
-        // }
       }
     }
     @include touch {
@@ -433,7 +382,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   .navbar-dropdown {
     padding:0;
     @include touch {
-      // display: none;
       padding-top: 0 !important;
     }
     .navbar-item {
@@ -1079,7 +1027,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 &:hover{
                   &>a{
                     color:$steel-gray;
-                    text-decoration:underline;
                   }
                 }
               }
@@ -1091,15 +1038,16 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 width:auto;
                 padding-right: 0;
                 margin-right: 1rem;
-                // &:before{
-                //   content:none;
-                // }
                 @include touch{
                   font-weight:400;                  
                   padding:0;
                   width:100%;
                   &:before{
                     content:none;
+                  }
+                  &:hover{
+                    text-decoration:underline;
+
                   }
                 }
                 &:hover{
