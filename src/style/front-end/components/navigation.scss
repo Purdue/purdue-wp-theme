@@ -577,7 +577,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
         .navbar-find-info__panel{
           transform: translateX(0);
-          animation: fadeIn 0.5s linear;
+          animation: fadeInHeader 0.5s linear;
         }
         @include touch{
           &:after{
@@ -588,7 +588,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       &__panel{
         overflow:auto;
         transform: translateX(100%);
-        animation: fadeOut 0.5s linear;
+        animation: fadeOutHeader 0.5s linear;
         width:500px;
         height:100%;
         @include touch{
@@ -1124,7 +1124,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     z-index:0;
   }
 }
-@keyframes fadeOut {
+@keyframes fadeOutHeader {
   0% {
     transform: translateX(0);
   }
@@ -1132,7 +1132,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     transform: translateX(100%);
   }
 }
-@keyframes fadeIn {
+@keyframes fadeInHeader {
   0% {
     transform: translateX(100%);
   }
