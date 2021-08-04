@@ -80,6 +80,7 @@
         background-color:$black;
         overflow: hidden;
         transition: height 0.2s ease;
+        height:0;
       }
       li.navbar-item>a{
         width:100%;

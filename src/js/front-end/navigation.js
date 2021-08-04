@@ -268,7 +268,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 content=current.parentElement
               }
             }
-            console.log(link)
             link.setAttribute('aria-expanded', true);
             link.classList.add('navbar-link-open')
             content.classList.add('is-active');
