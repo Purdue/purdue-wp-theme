@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           const current= globalNavContent.querySelector('.navbar-item.active')
-          if(current){
+          if(current && !current.parentElement.classList.contains('navbar-start')){
             let link;
             let content;
             if(current.classList.contains('has-dropdown')){
@@ -268,6 +268,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 content=current.parentElement
               }
             }
+            console.log(link)
             link.setAttribute('aria-expanded', true);
             link.classList.add('navbar-link-open')
             content.classList.add('is-active');
