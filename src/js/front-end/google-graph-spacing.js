@@ -16,20 +16,21 @@ if(typeof(wpDataCharts)!=='undefined'){
             wpDataCharts[i].render_data.options.pieSliceBorderColor = ''
         }
     })
+    jQuery(window).load(function(){
+        if( typeof wpDataChartsCallbacks == 'undefined' ){ wpDataChartsCallbacks = {}; }
+        wpDataChartsCallbacks[82] = function(obj){
+            obj.options.data.datasets[0].backgroundColor = [
+                                                            '#6F727B',
+                                                            '#C4BFC0',
+                                                            '#C4BFC0',
+                                                            '#FFFFFF',
+                                                            '#AA864B',
+                                                            '#827839',
+                                                            '#DAAA00'
+            ]
+        }
+    });
 }
 
-jQuery(window).load(function(){
-    if( typeof wpDataChartsCallbacks == 'undefined' ){ wpDataChartsCallbacks = {}; }
-    wpDataChartsCallbacks[82] = function(obj){
-        obj.options.data.datasets[0].backgroundColor = [
-                                                        '#6F727B',
-                                                        '#C4BFC0',
-                                                        '#C4BFC0',
-                                                        '#FFFFFF',
-                                                        '#AA864B',
-                                                        '#827839',
-                                                        '#DAAA00'
-        ]
-    }
-});
+
 
