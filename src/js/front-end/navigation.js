@@ -328,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
   var is_topLevel = false
   if ($navbar_topitems.length > 0) {
     $navbar_topitems.forEach((el) => {
-      const $href = el.firstChild.getAttribute('href')
+      const $href = el.firstElementChild.getAttribute('href')
       if ($href === $currentpage) {
         el.classList.add('active')        
         if (el.classList.contains('has-dropdown')) {			  
@@ -339,9 +339,9 @@ document.addEventListener('DOMContentLoaded', () => {
           $dropdown_content.classList.add('is-active')	
           is_topLevel=true;		
         }else if(el.parentElement.classList.contains('navbar-dropdown-submenu')){
-          el.parentElement.parentElement.parentElement.parentElement.firstChild.classList.add('navbar-link-open')
+          el.parentElement.parentElement.parentElement.parentElement.firstElementChild.classList.add('navbar-link-open')
           el.parentElement.parentElement.parentElement.classList.add('is-active')
-          el.parentElement.parentElement.parentElement.parentElement.firstChild.setAttribute('aria-expanded', "true")
+          el.parentElement.parentElement.parentElement.parentElement.firstElementChild.setAttribute('aria-expanded', "true")
         }
       }else{
         if (el.classList.contains('has-dropdown')) {
@@ -352,16 +352,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   if ($navbar_subitems.length > 0) {
     $navbar_subitems.forEach((el) => {
-      const $href = el.firstChild.getAttribute('href')
+      const $href = el.firstElementChild.getAttribute('href')
       if ($currentpage.includes($href)) {
         el.classList.add('active')
-        el.parentElement.parentElement.firstChild.classList.add('navbar-link-open')
+        el.parentElement.parentElement.firstElementChild.classList.add('navbar-link-open')
         el.parentElement.classList.add('is-active')
-        el.parentElement.parentElement.firstChild.setAttribute('aria-expanded', "true")
+        el.parentElement.parentElement.firstElementChild.setAttribute('aria-expanded', "true")
       }
       else{
         if(!is_topLevel){
-          el.parentElement.parentElement.firstChild.setAttribute('aria-expanded', "false")
+          el.parentElement.parentElement.firstElementChild.setAttribute('aria-expanded', "false")
         }
       }
 
