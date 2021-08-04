@@ -48,6 +48,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                   t.removeAttribute('style');
                 }, 500) 
+              }else if(t.classList.contains("mega-menu")){
+                t.style.display="flex"
+                t.classList.remove('is-active')
+                setTimeout(() => {
+                  t.removeAttribute('style');
+                }, 500) 
               }else{
                 t.style.height=0
                 setTimeout(() => {
@@ -59,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
               t.classList.add('is-active')
               if(t.classList.contains("navbar-find-info")){
                 body.classList.add('no-scroll')
-              }else{
+              }else if(!t.classList.contains("mega-menu")){
                 t.style.height=t.scrollHeight + "px";
               }
             }
@@ -91,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const findInfo=global.querySelector('.navbar-find-info')
     const blackBar=global.querySelector('.purdue-navbar-black')
     const alert= document.querySelector(".alert-widget")
-    console.log(alert)
     if(alert){
       findInfo.classList.add('has-alert')
     }else{
