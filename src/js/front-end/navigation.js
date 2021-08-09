@@ -49,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
                   t.removeAttribute('style');
                 }, 500) 
               }else if(t.classList.contains("mega-menu")){
-                t.style.display="flex"
-                t.classList.remove('is-active')
+                t.style.visibility = "hidden";
+                t.style.transform = "scaleY(0)";
                 setTimeout(() => {
+                  t.classList.remove('is-active')
                   t.removeAttribute('style');
                 }, 500) 
               }else{
