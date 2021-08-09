@@ -320,12 +320,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const topitems = Array.prototype.slice.call(globalNavContent.querySelectorAll('.navbar-item:not(.submenu)'), 0)
     //submenu
     const subitems = Array.prototype.slice.call(globalNavContent.querySelectorAll('.submenu'), 0)
-    const $dropdowns=Array.prototype.slice.call(globalNavContent.querySelectorAll('.has-dropdown:not(.submenu)'), 0);
+    const dropdowns=Array.prototype.slice.call(globalNavContent.querySelectorAll('.has-dropdown:not(.submenu)'), 0);
     $navbar_topitems=[...topitems, ...$navbar_topitems]
     $navbar_subitems=[...subitems, ...$navbar_subitems]
-    $outerSideDropdowns=[...$dropdowns, ...$outerSideDropdowns]
+    $outerSideDropdowns=[...dropdowns, ...$outerSideDropdowns]
   }
- 
+  //child theme collapsed menu
+  const collapsedNav=document.querySelector('.navbar-menu-expanded')
+  if(collapsedNav){
+    const dropdowns=[...collapsedNav.querySelectorAll('.has-dropdown:not(.submenu)')]
+    //top level menu
+    const topitems = [...collapsedNav.querySelectorAll('.navbar-item:not(.submenu)')]
+    //submenu
+    const subitems = [...collapsedNav.querySelectorAll('.submenu')]
+    $navbar_topitems=[...topitems, ...$navbar_topitems]
+    $navbar_subitems=[...subitems, ...$navbar_subitems]
+    $outerSideDropdowns=[...dropdowns, ...$outerSideDropdowns]
+  }
+
+
   var is_topLevel = false
   if ($navbar_topitems.length > 0) {
     $navbar_topitems.forEach((el) => {
@@ -338,10 +351,12 @@ document.addEventListener('DOMContentLoaded', () => {
           $dropdown_link.classList.add('navbar-link-open')
           $dropdown_link.setAttribute('aria-expanded', 'true')
           $dropdown_content.classList.add('is-active')	
+          $dropdown_content.style.height= "auto";
           is_topLevel=true;		
         }else if(el.parentElement.classList.contains('navbar-dropdown-submenu')){
           el.parentElement.parentElement.parentElement.parentElement.firstElementChild.classList.add('navbar-link-open')
           el.parentElement.parentElement.parentElement.classList.add('is-active')
+          el.parentElement.parentElement.parentElement.style.height="auto";
           el.parentElement.parentElement.parentElement.parentElement.firstElementChild.setAttribute('aria-expanded', "true")
         }
       }else{
@@ -358,6 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
         el.classList.add('active')
         el.parentElement.parentElement.firstElementChild.classList.add('navbar-link-open')
         el.parentElement.classList.add('is-active')
+        el.parentElement.style.height="auto";
         el.parentElement.parentElement.firstElementChild.setAttribute('aria-expanded', "true")
       }
       else{
@@ -382,13 +398,14 @@ document.addEventListener('DOMContentLoaded', () => {
           clickListener(event)
           e.parentElement.parentElement.parentElement.style.height="auto"
         }
+      }else if(e.parentElement.parentElement.classList.contains("navbar-menu-expanded")){
+        clickListener(event)
       }
     }
   })
 	
   const clickListener=(e)=> {
     e.preventDefault();
-    console.log(e.target)
     let target = e.target
     let x=e.clientX;
     const content = target.nextElementSibling;

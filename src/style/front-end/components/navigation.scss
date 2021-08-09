@@ -546,7 +546,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
       top:0;
       height:100vh;
       z-index:0;
-      animation: faeInRGBA 1s linear;
       background-color: rgba(0, 0, 0, 0);
       animation: fadeInRGBA 0.5s linear;
       width:100%;
@@ -993,7 +992,6 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               transition: height 0.2s ease;
               &.is-active{
                 display:block;
-                height:auto;
                 border-left: solid 1px $aged-gold;
               }
             }

@@ -2,53 +2,23 @@
     "linkGroups" : [
         {
             "type": "normal",
-            "header": "why Purdue",
-            "links": [
-                {
-                    "link_text": "Colleges and Schools",
-                    "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
-                },
-                {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
-                },
-                {
-                    "link_text": "Human Resources",
-                    "link_url": "https://www.purdue.edu/hr/"
-                },
-                {
-                    "link_text": "Directory",
-                    "link_url": "https://www.purdue.edu/directory/"
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/index.html"
-                }
-            ]
-        },
-        {
-            "type": "normal",
             "header": "admissions",
             "links": [
                 {
-                    "link_text": "Colleges and Schools",
-                    "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
+                    "link_text": "Undergraduate Students",
+                    "link_url": "https://www.admissions.purdue.edu/apply/apply.php"
                 },
                 {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
+                    "link_text": "Graduate Students",
+                    "link_url": "https://www.purdue.edu/gradschool/admissions/how-to-apply/index.html"
                 },
                 {
-                    "link_text": "Human Resources",
-                    "link_url": "https://www.purdue.edu/hr/"
+                    "link_text": "International Students",
+                    "link_url": "https://www.purdue.edu/IPPU/ISS/Admission/index.html"
                 },
                 {
-                    "link_text": "Directory",
-                    "link_url": "https://www.purdue.edu/directory/"
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/index.html"
+                    "link_text": "Transfer Students",
+                    "link_url": "https://www.admissions.purdue.edu/transfer/"
                 }
             ]
         },
@@ -57,76 +27,20 @@
             "header": "academics",
             "links": [
                 {
-                    "link_text": "Colleges and Schools",
-                    "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
+                    "link_text": "Majors",
+                    "link_url": "https://www.admissions.purdue.edu/majors/index.php"
                 },
                 {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
+                    "link_text": "Learning Communities",
+                    "link_url": "https://www.purdue.edu/learningcommunities/index.html"
                 },
                 {
-                    "link_text": "Human Resources",
-                    "link_url": "https://www.purdue.edu/hr/"
+                    "link_text": "Study Abroad",
+                    "link_url": "https://www.purdue.edu/IPPU/SA/"
                 },
                 {
-                    "link_text": "Directory",
-                    "link_url": "https://www.purdue.edu/directory/"
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/index.html"
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "research and innovation",
-            "links": [
-                {
-                    "link_text": "Colleges and Schools",
-                    "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
-                },
-                {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
-                },
-                {
-                    "link_text": "Human Resources",
-                    "link_url": "https://www.purdue.edu/hr/"
-                },
-                {
-                    "link_text": "Directory",
-                    "link_url": "https://www.purdue.edu/directory/"
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/index.html"
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "Purdue experience",
-            "links": [
-                {
-                    "link_text": "Colleges and Schools",
-                    "link_url": "https://www.purdue.edu/purdue/about/colleges_schools.php"
-                },
-                {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
-                },
-                {
-                    "link_text": "Human Resources",
-                    "link_url": "https://www.purdue.edu/hr/"
-                },
-                {
-                    "link_text": "Directory",
-                    "link_url": "https://www.purdue.edu/directory/"
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/index.html"
+                    "link_text": "UNDERGRADUATE RESEARCH",
+                    "link_url": "https://www.admissions.purdue.edu/academics/research.php"
                 }
             ]
         },
@@ -158,7 +72,7 @@
         }
     ],
     "featuredStory":{
-        "is_included": true,
+        "is_included": false,
         "description":"Purdue among world leaders in patents",
         "link_text": "Read more",
         "link_url":"https://www.purdue.edu/newsroom/releases/2021/Q2/rocketing-to-no.-6-internationally,-no.-1-in-big-ten-purdue-among-world-leaders-in-patents.html"

@@ -64,7 +64,7 @@
 			</header>
 
         <?php } else if (get_theme_mod( 'header_layout_settings' ) == 'global') { ?>
-			<header id="header" class="header--global">
+			<header id="header" class="header--global header--global__microsite">
 				<nav class="navbar is-black purdue-navbar-black" role="navigation">
 					<div class="navbar-brand">
 						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
