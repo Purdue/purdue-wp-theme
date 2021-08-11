@@ -194,14 +194,16 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
          * @param string $output Passed by reference. Used to append additional content.
          * @param int $depth Depth of page. Used for padding.
          */
+        private $curItem;
         public function start_lvl(&$output, $depth = 0, $args = [])
         {
             // Depth
             $indent = ($depth ? str_repeat("\t", $depth) : '');
             // Class
             $class = ($depth == 1 ? 'navbar-dropdown-submenu' : 'navbar-dropdown');
+            $id = 'navbar-dropdown-' . $this->curItem->ID;
             // Output
-            $output .= $indent . '<ul class="' . $class . '">';
+            $output .= $indent . '<ul id="' . $id . '" class="' . $class . '">';
         }
         /**
          * @see Walker::start_el()
@@ -215,6 +217,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
+            $this->curItem = $item;
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
             /**
              * Dividers, Headers or Disabled
@@ -240,9 +243,6 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                 if ($args->walker->has_children) {
                     $class_names .= ' has-dropdown is-hoverable';
                 }
-                // if (in_array('current-menu-item', $classes)) {
-                //     $class_names .= ' active';
-				// }
 				if($depth === 1){
 					$class_names .= ' submenu';
 				}
@@ -254,6 +254,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                 $atts['title']  = ! empty($item->title)	? $item->title	: '';
                 $atts['target'] = ! empty($item->target)	? $item->target	: '';
                 $atts['rel']    = ! empty($item->xfn)		? $item->xfn	: '';
+                $atts['id']     = 'menu-item-link-' . $item->ID;
                 // If item has_children add atts to a.
                 if ($args->walker->has_children && $depth === 0) {
                     $atts['class']			= 'navbar-link';
@@ -556,14 +557,19 @@ if ( ! class_exists( 'purdueBrand_nav_sidenav' ) ) {
          * @param string $output Passed by reference. Used to append additional content.
          * @param int $depth Depth of page. Used for padding.
          */
+        private $curItem;
         public function start_lvl(&$output, $depth = 0, $args = [])
         {
             // Depth
             $indent = ($depth ? str_repeat("\t", $depth) : '');
             // Class
             $class = ($depth == 1 ? 'navbar-dropdown-submenu' : 'navbar-dropdown');
+            $id = 'navbar-dropdown-' . $this->curItem->ID;
+            $label='menu-item-link-' . $this->curItem->ID;
+            $attributes = ($depth == 1 ? '': 'aria-labelledby='.$label);
+   
             // Output
-            $output .= $indent . '<ul class="' . $class . '">';
+            $output .= $indent . '<ul id="' . $id . '" class="' . $class . '"'.$attributes.'>';
         }
         /**
          * @see Walker::start_el()
@@ -577,6 +583,7 @@ if ( ! class_exists( 'purdueBrand_nav_sidenav' ) ) {
          */
         public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0)
         {
+            $this->curItem = $item;
             $indent = ($depth) ? str_repeat("\t", $depth) : '';
             /**
              * Dividers, Headers or Disabled
@@ -602,9 +609,7 @@ if ( ! class_exists( 'purdueBrand_nav_sidenav' ) ) {
                 if ($args->walker->has_children) {
                     $class_names .= ' has-dropdown';
                 }
-                // if (in_array('current-menu-item', $classes)) {
-                //     $class_names .= ' active';
-				// }
+
 				if($depth === 1){
 					$class_names .= ' submenu';
 				}
@@ -616,14 +621,17 @@ if ( ! class_exists( 'purdueBrand_nav_sidenav' ) ) {
                 $atts['title']  = ! empty($item->title)	? $item->title	: '';
                 $atts['target'] = ! empty($item->target)	? $item->target	: '';
                 $atts['rel']    = ! empty($item->xfn)		? $item->xfn	: '';
+                $atts['id']     = 'menu-item-link-' . $item->ID;
                 // If item has_children add atts to a.
                 if ($args->walker->has_children && $depth === 0) {
                     $atts['class']			= 'navbar-link';
-                    $atts['aria-haspopup']	= 'true';
+                    $atts['aria-haspopup']	= 'false';
+                    $atts['aria-expanded']	= 'false';
+                    $atts['aria-control']	= 'navbar-dropdown-' . $item->ID;;
 				}
 				if ($args->walker->has_children && $depth === 1) {
                     $atts['class']			= 'navbar-link-submenu';
-                    $atts['aria-haspopup']	= 'true';
+                    $atts['aria-haspopup']	= 'false';
                 }
                 $atts['href'] = ! empty($item->url) ? $item->url : '';
                 $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args);

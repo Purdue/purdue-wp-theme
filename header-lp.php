@@ -21,14 +21,14 @@
 	<!-- Font Awesome -->
 	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/v4-shims.js" crossorigin="anonymous"></script>
-	<no-script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" crossorigin="anonymous">
-	</no-script>
 	<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+	<no-script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" crossorigin="anonymous">
+	</no-script>
 <?php if (function_exists('gtm4wp_the_gtm_tag')) {
     gtm4wp_the_gtm_tag();
 } ?>

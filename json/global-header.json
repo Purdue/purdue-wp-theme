@@ -1,0 +1,80 @@
+{
+    "linkGroups" : [
+        {
+            "type": "normal",
+            "header": "admissions",
+            "links": [
+                {
+                    "link_text": "Undergraduate Students",
+                    "link_url": "https://www.admissions.purdue.edu/apply/apply.php"
+                },
+                {
+                    "link_text": "Graduate Students",
+                    "link_url": "https://www.purdue.edu/gradschool/admissions/how-to-apply/index.html"
+                },
+                {
+                    "link_text": "International Students",
+                    "link_url": "https://www.purdue.edu/IPPU/ISS/Admission/index.html"
+                },
+                {
+                    "link_text": "Transfer Students",
+                    "link_url": "https://www.admissions.purdue.edu/transfer/"
+                }
+            ]
+        },
+        {
+            "type": "normal",
+            "header": "academics",
+            "links": [
+                {
+                    "link_text": "Majors",
+                    "link_url": "https://www.admissions.purdue.edu/majors/index.php"
+                },
+                {
+                    "link_text": "Learning Communities",
+                    "link_url": "https://www.purdue.edu/learningcommunities/index.html"
+                },
+                {
+                    "link_text": "Study Abroad",
+                    "link_url": "https://www.purdue.edu/IPPU/SA/"
+                },
+                {
+                    "link_text": "UNDERGRADUATE RESEARCH",
+                    "link_url": "https://www.admissions.purdue.edu/academics/research.php"
+                }
+            ]
+        },
+        {
+            "type": "highlighted",
+            "header": "Information for:",
+            "links": [
+                {
+                    "link_text": "Prospective Students",
+                    "link_url": "https://www.purdue.edu/purdue/prospective_students/index.php"
+                },
+                {
+                    "link_text": "Current Students",
+                    "link_url": "https://www.purdue.edu/purdue/current_students/index.php"
+                },
+                {
+                    "link_text": "Faculty and Staff",
+                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php"
+                },
+                {
+                    "link_text": "Athletics",
+                    "link_url": "https://www.purdue.edu/purdue/athletics/index.php"
+                },
+                {
+                    "link_text": "Entrepreneurship and Commercialization",
+                    "link_url": "https://www.purdue.edu/purdue/commercialization/index.php"
+                }
+            ]
+        }
+    ],
+    "featuredStory":{
+        "is_included": false,
+        "description":"Purdue among world leaders in patents",
+        "link_text": "Read more",
+        "link_url":"https://www.purdue.edu/newsroom/releases/2021/Q2/rocketing-to-no.-6-internationally,-no.-1-in-big-ten-purdue-among-world-leaders-in-patents.html"
+    }
+}

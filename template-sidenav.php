@@ -14,13 +14,11 @@
 </div>
 <?php endif; ?>
 
-<div id="content" class="site-content-sidenav">
+<div id="content-sidenav" class="site-content-sidenav">
 
 <aside class="side-nav">
 	<div class="aside-wrapper">
-	<ul class="navbar-menu">
 		<?php purdueBrand_sideNav();?>	
-	</ul>
 </div>
 </aside>
 

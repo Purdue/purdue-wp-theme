@@ -22,21 +22,19 @@
 	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" crossorigin="anonymous"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.8.1/js/v4-shims.js" crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
+	<no-script>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" crossorigin="anonymous">
+	</no-script>
 </head>
 
 <body <?php body_class(); ?>>
-
-	<no-script>
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" crossorigin="anonymous" />
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/v4-shims.css" crossorigin="anonymous" />
-	</no-script>
-
 <?php if (function_exists('gtm4wp_the_gtm_tag')) {
     gtm4wp_the_gtm_tag();
 } ?>
 	<div id="page" class="site">
 		<?php purdueBrand_skip_link_screen_reader_text(); ?>
-		<?php dynamic_sidebar('top-alert'); ?>
+
 		<?php
         if (get_theme_mod('header_layout_settings') == 'simple') {	?>
 			<header id="header" class="header--simple">
@@ -47,12 +45,14 @@
 							<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>
 						</button>
 					</div>
+
 					<div class="navbar-end">
-						<?php purdueBrand_headerButtons(); ?>
+					<?php purdueBrand_headerButtons(); ?>
 						<div class="form-group search-box">
 							<?php get_search_form(); ?>
 						</div>
 					</div>
+
 				</nav>
 				<nav id="site-navigation" class="navbar has-shadow purdue-navbar-white" data-menu="simple-nav" role="navigation">
 					<div class="navbar-menu" id="navMenu">
@@ -65,61 +65,29 @@
 
         <?php } else if (get_theme_mod( 'header_layout_settings' ) == 'global') { ?>
 			<header id="header" class="header--global">
-				<nav class="navbar is-black purdue-navbar-black" role="navigation">
-					<div class="navbar-brand">
-						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
-						<button class="icon is-large navbar-burger" data-target="navbar-find-info" aria-expanded="false">
-							<span class="icon__button-text">Purdue Menu</span>	
-							<img src="<?php echo get_template_directory_uri() ?>/icons/search-menu-icon.png" aria-hidden="true" alt="" class="burger-icon">
-							<img src="<?php echo get_template_directory_uri() ?>/icons/close-icon.png" aria-hidden="true" alt="" class="close-icon">
-						</button>
-					</div>
-					<div class="navbar-menu">
+				<nav class="navbar is-black purdue-navbar-black" role="navigation" data-menu="global-nav">
+					<div class="navbar-menu" id="blackBarMenu">
+						<span class="sr-only-lg">Quick Links</span>
+						<ul class="navbar-start">
+							<?php purdueBrand_blackBarMenu(); ?>
+						</ul>
 						<div class="navbar-end">
-							<ul class="navbar-end__quick-links">
-								<li>
-									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
-								</li>
-							</ul>
+							<div class="form-group search-box">
+								<?php get_search_form(); ?>
+							</div>
 						</div>
 					</div>
 				</nav>
-				<div class="navbar-find-info"  data-menu="navbar-find-info">
-					<div class="navbar-find-info__panel">	
-						<div class="navbar-find-info__items">
-							<div class="form-group search-box">
-								<?php get_search_form(); ?>
-							</div>	
-							<ul class="navbar-find-info__quick-links">
-								<li>
-									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
-								</li>
-							</ul>	
-							<?php purdueBrand_header_links("global-header.json");?>
-						</div>
+				<nav class="navbar has-shadow purdue-navbar-white navbar--global" data-menu="global-nav">
+					<div class="navbar-brand">
+						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H-light.svg" alt="Purdue Logo"></a>
+						<button class="icon is-large navbar-burger" data-target="global-nav">
+							<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>
+						</button>
 					</div>
-				</div>
-				<div class="navbar-site-name">
-					<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="global-nav-button" aria-controls="global-nav">
-						<?php echo get_bloginfo( 'name' ); ?>
-					</button>
-				</div>
-				<nav id="global-nav" class="navbar has-shadow purdue-navbar-white navbar--global accordion__content" aria-labelledby="global-nav-button" data-menu="global-nav">					
 					<ul class="navbar-start" data-menu="global-nav">
 						<?php purdueBrand_globalMenu(); ?>
-					</ul>					
+					</ul>
 				</nav>
 			</header>
 		<?php	}	?>
