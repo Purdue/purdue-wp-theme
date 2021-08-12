@@ -163,3 +163,21 @@ if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 	}
 }
 
+if ( ! function_exists( 'purdueBrand_header_buttons' ) ) {
+	function purdueBrand_header_buttons($file)
+	{
+		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+		$url = $directory . $file;
+		$request = wp_remote_get( "$url" );
+		$body = wp_remote_retrieve_body( $request );
+		$linkGroups = json_decode( $body );
+		$output='';
+
+		if(($linkGroups && sizeof($linkGroups)>0)){
+			foreach ($linkGroups as $linkGroup) {  
+				$output.='<li><a href="'.$linkGroup->link_url.'">'.$linkGroup->link_text.'</a></li>';
+			}
+		}
+		echo $output;
+	}
+}

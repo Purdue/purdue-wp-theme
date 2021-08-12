@@ -77,15 +77,7 @@
 					<div class="navbar-menu">
 						<div class="navbar-end">
 							<ul class="navbar-end__quick-links">
-								<li>
-									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
-								</li>
+								<?php purdueBrand_header_buttons("global-header-buttons.json");?>
 							</ul>
 						</div>
 					</div>
@@ -97,17 +89,9 @@
 								<?php get_search_form(); ?>
 							</div>	
 							<ul class="navbar-find-info__quick-links">
-								<li>
-									<a href="https://www.purdue.edu/purdue/apply/">Apply</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/visit/">Visit</a>
-								</li>
-								<li>
-									<a href="https://www.purdue.edu/purdue/givenow/">Give</a>
-								</li>
+								<?php purdueBrand_header_buttons("global-header-buttons.json");?>
 							</ul>	
-							<?php purdueBrand_header_links("global-header.json");?>
+							<?php purdueBrand_header_links("global-header-links.json");?>
 						</div>
 					</div>
 				</div>
