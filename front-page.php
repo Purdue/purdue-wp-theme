@@ -10,7 +10,7 @@
 
 <main id="site-content" role="main" class="main-content">
 	<?php while (have_posts()) : the_post();
-		get_template_part('template-parts/content-front_page', get_post_type());
+		get_template_part('template-parts/content-page', get_post_type());
 	endwhile; // end of the loop. 
 	?>
 
