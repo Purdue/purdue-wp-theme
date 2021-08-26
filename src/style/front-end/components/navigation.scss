@@ -652,6 +652,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               color: $boiler-gold;
               padding: .5rem;
               text-decoration: none;
+              border: solid 1px $black;
               &:hover{
                 background-color: $boiler-gold;
                 color: $black;
