@@ -92,6 +92,15 @@
 								<?php purdueBrand_header_buttons("global-header-buttons.json");?>
 							</ul>	
 							<?php purdueBrand_header_links("global-header-links.json");?>
+							<div class="acumin-condensed-preload" aria-hidden="true">
+								Lorem
+							</div>
+							<div class="acumin-condensed-semibold-preload" aria-hidden="true">
+								Lorem
+							</div>
+							<div class="acumin-preload" aria-hidden="true">
+								Lorem
+							</div>
 						</div>
 					</div>
 				</div>

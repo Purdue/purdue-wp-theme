@@ -644,14 +644,19 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             margin: .5rem 0;
             a{
               display: block;
-            width: 100%;
-            text-align: center;
-            background-color: $black;
-            font-weight: 500;
-            font-size: 1rem;
-            color: $boiler-gold;
-            padding: .5rem;
-            text-decoration: none;;
+              width: 100%;
+              text-align: center;
+              background-color: $black;
+              font-weight: 500;
+              font-size: 1rem;
+              color: $boiler-gold;
+              padding: .5rem;
+              text-decoration: none;
+              border: solid 1px $black;
+              &:hover{
+                background-color: $boiler-gold;
+                color: $black;
+              }
             }
           }
         }
@@ -1137,4 +1142,31 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   100% {
     transform: translateX(0);
   }
+}
+.acumin-condensed-preload {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-family:$acumin-pro-condensed;
+  font-style:italic;
+  font-weight:400;
+}
+.acumin-condensed-semibold-preload {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-family:$acumin-pro-condensed;
+  font-style:italic;
+  font-weight:600;
+}
+.acumin-preload {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-family:$acumin-pro;
+  font-weight:700;
+  font-style:italic;
 }
