@@ -1161,6 +1161,15 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   font-style:italic;
   font-weight:600;
 }
+.acumin-semicondensed-semibold-preload {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  font-family:$acumin-pro-semicondensed;
+  font-style:italic;
+  font-weight:600;
+}
 .acumin-preload {
   opacity: 0;
   visibility: hidden;

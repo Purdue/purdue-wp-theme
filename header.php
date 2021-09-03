@@ -98,6 +98,9 @@
 							<div class="acumin-condensed-semibold-preload" aria-hidden="true">
 								Lorem
 							</div>
+							<div class="acumin-semicondensed-semibold-preload" aria-hidden="true">
+								Lorem
+							</div>
 							<div class="acumin-preload" aria-hidden="true">
 								Lorem
 							</div>
