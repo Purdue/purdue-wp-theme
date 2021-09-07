@@ -56,18 +56,13 @@ document.addEventListener('DOMContentLoaded', () => {
                   t.removeAttribute('style');
                 }, 500) 
               }else{
-                t.style.height=0
-                setTimeout(() => {
-                  t.classList.remove('is-active')
-                }, 500)              
+                t.classList.remove('is-active')           
               }
 
             }else{
               t.classList.add('is-active')
               if(t.classList.contains("navbar-find-info")){
                 body.classList.add('no-scroll')
-              }else if(!t.classList.contains("mega-menu")){
-                t.style.height=t.scrollHeight + "px";
               }
             }
           })

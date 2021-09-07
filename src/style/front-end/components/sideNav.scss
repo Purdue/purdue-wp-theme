@@ -27,10 +27,13 @@
     @include touch {
       width:100%;
       float:none;
-      padding:1.5rem $side-padding-tablet 0;
+      padding:1.5rem $side-padding-tablet;
+      &+main>.content:first-child>.section:first-child{
+        padding-top:1.5rem !important;
+      }
     }
     @include mobile{
-      padding:1.5rem $side-padding-mobile 0;
+      padding:1.5rem $side-padding-mobile;
     }
     .accordion__heading{
       border:none;
