@@ -211,7 +211,19 @@ function purdue_contact_options($wp_customize)
         'label' => __( 'Address Line 2' ),
         'description' => __( '' ),
     ) );
-
+    // Address Line 3
+    $wp_customize->add_setting( 'address_line_3', array(
+        'capability' => 'edit_theme_options',
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+        
+    $wp_customize->add_control( 'address_line_3', array(
+        'type' => 'text',
+        'section' => 'contact_information', // Add a default or your own section
+        'label' => __( 'Address Line 3' ),
+        'description' => __( '' ),
+    ) );
     // City
     $wp_customize->add_setting( 'city', array(
         'capability' => 'edit_theme_options',

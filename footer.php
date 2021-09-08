@@ -56,11 +56,10 @@
 							echo('<div class="column">');
 							if (is_active_sidebar('footer-column-4')) {dynamic_sidebar('footer-column-4');}
 							echo('</div>');
-						}
-						
-
+						}						
 					$ftr_add1 = get_theme_mod('address_line_1', 'Purdue University');
 					$ftr_add2 = get_theme_mod('address_line_2', '610 Purdue Mall');
+					$ftr_add3 = get_theme_mod('address_line_3', '');
 					$ftr_city = get_theme_mod('city', 'West Lafayette');
 					$ftr_state = get_theme_mod('state', 'IN');
 					$ftr_zip = get_theme_mod('zipcode', '47906');
@@ -89,25 +88,40 @@
 								echo ('West Lafayette, IN 47906');
 								echo('</a>');
 							} else {
-								$add1=str_replace(" ", "+", $ftr_add1);
-								if(strpos($add1, ',')!== false){
-									$add1=str_replace(",", "%2C", $add1);
+								if($ftr_add1 != ''){
+									$add1=str_replace(" ", "+", $ftr_add1);
+									if(strpos($add1, ',')!== false){
+										$add1=str_replace(",", "%2C", $add1);
+									}
+									$add1=$add1."%2C";
+								}else{
+									$add1="";
 								}
-								$add1=$add1."%2C";
 								if($ftr_add2 != ''){
 									$add2=str_replace(" ", "+", $ftr_add2);
-									if(strpos($add1, ',')!== false){
+									if(strpos($add2, ',')!== false){
 										$add2=str_replace(",", "%2C", $add2);
 									}
 									$add2=$add2."%2C";
 								}else{
 									$add2="";
 								}
+								if($ftr_add3 != ''){
+									$add3=str_replace(" ", "+", $ftr_add3);
+									if(strpos($add3, ',')!== false){
+										$add3=str_replace(",", "%2C", $add3);
+									}
+									$add3=$add3."%2C";
+								}else{
+									$add3="";
+								}
+
 								$city=str_replace(" ", "+", $ftr_city)."%2C";
-								$query=$add1.$add2.$city.$ftr_state;
+								$query=$add1.$add2.$add3.$city.$ftr_state;
 								echo('<a href="https://www.google.com/maps/search/?api=1&query='.$query.'" target="_blank">');
 								echo (($ftr_add1 == '') ? '' : $ftr_add1 . '<br/>');
 								echo (($ftr_add2 == '') ? '' : $ftr_add2 . '<br/>');
+								echo (($ftr_add3 == '') ? '' : $ftr_add3 . '<br/>');
 								echo (($ftr_city == '') ? '' : $ftr_city . ', ' . $ftr_state . ' ' . $ftr_zip);
 								echo('</a>');
 							}
