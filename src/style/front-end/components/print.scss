@@ -1,0 +1,26 @@
+@media print {
+    .site-content-sidenav {
+        display:block;
+    }
+    #header, aside.side-nav .aside-wrapper, .footer{
+         display:none;
+    }
+    blockquote, table, pre { page-break-inside:avoid; }
+
+    h1, h2, h3, h4, h5, h6, img { 
+        page-break-before: auto;
+        page-break-after: auto; 
+        page-break-inside: avoid;
+        display: block; 
+        break-inside: avoid
+    }
+    .accordion .accordion-title:after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f077";
+    }
+    .accordion .accordion-content{
+        display:block;
+        height: auto;
+        opacity: 1;
+    }
+}
