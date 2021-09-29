@@ -200,7 +200,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
             // Depth
             $indent = ($depth ? str_repeat("\t", $depth) : '');
             // Class
-            $class = ($depth == 1 ? 'navbar-dropdown-submenu' : 'navbar-dropdown');
+            $class = ($depth != 0 ? 'navbar-dropdown-submenu' : 'navbar-dropdown');
             $id = 'navbar-dropdown-' . $this->curItem->ID;
             // Output
             $output .= $indent . '<ul id="' . $id . '" class="' . $class . '">';
@@ -243,7 +243,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                 if ($args->walker->has_children) {
                     $class_names .= ' has-dropdown is-hoverable';
                 }
-				if($depth === 1){
+				if($depth !== 0){
 					$class_names .= ' submenu';
 				}
                 $class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
@@ -260,7 +260,7 @@ if ( ! class_exists( 'purdueBrand_nav_globalMenu' ) ) {
                     $atts['class']			= 'navbar-link';
                     $atts['aria-haspopup']	= 'true';
 				}
-				if ($args->walker->has_children && $depth === 1) {
+				if ($args->walker->has_children && $depth !== 0) {
                     $atts['class']			= 'navbar-link-submenu';
                     $atts['aria-haspopup']	= 'true';
                 }
