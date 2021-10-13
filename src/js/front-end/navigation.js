@@ -325,7 +325,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if(collapsedNav){
     const dropdowns=[...collapsedNav.querySelectorAll('.has-dropdown:not(.submenu)')]
     //top level menu
-    const topitems = [...collapsedNav.querySelectorAll('.navbar-item:not(.submenu)')]
+    const items = [...collapsedNav.querySelectorAll('.navbar-item:not(.submenu)')]
+    let topitems=[];
+    items.forEach((el)=>{
+      if(!el.parentElement.classList.contains("navbar-dropdown-submenu")){
+        topitems.push(el)
+      }
+    })
     //submenu
     const subitems = [...collapsedNav.querySelectorAll('.submenu')]
     $navbar_topitems=[...topitems, ...$navbar_topitems]
