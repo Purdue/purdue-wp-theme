@@ -238,6 +238,9 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
           text-decoration:underline;
           color:$aged-gold;
         }
+        &:last-child{
+          margin:2.5rem;
+        }
       }
       .wp-block-latest-posts__post-date{
         color:$steel-gray;
@@ -247,6 +250,9 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
         font-style:italic;
         text-transform:uppercase;
         margin:1rem 2.5rem;
+        &:last-child{
+          margin-bottom:2.5rem !important;
+        }
       }
       .wp-block-latest-posts__post-author{
         color:$steel-gray;
@@ -254,6 +260,9 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
         font-size:1.125rem;
         font-weight:600;
         margin:1rem 2.5rem;
+        &:last-child{
+          margin-bottom:2.5rem !important;
+        }
       }
       .wp-block-latest-posts__post-excerpt,.wp-block-latest-posts__post-full-content{
         color:$cool-gray;
