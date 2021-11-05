@@ -141,7 +141,7 @@ function purdue_search_options($wp_customize)
         'title'       => __( 'Search Options' ), //Visible title of section
         'priority'    => 55, //Determines what order this appears in
         'capability'  => 'edit_theme_options', //Capability needed to tweak
-        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue. Please note if you select Google Custom Seach, you will need to create an empty page on your site, name it Search and select the Search template as its template', 'purdue-wp-theme'), //Descriptive tooltip
+        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue. Please note if you select Google Custom Search, you will need to create an empty page on your site, name it Search and select the Search template as its template', 'purdue-wp-theme'), //Descriptive tooltip
         ) 
     );   
     $wp_customize->add_setting('search_option_settings', array(
@@ -179,7 +179,7 @@ function purdue_contact_options($wp_customize)
     //add new section
     $wp_customize->add_section('contact_information', array(
         'title' => 'Footer Contact Information',
-        'description' => 'Set custom contact information for the site. If fields are left blank they will default to the Purdue University defaults.',
+        'description' => 'Set custom contact information for the site. If the address fields are left blank they will default to the Purdue University default address.',
         'priority' => 1,
         'panel'         => 'contact_details'
     ));
@@ -297,7 +297,7 @@ function purdue_contact_options($wp_customize)
     //add new section
     $wp_customize->add_section('social_medias', array(
         'title' => 'Footer Social Media Link Options',
-        'description' => 'Set custom Social Media URLs for the site. If fields are left blank they will default to the Purdue University defaults.',
+        'description' => 'Set custom Social Media URLs for the site.',
         'priority' => 33,
         'panel'         => 'contact_details'
     ));
@@ -672,11 +672,10 @@ if( function_exists('acf_add_local_field_group') ):
 function rss_post_thumbnail($content) {
     global $post;
     if(has_post_thumbnail($post->ID)) {
-    $content = '<figure>' . get_the_post_thumbnail($post->ID) .
+    $content = '<figure>' . get_the_post_thumbnail($post->ID, 'medium') .
     '</figure>' . get_the_content();
     }
     return $content;
 }
 add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
-
