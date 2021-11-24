@@ -26,8 +26,7 @@
 					<?php if($searchOption=="wordpress"){
 						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 						if ( have_posts() ){ 
-							while ( have_posts() ) : the_post(); ?>
-
+							while ( have_posts() ) : the_post(); ?> 
 							<article class="search-post">
 								<h2 class="search-post-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
 								<p class="search-post-link"><?php the_permalink() ?></p>
