@@ -808,6 +808,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         justify-content: space-between;
         z-index:50;
         position:relative;
+        text-align: left;
+        align-items: center;
         @include touch{
           font-size:1.25rem;
           line-height:1.25;
