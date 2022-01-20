@@ -75,7 +75,7 @@ const toggle = (e) => {
             let icons = el.querySelectorAll('.accordion__icon');
             const content = document.querySelector('#' + contentId);
             const currAttr = getCurrDisplay(content)
-            if(el !== clicked){
+            if(el !== clicked && !el.parentElement.classList.contains('navbar-site-name') && !el.parentElement.classList.contains('aside-wrapper')){
                 if(icons&&icons.length>0){
                     plusIcon = el.querySelector('.accordion__icon__plus');
                     minusIcon = el.querySelector('.accordion__icon__minus');
