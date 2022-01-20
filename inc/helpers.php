@@ -144,8 +144,9 @@ if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 							'.$linkGroup->header.'
 							</button>';
 				$output.='<ul class="accordion__content hide" id="findInfoItem-list-'.$key.'" aria-labelledby="findInfoItem-button-'.$key.'">';
-				foreach ($linkGroup->links as $link) {  
-					$output.='<li><a href="'.$link->link_url.'">'.$link->link_text.'</a></li>';
+				foreach ($linkGroup->links as $link) {
+					$external=$link->external?"_blank":"_self";  
+					$output.='<li><a href="'.$link->link_url.'" target="'.$external.'">'.$link->link_text.'</a></li>';
 				}
 				$output.='</ul>';
 				$output.='</div>';

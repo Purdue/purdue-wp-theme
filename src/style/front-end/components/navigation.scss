@@ -756,6 +756,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           background:$boiler-gold;
           border-bottom:none;
           margin-bottom:2rem;
+          &+.navbar-find-info__item-highlighted{
+            background:$white;
+          }
           .accordion__heading{
             font-family:$acumin-pro-semicondensed;
             font-weight:600;

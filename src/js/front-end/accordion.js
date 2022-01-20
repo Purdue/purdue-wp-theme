@@ -70,34 +70,46 @@ const toggle = (e) => {
             })          
             break;
         case checkClassName(clicked, 'accordion__heading'): // accordion
-            const contentId = clicked.getAttribute('aria-controls');
-            let icons = clicked.querySelectorAll('.accordion__icon');
+        document.querySelectorAll('.accordion__heading:not(.accordion__heading--footer)').forEach((el) => {
+            const contentId = el.getAttribute('aria-controls');
+            let icons = el.querySelectorAll('.accordion__icon');
             const content = document.querySelector('#' + contentId);
             const currAttr = getCurrDisplay(content)
-            const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
-            clicked.setAttribute('aria-expanded', expanded);
-            if (currAttr && currAttr !== 'none') {
-                if(icons && icons.length>0){
-                    icons.forEach((icon) => {
-                        swapIcon(icon)
-                    })
+            if(el !== clicked && !el.parentElement.classList.contains('navbar-site-name') && !el.parentElement.classList.contains('aside-wrapper')){
+                if(icons&&icons.length>0){
+                    plusIcon = el.querySelector('.accordion__icon__plus');
+                    minusIcon = el.querySelector('.accordion__icon__minus');
+                    hideFooter(minusIcon)
+                    showFooter(plusIcon)
                 }
-                clicked.classList.remove('is-open')
+                el.classList.remove('is-open')
+                el.setAttribute('aria-expanded', 'false');
                 content.style.height = 0;
                 setTimeout(() => {
                     hideFooter(content)
                 }, 200)
-                
-            } else{
+            }else if (el === clicked){
+                const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
+                clicked.setAttribute('aria-expanded', expanded);
                 if(icons && icons.length>0){
                     icons.forEach((icon) => {
                         swapIcon(icon)
                     })
                 }
-                clicked.classList.add('is-open')
-                showFooter(content);
-                content.style.height = content.scrollHeight + "px";
-            }     
+                if (currAttr && currAttr !== 'none') {
+                    clicked.classList.remove('is-open')
+                    content.style.height = 0;
+                    setTimeout(() => {
+                        hideFooter(content)
+                    }, 200)
+                    
+                } else{
+                    clicked.classList.add('is-open')
+                    showFooter(content);
+                    content.style.height = content.scrollHeight + "px";
+                } 
+            }
+        })    
         break;
     }
 }
