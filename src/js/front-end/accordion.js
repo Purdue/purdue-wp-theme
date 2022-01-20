@@ -91,12 +91,12 @@ const toggle = (e) => {
             }else if (el === clicked){
                 const expanded = clicked.getAttribute('aria-expanded') === "false" ? true : false;
                 clicked.setAttribute('aria-expanded', expanded);
+                if(icons && icons.length>0){
+                    icons.forEach((icon) => {
+                        swapIcon(icon)
+                    })
+                }
                 if (currAttr && currAttr !== 'none') {
-                    if(icons && icons.length>0){
-                        icons.forEach((icon) => {
-                            swapIcon(icon)
-                        })
-                    }
                     clicked.classList.remove('is-open')
                     content.style.height = 0;
                     setTimeout(() => {
@@ -104,11 +104,6 @@ const toggle = (e) => {
                     }, 200)
                     
                 } else{
-                    if(icons && icons.length>0){
-                        icons.forEach((icon) => {
-                            swapIcon(icon)
-                        })
-                    }
                     clicked.classList.add('is-open')
                     showFooter(content);
                     content.style.height = content.scrollHeight + "px";
