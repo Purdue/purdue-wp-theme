@@ -568,6 +568,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         animation: fadeOutRGBA 0.5s linear;
         background-color: rgba(0, 0, 0, 0.75);
         overflow:auto;
+        position: fixed;
+        height: 100%;
         &:after{
           content: "";
           width: 100%;
@@ -707,6 +709,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           cursor: pointer;
           padding:0;
           text-transform: uppercase;
+          color:$black;
           &:after{
             font-family: "Font Awesome 5 Free"; 
             font-weight: 900; 
