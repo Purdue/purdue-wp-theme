@@ -19,7 +19,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
     "mini-css-extract-plugin": "^0.8.2",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.2",
