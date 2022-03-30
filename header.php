@@ -106,7 +106,7 @@
 						<?php echo get_bloginfo( 'name' ); ?>
 					</button>
 				</div>
-				<nav id="global-nav" class="navbar has-shadow purdue-navbar-white navbar--global accordion__content" aria-labelledby="global-nav-button" data-menu="global-nav">					
+				<nav id="global-nav" class="navbar has-shadow purdue-navbar-white navbar--global accordion__content" aria-labelledby="global-nav-button" data-menu="global-nav" role="navigation">					
 					<ul class="navbar-start" data-menu="global-nav">
 						<?php purdueBrand_globalMenu(); ?>
 					</ul>					
