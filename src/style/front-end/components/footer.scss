@@ -17,8 +17,8 @@
         color:$railway-gray;
         text-decoration: underline;
         &:hover{
-            color:$dust-gold;
-            text-decoration: none;
+            color:$white;
+            text-decoration: underline;
         }
     }
     .footer__links{
@@ -158,8 +158,8 @@
           text-decoration: underline; 
           font-weight:400;
           &:hover{
-            color:$dust-gold;
-            text-decoration: none; 
+            color:$white;
+            text-decoration: underline; 
           }
       }
     }

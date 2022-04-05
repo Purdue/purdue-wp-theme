@@ -162,6 +162,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="Facebook" href="<?php echo $ftr_facebook; ?>">
+										    <span class="screen-reader-text">Facebook</span>
 											<i class="fab fa-facebook" aria-hidden="true"></i> 
 										</a>
 									</li>
@@ -172,6 +173,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="Twitter" href="<?php echo $ftr_twitter; ?>">
+										<span class="screen-reader-text">Twitter</span>
 											<i class="fab fa-twitter" aria-hidden="true"></i> 
 										</a>
 									</li>
@@ -182,6 +184,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="LinkedIN" href="<?php echo $ftr_linkedin; ?>">
+											<span class="screen-reader-text">LinkedIn</span>
 											<i class="fab fa-linkedin" aria-hidden="true"></i> 
 										</a>
 									</li>
@@ -192,6 +195,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="Instagram" href="<?php echo $ftr_instagram; ?>">
+										  <span class="screen-reader-text">Instagram</span>
 											<i class="fab fa-instagram" aria-hidden="true"></i> 
 										</a>
 									</li>
@@ -202,6 +206,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="YouTube" href="<?php echo $ftr_youtube; ?>">
+											<span class="screen-reader-text">Youtube</span>
 											<i class="fab fa-youtube-square" aria-hidden="true"></i> 
 										</a>
 									</li>
@@ -212,6 +217,7 @@
 									?>
 									<li class="navbar-item">
 										<a title="SnapChat" href="<?php echo $ftr_snapchat; ?>">
+											<span class="screen-reader-text">snapchat</span>
 											<i class="fab fa-snapchat" aria-hidden="true"></i> 
 										</a>
 									</li>
