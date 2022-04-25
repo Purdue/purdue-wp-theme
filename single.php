@@ -47,16 +47,16 @@ $incShare = get_theme_mod('social_setting',false);
 										<div class="level is-mobile">
 											<div class="level-left">
 												<div class="level-item">
-													<a class="icon is-medium" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><i class="fab fa-lg fa-facebook-f"></i></a>
+													<a class="icon is-medium" href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>"><span class="sr-only">Share on Facebook</span><i class="fab fa-lg fa-facebook-f"></i></a>
 												</div>
 												<div class="level-item">
-													<a class="icon is-medium" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-twitter"></i></a>
+													<a class="icon is-medium" href="https://twitter.com/intent/tweet?url=<?php the_permalink(); ?>"><span class="sr-only">Share on Twitter</span><i class="fab fa-lg fa-twitter"></i></a>
 												</div>
 												<div class="level-item">
-													<a class="icon is-medium" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><i class="fab fa-lg fa-linkedin-in"></i></a>
+													<a class="icon is-medium" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php the_permalink(); ?>"><span class="sr-only">Share on LinkedIn</span><i class="fab fa-lg fa-linkedin-in"></i></a>
 												</div>
 												<div class="level-item">
-													<a class="icon is-medium" href="mailto:placeholder@placeholder.com?body=<?php the_permalink(); ?>"><i class="fas fa-lg fa-envelope"></i></a>
+													<a class="icon is-medium" href="mailto:placeholder@placeholder.com?body=<?php the_permalink(); ?>"><span class="sr-only">Share by Email</span><i class="fas fa-lg fa-envelope"></i></a>
 												</div>
 											</div>
 										</div>
