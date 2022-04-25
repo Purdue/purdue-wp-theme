@@ -114,6 +114,7 @@
 	
 	<?php if (!has_block('purdue-blocks/anchor-link-navigation')&&!has_block('purdue-blocks/custom-side-menu')) { ?>
 		<button id="to-top" class="to-top-hidden" aria-label="To top button">
+			<span class="sr-only">Scroll back to the top of the page.</span>
 			<i class="fas fa-chevron-up" aria-hidden="true"></i>
 		</button>
 	<?php } ?>
