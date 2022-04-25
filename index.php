@@ -15,9 +15,9 @@
 <?php get_header(); ?>
 
 <?php if(function_exists('bcn_display')&&!has_block('bcn/breadcrumb-trail')) : ?>
-<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/" role="navigation">   
+<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/" role="navigation">   
     <?php bcn_display();	?>
-</div>
+</nav>
 <?php endif; ?>
 
 <main id="site-content" role="main" class="main-content">

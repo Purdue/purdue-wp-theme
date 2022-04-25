@@ -9,9 +9,9 @@
 <?php get_header(); ?>
 
 <?php if(function_exists('bcn_display')) : ?>
-<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
+<nav class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
     <?php bcn_display();	?>
-</div>
+</nav>
 <?php endif; ?>
 
 <div id="content-sidenav" class="site-content-sidenav">
