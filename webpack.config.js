@@ -1,9 +1,10 @@
 const path = require('path');
 // include the js minification plugin
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+
 // include the css extraction and minification plugins
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 // include the clean webpack plugins
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
@@ -47,12 +48,9 @@ module.exports = {
   optimization: {
     minimizer: [
       // enable the js minification plugin
-      new UglifyJSPlugin({
-        cache: true,
-        parallel: true
-      }),
+      new TerserPlugin(),
       // enable the css minification plugin
-      new OptimizeCSSAssetsPlugin({})
+      new CssMinimizerPlugin({})
     ]
   }
 };
