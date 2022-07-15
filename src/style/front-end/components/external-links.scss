@@ -1,0 +1,25 @@
+p {
+    &>a[target=_blank] {
+        position: relative;
+        &:after {
+            position: relative;
+            vertical-align: top;
+            content: "\f08e";
+            display: inline-block;
+            font: var(--fa-font-solid);
+            font-size: 0.6rem;
+            margin-left: 0.2rem;
+            top: 0.3rem;
+        }
+    }
+}
+
+.resource__address {
+    p {
+        a {
+            &:after {
+                content: none;
+            }
+        }
+    }
+}
