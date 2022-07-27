@@ -222,6 +222,7 @@
 
 .main-content {
   display: block;
+  overflow-x: hidden;
 }
 
 .home .content {
@@ -13089,6 +13090,7 @@ ul.alm-listing {
 }
 .post__date-line--share .icon {
   color: #707070;
+  text-decoration: none;
 }
 .post__date-line--share .icon:hover {
   color: #8e6f3e;

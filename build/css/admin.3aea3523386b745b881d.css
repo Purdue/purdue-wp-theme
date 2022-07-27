@@ -10531,6 +10531,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .main-content {
   display: block;
+  overflow-x: hidden;
 }
 
 .home .content {

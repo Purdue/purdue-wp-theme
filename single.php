@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 
-<?php if(function_exists('bcn_display')) : ?>
+<?php if(function_exists('bcn_display')&&!has_block('bcn/breadcrumb-trail')) : ?>
 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
     <?php bcn_display();	?>
 </div>
