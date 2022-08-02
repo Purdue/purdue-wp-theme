@@ -666,8 +666,60 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
+// Make breadcrumb optional on pages
+if( function_exists('acf_add_local_field_group') ):
 
-
+    acf_add_local_field_group(array(
+        'key' => 'group_62e83c171dbf5',
+        'title' => 'Include bread crumb on this page?',
+        'fields' => array(
+            array(
+                'key' => 'field_62e83d8f32a21',
+                'label' => 'Include bread crumb on this page?',
+                'name' => 'include_bread_crumb_on_this_page',
+                'type' => 'checkbox',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'Yes' => 'Yes',
+                ),
+                'allow_custom' => 0,
+                'default_value' => array(
+                    0 => 'Yes',
+                ),
+                'layout' => 'vertical',
+                'toggle' => 0,
+                'return_format' => 'value',
+                'save_custom' => 0,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+    
+    endif;		
 //image in rss feed
 function rss_post_thumbnail($content) {
     global $post;

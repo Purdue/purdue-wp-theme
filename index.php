@@ -14,7 +14,14 @@
 
 <?php get_header(); ?>
 
-<?php if(function_exists('bcn_display')&&!has_block('bcn/breadcrumb-trail')) : ?>
+<?php
+if (function_exists('get_field')) {	
+	$breadCrumb = get_field('include_bread_crumb_on_this_page')[0];
+	
+} else {	
+	$breadCrumb = "";
+}
+if(function_exists('bcn_display')&&!has_block('bcn/breadcrumb-trail')&&$breadCrumb=="Yes") : ?>
 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/" role="navigation">   
     <?php bcn_display();	?>
 </div>
