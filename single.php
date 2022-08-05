@@ -6,7 +6,7 @@
 ?>
 <?php get_header(); ?>
 
-<?php if(function_exists('bcn_display')&&!has_block('bcn/breadcrumb-trail')) : ?>
+<?php if(function_exists('bcn_display')) : ?>
 <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">   
     <?php bcn_display();	?>
 </div>
@@ -27,7 +27,7 @@ $incShare = get_theme_mod('social_setting',false);
 		<?php if (is_active_sidebar('right-sidebar')) : ?>
 			<div class="columns is-multiline with-sideContent">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
-					<?php purdueBrand_the_title('is-1', False); ?>
+					<h1 id="main-heading"><?php the_title(); ?></h1>
 					<p class="post__subheading">
 						<?php echo ($subheading); ?>
 					</p>
@@ -100,7 +100,7 @@ $incShare = get_theme_mod('social_setting',false);
 		<?php else : ?>
 			<div class="columns is-centered">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
-					<?php purdueBrand_the_title('is-1', False); ?>
+					<h1 id="main-heading"><?php the_title(); ?></h1>
 
 					<p class="post__subheading">
 						<?php echo ($subheading); ?>

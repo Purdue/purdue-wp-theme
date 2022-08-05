@@ -1,0 +1,117 @@
+@keyframes slideDown {
+    from {height:37;}
+    to {height:150;}
+  }
+  @keyframes slideUp {
+    from {height:150;}
+    to {height:37;}
+  }
+.purdue-navbar-second{
+    position:relative;
+    padding:0 3.25rem;
+    background-color:$boiler-gold;
+    color:$black;
+    font-size:0.9rem;
+    width:100%;
+    height:37.6px;
+    min-height:37px;
+    overflow:hidden;
+    display:block;
+    animation-name: slideDown;
+    animation-duration: 4s;
+    @include touch{
+        padding:0 1.5rem;
+    }
+    @include mobile{
+        padding:0;
+    }
+    &:before{
+        content:"";
+        border-top:1px solid $steel-gray;
+        width: 100%;
+        height: 37.6px;
+        border-bottom: 1px solid $steel-gray;
+        display: block;
+        top: 37.6px;
+        left:0;
+        position: absolute;
+    }
+    &:after{
+        content:"";
+        border-top:1px solid $steel-gray;
+        width: 100%;
+        height: 37.6px;
+        border-bottom: 1px solid $steel-gray;
+        display: block;
+        top: 111.8px;
+        left:0;
+        position: absolute;
+    }
+    &.expand{
+        height:auto;
+        animation-name: slideUp;
+        animation-duration: 4s;
+     }
+    .navbar-items{
+        display:flex;
+        flex-wrap:wrap;
+        width:100%;
+        align-items:flex-start;
+        background-color:$boiler-gold;
+
+        .navbar-item{
+            flex:0 0 auto;
+            display:block;
+            &.is-current-page{
+                background:$black;
+                a{
+                    color:$white;
+                }
+                &:hover{
+                    background:$black;
+                }
+            }
+            a{
+                text-decoration:none;
+                color:$black;
+                font-weight:400;
+            }
+            &:hover{
+                background:$steel-gray;
+                a{
+                    color:$white;
+                }
+            }
+        }
+        li.more-less{
+            flex:1 1 auto;
+        }
+        .more, .less{
+            background:none;
+            border:none;
+            padding: 0.5rem 0.75rem;
+            height:37.6px;
+            width:68px;
+            cursor: pointer;
+            &:hover{
+                background:$steel-gray;
+                color:$white;
+            }
+          
+        }
+        .less, .more-less{
+            display:none;
+          }
+          .more-less.show{
+            display:flex !important;
+            justify-content: flex-end;
+          }
+          .more-less.show.open .more {
+            display:none;
+          }
+          .more-less.show.open .less {
+            display:block;
+          }
+    }
+
+}

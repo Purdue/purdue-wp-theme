@@ -590,6 +590,13 @@ if (is_plugin_active( 'luckywp-acf-menu-field/luckywp-acf-menu-field.php' )) {
                     'value' => 'template-sidenav.php',
                 ),
             ),
+            array(
+                array(
+                    'param' => 'post_template',
+                    'operator' => '==',
+                    'value' => 'template-topnav.php',
+                ),
+            ),
         ),
         'menu_order' => 0,
         'position' => 'side',
@@ -705,6 +712,11 @@ if( function_exists('acf_add_local_field_group') ):
                     'param' => 'post_type',
                     'operator' => '==',
                     'value' => 'page',
+                ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'template-topnav.php',
                 ),
             ),
         ),

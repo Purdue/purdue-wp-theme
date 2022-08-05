@@ -28,7 +28,7 @@ $img = get_the_post_thumbnail_url();
 		<div class="columns is-multiline with-sideContent">
 			<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
 
-				<?php purdueBrand_the_title('is-1', False); ?>
+				<h1 id="main-heading"><?php the_title(); ?></h1>
 
 				<p class="post__subheading">
 					<?php echo ($facultyTitle); ?>
@@ -56,7 +56,7 @@ $img = get_the_post_thumbnail_url();
 		<?php else : ?>
 			<div class="columns is-centered">
 				<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
-				<?php purdueBrand_the_title('is-1', False); ?>
+					<h1 id="main-heading"><?php the_title(); ?></h1>
 
 					<p class="post__subheading">
 						<?php echo ($facultyTitle); ?>

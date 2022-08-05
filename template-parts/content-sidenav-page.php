@@ -13,7 +13,7 @@
     <section class="section">
         <div class="container">
             <div class="content">
-                <?php purdueBrand_the_title('is-1', false); ?>
+                <h1 id="main-heading"><?php the_title(); ?></h1>
             </div>
         </div>
     </section>
