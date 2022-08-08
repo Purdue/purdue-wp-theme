@@ -3,29 +3,39 @@ h1 {
     font-weight: 400;
     font-size: 3.75rem; 
     color: $black;
-    line-height:0.9;
+    line-height:1.05;
     margin-bottom:2.1875rem;
+    text-transform:uppercase;
     &:not(:first-child) {
         margin-top: 2.1875rem;
     }
     @include touch {
         font-size: 2.125rem;
-        line-height:1.1;
+        line-height:1.2;
+        margin-bottom:1.875rem;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
     }
 }
 
 h2 {
     font-size: 3rem;
     font-weight: 400;
-    font-family: $acumin-pro-semicondensed;
+    font-family: $united-sans;
     color: $aged-gold;
-    line-height:0.95;
+    line-height:1;
     margin-bottom:2.1875rem;
     &:not(:first-child) {
         margin-top: 2.1875rem;
     }
     @include touch {
         font-size: 1.875rem;
+        line-height:1.25;
+        margin-bottom:1.875rem;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
     }
 }
 
@@ -38,6 +48,12 @@ h3 {
     margin-bottom:2.1875rem;
     &:not(:first-child) {
         margin-top: 2.1875rem;
+    }
+    @include touch {
+        margin-bottom:1.875rem;
+        &:not(:first-child) {
+            margin-top: 1.875rem;
+        }
     }
 }
 
@@ -95,32 +111,43 @@ h4+h5,h4+h6,h5+h6{
 .content{
     h1 {
         font-family: $united-sans;
-        font-weight: 700;
-        font-size: 2.1875rem; //mobile
+        font-weight: 400;
+        font-size: 3.75rem; 
         color: $black;
-        line-height:2.5rem;
+        line-height:1.05;
         margin-bottom:2.1875rem;
+        text-transform:uppercase;
+
         &:not(:first-child) {
             margin-top: 2.1875rem;
         }
-        @include tablet {
-            font-size: 2.5rem;
-            line-height:2.8125rem;
+        @include touch {
+            font-size: 2.125rem;
+            line-height:1.1;
+            margin-bottom:1.875rem;
+            &:not(:first-child) {
+                margin-top: 1.875rem;
+            }
         }
     }
     
     h2 {
-        font-size: 1.875rem; //mobile
-        font-weight: 600;
-        font-family: $acumin-pro-semicondensed;
+        font-size: 3rem;
+        font-weight: 400;
+        font-family: $united-sans;
         color: $aged-gold;
-        line-height:2.375rem;
+        line-height:1;
         margin-bottom:2.1875rem;
         &:not(:first-child) {
             margin-top: 2.1875rem;
         }
-        @include tablet {
-            font-size: 2rem;
+        @include touch {
+            font-size: 1.875rem;
+            line-height:1.2;
+            margin-bottom:1.875rem;
+            &:not(:first-child) {
+                margin-top: 1.875rem;
+            }
         }
     }
     
@@ -133,6 +160,12 @@ h4+h5,h4+h6,h5+h6{
         margin-bottom:2.1875rem;
         &:not(:first-child) {
             margin-top: 2.1875rem;
+        }
+        @include touch {
+            margin-bottom:1.875rem;
+            &:not(:first-child) {
+                margin-top: 1.875rem;
+            }
         }
     }
     
