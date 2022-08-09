@@ -6,12 +6,14 @@ h1 {
     line-height:1.05;
     margin-bottom:2.1875rem;
     text-transform:uppercase;
+
     &:not(:first-child) {
         margin-top: 2.1875rem;
     }
     @include touch {
         font-size: 2.125rem;
-        line-height:1.2;
+        font-weight: 700;
+        line-height:1.1;
         margin-bottom:1.875rem;
         &:not(:first-child) {
             margin-top: 1.875rem;
@@ -30,8 +32,9 @@ h2 {
         margin-top: 2.1875rem;
     }
     @include touch {
+        font-weight: 700;
         font-size: 1.875rem;
-        line-height:1.25;
+        line-height:1.2;
         margin-bottom:1.875rem;
         &:not(:first-child) {
             margin-top: 1.875rem;
@@ -40,17 +43,19 @@ h2 {
 }
 
 h3 {
-    font-size: 1.5625rem; 
+    font-size: 2.5rem; 
     font-weight: 600;
-    font-family: $acumin-pro-semicondensed;
+    font-family: $united-sans;
     color: $black;
-    line-height:2rem;
+    line-height:1.125;
     margin-bottom:2.1875rem;
     &:not(:first-child) {
         margin-top: 2.1875rem;
     }
     @include touch {
+        font-size: 1.5625rem; 
         margin-bottom:1.875rem;
+        line-height:1.2;
         &:not(:first-child) {
             margin-top: 1.875rem;
         }
@@ -123,6 +128,7 @@ h4+h5,h4+h6,h5+h6{
         }
         @include touch {
             font-size: 2.125rem;
+            font-weight: 700;
             line-height:1.1;
             margin-bottom:1.875rem;
             &:not(:first-child) {
@@ -142,6 +148,7 @@ h4+h5,h4+h6,h5+h6{
             margin-top: 2.1875rem;
         }
         @include touch {
+            font-weight: 700;
             font-size: 1.875rem;
             line-height:1.2;
             margin-bottom:1.875rem;
@@ -152,17 +159,19 @@ h4+h5,h4+h6,h5+h6{
     }
     
     h3 {
-        font-size: 1.5625rem; 
+        font-size: 2.5rem; 
         font-weight: 600;
-        font-family: $acumin-pro-semicondensed;
+        font-family: $united-sans;
         color: $black;
-        line-height:2rem;
+        line-height:1.125;
         margin-bottom:2.1875rem;
         &:not(:first-child) {
             margin-top: 2.1875rem;
         }
         @include touch {
+            font-size: 1.6rem; 
             margin-bottom:1.875rem;
+            line-height:1.2;
             &:not(:first-child) {
                 margin-top: 1.875rem;
             }
