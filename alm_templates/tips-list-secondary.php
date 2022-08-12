@@ -1,33 +1,17 @@
-<button data-open="<?php $post->ID ?>" class="tip-item box" onclick="openModal(this)">
-    <div class="card-content">
+<a class="tip-item column is-one-third-desktop is-half-tablet is-full-mobile" href="<?php the_permalink(); ?>">
+    <div class="card-content box ">
         <div class="media">
             <div class="media-content">
                 <p class="title is-4">
                     <?php the_title(); ?>
                 </p>
                 <p class="date">
-                    (<?php the_time('F j, Y'); ?>)
+                    <?php the_time('F j, Y'); ?>
                 </p>
-                <p class="read-more">
-                    Read this week's Tip of the Week >
+                <p class="read-more purdue-blocks__button purdue-blocks__button--gold-light">
+                    Learn More
                 </p>
             </div>
         </div>
     </div>
-</button>
-<div data-open="<?php $post->ID ?>" class="tip-modal" >
-    <div class="container">
-        <div class="box">
-            <button class="modal-close-button" onclick="closeModal(this)"><i class="fas fa-times"></i></button>
-            <p class="title">
-                <?php the_title(); ?>
-            </p>
-            <p class="date">
-                (<?php the_time('F j, Y'); ?>)
-            </p>
-            <?php
-                echo get_the_content( $post->ID );
-            ?>
-        </div>
-    </div>
-</div>
+</a>

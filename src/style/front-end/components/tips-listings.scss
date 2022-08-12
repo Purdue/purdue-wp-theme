@@ -1,153 +1,44 @@
 // secondary page
-.tips-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 2rem;
-
-    @media screen and (max-width: 1023px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-    }
-
-    @media screen and (max-width: 600px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(6, 1fr);
-    }
-}
-
 .tip-item {
-    border-radius: 0;
-    border: none;
-    outline: none;
     transition: box-shadow 0.1s ease;
-    margin-bottom: 0 !important;
-
-    &:hover {
-        cursor: pointer;
-        box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.2), 0 0px 0 1px rgba(0, 0, 0, 0.04);
-    }
-
+    text-decoration: none;
     .card-content {
         padding: 0;
-
+        border-radius: 0;
+        border: none;
+        outline: none;
+        transition: box-shadow 0.1s ease;
+        padding:1.5rem;
+        background:$white;
+        height:100%;
+        &:hover {
+            cursor: pointer;
+            box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.2), 0 0px 0 1px rgba(0, 0, 0, 0.04);
+        }
         .media {
+            height:100%;
             .media-content {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: flex-start;
-
+                justify-content: space-between;
+                height:100%;
                 p {
                     width: auto;
-
+                    color:$black;
                     &.date {
-                        color: #6f727b;
+                        font-size:1rem;
+                        font-weight:400;
+                        color:$black;
                     }
 
-                    &.read-more {
-                        color: #8e6f3e;
-                        text-decoration: underline;
-                    }
+                }
+                .purdue-blocks__button{
+                    padding: 0.75rem 1.5rem;
                 }
             }
         }
     }
-}
-
-.tip-modal {
-    z-index: 9999999;
-    display: none;
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.85);
-    padding: 5rem 0;
-    overflow: auto;
-
-    @media (max-width: 1024px) {
-      padding: 5rem 1.5rem;
-    }
-
-    @media (max-width: 767px) {
-      padding: 1.5rem;
-    }
-
-    &.open {
-      display: flex;
-    }
-
-    .container {
-        height: auto;
-        max-height:100%;
-        .box {
-          position: relative;
-          display: flex;
-          flex-direction: column;
-          height: auto;
-          max-height:100%;
-          padding: 7rem;
-          overflow: hidden;
-          margin-bottom: 5rem;
-  
-          @media (max-width: 1216px) {
-            padding: 6.5rem 5.125rem;
-          }
-  
-          @media (max-width: 767px) {
-            padding: 5rem 1.5rem;
-            margin-bottom: 1.5rem;
-          }
-
-          .modal-close-button {
-              position: absolute;
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              color: black;
-              top: 1rem;
-              right: 1rem;
-              font-size: 1.5rem;
-              border: 1px solid black;
-              border-radius: 100%;
-              width: 3rem;
-              height: 3rem;
-              background: none;
-              transition: border-width 0.1s ease;
-
-              svg {
-                  pointer-events: none;
-              }
-
-              &:hover {
-                  cursor: pointer;
-                  border-width: 2px;
-              }
-          }
-
-          p {
-              color: #555960;
-              &.title {
-                  text-transform: uppercase;
-                  font-style: italic;
-                  color: #8e6f3e;
-                  font-family: $acumin-pro-condensed;
-                  font-size: 27px;
-                  margin-bottom: 0.5rem;
-              }
-    
-              &.date {
-                  color: black;
-                  font-size: 18px;
-              }
-          }
-
-        }
-      }
 }
 
 
