@@ -3,7 +3,7 @@ h1 {
     font-weight: 400;
     font-size: 3.75rem; 
     color: $black;
-    line-height:1.05;
+    line-height:1;
     margin-bottom:2.1875rem;
     text-transform:uppercase;
 
@@ -64,37 +64,46 @@ h3 {
 
 h4 {
     color: $steel-gray;
-    font-weight: 600;
-    font-size: 1.375rem;
-    font-family: $source-serif-pro;
-    line-height:1.875rem;
+    font-weight: 700;
+    font-size: 2.125rem;
+    font-family: $acumin-pro;
+    line-height:1.3;
     margin-bottom:1.875rem;
     &:not(:first-child) {
         margin-top: 1.875rem;
+    }
+    @include touch {
+        font-size: 1.5rem;
     }
 }
 
 h5 {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: $aged-gold;
-    font-family: $acumin-pro-semicondensed;
-    line-height:1.625rem;
+    font-family: $acumin-pro;
+    line-height:1.4;
     margin-bottom:1.875rem;
     &:not(:first-child) {
         margin-top: 1.875rem;
+    }
+    @include touch {
+        font-size: 1.25rem;
     }
 }
 
 h6 {
     font-weight: 700;
-    font-size: 1.125rem;
-    font-family: $acumin-pro-condensed;
-    line-height:1.5625rem;
+    font-size: 1.25rem;
+    font-family: $acumin-pro;
+    line-height:1.5;
     margin-bottom:1.875rem;
     text-transform:uppercase;
     &:not(:first-child) {
         margin-top: 1.875rem;
+    }
+    @include touch {
+        font-size: 1.125rem;
     }
 }
 
@@ -119,7 +128,7 @@ h4+h5,h4+h6,h5+h6{
         font-weight: 400;
         font-size: 3.75rem; 
         color: $black;
-        line-height:1.05;
+        line-height:1;
         margin-bottom:2.1875rem;
         text-transform:uppercase;
 
@@ -180,37 +189,46 @@ h4+h5,h4+h6,h5+h6{
     
     h4 {
         color: $steel-gray;
-        font-weight: 600;
-        font-size: 1.375rem;
-        font-family: $source-serif-pro;
-        line-height:1.875rem;
+        font-weight: 700;
+        font-size: 2.125rem;
+        font-family: $acumin-pro;
+        line-height:1.3;
         margin-bottom:1.875rem;
         &:not(:first-child) {
             margin-top: 1.875rem;
+        }
+        @include touch {
+            font-size: 1.5rem;
         }
     }
     
     h5 {
         font-weight: 700;
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: $aged-gold;
-        font-family: $acumin-pro-semicondensed;
-        line-height:1.625rem;
+        font-family: $acumin-pro;
+        line-height:1.4;
         margin-bottom:1.875rem;
         &:not(:first-child) {
             margin-top: 1.875rem;
+        }
+        @include touch {
+            font-size: 1.25rem;
         }
     }
     
     h6 {
         font-weight: 700;
-        font-size: 1.125rem;
-        font-family: $acumin-pro-condensed;
-        line-height:1.5625rem;
+        font-size: 1.25rem;
+        font-family: $acumin-pro;
+        line-height:1.5;
         margin-bottom:1.875rem;
         text-transform:uppercase;
         &:not(:first-child) {
             margin-top: 1.875rem;
+        }
+        @include touch {
+            font-size: 1.125rem;
         }
     }
     h1+h2,h1+h3,h2+h3{
