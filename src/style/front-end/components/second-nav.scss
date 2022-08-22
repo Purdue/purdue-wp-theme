@@ -32,7 +32,7 @@
         height: 37.6px;
         border-bottom: 1px solid $steel-gray;
         display: block;
-        top: 37.6px;
+        top: 37px;
         left:0;
         position: absolute;
     }
@@ -43,7 +43,7 @@
         height: 37.6px;
         border-bottom: 1px solid $steel-gray;
         display: block;
-        top: 111.8px;
+        top: 112px;
         left:0;
         position: absolute;
     }
@@ -62,6 +62,7 @@
         .navbar-item{
             flex:0 0 auto;
             display:block;
+            z-index:10;
             &.is-current-page{
                 background:$black;
                 a{
@@ -91,7 +92,10 @@
             border:none;
             padding: 0.5rem 0.75rem;
             height:37.6px;
-            width:68px;
+            width:71px;
+            color:inherit;
+            font-family:inherit;
+            font-size:inherit;
             cursor: pointer;
             &:hover{
                 background:$steel-gray;
