@@ -301,14 +301,14 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
   font-weight:400;
   font-size:1.125rem !important;
   padding:0.75rem 1.5rem;
-  background-color:#000;
-  color:$boiler-gold;
+  background-color:$boiler-gold;
+  color:$black;
   border:2px solid #000;
   height:auto;
 	&:hover {
     text-decoration: none;
     color:$aged-gold;
-    background-color:#fff;
+    background-color:$black;
     border:2px solid #000;
   }
 }
@@ -325,20 +325,20 @@ $colorText: (
   'opaque' 		: #fff,
 );
 $colorBorder: (
-	'boiler-gold' 		: $aged-gold,
+	'boiler-gold' 		: $black,
   'black' 		: #000,
   'transparent' 		: $boiler-gold,
   'opaque' 		: #fff,
 );
 $colorBg_hover: (
-	'boiler-gold' 		: #fff,
-  'black' 		: #fff,
+	'boiler-gold' 		: $black,
+  'black' 		: $black,
   'transparent' 		: $boiler-gold,
   'opaque' 		: #000,
 );
 $colorText_hover: (
-	'boiler-gold' 		:  #000,
-  'black' 		: $aged-gold,
+	'boiler-gold' 		:  $boiler-gold,
+  'black' 		: $white,
   'transparent' 		: #000,
   'opaque' 		: #fff !important,
 );
@@ -350,20 +350,20 @@ $colorHollowText: (
   'opaque' 		: #fff,
 );
 $colorHollowBorder: (
-	'boiler-gold' 		: $aged-gold !important,
+	'boiler-gold' 		: $black !important,
   'black' 		: #000 !important,
   'transparent' 		: $boiler-gold !important,
   'opaque' 		: #fff !important,
 );
 $colorHollowBg_hover: (
-	'boiler-gold' 		: $boiler-gold !important,
-  'black' 		: #000 !important,
+	'boiler-gold' 		: $black !important,
+  'black' 		: $white !important,
   'transparent' 		: $boiler-gold !important,
   'opaque' 		: #000 !important,
 );
 $colorHollowText_hover: (
-	'boiler-gold' 		:  #000 !important,
-  'black' 		: $boiler-gold !important,
+	'boiler-gold' 		:  $boiler-gold !important,
+  'black' 		: $black !important,
   'transparent' 		: #000 !important,
   'opaque' 		: #fff !important,
 );
@@ -379,16 +379,16 @@ $colorHollowText_hover: (
       background-color:  map_get( $colorBg_hover, $name ) !important;
       color:map_get( $colorText_hover, $name ) !important;
     }
-    .is-style-outline{
-      .has-#{$name}-color {
-        background-color: transparent !important;
+    &.is-style-outline{
+      .has-#{$name}-background-color {
+        background-color: rgba(0,0,0,0) !important;
         color:map_get( $colorHollowText, $name );
         border: 2px solid map_get( $colorHollowBorder, $name );
       }
-      .has-#{$name}-color:hover,
-      .has-#{$name}-color:focus {
-        background-color:  map_get( $colorHollowBg_hover, $name ) !important;
-        color:map_get( $colorHollowText_hover, $name ) !important;
+      .has-#{$name}-background-color:hover,
+      .has-#{$name}-background-color:focus {
+        background-color:  map_get( $colorHollowBg_hover, $name );
+        color:map_get( $colorHollowText_hover, $name );
       }
     }
   }
