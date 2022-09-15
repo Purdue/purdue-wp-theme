@@ -900,6 +900,17 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 }
               }
             }
+            & > a.is-active-page {
+              &:before {
+                visibility: visible;
+                transform: scaleX(1);
+              }
+              @include touch {
+                &:before {
+                  height: 0;
+                }
+              }
+            }
             a{
               font-size: 15px;
               text-transform:uppercase;

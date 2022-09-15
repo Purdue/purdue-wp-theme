@@ -56,5 +56,16 @@ if (navbar_items.length > 0) {
         }
     })
 }
+var sticky = secondNav.offsetTop;
+window.addEventListener("scroll",()=>{
+
+    console.log(sticky +"+"+window.pageYOffset )
+    if (window.pageYOffset >= sticky) {
+        secondNav.classList.add("sticky")
+      } else {
+        secondNav.classList.remove("sticky");
+      }
+});
+
 }
 

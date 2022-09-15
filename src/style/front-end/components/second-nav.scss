@@ -63,6 +63,7 @@
             flex:0 0 auto;
             display:block;
             z-index:10;
+            margin:0;
             &.is-current-page{
                 background:$black;
                 a{
@@ -117,5 +118,14 @@
             display:block;
           }
     }
-
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+   &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10000;
+  }  
+  &.sticky + .main-content {
+    padding-top: 60px;
+  }
 }

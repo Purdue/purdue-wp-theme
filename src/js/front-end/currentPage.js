@@ -1,7 +1,7 @@
 //Highlight current page/folder on top nav
 
 const $currentpage=window.location.href;
-const $topnav=document.querySelector('.purdue-navbar-white>.navbar-menu>.navbar-start');
+const $topnav=document.querySelector('.purdue-navbar-white .navbar-start');
 if($topnav){
     const $navbar_items=Array.prototype.slice.call($topnav.querySelectorAll('a'), 0);
     if ($navbar_items.length > 0) {
