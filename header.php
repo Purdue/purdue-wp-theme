@@ -57,7 +57,7 @@
 				</nav>
 			</header>
 
-        <?php } else if (get_theme_mod( 'header_layout_settings' ) == 'global') { ?>
+        <?php } else if (get_theme_mod( 'header_layout_settings' ) == 'global'||get_theme_mod( 'header_layout_settings' ) == 'global2') { ?>
 			<header id="header" class="header--global">
 				<nav class="navbar is-black purdue-navbar-black" role="navigation">
 					<div class="navbar-brand">

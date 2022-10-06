@@ -15,7 +15,6 @@
 <?php
 	$header_option = get_theme_mod('header_layout_settings', 'global');
 	$footer_option = get_theme_mod('footer_layout_settings', 'four');
-	var_dump($header_option);
 ?>
 <footer id="colophon" role="contentinfo" class="footer">
 	<div class="footer footer__global__logo">
