@@ -15,6 +15,7 @@
 <?php
 	$header_option = get_theme_mod('header_layout_settings', 'global');
 	$footer_option = get_theme_mod('footer_layout_settings', 'four');
+	var_dump($header_option);
 ?>
 <footer id="colophon" role="contentinfo" class="footer">
 	<div class="footer footer__global__logo">
@@ -29,7 +30,7 @@
 		<div class="container is-fullhd">
 			<div class="columns is-desktop">
 				<div class="column is-four-fifths-desktop columns is-desktop">
-					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-half-desktop' :'') ?>">
+					<div class="column<?php echo(($header_option == "simple"||$header_option == "global2")&&$footer_option == "three" ? ' is-half-desktop' :'') ?>">
 						<?php 
 							if($header_option == "global"){
 								purdueBrand_footer_links("global-footer-1.json");
@@ -38,7 +39,7 @@
 							}
 						?>
 					</div>
-					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
+					<div class="column<?php echo(($header_option == "simple"||$header_option == "global2")&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php 
 							if($header_option == "global"){
 								purdueBrand_footer_links("global-footer-2.json");
@@ -47,12 +48,12 @@
 							}
 						?>
 					</div>
-					<div class="column<?php echo($header_option == "simple"&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
+					<div class="column<?php echo(($header_option == "simple"||$header_option == "global2")&&$footer_option == "three" ? ' is-one-quarter-desktop' :'') ?>">
 						<?php if (is_active_sidebar('footer-column-3')) {dynamic_sidebar('footer-column-3');} ?>
 					</div>
 
 					<?php
-						if (($footer_option !== "three" && $header_option == "simple") || $header_option == "global") {
+						if (($footer_option !== "three" && ($header_option == "simple"||$header_option == "global2")) || $header_option == "global") {
 							echo('<div class="column">');
 							if (is_active_sidebar('footer-column-4')) {dynamic_sidebar('footer-column-4');}
 							echo('</div>');

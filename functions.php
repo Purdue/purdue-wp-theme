@@ -62,8 +62,9 @@ function purdue_layout_options($wp_customize){
         'settings'=>'header_layout_settings',
         'label'=>'Header Layout',
         'choices'=>array(
-            'simple'=>_('Simple'),
-            'global'=>_('Global')
+            'simple'=>_('Simple with fully customizable footer'),
+            'global'=>_('Global with fixed first two columns of links on footer'),
+            'global2'=>_('Global with fully customizable footer')
         )
     ));
 
@@ -407,8 +408,9 @@ function purdue_header_radio_select($input, $setting)
 {
     // list of valid choices
     $valid = array(
-        'simple'=>_('Simple'),
-        'global'=>_('Global')
+        'simple'=>_('Simple with fully customizable footer'),
+        'global'=>_('Global with fixed first two columns of links on footer'),
+        'global2'=>_('Global with fully customizable footer')
     );
     // Ensure input is a slug.
     $input = sanitize_key($input);
