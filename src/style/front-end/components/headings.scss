@@ -1,91 +1,91 @@
 h1 {
     font-family: $united-sans;
     font-weight: 400;
-    font-size: 3.75rem; 
-    color: $black;
+    font-size: 3rem; 
+    color: black;
     line-height:1;
     text-transform:uppercase;
 
     &:not(:first-child) {
-        margin-top: 1.25rem;
+        margin-top: 3rem;
     }
     &:not(:last-child) {
         margin-bottom:1.25rem;
     }
     @include touch {
-        font-size: 2.125rem;
+        font-size: 2rem;
         font-weight: 700;
         line-height:1.1;
     }
 }
 h2 {
-    font-size: 3rem;
+    font-size: 2.25rem;
     font-weight: 400;
     font-family: $united-sans;
-    color: $aged-gold;
+    color: black;
     line-height:1;
     &:not(:first-child) {
-        margin-top: 1.25rem;
+        margin-top: 3rem;
     }
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:1rem;
     }
     @include touch {
         font-weight: 700;
-        font-size: 1.875rem;
+        font-size: 1.75rem;
         line-height:1.2;
     }
 }
 
 h3 {
-    font-size: 2.5rem; 
-    font-weight: 600;
+    font-size: 2rem; 
+    font-weight: 400;
     font-family: $united-sans;
-    color: $black;
+    color: black;
     line-height:1.125;
     &:not(:first-child) {
-        margin-top: 1.25rem;
+        margin-top: 2rem;
     }
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:0.5rem;
     }
     @include touch {
-        font-size: 1.5625rem; 
+        font-size: 1.5rem; 
         line-height:1.2;
     }
 }
 
 h4 {
-    color: $steel-gray;
+    color: black;
     font-weight: 700;
-    font-size: 2.125rem;
+    font-size: 1.75rem;
     font-family: $acumin-pro;
     line-height:1.3;
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:0.5rem;
     }
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
     @include touch {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
 }
 
 h5 {
     font-weight: 700;
     font-size: 1.5rem;
-    color: $aged-gold;
+    color: black;
     font-family: $acumin-pro;
     line-height:1.4;
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:0.5rem;
     }
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
     @include touch {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
 
@@ -94,20 +94,20 @@ h6 {
     font-size: 1.25rem;
     font-family: $acumin-pro;
     line-height:1.5;
+    color: black;
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:0.5rem;
     }
-    text-transform:uppercase;
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
     @include touch {
-        font-size: 1.125rem;
+        font-size: 1rem;
     }
 }
 
 p {
-    font-size: 1.125rem;
+    font-size: 1rem;
     line-height:1.5;
 }
 
@@ -117,92 +117,91 @@ p {
     h1 {
         font-family: $united-sans;
         font-weight: 400;
-        font-size: 3.75rem; 
-        color: $black;
+        font-size: 3rem; 
+        color: black;
         line-height:1;
         text-transform:uppercase;
     
         &:not(:first-child) {
-            margin-top: 1.25rem;
+            margin-top: 3rem;
         }
         &:not(:last-child) {
             margin-bottom:1.25rem;
         }
         @include touch {
-            font-size: 2.125rem;
+            font-size: 2rem;
             font-weight: 700;
             line-height:1.1;
         }
     }
-    
     h2 {
-        font-size: 3rem;
+        font-size: 2.25rem;
         font-weight: 400;
         font-family: $united-sans;
-        color: $aged-gold;
+        color: black;
         line-height:1;
         &:not(:first-child) {
-            margin-top: 1.25rem;
+            margin-top: 3rem;
         }
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:1rem;
         }
         @include touch {
             font-weight: 700;
-            font-size: 1.875rem;
+            font-size: 1.75rem;
             line-height:1.2;
         }
     }
     
     h3 {
-        font-size: 2.5rem; 
-        font-weight: 600;
+        font-size: 2rem; 
+        font-weight: 400;
         font-family: $united-sans;
-        color: $black;
+        color: black;
         line-height:1.125;
         &:not(:first-child) {
-            margin-top: 1.25rem;
+            margin-top: 2rem;
         }
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:0.5rem;
         }
         @include touch {
-            font-size: 1.5625rem; 
+            font-size: 1.5rem; 
             line-height:1.2;
         }
     }
     
     h4 {
-        color: $steel-gray;
+        color: black;
         font-weight: 700;
-        font-size: 2.125rem;
+        font-size: 1.75rem;
         font-family: $acumin-pro;
         line-height:1.3;
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:0.5rem;
         }
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
         @include touch {
-            font-size: 1.5rem;
+            font-size: 1.375rem;
         }
     }
     
     h5 {
         font-weight: 700;
         font-size: 1.5rem;
-        color: $aged-gold;
+        color: black;
         font-family: $acumin-pro;
         line-height:1.4;
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:0.5rem;
         }
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
         @include touch {
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
     }
     
@@ -211,15 +210,20 @@ p {
         font-size: 1.25rem;
         font-family: $acumin-pro;
         line-height:1.5;
+        color: black;
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:0.5rem;
         }
-        text-transform:uppercase;
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
         @include touch {
-            font-size: 1.125rem;
+            font-size: 1rem;
         }
+    }
+    
+    p {
+        font-size: 1rem;
+        line-height:1.5;
     }
 }
