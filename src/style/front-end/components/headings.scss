@@ -12,9 +12,9 @@ h1 {
     &:not(:last-child) {
         margin-bottom:1.25rem;
     }
-    @include touch {
+    @include mobile {
         font-size: 2rem;
-        font-weight: 700;
+        font-weight: 400;
         line-height:1.1;
     }
 }
@@ -23,15 +23,15 @@ h2 {
     font-weight: 400;
     font-family: $united-sans;
     color: black;
-    line-height:1;
+    line-height:1.1;
     &:not(:first-child) {
         margin-top: 3rem;
     }
     &:not(:last-child) {
         margin-bottom:1rem;
     }
-    @include touch {
-        font-weight: 700;
+    @include mobile {
+        font-weight: 400;
         font-size: 1.75rem;
         line-height:1.2;
     }
@@ -49,7 +49,7 @@ h3 {
     &:not(:last-child) {
         margin-bottom:0.5rem;
     }
-    @include touch {
+    @include mobile {
         font-size: 1.5rem; 
         line-height:1.2;
     }
@@ -67,7 +67,7 @@ h4 {
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
-    @include touch {
+    @include mobile {
         font-size: 1.375rem;
     }
 }
@@ -84,7 +84,7 @@ h5 {
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
-    @include touch {
+    @include mobile {
         font-size: 1rem;
     }
 }
@@ -101,14 +101,17 @@ h6 {
     &:not(:first-child) {
         margin-top: 1.25rem;
     }
-    @include touch {
-        font-size: 1rem;
+    @include mobile {
+        font-size: 0.875rem;
     }
 }
 
 p {
     font-size: 1rem;
     line-height:1.5;
+    @include mobile {
+        font-size: 0.875rem;
+    }
 }
 
 
@@ -128,9 +131,9 @@ p {
         &:not(:last-child) {
             margin-bottom:1.25rem;
         }
-        @include touch {
+        @include mobile {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 400;
             line-height:1.1;
         }
     }
@@ -139,15 +142,15 @@ p {
         font-weight: 400;
         font-family: $united-sans;
         color: black;
-        line-height:1;
+        line-height:1.1;
         &:not(:first-child) {
             margin-top: 3rem;
         }
         &:not(:last-child) {
             margin-bottom:1rem;
         }
-        @include touch {
-            font-weight: 700;
+        @include mobile {
+            font-weight: 400;
             font-size: 1.75rem;
             line-height:1.2;
         }
@@ -165,7 +168,7 @@ p {
         &:not(:last-child) {
             margin-bottom:0.5rem;
         }
-        @include touch {
+        @include mobile {
             font-size: 1.5rem; 
             line-height:1.2;
         }
@@ -183,7 +186,7 @@ p {
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
-        @include touch {
+        @include mobile {
             font-size: 1.375rem;
         }
     }
@@ -200,7 +203,7 @@ p {
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
-        @include touch {
+        @include mobile {
             font-size: 1rem;
         }
     }
@@ -217,13 +220,16 @@ p {
         &:not(:first-child) {
             margin-top: 1.25rem;
         }
-        @include touch {
-            font-size: 1rem;
+        @include mobile {
+            font-size: 0.875rem;
         }
     }
     
     p {
         font-size: 1rem;
         line-height:1.5;
+        @include mobile {
+            font-size: 0.875rem;
+        }
     }
 }
