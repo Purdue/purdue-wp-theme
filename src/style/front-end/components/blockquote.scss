@@ -1,8 +1,26 @@
 .content blockquote {
     background: transparent;
-    border-left: 4px solid $aged-gold;
-    padding: 0.5rem 0 0.5rem 2rem;
-    margin-left:4rem;
+    border-left:none;
+    padding: 50px 24px 20px 84px;
+    position: relative;
+    &:before{
+        content: "“";
+        position: absolute;
+        text-align: left;
+        font-weight: 900;
+        font-size: 300px;
+        line-height: 1.1933333333;
+        letter-spacing: 0;
+        color: $white;
+        font-family: $united-sans;
+        -webkit-text-stroke: 1px #cfb991;
+        -webkit-text-fill-color: transparent;
+        opacity: .75;
+        left: 16px;
+        z-index: 1;
+        top:0;
+    }
+
     @include touch{
         margin-left:2rem;
     }
@@ -11,21 +29,42 @@
         margin-left:1rem;
     }
     p {
-        font-family: $source-serif-pro;
+        font-family: $acumin-pro;
         font-weight: 400;
-        font-size: 1.875rem;
+        font-size: 2rem;
         margin-bottom: 1rem !important;
-        line-height:1.1;
+        line-height:1.125;
+        font-style: italic;
+        @include mobile{
+            font-size: 1.5rem;
+        }
+        &:after{
+            content: "”";
+        }
     }
 
     cite {
-        font-size: 1rem;
-        font-family: $united-sans-condensed;
+        text-align: left;
+        font-size: 16px;
         font-weight: 700;
-        color: black;
-        font-style: normal;
+        line-height: 1.5;
+        font-family: $acumin-pro;
+        letter-spacing: 1.5px;
         text-transform: uppercase;
-        line-height: 1;
-        color:$aged-gold;
+        font-style: unset;
+        &:before{
+            display: block;
+            width: 230px;
+            height: 3px;
+            background: #cfb991;
+            content: "";
+            margin-top: 32px;
+            margin-bottom: 32px;
+        }
+        em{
+            font-style: unset;
+            text-transform: none;
+            font-weight: 400;
+        }
     }
 }
