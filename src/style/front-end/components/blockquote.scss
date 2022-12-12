@@ -21,12 +21,8 @@
         top:0;
     }
 
-    @include touch{
-        margin-left:2rem;
-    }
     @include mobile{
-        padding-left: 1rem;
-        margin-left:1rem;
+        padding:50px 20px 30px 60px
     }
     p {
         font-family: $acumin-pro;
