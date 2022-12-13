@@ -7,12 +7,12 @@ a{
         color:$aged-gold;
     }
 }
-.has-background-black a,.has-background-black-ter a{
+.has-background-black a:not(.wp-block-button__link),.has-background-black-ter a:not(.wp-block-button__link){
     color:$dust-gold;
 }
-.has-background-grey-lighter a{
+.has-background-grey-lighter a:not(.wp-block-button__link){
     color:$aged-gold;
 }
-.has-background-boiler-gold a{
+.has-background-boiler-gold a:not(.wp-block-button__link){
     color:$steel-gray;
 }
