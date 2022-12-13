@@ -504,12 +504,12 @@ function purdueBrand_default_colors()
         array(
             'name' => __('Opaque', 'purdue-wp-theme'),
             'slug' => 'opaque',
-            'color' => 'rgba(0,0,0,0.65',
+            'color' => 'rgba(0,0,0,0.65)',
         ),
         array(
             'name' => __('Transparent', 'purdue-wp-theme'),
             'slug' => 'transparent',
-            'color' => 'rgba(0,0,0,0',
+            'color' => 'rgba(0,0,0,0)',
         )
     ));
 }
