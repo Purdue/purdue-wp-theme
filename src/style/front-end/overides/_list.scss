@@ -11,5 +11,8 @@
 .content{
     ul,ol{
         font-size: 1rem;
+        li + li{
+            margin-top:0.5em;
+        }
     }
 }  
