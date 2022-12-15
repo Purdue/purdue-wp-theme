@@ -295,6 +295,9 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
 }
 
 //button block
+.wp-block-buttons.is-layout-flex {
+  display: flex;
+}
 .wp-block-button__link,.gform_button {
 	border-radius: 0;
   font-family: $acumin-pro;
