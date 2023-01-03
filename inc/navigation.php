@@ -109,7 +109,7 @@ if ( ! function_exists( 'purdueBrand_navigation' ) ) {
 			'items_wrap'    	=> '%3$s',
 			'menu_class'        => '',
 			'fallback_cb'       => 'purdueBrand_nav_primary::fallback',
-			'walker'            => new purdueBrand_nav_primary()
+			'walker'            => new purdueBrand_nav_globalMenu()
 			)
 		);
 	}

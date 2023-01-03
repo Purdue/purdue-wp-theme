@@ -244,13 +244,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   }
   .submenu.has-dropdown{
     &:after {
-      font-family: 'Font Awesome 5 Free';
-      font-size: 14px !important;
       font-weight: 900;
       content: '\f105' !important;
       position: absolute;
       right: 1.75rem;
-      margin-top: 2px !important;
+      margin-top: 4px !important;
       color: black !important;
       @include touch {
         display: none;
@@ -322,14 +320,17 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     }
     &.has-dropdown {
       &:after {
-        font-family: 'Font Awesome 5 Free';
-        font-size: 12px;
+        font-size: 12px !important;
         font-weight: 900;
         content: '\f078';
         position: relative;
         right: -0.4rem;
         margin-top: 3px;
         color: black !important;
+        font: var(--fa-font-solid);
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
         @include touch {
           display: none;
         }
@@ -714,8 +715,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           &:after{
             font-family: "Font Awesome 5 Free"; 
             font-weight: 900; 
-            content: "\f067";
+            // content: "\f067";
+            font: var(--fa-font-solid);
+            content: "\2b";
             font-size:1rem;
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
           }
           &.is-open:after{
             content: "\f068";
@@ -823,9 +829,13 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           padding:1rem $side-padding-tablet;
           box-shadow: $box-shadow;
           &:after{
-            font-family: "Font Awesome 5 Free"; 
             font-weight: 900; 
-            content: "\f067";
+            font: var(--fa-font-solid);
+            content: "\2b";
+            font-size:1.2rem;
+            display: inline-block;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
             margin-left:1rem;
             display:inline-block;
             text-decoration: none;
@@ -972,8 +982,12 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
               @include touch{
                 width:100%;
                 &:after{
-                  content: '\f067';
-                  font-family: 'Font Awesome 5 Free';
+                  font: var(--fa-font-solid);
+                  content: "\2b";
+                  font-size:1rem;
+                  display: inline-block;
+                  text-rendering: auto;
+                  -webkit-font-smoothing: antialiased;
                   font-weight: 900;
                   position: absolute;
                   border:none;
