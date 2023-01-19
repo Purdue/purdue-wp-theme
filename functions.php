@@ -745,3 +745,21 @@ function rss_post_thumbnail($content) {
 }
 add_filter('the_excerpt_rss', 'rss_post_thumbnail');
 add_filter('the_content_feed', 'rss_post_thumbnail');
+
+//Add iframe shortcode compiler
+add_shortcode( 'iframe' , 'mycustom_shortcode_iframe' );
+function mycustom_shortcode_iframe($args, $content) {
+    $keys = array("id", "src", "title", "frameborder", "allow");
+    $arguments = mycustom_extract_shortcode_arguments($args, $keys);
+    return '<iframe ' . $arguments . '></iframe>';
+}
+
+function mycustom_extract_shortcode_arguments($args, $keys) {
+    $result = "";
+    foreach ($keys as $key) {
+        if (isset($args[$key])) {
+            $result .= $key . '="' . $args[$key] . '" ';
+        }
+    }
+    return $result;
+}

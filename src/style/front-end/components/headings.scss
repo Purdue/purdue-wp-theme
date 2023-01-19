@@ -3,14 +3,14 @@ h1 {
     font-weight: 400;
     font-size: 3rem; 
     color: black;
-    line-height:1;
+    line-height:1.1;
     text-transform:uppercase;
 
     &:not(:first-child) {
         margin-top: 3rem;
     }
     &:not(:last-child) {
-        margin-bottom:1.25rem;
+        margin-bottom:2.25rem;
     }
     @include mobile {
         font-size: 2rem;
@@ -25,7 +25,7 @@ h2 {
     color: black;
     line-height:1.1;
     &:not(:first-child) {
-        margin-top: 3rem;
+        margin-top: 2.75rem;
     }
     &:not(:last-child) {
         margin-bottom:1rem;
@@ -44,7 +44,7 @@ h3 {
     color: black;
     line-height:1.125;
     &:not(:first-child) {
-        margin-top: 2rem;
+        margin-top: 2.5rem;
     }
     &:not(:last-child) {
         margin-bottom:0.5rem;
@@ -122,14 +122,14 @@ p {
         font-weight: 400;
         font-size: 3rem; 
         color: black;
-        line-height:1;
+        line-height:1.1;
         text-transform:uppercase;
     
         &:not(:first-child) {
             margin-top: 3rem;
         }
         &:not(:last-child) {
-            margin-bottom:1.25rem;
+            margin-bottom:2.25rem;
         }
         @include mobile {
             font-size: 2rem;
@@ -144,7 +144,7 @@ p {
         color: black;
         line-height:1.1;
         &:not(:first-child) {
-            margin-top: 3rem;
+            margin-top: 2.75rem;
         }
         &:not(:last-child) {
             margin-bottom:1rem;
@@ -163,7 +163,7 @@ p {
         color: black;
         line-height:1.125;
         &:not(:first-child) {
-            margin-top: 2rem;
+            margin-top: 2.5rem;
         }
         &:not(:last-child) {
             margin-bottom:0.5rem;
