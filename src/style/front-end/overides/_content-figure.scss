@@ -9,3 +9,10 @@ figure {
 .wp-block-image .aligncenter>figcaption, .wp-block-image .alignleft>figcaption, .wp-block-image .alignright>figcaption, .wp-block-image.is-resized>figcaption{
     display:block
 }
+.content figure figcaption {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: $steel-gray;
+    font-weight: 400;
+    max-width: 900px;
+}
