@@ -763,3 +763,61 @@ function mycustom_extract_shortcode_arguments($args, $keys) {
     }
     return $result;
 }
+
+/**
+ * Find the images in a gallery and return them in a new wrapping <div>  for Square image gallery block
+ *
+ * @param string $block_content The block content about to be appended.
+ * @param array  $block   The full block, including name and attributes.
+ *
+ * @return string
+ */
+function pu_block_wrapper_edit_image_gallery( $block_content, $block ) {
+	if ( isset( $block['attrs']['className'] ) ) {
+		if ( 'core/gallery' === $block['blockName'] && 'purdue-image-gallery' === $block['attrs']['className'] ) {
+			$urls = [];
+            $captions = [];
+            $ids = [];
+            $alts = [];
+			preg_match_all( '/<figure[^>]*>(.*?)<\/figure>/mi', $block_content, $matches, PREG_SET_ORDER, 0 );
+			foreach ( $matches as $match ) {
+				preg_match("/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/", $match[0], $matches1);
+                $urls[]=$matches1[1];
+                preg_match("/<figcaption[^>]*>(.*?)<\/figcaption>/mi", $match[0], $matches2);
+                $captions[]=$matches2[1];
+                preg_match("/\<img.+alt\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/", $match[0], $matches4);
+                $alts[]=$matches4[1];
+			}
+            $class="is-one-quarter";
+            if ( isset( $block['attrs']['columns'] ) ) {
+				if($block['attrs']['columns']<=3){
+                    $class="is-one-third";
+                }
+            }
+			$output = "<div class='purdue-image-gallery purdue-image-gallery-core'>
+            <div class='container'>
+            <div class='columns is-multiline'>";
+            for($i=0; $i<sizeof($urls); $i++){
+                $output.= "<div class='column is-half-tablet is-full-mobile ".$class."'>";
+                $output.= "<div class='image-gallery-open'>";
+                $output.= "<div class='image is-square' role='image' style='background-image:url(".$urls[$i].")' aria-label='".$alts[$i]."'></div>";
+                if($captions[$i] !="" ){
+                $output.='<button class="image-modal-button" aria-label="More information">
+                <i class="fas fa-plus" aria-hidden="true"></i></button>';
+                }
+                $output.= "</div>";
+                if($captions[$i] !="" ){
+                $output.='<div class="image-modal-content">
+                <div class="image-modal-close"><p>'.$captions[$i].'</p></div>
+                <button class="image-modal-button" aria-label="close">
+                <i class="fas fa-minus" aria-hidden="true"></i></button>
+                </div>';}
+                $output.= "</div>";
+            }
+            $output.= "</div></div></div>";
+			return $output;
+		}
+	}
+	return $block_content;
+}
+add_filter( 'render_block', 'pu_block_wrapper_edit_image_gallery', 10, 2 );
