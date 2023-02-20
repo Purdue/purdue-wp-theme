@@ -780,13 +780,15 @@ function pu_block_wrapper_edit_image_gallery( $block_content, $block ) {
             $ids = [];
             $alts = [];
 			preg_match_all( '/<figure[^>]*>(.*?)<\/figure>/mi', $block_content, $matches, PREG_SET_ORDER, 0 );
+
 			foreach ( $matches as $match ) {
 				preg_match("/\<img.+src\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/", $match[0], $matches1);
                 $urls[]=$matches1[1];
                 preg_match("/<figcaption[^>]*>(.*?)<\/figcaption>/mi", $match[0], $matches2);
                 $captions[]=$matches2[1];
-                preg_match("/\<img.+alt\=(?:\"|\')(.+?)(?:\"|\')(?:.+?)\>/", $match[0], $matches4);
+                preg_match("/\<img[^>]+alt=\"([^>]*)\"[^>]*>/iU", $match[0], $matches4);
                 $alts[]=$matches4[1];
+
 			}
             $class="is-one-quarter";
             if ( isset( $block['attrs']['columns'] ) ) {
@@ -799,8 +801,12 @@ function pu_block_wrapper_edit_image_gallery( $block_content, $block ) {
             <div class='columns is-multiline'>";
             for($i=0; $i<sizeof($urls); $i++){
                 $output.= "<div class='column is-half-tablet is-full-mobile ".$class."'>";
-                $output.= "<div class='image-gallery-open'>";
-                $output.= "<div class='image is-square' role='image' style='background-image:url(".$urls[$i].")' aria-label='".$alts[$i]."'></div>";
+                $imageClass="image-gallery-open";
+                if($captions[$i] =="" ){
+                    $imageClass.=" image-no-caption";
+                }
+                $output.= "<div class='".$imageClass."'>";
+                $output.= "<div class='image is-square' role='image' data-src='".$urls[$i]."' aria-label='".$alts[$i]."'></div>";
                 if($captions[$i] !="" ){
                 $output.='<button class="image-modal-button" aria-label="More information">
                 <i class="fas fa-plus" aria-hidden="true"></i></button>';
