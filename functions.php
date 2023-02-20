@@ -790,17 +790,17 @@ function pu_block_wrapper_edit_image_gallery( $block_content, $block ) {
                 $alts[]=$matches4[1];
 
 			}
-            $class="is-one-quarter";
+            $class="is-one-quarter-widescreen";
             if ( isset( $block['attrs']['columns'] ) ) {
 				if($block['attrs']['columns']<=3){
-                    $class="is-one-third";
+                    $class="is-one-third-widescreen";
                 }
             }
 			$output = "<div class='purdue-image-gallery purdue-image-gallery-core'>
             <div class='container'>
             <div class='columns is-multiline'>";
             for($i=0; $i<sizeof($urls); $i++){
-                $output.= "<div class='column is-half-tablet is-full-mobile ".$class."'>";
+                $output.= "<div class='column is-half-tablet is-full-mobile is-one-third-desktop ".$class."'>";
                 $imageClass="image-gallery-open";
                 if($captions[$i] =="" ){
                     $imageClass.=" image-no-caption";
