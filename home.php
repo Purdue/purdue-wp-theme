@@ -85,7 +85,7 @@
 									<div class="content-text">
 										<?php 
 											$more = true;
-											if(sizeof(the_excerpt())!==0){
+											if(strlen(the_excerpt())!==0){
 												the_excerpt();
 											}else{
 												echo purdue_get_excerpt(get_the_content()); 
