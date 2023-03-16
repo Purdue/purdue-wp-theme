@@ -675,7 +675,7 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;
-// Make breadcrumb optional on pages
+// Make breadcrumb optional on pages with top second nav
 if( function_exists('acf_add_local_field_group') ):
 
     acf_add_local_field_group(array(
@@ -734,6 +734,67 @@ if( function_exists('acf_add_local_field_group') ):
     ));
     
     endif;		
+
+// Make breadcrumb optional on pages with default template
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array(
+        'key' => 'group_641340f3a8918',
+        'title' => 'Breadcrumb setting',
+        'fields' => array(
+            array(
+                'key' => 'field_641340f382cb3',
+                'label' => 'Remove Breadcrumb on this page?',
+                'name' => 'remove_breadcrumb_on_this_page',
+                'aria-label' => '',
+                'type' => 'checkbox',
+                'instructions' => '',
+                'required' => 0,
+                'conditional_logic' => 0,
+                'wrapper' => array(
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ),
+                'choices' => array(
+                    'Yes' => 'Yes',
+                ),
+                'default_value' => array(
+                ),
+                'return_format' => 'value',
+                'allow_custom' => 0,
+                'layout' => 'vertical',
+                'toggle' => 0,
+                'save_custom' => 0,
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'page',
+                ),
+                array(
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'default',
+                ),
+            ),
+        ),
+        'menu_order' => 0,
+        'position' => 'side',
+        'style' => 'default',
+        'label_placement' => 'top',
+        'instruction_placement' => 'label',
+        'hide_on_screen' => '',
+        'active' => true,
+        'description' => '',
+        'show_in_rest' => 0,
+    ));
+    
+    endif;		
+
 //image in rss feed
 function rss_post_thumbnail($content) {
     global $post;
