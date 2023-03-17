@@ -5,7 +5,7 @@ tables.forEach((t)=>{
     const tfoot=t.getElementsByTagName("tfoot");
     const tbody=t.getElementsByTagName("tbody");
     let trlength;
-    const trs=tbody[0].getElementsByTagName("tr")
+    const trs=[...tbody[0].getElementsByTagName("tr")]
 
     let ths;
     if(thead.length>0){

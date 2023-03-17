@@ -1,7 +1,7 @@
 .content blockquote {
     background: transparent;
     border-left:none;
-    padding: 50px 24px 20px 84px;
+    padding: 50px 24px 20px 84px !important;
     position: relative;
     &:before{
         content: "“";
