@@ -19,7 +19,7 @@
                     $bio = (get_field('short_bio'));
                     if ($bio) {
                         echo $bio;
-                    } elseif(sizeof(the_excerpt())!==0) {
+                    } elseif(!empty(the_excerpt()) && sizeof(the_excerpt())!==0) {
 						the_excerpt();
 					} else {
 						echo purdue_get_excerpt(get_the_content()); 

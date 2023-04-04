@@ -32,7 +32,7 @@
 								<p class="search-post-link"><?php the_permalink() ?></p>
 								<p  class="search-post-content">
 									<?php 					
-									if(sizeof(the_excerpt())!==0){
+									if(!empty(the_excerpt()) && sizeof(the_excerpt())!==0){
 										the_excerpt();
 									}else{
 										echo purdue_get_excerpt(get_the_content());
