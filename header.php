@@ -18,8 +18,6 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<!-- Font Awesome -->
-	<script src="https://kit.fontawesome.com/439a72c385.js" crossorigin="anonymous"></script>
 	<?php wp_head(); ?>
 </head>
 
@@ -38,7 +36,7 @@
 					<div class="navbar-brand">
 						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
 						<button class="icon is-large navbar-burger" data-target="simple-nav">
-							<i arial-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i arial-hidden="true" class="fas fa-times close-icon"></i>
+							<i aria-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i aria-hidden="true" class="fas fa-times close-icon"></i>
 						</button>
 					</div>
 					<div class="navbar-end">

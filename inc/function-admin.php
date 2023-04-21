@@ -20,3 +20,8 @@ function admin_styles() {
 }
 add_action('admin_enqueue_scripts', 'admin_scripts');
 add_action('admin_enqueue_scripts', 'admin_styles');
+
+//fontawesome
+
+wp_register_script( 'FontAwesome', 'https://kit.fontawesome.com/439a72c385.js', null, null, false );
+wp_enqueue_script('FontAwesome');
