@@ -51,7 +51,7 @@
 							</div>
 							<div class="content-text">
 								<?php 
-									if(!empty(the_excerpt()) && sizeof(the_excerpt())!==0){
+									if(!empty(the_excerpt())){
 										the_excerpt();
 									}else{
 										echo purdue_get_excerpt(get_the_content());  
