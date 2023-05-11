@@ -14,7 +14,7 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="is-fullheight">
 <head>
-	<title><?php wp_title(''); ?></title>
+	<title><?php is_front_page() ? bloginfo('name') : wp_title(''); ?></title>
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
