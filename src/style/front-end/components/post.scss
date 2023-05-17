@@ -455,3 +455,41 @@ ul.alm-listing{
     }
   }
 } 
+.marcom-news-list{
+  align-items: center;
+  border-bottom: 2px solid $steam-gray;
+  padding: 1.5rem 0;
+  &>.column{
+    padding-left:0;
+    padding-right:0;
+  }
+}
+.news-list-content{
+  align-items: center;
+  padding-right: 1.5rem;
+  @include touch{
+    flex-direction:column;
+    align-items: flex-start;
+  }
+  @include mobile{
+    padding-right: 0;
+  }
+  .column.is-narrow{
+    width:350px;
+  }
+  img{
+    height:45px;
+    width:auto;
+    display:block;
+  }
+  .news-publisher-name{
+    font-weight:700;
+  }
+}
+.news-list .news-list-content{
+  flex-direction:column;
+  align-items: flex-start;
+}
+.news-list + .alm-btn-wrap{
+  padding:3rem 0 2rem !important;
+}

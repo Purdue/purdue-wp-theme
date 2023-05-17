@@ -1,0 +1,15 @@
+.alm-load-more-btn{
+    border:1px solid $black !important;
+    background:$white !important;
+    border-radius:0 !important;
+    color:$black !important;
+    font-family: $acumin-pro;
+    font-weight:500 !important;
+    &.done{
+        display: none !important;
+    }
+    &:hover{
+        background:$black !important;
+        color:$white !important;
+    }
+}

@@ -3,4 +3,4 @@ window.almDone = function(){
         el.style.display = "none";
     });
 };
-window.almDone();
+// window.almDone();
