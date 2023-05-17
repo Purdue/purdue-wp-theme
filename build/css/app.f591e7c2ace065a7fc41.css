@@ -15497,7 +15497,7 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 li {
 }
 
 .alm-load-more-btn {
-  border: 1px solid #000 !important;
+  border: 2px solid #000 !important;
   background: hsl(0deg, 0%, 100%) !important;
   border-radius: 0 !important;
   color: #000 !important;
