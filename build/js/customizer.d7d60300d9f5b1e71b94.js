@@ -15,7 +15,7 @@
   \***************************************/
 /***/ (() => {
 
-eval("//Hide/show footer layout options\n(function ($) {\n  wp.customize.bind('ready', function () {\n    // hide control at first load\n    if ($('input[name=\"_customize-radio-header_layout_radio\"]:checked').val() === \"global\") {\n      $('#customize-control-footer_layout_radio').hide();\n    } else {\n      $('#customize-control-footer_layout_radio').show();\n    }\n\n    $(document).on('click', 'input[name=\"_customize-radio-header_layout_radio\"]', function () {\n      if ($(this).val() === \"global\") {\n        $('#customize-control-footer_layout_radio').hide();\n      } else {\n        $('#customize-control-footer_layout_radio').show();\n      }\n    });\n  });\n})(jQuery);\n\n//# sourceURL=webpack://purdue-wp-theme/./src/js/back-end/customizer.js?");
+eval("//Hide/show footer layout options\n\n(function ($) {\n  wp.customize.bind('ready', function () {\n    // hide control at first load\n    if ($('input[name=\"_customize-radio-header_layout_radio\"]:checked').val() === \"global\") {\n      $('#customize-control-footer_layout_radio').hide();\n    } else {\n      $('#customize-control-footer_layout_radio').show();\n    }\n    $(document).on('click', 'input[name=\"_customize-radio-header_layout_radio\"]', function () {\n      if ($(this).val() === \"global\") {\n        $('#customize-control-footer_layout_radio').hide();\n      } else {\n        $('#customize-control-footer_layout_radio').show();\n      }\n    });\n  });\n})(jQuery);\n\n//# sourceURL=webpack://purdue-wp-theme/./src/js/back-end/customizer.js?");
 
 /***/ })
 

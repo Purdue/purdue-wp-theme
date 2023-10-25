@@ -174,7 +174,7 @@
 									<li class="navbar-item">
 										<a title="Twitter" href="<?php echo $ftr_twitter; ?>">
 										<span class="screen-reader-text">Twitter</span>
-											<i class="fab fa-twitter" aria-hidden="true"></i> 
+										<i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
 										</a>
 									</li>
 								<?php
