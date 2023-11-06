@@ -414,10 +414,15 @@ ul.alm-listing{
       }
 
       .icon {
-        color: #707070;
         text-decoration: none;
+        svg{
+          font-size:1.75rem;
+        }
         &:hover {
           color: $aged-gold;
+          svg{
+            fill:$aged-gold;
+          }
         }
       }
     }

@@ -288,8 +288,14 @@
                 margin:0;
                 display:inline;
                 a {
+                    svg{
+                        fill:$steam-gray;
+                    }
                     &:hover{
                         color:$white;
+                        svg{
+                            fill:$white;
+                        }
                     }
                 }
                 &:not(:last-child){
