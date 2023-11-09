@@ -14,7 +14,7 @@ include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 require get_template_directory() . '/inc/navwalker.php';
 require get_template_directory() . '/inc/helpers.php';
 require get_template_directory() . '/inc/function-admin.php';
-
+require get_template_directory() . '/inc/content-filters.php';
 if (!function_exists('purdueBrand_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
