@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="104.253572px" height="104.253572px" viewBox="0 0 104.253572 104.253572" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow_circle_icon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(52.1268, 52.1268) rotate(40) translate(-52.1268, -52.1268)translate(15.1268, 15.1268)" stroke="#cfb991" stroke-width="4">
+            <g transform="translate(0, 0)">
+                <circle transform="translate(37, 37) rotate(135) translate(-37, -37)" cx="36.9999977" cy="36.9999977" r="25.1629493"></circle>
+                <g transform="translate(27.7199, 21.7701)" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="9.52771771" y1="2.99227577" x2="9.56560625" y2="27.0777404" transform="translate(9.5467, 15.035) rotate(50) translate(-9.5467, -15.035)"></line>
+                    <polyline transform="translate(14.2315, 11.1834) rotate(50) translate(-14.2315, -11.1834)" points="4.73086087 17.2295253 14.1515077 5.10747085 23.7320575 17.2593992"></polyline>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -182,3 +182,168 @@ if ( ! function_exists( 'purdueBrand_header_buttons' ) ) {
 		echo $output;
 	}
 }
+
+if ( ! function_exists( 'purdue_search_placeholder_google' ) ) {
+	function purdue_search_placeholder_google()
+	{	
+
+		$body = file_get_contents(__DIR__ . '/../json/search-quick-links.json');
+		$data = json_decode( $body );
+		$output = '';
+		foreach ($data->links as $key => $link) {  
+			$output.=$link->link_text;
+			if($key!=sizeof($data->links)-1){
+				$output.=", ";
+			}
+		}
+
+		return $output;
+	}
+}
+if ( ! function_exists( 'purdue_search_placeholder_wordpress' ) ) {
+	function purdue_search_placeholder_wordpress()
+	{
+		$placeholderText_1 = get_theme_mod('quick_link_1_text', '');	
+		$placeholderText_2 = get_theme_mod('quick_link_2_text', '');
+		$placeholderText_3 = get_theme_mod('quick_link_3_text', '');
+		$placeholderText_4 = get_theme_mod('quick_link_4_text', '');
+		$placeholderText_5 = get_theme_mod('quick_link_5_text', '');
+		$placeholdertexts=[];
+	
+		if($placeholderText_1 !=""){
+			$placeholdertexts[]=$placeholderText_1;
+		}
+		if($placeholderText_2 !=""){
+			$placeholdertexts[]=$placeholderText_2;
+		}
+		if($placeholderText_3 !=""){
+			$placeholdertexts[]=$placeholderText_3;
+		}
+		if($placeholderText_4 !=""){
+			$placeholdertexts[]=$placeholderText_4;
+		}
+		if($placeholderText_5 !=""){
+			$placeholdertexts[]=$placeholderText_5;
+		}
+		$placeholder=implode( ', ', $placeholdertexts ); 
+		
+		return $placeholder;
+	}
+}
+if ( ! function_exists( 'purdue_search_popular_google' ) ) {
+	function purdue_search_popular_google()
+	{
+		$body = file_get_contents(__DIR__ . '/../json/search-quick-links.json');
+		$data = json_decode( $body );
+		$output='<div class="purdue-home-search-bar__links"><span>Most Popular Searches:</span><ul>';
+		foreach ($data->links as $key => $link) {  
+			$output.='<li><a href="'.$link->link_url.'">'.$link->link_text.'</a>';
+			if($key!=sizeof($data->links)-1){
+				$output.=",";
+			}
+			$output.="</li>";
+		}
+		$output.="</ul></div>";
+		return $output;
+	}
+}
+if ( ! function_exists( 'purdue_search_popular_wordpress' ) ) {
+	function purdue_search_popular_wordpress()
+	{
+		$placeholderText_1 = get_theme_mod('quick_link_1_text', '');	
+		$placeholderText_2 = get_theme_mod('quick_link_2_text', '');
+		$placeholderText_3 = get_theme_mod('quick_link_3_text', '');
+		$placeholderText_4 = get_theme_mod('quick_link_4_text', '');
+		$placeholderText_5 = get_theme_mod('quick_link_5_text', '');
+		$link_1 = get_theme_mod('quick_link_1_text', '');	
+		$link_2 = get_theme_mod('quick_link_2_text', '');
+		$link_3 = get_theme_mod('quick_link_3_text', '');
+		$link_4 = get_theme_mod('quick_link_4_text', '');
+		$link_5 = get_theme_mod('quick_link_5_text', '');
+		$links=[];
+		if($link_1 !="" && $placeholderText_1 !=""){
+			$link=array(
+				"link_text" => $placeholderText_1,
+				"link_URL" => $link_1,
+			);
+			array_push($links, $link);
+		}
+		if($link_2 !="" && $placeholderText_2 !=""){
+			$link=array(
+				"link_text" => $placeholderText_2,
+				"link_URL" => $link_2,
+			);
+			array_push($links, $link);
+		}
+		if($link_3 !="" && $placeholderText_3!=""){
+			$link=array(
+				"link_text" => $placeholderText_3,
+				"link_URL" => $link_3,
+			);
+			array_push($links, $link);
+
+		}
+		if($link_4 !="" && $placeholderText_4!=""){
+			$link=array(
+				"link_text" => $placeholderText_4,
+				"link_URL" => $link_4,
+			);
+			array_push($links, $link);
+
+		}
+		if($link_5 !="" && $placeholderText_5!=""){
+			$link=array(
+				"link_text" => $placeholderText_5,
+				"link_URL" => $link_5,
+			);
+			array_push($links, $link);
+
+		}
+	if(sizeof($links)>0){
+		$output='<div class="purdue-home-search-bar__links"><span>Most Popular Searches:</span><ul>';
+		foreach ($links as $key=>$link) {  
+			$output.='<li><a href="'.$link['link_URL'].'">'.$link['link_text'].'</a>';
+			if($key!=sizeof($links)-1){
+				$output.=",";
+			}
+			$output.="</li>";
+		}
+		$output.="</ul></div>";
+		return $output;
+	}
+	}
+}
+if ( ! function_exists( 'purdue_search_trending' ) ) {
+	function purdue_search_trending()
+	{
+		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+		$url = $directory . 'trending-search-items.json';
+		$request = wp_remote_get( "$url" );
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+		$output='<ul>';
+		foreach ($data->links as $key => $link) {  
+			$output.='<li><a href="'.$link->link_url.'">'.$link->link_text.'</a>';
+			$output.="</li>";
+		}
+		$output.="</ul>";
+		return $output;
+	}
+}
+if ( ! function_exists( 'purdue_404_trending' ) ) {
+	function purdue_404_trending()
+	{
+		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+		$url = $directory . 'trending-search-items.json';
+		$request = wp_remote_get( "$url" );
+		$body = wp_remote_retrieve_body( $request );
+		$data = json_decode( $body );
+		$output='<ul class="purdue-home-button-list">';
+		foreach ($data->links as $key => $link) {  
+			$output.='<li><a class="purdue-home-button" href="'.$link->link_url.'">'.$link->link_text.'</a>';
+			$output.="</li>";
+		}
+		$output.="</ul>";
+		return $output;
+	}
+}

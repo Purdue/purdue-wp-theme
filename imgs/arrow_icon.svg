@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40.031509px" height="39.7803893px" viewBox="0 0 40.031509 39.7803893" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow_icon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(19.7756, 19.9325) rotate(40) translate(-19.7756, -19.9325)translate(6.3555, 7.5011)" stroke="#000000" stroke-width="2">
+            <line x1="10.2518474" y1="3.21012518" x2="10.2273541" y2="29.1047246" transform="translate(10.2396, 16.1574) rotate(50) translate(-10.2396, -16.1574)"></line>
+            <polyline transform="translate(15.2788, 12.0144) rotate(50) translate(-15.2788, -12.0144)" points="5.07362269 18.5434654 15.2257423 5.48533512 25.4839217 18.5241532"></polyline>
+        </g>
+    </g>
+</svg>

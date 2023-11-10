@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21.3847014px" height="21.3847014px" viewBox="0 0 21.3847014 21.3847014" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>close_icon</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(1.0607, 1.0607)" stroke="#000000" stroke-width="2">
+            <line x1="-3.48954629" y1="9.6315124" x2="22.7527798" y2="9.6317211" transform="translate(9.6316, 9.6316) rotate(45) translate(-9.6316, -9.6316)"></line>
+            <line x1="-3.48954629" y1="9.63161668" x2="22.7527798" y2="9.63161682" transform="translate(9.6316, 9.6316) scale(-1, 1) rotate(45) translate(-9.6316, -9.6316)"></line>
+        </g>
+    </g>
+</svg>

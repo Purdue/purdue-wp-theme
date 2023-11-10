@@ -1,70 +1,208 @@
-.search-box{
-    @include touch{
-      width:100%;
-      margin-left:0;
+.search-box {
+    @include touch {
+      width: 100%;
+      margin-left: 0;
     }
-    form{
-        display:flex;
-        flex-direction:row;
-        input:focus,
-        button:focus {
-            outline: none;
+    .search-form {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      input:focus,
+      button:focus {
+        outline: none;
+      }
+      input[type="search"] {
+        width: 100%;
+        font-size: 1.125rem;
+        border-radius: 4px;
+        height: 4rem;
+        border-image: none;
+        border: 1px solid $white;
+        box-shadow: $box-shadow;
+        padding: 0.5rem 11rem 0.5rem 5.5rem;
+        background: #fff;
+        -webkit-appearance: none;
+        @include touch {
+          padding: 0.5rem 10rem 0.5rem 5rem;
         }
-        input[type=search] {
-            width:200px;
-            font-size:1rem;
-            border-radius: 0;
-            height:2rem;
-            border-image:none;
-            border-left:1px solid $steel-gray;
-            border-top:1px solid $steel-gray;
-            border-bottom:1px solid $steel-gray;
-            border-right:none;
-            padding:0.5rem 1rem;
-            background:#fff;
-            -webkit-appearance: none;
-            @include touch{
-                width:100%;
-                height:2.5rem;
-                line-height: 2.5rem;
-            }
+        @include mobile {
+          padding: 0.5rem 3.5rem;
         }
-        .search-button{
-            background: #fff;
-            border: none;
-            font-size: 1rem;
-            padding: 0 0.75rem 0 0;
-            border-right:1px solid $steel-gray;
-            border-top:1px solid $steel-gray;
-            border-bottom:1px solid $steel-gray;
-            .search-icon{
-                cursor: pointer;
-            }
+        &:focus::placeholder {
+          color: transparent;
         }
+      }
+      input::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        content: "";
+      }
+      .search-icon {
+        color: $aged-gold;
+        position: absolute;
+        left: 1.5rem;
+        top: calc(50% - 16px);
+        font-size: 2rem;
+        @include mobile {
+          font-size: 1.6rem;
+          top: calc(50% - 12.5px);
+          left: 1.25rem;
+        }
+      }
+      .search-button {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.125rem;
+        padding: 0;
+        border: none;
+        position: absolute;
+        right: 5rem;
+        top: calc(50% - 12px);
+        font-family: $united-sans-condensed;
+        font-weight: 900;
+        letter-spacing: 2px;
+        border-bottom: 2px solid $aged-gold;
+        text-transform: uppercase;
+        cursor: pointer;
+        &.active {
+          display: block;
+          @include mobile {
+            display: none;
+          }
+        }
+      }
+      .clear-button {
+        background: none;
+        border: none;
+        font-size: 2rem;
+        padding: 1.5rem;
+        border: none;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        display: none;
+        align-items: center;
+        color: $railway-gray;
+        cursor: pointer;
+        &.active {
+          display: flex;
+        }
+        @include mobile {
+          font-size: 1.5rem;
+          padding: 1rem;
+        }
+      }
     }
-    &-fullwidth{
-        width:100% !important; 
-        margin-bottom:1rem;
-        form{
-            input[type=search] {
-                width:100%; 
-                height:5.25rem;
-                font-size:1.55rem;
-                @include touch{
-                    height:3.75rem;
-                    font-size:1.25rem;
-                }
-            }
-            .search-button{
-                font-size: 1.55rem;
-                @include touch{
-                    font-size:1.25rem;
-                }
-            }
+    &-wide {
+      width: 100% !important;
+      margin: 2rem 0;
+      @include mobile {
+        margin: 1.5rem 0;
+      }
+      .search-form {
+        input[type="search"] {
+          width: 100%;
+          height: 6rem;
+          font-size: 1.55rem;
+          @include touch {
+            height: 4.75rem;
+            font-size: 1.25rem;
+          }
+          @include mobile {
+            height: 3.75rem;
+          }
         }
-
+        .search-icon {
+          top: calc(50% - 24px);
+          font-size: 3rem;
+          @include touch {
+            font-size: 2rem;
+            top: calc(50% - 16px);
+          }
+          @include mobile {
+            font-size: 1.6rem;
+            top: calc(50% - 12.5px);
+            left: 1.25rem;
+          }
+        }
+        .clear-button {
+          font-size: 2.5rem;
+          @include touch {
+            font-size: 2rem;
+          }
+          @include mobile {
+            font-size: 1.5rem;
+            padding: 1rem;
+          }
+        }
+        .search-button {
+          font-size: 1.55rem;
+          @include touch {
+            font-size: 1.25rem;
+          }
+        }
+      }
     }
-    &-404{
-        margin:2rem 0 3rem;
+    &-404 {
+      margin: 2rem 0 3rem;
     }
   }
+  //links below search box
+  .purdue-home-search-bar {
+    &__links {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+      color: $steel-gray;
+      flex-wrap: wrap;
+      @include mobile {
+        flex-direction: column;
+      }
+      span {
+        text-transform: uppercase;
+        font-family: $united-sans-condensed;
+        font-weight: 900;
+        letter-spacing: 1.75px;
+        @include mobile {
+          display: block;
+        }
+      }
+      ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0.8rem;
+        list-style: none;
+        flex-wrap: wrap;
+        padding-bottom: 0;
+        li {
+          padding-left: 0.4rem;
+          padding-bottom: 0;
+          a {
+            color: $steel-gray;
+            font-family: $acumin-pro;
+            letter-spacing: 1.75px;
+            text-decoration: underline;
+            font-weight: 500;
+            font-size: 0.875rem;
+            vertical-align: text-top;
+            &:hover {
+              text-decoration: none;
+            }
+          }
+          &:first-child {
+            @include mobile {
+              padding-left: 0;
+            }
+          }
+        }
+        @include mobile {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  

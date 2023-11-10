@@ -38,102 +38,6 @@ if (!function_exists('purdueBrand_setup')) :
 endif;
 add_action('after_setup_theme', 'purdueBrand_setup');
 
-//Layout options
-function purdue_layout_options($wp_customize){
-
-    $wp_customize->add_section('layout', array(
-        'title' => 'Layout Options',
-        'description' => 'Select between the different Header layout, Footer layout, and Dateline options.',
-        'priority' => 30
-    ));
-    //add header layout section
-    $wp_customize->add_setting('header_layout_settings', array(
-        'type'=>'theme_mod',
-        'default'=>'global',
-        'capability'=>'edit_theme_options',
-        'transport'=>'refresh',
-        'sanitize_callback'=>'purdue_header_radio_select'
-    ));
-        //add controls to header options section
-    $wp_customize->add_control('header_layout_radio', array(
-        'type'=>'radio',
-        'priority'=>'10',
-        'section'=>'layout',
-        'settings'=>'header_layout_settings',
-        'label'=>'Header Layout',
-        'choices'=>array(
-            'simple'=>_('Simple with fully customizable footer'),
-            'global'=>_('Global with fixed first two columns of links on footer'),
-            'global2'=>_('Global with fully customizable footer')
-        )
-    ));
-
-    $wp_customize->add_setting('footer_layout_settings', array(
-        'type'=>'theme_mod',
-        'default'=>'four',
-        'capability'=>'edit_theme_options',
-        'transport'=>'refresh',
-        'sanitize_callback'=>'purdue_footer_radio_select'
-    ));
-
-    //add controls to footer options section
-    $wp_customize->add_control('footer_layout_radio', array(
-        'type'=>'radio',
-        'priority'=>'10',
-        'section'=>'layout',
-        'settings'=>'footer_layout_settings',
-        'label'=>'Footer Layout',
-        'choices'=>array(
-            'three'=>_('Three Columns'),
-            'four'=>_('Four Columns')
-        )
-    ));
-
-
-    $wp_customize->add_setting('date_setting', array(
-        'default'    => '1',
-        'capability' => 'edit_theme_options'
-    ));
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'show_dateline',
-            array(
-                'label'     => __('Show Date Under the Header', 'purdue-wp-theme'),
-                'section'   => 'layout',
-                'settings'  => 'date_setting',
-                'type'      => 'checkbox',
-            )
-        )
-    );
-    $wp_customize->add_setting('social_setting', array(
-        'default'    => '1',
-        'capability' => 'edit_theme_options'
-    ));
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'show_social',
-            array(
-                'label'     => __('Show Social Share Buttons', 'purdue-wp-theme'),
-                'section'   => 'layout',
-                'settings'  => 'social_setting',
-                'type'      => 'checkbox',
-            )
-        )
-    );
-}
-add_action('customize_register', 'purdue_layout_options');
-add_action( 'customize_render_control_show_dateline', function(){
-    printf( '<span class="customize-control-title">Dateline Options for Posts</span>');
-});
-function hide_footer_layout_script() {
-    $jsFilePath = glob( get_template_directory() . '/build/js/customizer.*.js' );
-    $jsFileURI = get_template_directory_uri() . '/build/js/' . basename($jsFilePath[0]);
-    wp_enqueue_script( 'footer-customize',$jsFileURI, array( 'jquery', 'customize-controls' ), false, true );
-}
-add_action( 'customize_controls_enqueue_scripts', 'hide_footer_layout_script' );
-
 // add search options
 function purdue_search_options($wp_customize)
 {
@@ -142,11 +46,11 @@ function purdue_search_options($wp_customize)
         'title'       => __( 'Search Options' ), //Visible title of section
         'priority'    => 55, //Determines what order this appears in
         'capability'  => 'edit_theme_options', //Capability needed to tweak
-        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue. Please note if you select Google Custom Search, you will need to create an empty page on your site, name it Search and select the Search template as its template', 'purdue-wp-theme'), //Descriptive tooltip
+        'description' => __('Choose to use Wordpress default search to search within the site or Google Custom Search to search all of Purdue. Please note if you select Google Custom Search, you will need to create an empty page on your site, name it Search and select the Search template as its template', 'purdue-home-theme'), //Descriptive tooltip
         ) 
     );   
     $wp_customize->add_setting('search_option_settings', array(
-        'default'=>'wordpress',
+        'default'=>'google',
         'capability'=>'edit_theme_options',
         'transport'=>'refresh',
         'sanitize_callback'=>'purdue_header_radio_search'
@@ -160,20 +64,179 @@ function purdue_search_options($wp_customize)
         'choices'=>array(
             'wordpress'=>_('Wordpress Default'),
             'google'=>_('Google Custom Search')
-        )
+        ),
+        'description' => __( 'Popular search items will be set to default when Google custom search is selected.' ),
+    ));
+    $wp_customize->add_setting('quick_link_1_text', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_1_text', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Text #1' ),
+        'description' => __( '' ),
+    ));
+    $wp_customize->add_setting('quick_link_1_link', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_1_link', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Link #1' ),
+        'description' => __( 'This is the link to the popular search text #1' ),
+    ));
+    $wp_customize->add_setting('quick_link_2_text', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_2_text', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Text #2' ),
+        'description' => __( '' ),
+    ));
+    $wp_customize->add_setting('quick_link_2_link', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_2_link', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Link #2' ),
+        'description' => __( 'This is the link to the popular search text #2' ),
+    ));
+    $wp_customize->add_setting('quick_link_3_text', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_3_text', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Text #3' ),
+        'description' => __( '' ),
+    ));
+    $wp_customize->add_setting('quick_link_3_link', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_3_link', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Link #3' ),
+        'description' => __( 'This is the link to the popular search text #3' ),
+    ));
+    $wp_customize->add_setting('quick_link_4_text', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_4_text', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Text #4' ),
+        'description' => __( '' ),
+    ));
+    $wp_customize->add_setting('quick_link_4_link', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_4_link', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Link #4' ),
+        'description' => __( 'This is the link to the popular search text #4' ),
+    ));
+    $wp_customize->add_setting('quick_link_5_text', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_5_text', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Text #5' ),
+        'description' => __( '' ),
+    ));
+    $wp_customize->add_setting('quick_link_5_link', array(
+        'type'=>'theme_mod',
+        'default'=>'',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control('quick_link_5_link', array(
+        'type' => 'text',
+        'priority'=>'16',
+        'section' => 'search_option', // Add a default or your own section
+        'label' => __( 'Popular Search Link #5' ),
+        'description' => __( 'This is the link to the popular search text #5' ),
     ));
 }
 add_action('customize_register', 'purdue_search_options');
 
-// add footer address options
+function customizer_script() {
+    $x = require get_template_directory() . '/build/customizer.asset.php';
+    $jsFilePath = glob( get_template_directory() . '/build/customizer.js' );
+    $jsFileURI = get_template_directory_uri() . '/build/' . basename($jsFilePath[0]);
+    wp_enqueue_script( 'customizer', $jsFileURI, array( 'jquery', 'customize-controls' ), $x['version'], true );
+}
+add_action( 'customize_controls_enqueue_scripts', 'customizer_script' );
+
+// add footer options
 function purdue_contact_options($wp_customize)
 {
     //add a new panel
     $wp_customize->add_panel( 'contact_details', 
         array(
-            'priority'       => 100,
-            'title'            => 'Contact Details',
-            'description'      => 'Contact Details displayed on the footer'
+            'priority'       => 54,
+            'title'            => 'Footer',
+            'description'      => 'Options for editing the footer'
         ) 
     );
 
@@ -181,7 +244,7 @@ function purdue_contact_options($wp_customize)
     $wp_customize->add_section('contact_information', array(
         'title' => 'Footer Contact Information',
         'description' => 'Set custom contact information for the site. If the address fields are left blank they will default to the Purdue University default address.',
-        'priority' => 1,
+        'priority' => 2,
         'panel'         => 'contact_details'
     ));
 
@@ -291,7 +354,7 @@ function purdue_contact_options($wp_customize)
     $wp_customize->add_control( 'email_address', array(
         'type' => 'text',
         'section' => 'contact_information', // Add a default or your own section
-        'label' => __( 'Email Address' ),
+        'label' => __( 'Contact Us' ),
         'description' => __( '' ),
     ) );
 
@@ -386,24 +449,69 @@ function purdue_contact_options($wp_customize)
         'label' => __( 'YouTube' ),
         'description' => __( '' ),
     ) );
+
+     //add new section
+     $wp_customize->add_section('foot_background', array(
+        'title' => 'Footer Background Image',
+        'description' => '',
+        'priority' => 34,
+        'panel'         => 'contact_details'
+    ));
+    $wp_customize->add_setting('footer_image', array(
+        'default' => '',
+        'type' => 'theme_mod',
+        'sanitize_callback' => 'my_customize_sanitize_footer_image',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+            $wp_customize, 'footer_image', array(
+                'label'    => 'Footer Background Image',
+                'settings' => 'footer_image',
+                'section'  => 'foot_background',
+                'priority' => 50,
+            )
+        )
+    );
     
 }
 add_action('customize_register', 'purdue_contact_options');
-
-
-function purdue_header_radio_search($input, $setting)
+function my_customize_sanitize_footer_image($input)
 {
-    // list of valid choices
-    $valid = array(
-        'wordpress'=>_('Wordpress Default'),
-        'google'=>_('Google Custom Search')
-    );
-    // Ensure input is a slug.
-    $input = sanitize_key($input);
-
-    // If the input is a valid key, return it; otherwise, return the default.
-    return (array_key_exists($input, $valid) ? $input : 'wordpress');
+    error_log(attachment_url_to_postid($input));//debug
+    return attachment_url_to_postid($input);
 }
+//Header options
+function purdue_layout_options($wp_customize){
+
+    $wp_customize->add_section('layout', array(
+        'title' => 'Header',
+        'description' => '',
+        'priority' => 30
+    ));
+    //add header layout section
+    $wp_customize->add_setting('header_layout_settings', array(
+        'type'=>'theme_mod',
+        'default'=>'global',
+        'capability'=>'edit_theme_options',
+        'transport'=>'refresh',
+        'sanitize_callback'=>'purdue_header_radio_select'
+    ));
+        //add controls to header options section
+    $wp_customize->add_control('header_layout_radio', array(
+        'type'=>'radio',
+        'priority'=>'10',
+        'section'=>'layout',
+        'settings'=>'header_layout_settings',
+        'label'=>'Header Layout',
+        'choices'=>array(
+            'simple'=>_('Simple'),
+            'global'=>_('Global with department name'),
+        )
+    ));
+
+}
+add_action('customize_register', 'purdue_layout_options');
 function purdue_header_radio_select($input, $setting)
 {
     // list of valid choices
@@ -418,19 +526,18 @@ function purdue_header_radio_select($input, $setting)
     // If the input is a valid key, return it; otherwise, return the default.
     return (array_key_exists($input, $valid) ? $input : 'global');
 }
-
-function purdue_footer_radio_select($input, $setting)
+function purdue_header_radio_search($input, $setting)
 {
     // list of valid choices
     $valid = array(
-        'three'=>_('Three Columns'),
-        'four'=>_('Four Columns')
+        'wordpress'=>_('Wordpress Default'),
+        'google'=>_('Google Custom Search')
     );
     // Ensure input is a slug.
     $input = sanitize_key($input);
 
     // If the input is a valid key, return it; otherwise, return the default.
-    return (array_key_exists($input, $valid) ? $input : 'global');
+    return (array_key_exists($input, $valid) ? $input : 'wordpress');
 }
 
 // Changing excerpt length

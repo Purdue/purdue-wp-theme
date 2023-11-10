@@ -1,327 +1,328 @@
 //footer without sidenav style
-.footer{
-    padding:0;
-    color:$railway-gray;
-    h2,h3,h4,h5,h6{
-        color: $boiler-gold;
-        font-weight: 700;
+body.custom-background {
+    background-image: none !important;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .footer {
+    padding: 6rem $side-padding-desktop 5rem;
+    color: $white;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.88);
     }
-    h2{
-        font-size: 1.1875rem;
-        line-height: 1.625rem;
+    @include touch {
+      padding: 6rem $side-padding-tablet 5rem;
     }
-    p{
-        color:$railway-gray;
+    @include mobile {
+      padding: 3rem $side-padding-mobile 3rem;
+    }
+    h2 {
+      color: $boiler-gold;
+      font-family: $united-sans-condensed;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    p {
+      color: $white;
     }
     a {
-        color:$railway-gray;
+      color: $white;
+      text-decoration: underline;
+      &:hover {
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    .footer__global__resources {
+      padding-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+    .footer__links {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      @include touch {
+        align-items: flex-start;
+        margin-bottom: 0;
+      }
+      h2 {
+        margin: 0 0 1.3rem 0;
+        @include touch {
+          width: 100%;
+          margin: 0;
+        }
+        .accordion__heading--footer {
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          border: 0;
+          text-align: left;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          text-transform: uppercase;
+          pointer-events: none;
+          font-family: $united-sans-condensed;
+          background: none;
+          color: $boiler-gold;
+          font-weight: 900;
+          letter-spacing: 2px;
+          line-height: 1.5;
+          font-size: 1rem;
+          .accordion__icon__plus {
+            display: none;
+            pointer-events: none;
+            width: 24px;
+            height: 24px;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+          }
+          &:focus {
+            outline: none;
+          }
+          @include touch {
+            pointer-events: all;
+            padding: 1rem;
+            &:hover {
+              cursor: pointer;
+            }
+            .accordion__icon__plus {
+              display: block;
+              &.hide {
+                transform: rotate(45deg);
+              }
+            }
+          }
+          @include mobile {
+            padding: 0.75rem;
+          }
+        }
+      }
+      ul {
+        font-family: $acumin-pro;
+        @include touch {
+          display: none;
+          height: 0;
+          transition: height 0.2s ease;
+          overflow: hidden;
+          width: 100%;
+          padding: 0 1rem;
+        }
+        @include mobile {
+          padding: 0 0.75rem;
+        }
+        &.show {
+          display: block;
+        }
+        &.hide {
+          display: none;
+        }
+        li {
+          padding: 0.4rem 0;
+          margin: 0;
+          a {
+            color: $white;
+            font-size: 14px;
+            text-decoration: none;
+            font-weight: 400;
+            &:hover {
+              text-decoration: underline;
+              color: $white;
+            }
+          }
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-bottom: 0;
+            @include touch {
+              padding-bottom: 1rem;
+            }
+          }
+        }
+      }
+    }
+    .footer__signature {
+      text-align: center;
+      background-color: none;
+      color: $white;
+      font-size: 0.875rem;
+      font-family: $source-serif-pro;
+      position: relative;
+      z-index: 1;
+      .container {
+        border-top: 1px solid #c4bfc0;
+        padding-top: 2rem;
+        @include touch {
+          border-top: none;
+          padding-top: 0;
+        }
+      }
+      a {
+        color: $white;
         text-decoration: underline;
-        &:hover{
-            color:$white;
+        font-weight: 400;
+        &:hover {
+          color: $white;
+          text-decoration: none;
+        }
+      }
+    }
+    &.footer__global__resources > .container {
+      overflow: hidden;
+    }
+    .contact {
+      &-info {
+        position: relative;
+        font-family: $acumin-pro;
+        font-weight: 600;
+        padding-bottom: 3rem;
+        @include touch {
+          padding-left: 0;
+          padding-right: 0;
+        }
+        @include mobile {
+          flex-direction: column;
+          align-items: center;
+          padding-bottom: 2rem;
+        }
+        .columns.is-desktop {
+          align-items: flex-end;
+          height: 100%;
+        }
+        & > .columns {
+          @include mobile {
+            display: flex;
+          }
+        }
+        .social-container {
+          @include touch {
+            display: flex;
+            align-items: flex-end;
+            & > .columns {
+              display: flex;
+              align-items: flex-end;
+              flex-direction: column;
+            }
+          }
+          @include mobile {
+            & > .columns {
+              flex-direction: row-reverse;
+              .column {
+                flex-basis: auto;
+              }
+            }
+          }
+        }
+        a {
+          display: block;
+          text-align: left;
+          img {
+            display: block;
+            height: 104px;
+            @include touch {
+              height: 80px;
+            }
+          }
+        }
+        &__address {
+          margin-bottom: 1.5rem;
+          @include touch {
+            margin-bottom: 1.5rem;
+          }
+          @include mobile {
+            margin-bottom: 1rem;
+          }
+          a {
             text-decoration: underline;
-        }
-    }
-    .footer__links{
-        margin-bottom: 1rem;
-        display:flex;
-        flex-direction:column;
-        align-items:flex-start;
-        @include touch{
-            border-top:1px solid #2e2e2e;
-            align-items:flex-start;
-            margin-bottom: 0;
-            padding: 0 1.5rem;
-        }
-        h2{
-            margin:0 0 1.3rem 0;
-            @include touch{
-                width:100%;
-                margin:0;
+            font-weight: 400;
+            font-size: 0.875rem;
+            &:hover {
+              color: $white;
+              text-decoration: none;
             }
-            .accordion__heading--footer{
-                width:100%;
-                font-size: 1.1875rem;
-                font-weight: 700;
-                color:$boiler-gold;
-                padding:0;
-                margin:0;
-                border:0;
-                text-align:left;
-                background-color:#000000;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-                align-items:baseline;         
-                text-transform: uppercase;
-                pointer-events: none;
-                .fa-plus,.fa-minus{
-                    display:none;
-                    pointer-events: none;
-                }
-                &:focus{
-                    outline:none;
-                }       
-                @include touch{
-                    pointer-events: all;
-                    padding:1rem $side-padding-tablet;
-                    &:hover{
-                        cursor:pointer;
-                    }
-                    .fa-plus{
-                        display:block;
-                    }
-                    .fa-minus{
-                        display:none;
-                    }
-                } 
-                @include mobile{
-                    padding:1rem $side-padding-mobile;
-                }
           }
         }
-        ul{
-            font-family: $acumin-pro;
-            @include touch{
-                display:none;
-                height:0;
-                transition: height 0.2s ease;
-                overflow:hidden;
-                width:100%;
-                padding:0 $side-padding-tablet;
+        &__phone {
+          a {
+            text-decoration: underline;
+            color: $boiler-gold;
+            &:hover {
+              color: $boiler-gold;
+              text-decoration: none;
             }
-            @include mobile{
-                padding:0 $side-padding-mobile;
-            }
-            li{
-                padding:0.4rem 0;
-                margin:0;
-                a{
-                    color:$railway-gray;
-                    font-size:0.9375rem;
-                    text-decoration: none;
-                    font-weight:400;
-                    &:hover{
-                        text-decoration: underline;
-                        color:$white;
-                    }
-                }
-                &:first-child {
-                    padding-top: 0;
-                }
-                &:last-child {
-                    padding-bottom: 0;
-                    @include touch{
-                        padding-bottom: 1rem;
-                    }
-                }
-            }
-        }
-
-        .custom-html-widget{
-            width:100%;
-        }
-    }
-    .widget_custom_html.footer__links{
-        @include touch{
-            padding:1rem 3rem !important;
-        }
-    }
-    .footer__signature{
-      padding:1.68rem 3.25rem!important;
-      text-align:center;
-      background-color: $gray-footer !important;
-      color:$steam-gray;
-      font-size:0.9375rem;
-      @include touch{
-        padding:1.68rem 1.5rem !important;
-      }
-      @include mobile{
-        padding:1.68rem $side-padding-mobile !important;
-    }
-      .container{
-        div{
-            display:inline-block;
-            ul{
-                display:inline-block;
-                li{
-                    display:inline-block;
-                    &:before{
-                        content:"| ";
-                    }
-                }
-            }
-        }
-      }
-
-      a{
-          color:$steam-gray;
-          text-decoration: underline; 
-          font-weight:400;
-          &:hover{
-            color:$white;
-            text-decoration: underline; 
           }
+          margin-bottom: 0;
+          @include touch {
+            margin-bottom: 1.5rem;
+          }
+          @include mobile {
+            margin-bottom: 1rem;
+          }
+        }
+        h2.title {
+          margin-bottom: 0.5rem;
+        }
+        &__social {
+          display: flex;
+          font-size: 1.375rem;
+          display: flex;
+          flex-wrap: wrap;
+          .navbar-item {
+            padding: 0;
+            margin: 0;
+            display: inline;
+            a {
+              svg{
+                fill: $white;
+              }
+              &:hover {
+                color: $boiler-gold;
+                svg{
+                  fill: $boiler-gold;
+                }
+              }
+            }
+            &:not(:last-child) {
+              margin-right: 0.8rem;
+            }
+          }
+        }
+        &__campuses {
+          padding: 0;
+        }
       }
     }
-
-    &__social {
-        .navbar-item {
-            align-self:flex-start;
-            padding: 0;
-            margin:0;
-            &:not(:last-child){
-                margin-right:0.8rem;
-                }
-        }
-    }
-    .footer__global__logo{
-        border-bottom: 2px solid $boiler-gold;
-        padding:2.25rem $side-padding-desktop !important;
-        @include touch{
-            padding:1.5625rem $side-padding-tablet !important;
-        }
-        @include mobile{
-            padding:1.5625rem $side-padding-mobile !important;
-        }
-        .container{
-            a{
-                display:block;
-                text-align:center;
-                img{
-                    display:block;
-                    margin:0 auto;
-                    height:3.5625rem;
-                    @include touch{
-                        height:2.5rem;                
-                    }
-                }
-            }
-        }
-    }
-    .footer__global__resources{
-        padding:3.25rem $side-padding-desktop !important;
-        @include touch{
-            padding:0 !important;
-        }
-    }
-}
-
-.resources {
-    &__info {
-        position:relative;
-        padding: 0.75rem 0 0.75rem 1.5rem;
-        &:before{
-            content: "";
-            display: block; 
-            position:absolute;
-            top:10%;
-            left: 0;
-            margin: 0 auto; 
-            height:80%; 
-            border-right: 1px solid #2e2e2e;
-        }
+    .link-resources {
+      @include touch {
+        margin: 0;
+      }
+      & > .column {
         @include touch {
-            padding: 2.5rem 2.25rem !important;
-            border-top: 1px solid #2e2e2e;
-            display: flex;
-            justify-content: space-between;
+          padding: 0;
+          border-top: 1px solid #c4bfc0;
+          &:last-child {
+            border-bottom: 1px solid #c4bfc0;
+          }
         }
-        @include mobile {
-            flex-direction: column;
-            align-items: center;
-        }
+      }
     }
-    &__address {
-        margin-bottom: 1.5rem;
-        h2.title {
-            margin-bottom: 0.625rem;
-            text-transform: uppercase;
-        }
-        @include touch {
-            margin-bottom: 0;
-        }
-        @include mobile {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-        a {
-            text-decoration:none;
-            font-weight:400;
-            &:hover {
-                color: $white;
-            }
-        }
-    }
-    &__contact {
-        margin-bottom: 1.5rem;
-        h2.title {
-            margin-bottom: 0.625rem;
-            text-transform: uppercase;
-        }
-        a {
-            text-decoration:none;
-            &:hover {
-                color: $white;
-            }
-        }
-        @include touch {
-            margin-bottom: 0;
-        }
-        @include mobile {
-            text-align: center;
-            margin-bottom: 2.5rem;
-        }
-    }
-    &__social {
-        h2.title {
-            margin-bottom: 0.625rem;
-            text-transform: uppercase;
-        }
-        .social {
-            font-size:1.375rem;
-            display: flex;
-            @include mobile {
-                justify-content: center;
-            }
-            .navbar-item {
-                padding: 0;
-                margin:0;
-                display:inline;
-                a {
-                    svg{
-                        fill:$steam-gray;
-                    }
-                    &:hover{
-                        color:$white;
-                        svg{
-                            fill:$white;
-                        }
-                    }
-                }
-                &:not(:last-child){
-                    margin-right:0.8rem;
-                }
-            }
-        }
-        @include mobile {
-            text-align: center;
-        }
-    }
-}
-
-.footer {
-    .column {
-        @include touch {
-            padding: 0;
-        }
-    }
-    .columns {
-        @include touch {
-            margin-bottom: 0;
-            margin-top: 0;
-        }
-    }
-    &.footer__global__resources>.container {
-        overflow: hidden;
-    }
-}
+  }
+  

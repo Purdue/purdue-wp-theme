@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30.0964851px" height="22px" viewBox="0 0 30.0964851 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>hamburger_menu_icon</title>
+    <g id="Desktop" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="hamburger_menu_icon" transform="translate(0.5317, 0.2935)" stroke="#000000" stroke-width="2">
+            <line x1="0.468274752" y1="20.7064846" x2="28.5647599" y2="20.7064846" id="line"></line>
+            <line x1="0.468274752" y1="10.7064846" x2="28.5647599" y2="10.7064846" id="line"></line>
+            <line x1="0.468274752" y1="0.706484642" x2="28.5647599" y2="0.706484642" id="line"></line>
+        </g>
+    </g>
+</svg>
