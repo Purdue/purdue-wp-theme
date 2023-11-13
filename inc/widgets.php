@@ -106,44 +106,6 @@ if (!function_exists('purdueBrand_widgets_init')) {
             ));
         }
         
-        //Footer widgets
-
-        register_sidebar(array(
-            'name'          => esc_html__('Footer links column 1', 'purdueBrand'),
-            'id'            => 'footer-column-1',
-            'description'   => esc_html__('Add a Footer Links Column widget here for the first link column on footer.', 'purdueBrand'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
-        ));
-        register_sidebar(array(
-            'name'          => esc_html__('Footer links column 2', 'purdueBrand'),
-            'id'            => 'footer-column-2',
-            'description'   => esc_html__('Add a Footer Links Column widget here for the second link column on footer.', 'purdueBrand'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
-        ));
-        register_sidebar(array(
-            'name'          => esc_html__('Footer links column 3', 'purdueBrand'),
-            'id'            => 'footer-column-3',
-            'description'   => esc_html__('Add a Footer Links Column widget here for the third link column on footer.', 'purdueBrand'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
-        ));
-        register_sidebar(array(
-            'name'          => esc_html__('Footer links column 4', 'purdueBrand'),
-            'id'            => 'footer-column-4',
-            'description'   => esc_html__('Add a Footer Links Column widget here for the fourth link column on footer.', 'purdueBrand'),
-            'before_widget' => '<div id="%1$s" class="widget %2$s footer__links">',
-            'after_widget'  => '</div>',
-            'before_title'  => '<h2>',
-            'after_title'   => '</h2>',
-        ));
         register_sidebar(array(
             'name'          => esc_html__('Footer signature', 'purdue'),
             'id'            => 'footer-signature',

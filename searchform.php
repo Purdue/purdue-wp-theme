@@ -6,7 +6,6 @@
 ?>
 <?php
 	$searchOption = get_theme_mod( 'search_option_settings' )?get_theme_mod( 'search_option_settings' ):"wordpress";
-	echo $searchOption;
 	if($searchOption=="wordpress"){
 ?>
 <form action="<?php echo esc_url( home_url( '/' ) );?>" name="searchform" method="get" class="search-form">
