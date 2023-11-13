@@ -9,7 +9,7 @@
  */
 function youtube_lite_embed_oembed_html( $html, $url ) {
 	if ( ! empty($url) ) {
-		if ( 1 === preg_match( '#(?:youtu.be/(.+)|youtube.com/watch\?v=(.+))#', $url, $matches ) ) {
+		if ( 1 === preg_match( '/(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/', $url, $matches ) ) {
 			$html = sprintf(
 				'<lite-youtube class="youtube-lite" videoid="%s" params="rel=0"></lite-youtube>',
 				$matches[1] ?: $matches[2]

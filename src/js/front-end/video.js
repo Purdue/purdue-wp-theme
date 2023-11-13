@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		ytl_list.forEach((youtube) => {
 			youtube.parentNode.classList.add('youtube-lite-contain');
 			const videoId = youtube.getAttribute('videoid');
+			console.log(videoId)
 			let playBtnEl = youtube.querySelector('.lty-playbtn');
 			// A label for the button takes priority over a [playlabel] attribute on the custom-element
 			const playLabel =
