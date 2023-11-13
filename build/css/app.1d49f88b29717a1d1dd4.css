@@ -111,6 +111,10 @@
   background-color: #555960 !important;
 }
 
+.has-gray-background {
+  background-color: #ededed !important;
+}
+
 /* -- Color Defaults -- */
 .has-white-color {
   color: hsl(0, 0%, 100%) !important;
@@ -218,6 +222,10 @@
 
 .has-background-black-ter {
   background-color: #555960 !important;
+}
+
+.has-gray-background {
+  background-color: #ededed !important;
 }
 
 .main-content {
@@ -14211,6 +14219,10 @@ a:hover {
 }
 
 .gsc-control-cse {
+  padding: 0 !important;
+}
+
+.gsc-control-cse {
   font-family: acumin-pro, "Franklin Gothic", sans-serif;
 }
 
@@ -14231,7 +14243,7 @@ a:hover {
   padding-right: 0 !important;
 }
 .gsc-orderby-container .gsc-orderby {
-  font-size: 0.875rem;
+  font-size: 1rem;
   text-align: right;
 }
 
@@ -14247,6 +14259,7 @@ a:hover {
 .gsc-thumbnail-inside .gs-title b {
   color: #8e6f3e !important;
   font-size: 1.25rem !important;
+  font-weight: 600 !important;
 }
 
 .gsc-url-top {
@@ -14269,17 +14282,16 @@ a:hover {
   width: 100%;
 }
 
-.gsc-webResult .gsc-result {
-  padding: 1.5rem 0;
-  border-bottom: 0.5px solid #C4BFC0;
+.gsc-webResult.gsc-result {
+  padding: 1.5rem 0 !important;
+}
+
+.gsc-webResult.gsc-result {
+  border-bottom: 0.5px solid #c4bfc0;
   border-left: none;
 }
-.gsc-webResult .gsc-result:first-child {
-  border-top: 0.5px solid #C4BFC0;
-}
-.gsc-webResult .gsc-result:hover {
-  border-left: none;
-  border-bottom: 0.5px solid #C4BFC0;
+.gsc-webResult.gsc-result:hover {
+  border-bottom: 0.5px solid #c4bfc0;
 }
 
 .gcsc-more-maybe-branding-root {
@@ -14287,7 +14299,10 @@ a:hover {
 }
 
 .gcsc-find-more-on-google {
-  color: #8e6f3e;
+  color: #8e6f3e !important;
+}
+
+.gcsc-find-more-on-google {
   margin-left: 0;
 }
 .gcsc-find-more-on-google:hover {
@@ -14319,25 +14334,42 @@ a:hover {
   padding-right: 0;
 }
 
-.gcsc-find-more-on-google-text, .gcsc-find-more-on-google-query, .gcsc-branding, .gcsc-branding-text {
+.gcsc-find-more-on-google-text,
+.gcsc-find-more-on-google-query,
+.gcsc-branding,
+.gcsc-branding-text {
   font-size: 0.875rem;
 }
 
-.gs-no-results-result .gs-snippet, .gs-error-result .gs-snippet {
-  border: 1px solid #DAAA00;
-  background-color: #EBD99F;
+.gs-no-results-result .gs-snippet,
+.gs-error-result .gs-snippet {
+  border: 1px solid #daaa00;
+  background-color: #ebd99f;
 }
 
 .search-post {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  display: block;
+  color: #000;
 }
 .search-post:not(:last-child) {
-  border-bottom: 0.5px solid #C4BFC0;
+  border-bottom: 0.5px solid hsl(0, 0%, 100%);
+}
+.search-post:hover {
+  color: #000;
+}
+.search-post:hover:not(:last-child) {
+  border-bottom: 0.5px solid #c4bfc0;
+}
+@media screen and (max-width: 767px) {
+  .search-post:not(:last-child) {
+    border-bottom: 0.5px solid #c4bfc0;
+  }
 }
 .search-post-title {
   color: #8e6f3e !important;
   font-size: 1.25rem !important;
-  font-weight: 400 !important;
+  font-weight: 600 !important;
   margin-bottom: 0.5rem !important;
 }
 .search-post-link {
@@ -14350,255 +14382,66 @@ a:hover {
 }
 .search-post-noresult {
   padding-top: 2rem;
+  padding-bottom: 2rem;
   font-size: 1.5rem;
   color: #8e6f3e;
 }
 
-@media screen and (max-width: 1023px) {
-  .search-box {
-    width: 100%;
-    margin-left: 0;
-  }
-}
-.search-box .search-form {
-  display: flex;
-  flex-direction: row;
-  position: relative;
-}
-.search-box .search-form input:focus,
-.search-box .search-form button:focus {
-  outline: none;
-}
-.search-box .search-form input[type=search] {
-  width: 100%;
-  font-size: 1.125rem;
-  border-radius: 4px;
-  height: 4rem;
-  -o-border-image: none;
-     border-image: none;
-  border: 1px solid hsl(0, 0%, 100%);
-  box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1), 0 0px 0 1px rgba(0, 0, 0, 0.02);
-  padding: 0.5rem 11rem 0.5rem 5.5rem;
-  background: #fff;
-  -webkit-appearance: none;
-}
-@media screen and (max-width: 1023px) {
-  .search-box .search-form input[type=search] {
-    padding: 0.5rem 10rem 0.5rem 5rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .search-box .search-form input[type=search] {
-    padding: 0.5rem 3.5rem;
-  }
-}
-.search-box .search-form input[type=search]:focus::-webkit-input-placeholder {
-  color: transparent;
-}
-.search-box .search-form input[type=search]:focus:-ms-input-placeholder {
-  color: transparent;
-}
-.search-box .search-form input[type=search]:focus::placeholder {
-  color: transparent;
-}
-.search-box .search-form input::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-  content: "";
-}
-.search-box .search-form .search-icon {
-  color: #8e6f3e;
-  position: absolute;
-  left: 1.5rem;
-  top: calc(50% - 16px);
-  font-size: 2rem;
-}
-@media screen and (max-width: 767px) {
-  .search-box .search-form .search-icon {
-    font-size: 1.6rem;
-    top: calc(50% - 12.5px);
-    left: 1.25rem;
-  }
-}
-.search-box .search-form .search-button {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.125rem;
-  padding: 0;
-  border: none;
-  position: absolute;
-  right: 5rem;
-  top: calc(50% - 12px);
-  font-family: "United Sans Condensed", Impact, "Arial Black", "sans serif";
-  font-weight: 900;
-  letter-spacing: 2px;
-  border-bottom: 2px solid #8e6f3e;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.search-box .search-form .search-button.active {
-  display: block;
-}
-@media screen and (max-width: 767px) {
-  .search-box .search-form .search-button.active {
-    display: none;
-  }
-}
-.search-box .search-form .clear-button {
-  background: none;
-  border: none;
-  font-size: 2rem;
-  padding: 1.5rem;
-  border: none;
-  position: absolute;
-  right: 0;
-  height: 100%;
-  display: none;
-  align-items: center;
-  color: #9d9795;
-  cursor: pointer;
-}
-.search-box .search-form .clear-button.active {
-  display: flex;
-}
-@media screen and (max-width: 767px) {
-  .search-box .search-form .clear-button {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-}
-.search-box-wide {
-  width: 100% !important;
-}
-.search-box-wide {
-  margin: 2rem 0;
-}
-@media screen and (max-width: 767px) {
-  .search-box-wide {
-    margin: 1.5rem 0;
-  }
-}
-.search-box-wide .search-form input[type=search] {
-  width: 100%;
-  height: 6rem;
-  font-size: 1.55rem;
-}
-@media screen and (max-width: 1023px) {
-  .search-box-wide .search-form input[type=search] {
-    height: 4.75rem;
-    font-size: 1.25rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .search-box-wide .search-form input[type=search] {
-    height: 3.75rem;
-  }
-}
-.search-box-wide .search-form .search-icon {
-  top: calc(50% - 24px);
-  font-size: 3rem;
-}
-@media screen and (max-width: 1023px) {
-  .search-box-wide .search-form .search-icon {
-    font-size: 2rem;
-    top: calc(50% - 16px);
-  }
-}
-@media screen and (max-width: 767px) {
-  .search-box-wide .search-form .search-icon {
-    font-size: 1.6rem;
-    top: calc(50% - 12.5px);
-    left: 1.25rem;
-  }
-}
-.search-box-wide .search-form .clear-button {
-  font-size: 2.5rem;
-}
-@media screen and (max-width: 1023px) {
-  .search-box-wide .search-form .clear-button {
-    font-size: 2rem;
-  }
-}
-@media screen and (max-width: 767px) {
-  .search-box-wide .search-form .clear-button {
-    font-size: 1.5rem;
-    padding: 1rem;
-  }
-}
-.search-box-wide .search-form .search-button {
-  font-size: 1.55rem;
-}
-@media screen and (max-width: 1023px) {
-  .search-box-wide .search-form .search-button {
-    font-size: 1.25rem;
-  }
-}
-.search-box-404 {
-  margin: 2rem 0 3rem;
+.search-results-count {
+  margin-bottom: 1.5rem;
 }
 
-.purdue-home-search-bar__links {
+.search-results-container {
+  border-bottom: 0.5px solid #c4bfc0;
+  border-top: 0.5px solid #c4bfc0;
+}
+
+.search-results-header {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.875rem;
-  color: #555960;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
-@media screen and (max-width: 767px) {
-  .purdue-home-search-bar__links {
-    flex-direction: column;
-  }
+.search-results-header div {
+  margin-bottom: 1rem;
 }
-.purdue-home-search-bar__links span {
-  text-transform: uppercase;
+
+.trending-search .purdue-home-intro-text__header.header-font-united {
   font-family: "United Sans Condensed", Impact, "Arial Black", "sans serif";
-  font-weight: 900;
-  letter-spacing: 1.75px;
+  font-weight: 700;
+  font-size: 1.75rem;
 }
-@media screen and (max-width: 767px) {
-  .purdue-home-search-bar__links span {
-    display: block;
-  }
+.trending-search ul {
+  list-style-type: none;
+  padding-left: 0;
 }
-.purdue-home-search-bar__links ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding-left: 0.8rem;
-  list-style: none;
-  flex-wrap: wrap;
-  padding-bottom: 0;
+.trending-search ul li {
+  padding-bottom: 1rem;
 }
-.purdue-home-search-bar__links ul li {
-  padding-left: 0.4rem;
-  padding-bottom: 0;
+.trending-search ul li a {
+  font-size: 1rem;
+  color: #000;
 }
-.purdue-home-search-bar__links ul li a {
-  color: #555960;
-  font-family: acumin-pro, "Franklin Gothic", sans-serif;
-  letter-spacing: 1.75px;
+.trending-search ul li a:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 448 512%27%3E%3C%21--%21 Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license %28Commercial License%29 Copyright 2023 Fonticons, Inc. --%3E%3Cpath fill=%27%23000000%27 d=%27M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z%27/%3E%3C/svg%3E");
+  color: #000;
+  height: 1.125rem;
+  width: 1rem;
+  right: -0.25rem;
+  margin-left: 0.75rem;
+  position: relative;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  top: 3px;
+  display: inline-block;
+}
+.trending-search ul li a:hover {
   -webkit-text-decoration: underline;
   text-decoration: underline;
-  font-weight: 500;
-  font-size: 0.875rem;
-  vertical-align: text-top;
 }
-.purdue-home-search-bar__links ul li a:hover {
-  -webkit-text-decoration: none;
-  text-decoration: none;
-}
-@media screen and (max-width: 767px) {
-  .purdue-home-search-bar__links ul li:first-child {
-    padding-left: 0;
-  }
-}
-@media screen and (max-width: 767px) {
-  .purdue-home-search-bar__links ul {
-    padding-left: 0;
-  }
+.trending-search ul li a:hover:after {
+  -webkit-transform: translateX(3px);
+          transform: translateX(3px);
 }
 
 @media screen and (max-width: 1023px) {
@@ -16081,4 +15924,127 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 li {
 .alm-load-more-btn:hover {
   background: #000 !important;
   color: hsl(0, 0%, 100%) !important;
+}
+
+.purdue-accordion.accordion--campus {
+  background: none;
+  margin-bottom: 0;
+}
+.purdue-accordion.accordion--campus .accordion__heading {
+  color: hsl(0, 0%, 100%);
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0 2rem 0 0;
+  position: relative;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .purdue-accordion.accordion--campus .accordion__heading {
+    font-size: 0.875rem;
+    padding: 0 2rem 0 0;
+  }
+}
+.purdue-accordion.accordion--campus .accordion__heading:before {
+  content: "";
+  height: 3px;
+  position: absolute;
+  display: block;
+  visibility: visible;
+  background: #cfb991;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  transition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+  bottom: -3px;
+  left: 0;
+  width: calc(100% - 30px);
+}
+.purdue-accordion.accordion--campus .accordion__heading:after {
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 height=%271em%27 viewBox=%270 0 512 512%27%3E%3C%21--%21 Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license %28Commercial License%29 Copyright 2023 Fonticons, Inc. --%3E%3Cpath fill=%27%23cfb991%27 d=%27M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z%27/%3E%3C/svg%3E");
+  right: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #CFB991;
+  position: absolute;
+  transition: all 0.3s;
+}
+.purdue-accordion.accordion--campus .accordion__heading.is-open:after {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+.purdue-accordion.accordion--campus .accordion__content {
+  background-color: #fff;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top: 2px solid #ededed;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+  font-size: 0.875rem;
+  left: 0;
+  position: absolute;
+  top: 100%;
+  z-index: 20;
+  padding: 0.5rem 0;
+}
+.purdue-accordion.accordion--campus .accordion__content.show {
+  display: block;
+}
+.purdue-accordion.accordion--campus .accordion__content li a {
+  color: #000;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  -webkit-text-decoration: underline;
+  text-decoration: underline;
+}
+.purdue-accordion.accordion--campus .accordion__content li a:hover {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 767px) {
+  .mobile-hidden {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px), print {
+  .mobile-show {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .desktop-hidden,
+.level.desktop-hidden {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .tablet-hidden,
+.level .tablet-hidden.level-right {
+    display: none;
+  }
 }

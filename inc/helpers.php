@@ -108,7 +108,17 @@ if ( ! function_exists( 'purdueBrand_footer_links' ) ) {
 		$data = json_decode( $body );
 		$output='<div class="footer__links">';
 		$output.='<h2>
-					<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$data->column.'id" aria-controls="sect'.$data->column.'">'.$data->header.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i>
+					<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$data->column.'id" aria-controls="sect'.$data->column.'">'.$data->header.'
+					<svg aria-hidden="true" class="accordion__icon accordion__icon__plus" width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+						<title>plus_icon</title>
+						<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+							<g stroke="#cfb991" stroke-width="4">
+								<circle cx="26" cy="26" r="24"></circle>
+								<line x1="26.5" y1="14" x2="26.5" y2="38" stroke-linecap="round" stroke-linejoin="round"></line>
+								<line x1="25.6896552" y1="14.5116279" x2="25.6896552" y2="38.6976744" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.6897, 26.6047) rotate(-90) translate(-25.6897, -26.6047)"></line>
+							</g>
+						</g>
+					</svg>
 					</button>
 				</h2>';
 		$output.='<ul class="accordion__content--footer" id="sect'.$data->column.'" aria-labelledby="accordion'.$data->column.'id">';

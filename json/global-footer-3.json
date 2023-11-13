@@ -1,0 +1,30 @@
+{
+    "column" : "3",
+    "header" : "INFORMATION",
+    "links" : [
+        {
+            "link_text": "Purdue Today",
+            "link_url": "https://www.purdue.edu/newsroom/purduetoday/"
+        },
+        {
+            "link_text": "Purdue Today",
+            "link_url": "https://protect.purdue.edu/"
+        },
+        {
+            "link_text": "Libraries",
+            "link_url": "https://www.lib.purdue.edu/"
+        },
+        {
+            "link_text": "Construction",
+            "link_url": "https://www.purdue.edu/physicalfacilities/construction/"
+        },
+        {
+            "link_text": "Tuition Calculator",
+            "link_url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/tuition-calculator/"
+        },
+        {
+            "link_text": "Center for Healthy Living",
+            "link_url": "https://www.purdue.edu/hr/CHL/index.php"
+        }
+    ]
+}

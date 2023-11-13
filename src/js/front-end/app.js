@@ -13,6 +13,7 @@ import "./themeSelector";
 import "./collapseSection";
 import "./table";
 import "./top-second-nav";
+import "./search.js";
 
 if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector ||

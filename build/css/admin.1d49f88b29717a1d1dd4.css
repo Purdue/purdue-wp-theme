@@ -10562,6 +10562,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   background-color: #555960 !important;
 }
 
+.has-gray-background {
+  background-color: #ededed !important;
+}
+
 .main-content {
   display: block;
 }
@@ -10706,6 +10710,10 @@ strong {
 
 .has-background-black-ter {
   background-color: #555960 !important;
+}
+
+.has-gray-background {
+  background-color: #ededed !important;
 }
 
 .editor-styles-wrapper .wp-block h2,

@@ -144,6 +144,15 @@ if (!function_exists('purdueBrand_widgets_init')) {
             'before_title'  => '<h2>',
             'after_title'   => '</h2>',
         ));
+        register_sidebar(array(
+            'name'          => esc_html__('Footer signature', 'purdue'),
+            'id'            => 'footer-signature',
+            'description'   => esc_html__('Footer signature content', 'purdueBrand'),
+            'before_widget' => '<div id="%1$s" class="container is-fullhd %2$s">',
+            'after_widget'  => '</div>',
+            'before_title'  => '',
+            'after_title'   => '',
+        ));
     }
 }
 add_action('widgets_init', 'purdueBrand_widgets_init');

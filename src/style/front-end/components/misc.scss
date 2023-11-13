@@ -1,0 +1,22 @@
+.mobile-hidden {
+    @include mobile {
+      display: none;
+    }
+  }
+  .mobile-show {
+    @include tablet {
+      display: none;
+    }
+  }
+  .desktop-hidden,
+  .level.desktop-hidden {
+    @include desktop {
+      display: none;
+    }
+  }
+  .tablet-hidden,
+  .level .tablet-hidden.level-right {
+    @include touch {
+      display: none;
+    }
+  }

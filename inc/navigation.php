@@ -302,7 +302,16 @@ if ( ! function_exists( 'purdueBrand_footerLinks_1' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect1" aria-labelledby="accordion1id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion1id" aria-controls="sect1">'.$menu_obj->name.'<svg aria-hidden="true" class="accordion__icon accordion__icon__plus" width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<title>plus_icon</title>
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<g stroke="#cfb991" stroke-width="4">
+						<circle cx="26" cy="26" r="24"></circle>
+						<line x1="26.5" y1="14" x2="26.5" y2="38" stroke-linecap="round" stroke-linejoin="round"></line>
+						<line x1="25.6896552" y1="14.5116279" x2="25.6896552" y2="38.6976744" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.6897, 26.6047) rotate(-90) translate(-25.6897, -26.6047)"></line>
+					</g>
+				</g>
+			</svg></button></h2><ul class="accordion__content--footer" id="sect1" aria-labelledby="accordion1id">%3$s</ul>'
 			)); 
 		endif;
 	}
@@ -317,7 +326,16 @@ if ( ! function_exists( 'purdueBrand_footerLinks_2' ) ) {
 				'theme_location'  => $location,
 				'container'         => 'div',
 				'container_class' => 'resources__column footer__links',
-				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">'.$menu_obj->name.'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button></h2><ul class="accordion__content--footer" id="sect2" aria-labelledby="accordion2id">%3$s</ul>'
+				'items_wrap'=> '<h2><button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion2id" aria-controls="sect2">'.$menu_obj->name.'<svg aria-hidden="true" class="accordion__icon accordion__icon__plus" width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<title>plus_icon</title>
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<g stroke="#cfb991" stroke-width="4">
+						<circle cx="26" cy="26" r="24"></circle>
+						<line x1="26.5" y1="14" x2="26.5" y2="38" stroke-linecap="round" stroke-linejoin="round"></line>
+						<line x1="25.6896552" y1="14.5116279" x2="25.6896552" y2="38.6976744" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.6897, 26.6047) rotate(-90) translate(-25.6897, -26.6047)"></line>
+					</g>
+				</g>
+			</svg></button></h2><ul class="accordion__content--footer" id="sect2" aria-labelledby="accordion2id">%3$s</ul>'
 			)); 
 		endif;
 	}

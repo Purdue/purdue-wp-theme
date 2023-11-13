@@ -1,0 +1,24 @@
+{
+    "links" : [
+        {
+            "link_text": "Major",
+            "link_url": "https://www.admissions.purdue.edu/majors/index.php"
+        },
+        {
+            "link_text": "Tuition & Costs",
+            "link_url": "https://admissions.purdue.edu/costsandfinaid/index.php"
+        },
+        {
+            "link_text": "Schedule a Visit",
+            "link_url": "https://www.purdue.edu/visit/"
+        },
+        {
+            "link_text": "Boilermakers’ Stories",
+            "link_url": "https://stories.purdue.edu/"
+        },
+        {
+            "link_text": "Apply",
+            "link_url": "https://www.purdue.edu/home/become-a-student/#apply"
+        }
+    ]
+}

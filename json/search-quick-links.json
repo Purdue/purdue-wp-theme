@@ -1,0 +1,24 @@
+{
+    "links" : [
+        {
+            "link_text": "Research",
+            "link_url": "https://www.purdue.edu/home/research/"
+        },
+        {
+            "link_text": "Housing",
+            "link_url": "https://www.housing.purdue.edu/"
+        },
+        {
+            "link_text": "Majors",
+            "link_url": "https://www.admissions.purdue.edu/majors/index.php"
+        },
+        {
+            "link_text": "Student Orgs",
+            "link_url": "https://www.purdue.edu/sao/index.html"
+        },
+        {
+            "link_text": "Dining",
+            "link_url": "https://dining.purdue.edu/"
+        }
+    ]
+}

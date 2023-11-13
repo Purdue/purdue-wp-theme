@@ -23,5 +23,9 @@ add_action('admin_enqueue_scripts', 'admin_styles');
 
 //fontawesome
 
-wp_register_script( 'FontAwesome', 'https://kit.fontawesome.com/439a72c385.js', null, null, false );
-wp_enqueue_script('FontAwesome');
+function fontawesome() {
+    wp_enqueue_style( 'load-fa', 'https://use.fontawesome.com/releases/v6.4.2/css/all.css' );
+}
+ 
+ add_action('admin_init', 'fontawesome');
+ add_action( 'wp_enqueue_scripts', 'fontawesome' );

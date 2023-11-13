@@ -11,47 +11,44 @@
 ?>
 
 <main id="site-content" role="main" class="main-content">
-	<section class="section container">
-		<div class="columns is-centered">
-			<div class="column is-two-thirds-desktop is-full-tablet is-full-mobile">
-				<div class="content">
-					<h1>Search <?php if($searchOption=="wordpress"){
-										echo get_bloginfo( 'name' );
-					 					}else{
-										echo "All Purdue";	 
-										 } ?></h1>
-					<div class="form-group search-box search-box-fullwidth">
-						<?php get_search_form();?>
-					</div>
-					<?php if($searchOption=="wordpress"){
-						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-						if ( have_posts() ){ 
-							while ( have_posts() ) : the_post(); ?> 
-							<article class="search-post">
-								<h2 class="search-post-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
-								<p class="search-post-link"><?php the_permalink() ?></p>
-								<p  class="search-post-content">
-									<?php 					
-									if(!empty(the_excerpt()) && sizeof(the_excerpt())!==0){
-										the_excerpt();
-									}else{
-										echo purdue_get_excerpt(get_the_content());
-									} 
-									?>
-								</p>
-							</article>	
+	<section class="section has-gray-background">
+		<div class="container<?php
+			if($searchOption=="wordpress"){
+				echo ' narrow-page-content';
+			}
+		?>">
+			<h1 class="screen-reader-text">What are you looking for?</h1>
+			<div class="form-group search-box search-box-wide">
+				<?php get_search_form();?>
+			</div>
+			<?php
+				    if($searchOption=="wordpress"){
+						echo purdue_search_popular_wordpress();
+					}else{
+						echo purdue_search_popular_google();
+					}
+				?>
+		</div>
+	</section>
+	<section class="section">
+		<div class="container<?php
+			if($searchOption=="wordpress"){
+				echo ' narrow-page-content';
+			}
+		?>">
+		<?php
+			if($searchOption=="google"){
+		?>
+			<div class="columns has-sidebar">
+				<div class="column is-two-thirds">
+					<div class="content">
+						<h2>Results for:
 						<?php 
-						endwhile;
-						the_posts_pagination( array(
-							'mid_size' => 2,
-							'prev_text' => __( 'Prev', 'textdomain' ),
-							'next_text' => __( 'Next', 'textdomain' ),
-						));
-						}else {
-							echo '<p class="search-post-noresult">No search results found!</p>';
-						
+						if (isset($_GET['q'])){
+								echo wp_filter_nohtml_kses(sanitize_text_field($_GET['q']));
 						}
-					}else{ ?>
+						?>
+						</h2>
 						<script>
 							(function() {
 								var cx = '000644513606665216020:olj7bswxyxf';
@@ -64,16 +61,71 @@
 							})();
 						</script>
 						<gcse:searchresults-only></gcse:searchresults-only>
-					<?php }?>
+					</div>
+				</div>
+				<div class="column is-one-quarter">
+					<div class="trending-search box has-gray-background">
+						<h2 class="purdue-home-intro-text__header header-font-united">Trending Searches</h2>
+							<?php echo purdue_search_trending();?>
+					</div>
 				</div>
 			</div>
+
+		<?php }else{?>
+			<div class="search-results-header">
+				<h2>Results for:
+				<?php 
+					if (isset($_GET['s'])){
+						echo wp_filter_nohtml_kses(sanitize_text_field($_GET['s']));
+					}
+				?>
+				</h2>
+				<div>Sort by:
+					<select class="search-results-sort">
+						<option selected="" value="relevance">Relevance</option>
+						<option value="date">Date</option>
+					</select>
+				</div>
+			</div>
+			<?php
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+			global $wp_query;
+			$not_singular = $wp_query->found_posts > 1 ? 'results' : 'result';
+			?>
+			<div class="search-results-count">
+			<?php
+			echo $wp_query->found_posts . " $not_singular";?>
+			</div>
+			<div class="search-results-container">
+			<?php
+				if ( have_posts() ){ 
+					while ( have_posts() ) : the_post(); ?> 
+					<a class="search-post" href="<?php the_permalink() ?>">
+						<h3 class="search-post-title"><?php the_title() ?></h3>
+						<p class="search-post-link"><?php the_permalink() ?></p>
+						<p  class="search-post-content">
+						<?php purdue_get_excerpt(); ?>
+						</p>
+					</a>	
+				<?php 
+				endwhile;
+				the_posts_pagination( array(
+					'mid_size' => 2,
+					'prev_text' => __( 'Prev', 'textdomain' ),
+					'next_text' => __( 'Next', 'textdomain' ),
+				));
+				}else {
+					echo '<p class="search-post-noresult">No search results found!</p>';
+				
+				}
+			}?>
+		</div>
+		
 		</div>
 	</section>
-	<?php if (!has_block('purdue-blocks/anchor-link-navigation')&&!has_block('purdue-blocks/custom-side-menu')) { ?>
-		<button id="to-top" class="to-top-hidden">
-			<i class="fas fa-chevron-up" aria-hidden="true"></i>
-		</button>
-	<?php } ?>
+	<button id="to-top" class="to-top-hidden" aria-label="Back to Top Button">
+		<span class="icon"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></span>
+	</button>
 </main><!-- #site-content -->
 
 <?php get_footer(); ?>
