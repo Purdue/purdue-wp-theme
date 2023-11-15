@@ -227,9 +227,9 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
       }
       a{
         color:$black;
-        font-family:$source-serif-pro;
+        font-family:$acumin-pro-semicondensed;
         font-size:1.5625rem;
-        line-height:2rem;
+        line-height:1.35rem;
         font-weight:600;
         text-decoration:none;
         margin:2.5rem 2.5rem 1rem;
@@ -243,11 +243,10 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
         }
       }
       .wp-block-latest-posts__post-date{
-        color:$steel-gray;
-        font-family:$acumin-pro;
+        color:$aged-gold;
+        font-family:$united-sans;
         font-size:1.125rem;
-        font-weight:600;
-        font-style:italic;
+        font-weight:800;
         text-transform:uppercase;
         margin:1rem 2.5rem;
         &:last-child{
@@ -255,8 +254,8 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
         }
       }
       .wp-block-latest-posts__post-author{
-        color:$steel-gray;
-        font-family:$acumin-pro;
+        color: $cool-gray;
+        font-family:$united-sans;
         font-size:1.125rem;
         font-weight:600;
         margin:1rem 2.5rem;
@@ -265,11 +264,27 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list{
         }
       }
       .wp-block-latest-posts__post-excerpt,.wp-block-latest-posts__post-full-content{
-        color:$cool-gray;
+        color: $cool-gray;
         font-family:$acumin-pro;
         font-size:1.125rem;
         margin:1rem 2.5rem 2.5rem;
         line-height:1.5;
+
+        a{
+          color: $aged-gold;
+          margin:1rem 0 2.5rem;
+          font-family:$united-sans;
+          font-size:1.125rem;
+          font-weight: 800;
+          text-transform: uppercase;
+          &:after{
+            content: "\f105";
+            display: inline-block;
+            font-family: "Font Awesome 5 Free";
+            margin-left: 1rem;
+            position: relative;
+          }
+        }
       }
     }
     &.columns-3{
