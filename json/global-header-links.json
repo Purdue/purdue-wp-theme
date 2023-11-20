@@ -1,202 +1,27 @@
-{
-    "linkGroups" : [
-        {
-            "type": "normal",
-            "header": "admissions",
-            "links": [
-                {
-                    "link_text": "Admissions Overview",
-                    "link_url": "https://www.purdue.edu/purdue/admissions/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Undergraduate Admissions",
-                    "link_url": "https://www.admissions.purdue.edu/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Graduate Degree Programs",
-                    "link_url": "https://www.purdue.edu/gradschool/academics/graduate-degree-programs.html",
-                    "external": false
-                },
-                {
-                    "link_text": "International Student Admissions",
-                    "link_url": "https://www.purdue.edu/IPPU/ISS/Admission/index.html",
-                    "external": false
-                },
-                {
-                    "link_text": "Apply Now",
-                    "link_url": "https://www.purdue.edu/purdue/apply/",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "academics",
-            "links": [
-                {
-                    "link_text": "Academics Overview",
-                    "link_url": "https://www.purdue.edu/purdue/academics/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Undergraduate Majors & Minors",
-                    "link_url": "https://www.admissions.purdue.edu/majors/",
-                    "external": false
-                },
-                {
-                    "link_text": "Graduate School",
-                    "link_url": "https://www.purdue.edu/gradschool/index.html",
-                    "external": false
-                },
-                {
-                    "link_text": "Purdue Online Learning",
-                    "link_url": "https://online.purdue.edu/",
-                    "external": false
-                },
-                {
-                    "link_text": "Tour Purdue’s Campus",
-                    "link_url": "https://www.purdue.edu/visit/tours/schedule-tour.php",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "RESEARCH AND INNOVATION",
-            "links": [
-                {
-                    "link_text": "Research and Innovation Overview",
-                    "link_url": "https://www.purdue.edu/purdue/research/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Research & Partnerships",
-                    "link_url": "https://www.purdue.edu/research/",
-                    "external": false
-                },
-                {
-                    "link_text": "Corporate & Global Partnerships",
-                    "link_url": "https://partners.purdue.edu/",
-                    "external": false
-                },
-                {
-                    "link_text": "Purdue Research Foundation",
-                    "link_url": "https://prf.org/",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "ABOUT",
-            "links": [
-                {
-                    "link_text": "About Purdue",
-                    "link_url": "https://www.purdue.edu/purdue/about/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "History",
-                    "link_url": "https://www.purdue.edu/purdue/about/history.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Office of the President",
-                    "link_url": "https://www.purdue.edu/president/",
-                    "external": false
-                },
-                {
-                    "link_text": "Commitment to Free Speech",
-                    "link_url": "https://www.purdue.edu/purdue/about/free-speech.php",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "normal",
-            "header": "PURDUE EXPERIENCE",
-            "links": [
-                {
-                    "link_text": "Student Life at Purdue",
-                    "link_url": "https://www.purdue.edu/purdue/arts/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Purdue Activity & Wellness",
-                    "link_url": "https://www.purdue.edu/purdue/athletics/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Campus Inclusion",
-                    "link_url": "https://www.purdue.edu/purdue/inclusion/index.php",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "highlighted",
-            "header": "QUICK LINKS",
-            "links": [
-                {
-                    "link_text": "Prospective Students",
-                    "link_url": "https://www.purdue.edu/purdue/prospective_students/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Current Students",
-                    "link_url": "https://www.purdue.edu/purdue/current_students/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Faculty and Staff",
-                    "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Alumni",
-                    "link_url": "https://www.purdue.edu/purdue/alumni/index.php",
-                    "external": false
-                },
-                {
-                    "link_text": "Campus Map",
-                    "link_url": "https://www.purdue.edu/campus-map/",
-                    "external": false
-                }
-            ]
-        },
-        {
-            "type": "highlighted",
-            "header": "PURDUE CAMPUSES",
-            "links": [
-                {
-                    "link_text": "Purdue Northwest",
-                    "link_url": "https://www.pnw.edu/",
-                    "external": true
-                },
-                {
-                    "link_text": "Purdue Fort Wayne",
-                    "link_url": "https://www.pfw.edu/",
-                    "external": true
-                },
-                {
-                    "link_text": "Purdue Global",
-                    "link_url": "https://www.purdueglobal.edu/",
-                    "external": true
-                },
-                {
-                    "link_text": "Purdue Online",
-                    "link_url": "https://online.purdue.edu/",
-                    "external": true
-                }
-            ]
-        }
-    ],
-    "featuredStory":{
-        "is_included": false,
-        "description":"Purdue among world leaders in patents",
-        "link_text": "Read more",
-        "link_url":"https://www.purdue.edu/newsroom/releases/2021/Q2/rocketing-to-no.-6-internationally,-no.-1-in-big-ten-purdue-among-world-leaders-in-patents.html"
+[
+    {
+        "link_text": "Prospective Students",
+        "link_url": "https://www.purdue.edu/purdue/prospective_students/index.php",
+        "external": false
+    },
+    {
+        "link_text": "Current Students",
+        "link_url": "https://www.purdue.edu/purdue/current_students/index.php",
+        "external": false
+    },
+    {
+        "link_text": "Faculty and Staff",
+        "link_url": "https://www.purdue.edu/purdue/faculty_staff/index.php",
+        "external": false
+    },
+    {
+        "link_text": "Alumni",
+        "link_url": "https://www.purdue.edu/purdue/alumni/index.php",
+        "external": false
+    },
+    {
+        "link_text": "Campus Map",
+        "link_url": "https://www.purdue.edu/campus-map/",
+        "external": false
     }
-}
+]

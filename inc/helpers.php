@@ -130,6 +130,8 @@ if ( ! function_exists( 'purdueBrand_footer_links' ) ) {
 		echo $output;
 	}
 }
+
+//Old Helpful Links
 	
 if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 	function purdueBrand_header_links($file)
@@ -139,40 +141,19 @@ if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 		$request = wp_remote_get( "$url" );
 		$body = wp_remote_retrieve_body( $request );
 		$data = json_decode( $body );
-		$linkGroups=$data->linkGroups;
-		$featuredStory=$data->featuredStory;
+		$linkGroups = json_decode( $body );
 		$output='';
 
 		if(($linkGroups && sizeof($linkGroups)>0)){
-			foreach ($data->linkGroups as $key=>$linkGroup) {  
-				if($linkGroup->type == "normal"){					
-					$output.='<div class="navbar-find-info__item">';
-				}else{
-					$output.='<div class="navbar-find-info__item navbar-find-info__item-highlighted">';
-				}
-				$output.='<button class="accordion__heading" aria-expanded="false" id="findInfoItem-button-'.$key.'" aria-controls="findInfoItem-list-'.$key.'">
-							'.$linkGroup->header.'
-							</button>';
-				$output.='<ul class="accordion__content hide" id="findInfoItem-list-'.$key.'" aria-labelledby="findInfoItem-button-'.$key.'">';
-				foreach ($linkGroup->links as $link) {
-					$external=$link->external?"_blank":"_self";  
-					$output.='<li><a href="'.$link->link_url.'" target="'.$external.'">'.$link->link_text.'</a></li>';
-				}
-				$output.='</ul>';
-				$output.='</div>';
+			foreach ($linkGroups as $linkGroup) {  
+				$output.='<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$linkGroup->link_url.'">'.$linkGroup->link_text.'</a></li>';
 			}
-		}
-		if($featuredStory && $featuredStory->is_included){
-			if($featuredStory->description){
-				$output.='<p class="navbar-find-info__item-intro">'.$featuredStory->description.'</p>';
-			}
-			if($featuredStory->link_url){
-				$output.='<a href="'.$featuredStory->link_url.'" class="navbar-find-info__item-link">'.$featuredStory->link_text.'</a>';
-			}
-		}
+		}		
 		echo $output;
 	}
 }
+
+//Old Quick Links
 
 if ( ! function_exists( 'purdueBrand_header_buttons' ) ) {
 	function purdueBrand_header_buttons($file)
@@ -186,7 +167,7 @@ if ( ! function_exists( 'purdueBrand_header_buttons' ) ) {
 
 		if(($linkGroups && sizeof($linkGroups)>0)){
 			foreach ($linkGroups as $linkGroup) {  
-				$output.='<li><a href="'.$linkGroup->link_url.'">'.$linkGroup->link_text.'</a></li>';
+				$output.='<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="'.$linkGroup->link_url.'">'.$linkGroup->link_text.'</a></li>';
 			}
 		}
 		echo $output;

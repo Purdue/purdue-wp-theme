@@ -82,7 +82,11 @@
 			<?php if ($headerSetting == 'global'){ ?>	
 			<nav id="top-nav" class="navbar navbar-menu purdue-top-nav__second-row" role="navigation">					
 				<ul class="navbar-start menu-items">
-					<?php purdueHome_navigation(); ?>
+					<?php if (has_nav_menu('global-menu')) {
+						purdueBrand_globalMenu();
+					}else{
+						purdueHome_navigation();
+					} ?>
 				</ul>				
 			</nav>
 			<?php } ?>
@@ -101,17 +105,33 @@
 					</div>	
 					<div class="navbar-find-info__menu">
 						<ul class="menu-items">
-							<?php purdueHome_navigation(); ?>
+							<?php if (has_nav_menu('global-menu')) {
+								purdueBrand_globalMenu();
+							}else{
+								purdueHome_navigation();
+							} ?>
 						</ul>
 					</div>
 					<div class="navbar-find-info__quicklinks">
 						<span class="navbar-links-description">Helpful links</span>
-						<?php purdueHome_quicklinks(); ?>
+						<?php if (has_nav_menu('quick-links')) {
+								purdueHome_quicklinks();
+							}else{ ?>
+								<ul class="navbar-quick-links">
+									<?php purdueBrand_header_links("global-header-buttons.json"); ?>
+								</ul>
+						<?php } ?>
 					</div>
 
 					<div class="navbar-other-links-wrapper">
 						<span class="navbar-links-description">Quick links</span>
-						<?php purdueHome_otherlinks(); ?>
+							<?php if (has_nav_menu('other-links')) {
+								purdueHome_otherlinks();
+							}else{ ?>
+								<ul class="navbar-other-links">
+									<?php purdueBrand_header_links("global-header-links.json"); ?>
+								</ul>
+							<?php } ?>
 					</div>
 				</div>
 			</div>
@@ -136,12 +156,24 @@
 						</div>
 						<div class="column is-narrow">
 							<span class="navbar-links-description">Helpful links</span>
-							<?php purdueHome_quicklinks(); ?>
+							<?php if (has_nav_menu('quick-links')) {
+								purdueHome_quicklinks();
+							}else{ ?>
+								<ul class="navbar-quick-links">
+									<?php purdueBrand_header_links("global-header-buttons.json"); ?>
+								</ul>
+						<?php } ?>
 						</div>
 					</div>
 					<div class="navbar-other-links-wrapper">
 						<span class="navbar-links-description">Quick links</span>
-						<?php purdueHome_otherlinks(); ?>
+							<?php if (has_nav_menu('other-links')) {
+								purdueHome_otherlinks();
+							}else{ ?>
+								<ul class="navbar-other-links">
+									<?php purdueBrand_header_buttons("global-header-links.json"); ?>
+								</ul>
+							<?php } ?>
 					</div>
 				</div>
 			</div>
