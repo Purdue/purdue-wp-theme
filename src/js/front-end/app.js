@@ -14,6 +14,7 @@ import "./collapseSection";
 import "./table";
 import "./top-second-nav";
 import "./search.js";
+import "./video";
 
 if (!Element.prototype.matches) {
     Element.prototype.matches = Element.prototype.msMatchesSelector ||
