@@ -224,6 +224,8 @@
 						<div class="column is-one-quarter-desktop is-full-tablet">
 							<?php if(array_key_exists("footer-links-1", get_nav_menu_locations()) && wp_get_nav_menu_items(get_nav_menu_locations()['footer-links-1'])){
 									purdueHome_footerLinks_1();
+								}elseif(is_active_sidebar('footer-column-1')){
+									dynamic_sidebar('footer-column-1');
 								}else{
 									purdueBrand_footer_links("global-footer-1.json");
 								}
@@ -233,6 +235,8 @@
 						<div class="column is-one-quarter-desktop is-full-tablet">
 						<?php if(array_key_exists("footer-links-2", get_nav_menu_locations()) && wp_get_nav_menu_items(get_nav_menu_locations()['footer-links-2'])){
 									purdueHome_footerLinks_2();
+								}elseif(is_active_sidebar('footer-column-2')){
+									dynamic_sidebar('footer-column-2');
 								}else{
 									purdueBrand_footer_links("global-footer-2.json");
 								}
@@ -242,6 +246,8 @@
 						<div class="column is-one-quarter-desktop is-full-tablet">
 						<?php if(array_key_exists("footer-links-3", get_nav_menu_locations()) && wp_get_nav_menu_items(get_nav_menu_locations()['footer-links-3'])){
 									purdueHome_footerLinks_3();
+								}elseif(is_active_sidebar('footer-column-3')){
+									dynamic_sidebar('footer-column-3');
 								}else{
 									purdueBrand_footer_links("global-footer-3.json");
 								}
@@ -251,6 +257,8 @@
 						<div class="column is-one-quarter-desktop is-full-tablet">
 						<?php if(array_key_exists("footer-links-4", get_nav_menu_locations()) && wp_get_nav_menu_items(get_nav_menu_locations()['footer-links-4'])){
 									purdueHome_footerLinks_4();
+								}elseif(is_active_sidebar('footer-column-4')){
+									dynamic_sidebar('footer-column-4');
 								}else{
 									purdueBrand_footer_links("global-footer-4.json");
 								}
