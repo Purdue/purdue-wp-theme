@@ -51,7 +51,7 @@ body.custom-background {
       padding-bottom: 3rem;
       position: relative;
       z-index: 1;
-    }
+    }    
     .footer__links {
       margin-bottom: 1rem;
       display: flex;
@@ -159,6 +159,22 @@ body.custom-background {
         }
       }
     }
+    .widget_block{
+      margin-bottom: 0;
+       @include touch {
+         padding: 0 0.75rem;
+         &:first-child{
+           padding-top: 0.75rem;
+           padding-bottom: 0.75rem;
+         }
+         &:last-child{
+           padding-bottom: 0.75rem;
+         }
+       }      
+       p{
+         font-size: 14px;
+       }
+     }
     .footer__signature {
       text-align: center;
       background-color: none;

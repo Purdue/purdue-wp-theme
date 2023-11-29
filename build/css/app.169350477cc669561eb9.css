@@ -12299,6 +12299,24 @@ body {
     padding-bottom: 1rem;
   }
 }
+.footer .widget_block {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 1023px) {
+  .footer .widget_block {
+    padding: 0 0.75rem;
+  }
+  .footer .widget_block:first-child {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .footer .widget_block:last-child {
+    padding-bottom: 0.75rem;
+  }
+}
+.footer .widget_block p {
+  font-size: 14px;
+}
 .footer .footer__signature {
   text-align: center;
   background-color: none;
