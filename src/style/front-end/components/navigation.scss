@@ -430,6 +430,9 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     animation: fadeInHeader 0.3s linear;
     transform: translateY(0);
   }
+  &.has-alert.is-active {
+    top: 2.5rem;
+}
   .icon {
     background: none;
     border: none;
