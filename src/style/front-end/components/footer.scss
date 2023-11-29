@@ -104,7 +104,7 @@ body.custom-background {
               cursor: pointer;
             }
             .accordion__icon__plus {
-              display: block;
+              display: block !important;
               &.hide {
                 transform: rotate(45deg);
               }

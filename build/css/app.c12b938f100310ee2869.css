@@ -12236,7 +12236,7 @@ body {
     cursor: pointer;
   }
   .footer .footer__links h2 .accordion__heading--footer .accordion__icon__plus {
-    display: block;
+    display: block !important;
   }
   .footer .footer__links h2 .accordion__heading--footer .accordion__icon__plus.hide {
     -webkit-transform: rotate(45deg);
