@@ -15033,7 +15033,7 @@ a:hover {
 
 #to-top {
   position: fixed;
-  bottom: 5rem;
+  bottom: -6rem;
   right: 5rem;
   display: flex;
   align-items: center;
@@ -15043,7 +15043,7 @@ a:hover {
   font-size: 1.1rem;
   padding: 1.5rem;
   margin: 0;
-  border: none;
+  border: 2px solid #cfb991;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
