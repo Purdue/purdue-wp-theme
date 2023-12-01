@@ -761,6 +761,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     }
     &.hide {
       display: none;
+      overflow: hidden;
     }
     &.show {
       display: block;

@@ -11651,6 +11651,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 .navbar-find-info .navbar-dropdown.hide {
   display: none;
+  overflow: hidden;
 }
 .navbar-find-info .navbar-dropdown.show {
   display: block;
