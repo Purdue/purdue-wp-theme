@@ -620,7 +620,18 @@ class LinksColumn_Widget extends WP_Widget {
 		
 		if ( $title ) {
            
-			echo $args['before_title'] .'<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$no.'id" aria-controls="sect'.$no.'">'. $title .'<i aria-hidden="true" class="fas fa-plus accordion__icon accordion__icon__plus"></i><i aria-hidden="true" class="fas fa-minus accordion__icon accordion__icon__minus"></i></button>'. $args['after_title'];
+			echo $args['before_title'] .'<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="accordion'.$no.'id" aria-controls="sect'.$no.'">'.$title.'
+            <svg aria-hidden="true" class="accordion__icon accordion__icon__plus" width="52px" height="52px" viewBox="0 0 52 52" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>plus_icon</title>
+                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g stroke="#cfb991" stroke-width="4">
+                        <circle cx="26" cy="26" r="24"></circle>
+                        <line x1="26.5" y1="14" x2="26.5" y2="38" stroke-linecap="round" stroke-linejoin="round"></line>
+                        <line x1="25.6896552" y1="14.5116279" x2="25.6896552" y2="38.6976744" stroke-linecap="round" stroke-linejoin="round" transform="translate(25.6897, 26.6047) rotate(-90) translate(-25.6897, -26.6047)"></line>
+                    </g>
+                </g>
+            </svg>
+            </button>'. $args['after_title'];
         }
 
         echo '<ul class="accordion__content--footer" id="sect'.$no.'" aria-labelledby="accordion'.$no.'id">';

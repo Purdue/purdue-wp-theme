@@ -100,6 +100,10 @@
 													$phone=$ftr_phone;
 												}
 												echo (($ftr_phone == '') ? '' : '<a href="tel://' . $phone . '">' . $ftr_phone . '</a>');
+											}else{
+												$ftr_phone = '765-494-4600'; 
+												$phone=str_replace("-", "", $ftr_phone);
+												echo '<a href="tel://' . $phone . '">' . $ftr_phone . '</a>';
 											}
 										?>
 										</p>
