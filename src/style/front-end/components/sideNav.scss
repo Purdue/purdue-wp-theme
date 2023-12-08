@@ -87,6 +87,10 @@
         transition: height 0.2s ease;
         height:0;
       }
+      &.show{
+        overflow: visible;
+        height: auto;
+      }
       li.navbar-item>a{
         width:100%;
       }
@@ -255,4 +259,3 @@
     }
   }
 }
-
