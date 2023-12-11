@@ -353,11 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
           navbarEnd.classList.remove('is-active')
         }
       }
-      if(findInfo){
-        if(findInfo&&findInfo.classList.contains('is-active')){
-          findInfo.classList.remove('is-active')
-        }
-      }
+      
       if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach((el) => {
           const hamburgerIcon = el.querySelector('.burger-icon')
