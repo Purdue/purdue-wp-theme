@@ -161,7 +161,7 @@ if ( ! function_exists( 'purdueBrand_topSecondMenu' ) ) {
 				'items_wrap'    	=> '%3$s',
 				'menu_class'        => '',
 				'fallback_cb'       => 'purdueBrand_nav_blackBar::fallback',
-				'walker'            => new purdueBrand_nav_secondnav()
+				'walker'            => new purdueBrand_nav_blackBar()
 				)
 			);
 		}

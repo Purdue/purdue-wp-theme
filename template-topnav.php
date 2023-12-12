@@ -6,12 +6,40 @@
  */
 ?>
 
-<?php get_header(); ?>
-<nav id="top-second-nav" class="purdue-navbar-second" role="navigation">					
-	<ul class="navbar-items">
-		<?php purdueBrand_topSecondMenu(); ?>
-	</ul>					
-</nav>
+<?php get_header(); 
+
+$location = 'side-nav';
+$locations = get_nav_menu_locations();
+
+if (has_nav_menu($location)){
+
+	$menu_obj = get_term($locations[$location], 'nav_menu');
+	$menuTitle = $menu_obj->name;
+
+}else{
+
+	if ( class_exists('acf') ) {
+		
+		$menu_obj = get_field( "subnav_menu" );
+		$menuTitle = wp_get_nav_menu_object($menu_obj)->name;
+	}
+
+}
+?>
+
+	<nav class="navbar is-black purdue-second-nav tablet-hidden" role="navigation">
+		<ul class="menu-items">
+			<?php purdueBrand_topSecondMenu(); ?>
+		</ul>
+	</nav>
+	<nav class="navbar is-black purdue-second-nav desktop-hidden" role="navigation">
+		<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="top-second-menu-title" aria-controls="top-second-menu">
+			<?php echo $menuTitle; ?>
+		</button>
+		<ul class="menu-items" id="top-second-menu" aria-labelledby="top-second-menu-title">
+			<?php purdueBrand_topSecondMenu(); ?>
+			</ul>
+		</nav>
 <?php
 if (function_exists('get_field')) {	
 	$breadCrumb = get_field('include_bread_crumb_on_this_page')[0];
