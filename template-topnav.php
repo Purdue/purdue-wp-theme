@@ -14,17 +14,26 @@ $locations = get_nav_menu_locations();
 if (has_nav_menu($location)){
 
 	$menu_obj = get_term($locations[$location], 'nav_menu');
+	
 	$menuTitle = $menu_obj->name;
+
+}elseif ( get_field( "subnav_menu" )!== NULL) {
+	
+		$menu_obj = get_field( "subnav_menu" );
+
+		$menuTitle = wp_get_nav_menu_object($menu_obj)->name;
 
 }else{
 
-	if ( class_exists('acf') ) {
-		
-		$menu_obj = get_field( "subnav_menu" );
-		$menuTitle = wp_get_nav_menu_object($menu_obj)->name;
+	if (function_exists('get_field')) {	
+
+		$menuTitle = get_field('menu_title')?get_field('menu_title'):"Additional Links";
+	
 	}
 
 }
+
+
 ?>
 
 	<nav class="navbar is-black purdue-second-nav tablet-hidden" role="navigation">

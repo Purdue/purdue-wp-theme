@@ -183,20 +183,7 @@
 					$hasSecondMenu = get_field('add_second_menu');	
 					$menuTitle=get_field('menu_title')?get_field('menu_title'):"Additional Links";
 					if($hasSecondMenu&&$hasSecondMenu[0]=="Yes"){
-			?>
-			<nav class="navbar is-black purdue-second-nav tablet-hidden" role="navigation">
-				<ul class="menu-items">
-					<?php purdueHome_secondNav(); ?>
-				</ul>
-			</nav>
-			<nav class="navbar is-black purdue-second-nav desktop-hidden" role="navigation">
-				<button class="accordion__heading accordion__heading--footer" aria-expanded="true" aria-disabled="true" id="top-second-menu-title" aria-controls="top-second-menu">
-				<?php echo $menuTitle; ?>
-				</button>
-				<ul class="menu-items" id="top-second-menu" aria-labelledby="top-second-menu-title">
-					<?php purdueHome_secondNav(); ?>
-				</ul>
-			</nav>
+			?>			
 			<?php
 				}
 			}

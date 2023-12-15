@@ -902,6 +902,136 @@ if( function_exists('acf_add_local_field_group') ):
     
     endif;		
 
+//Second menu
+add_filter( 'acf/load_field/type=select', 'purdue_load_select_values' );
+function purdue_load_select_values( $field ) {
+	$menus = wp_get_nav_menus();
+	
+	$field[ 'choices' ] = array();
+	foreach( $menus as $menu ) {
+		$field[ 'choices' ][ $menu->term_id ] = $menu->name;
+	}
+	
+	return $field;
+}
+
+// Add the ACF field group with the select field type.
+add_action( 'acf/init', 'purdue_add_menu_field_group' );
+function purdue_add_menu_field_group() {
+	if ( function_exists( 'acf_add_local_field_group' ) ) {
+		acf_add_local_field_group( array(
+			'key' => 'group_6501b9357489d',
+			'title' => 'Second Menu Setting',
+			'fields' => array(
+				array(
+					'key' => 'field_6501b93534495',
+					'label' => 'Add Second Menu',
+					'name' => 'add_second_menu',
+					'aria-label' => '',
+					'type' => 'checkbox',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => 0,
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'Yes' => 'Yes',
+					),
+					'default_value' => array(
+					),
+					'return_format' => 'value',
+					'allow_custom' => 0,
+					'layout' => 'vertical',
+					'toggle' => 0,
+					'save_custom' => 0,
+					'custom_choice_button_text' => 'Add new choice',
+				),
+				array(
+					'key' => 'field_6501cdba34496',
+					'label' => 'Second Menu',
+					'name' => 'second_menu',
+					'aria-label' => '',
+					'type' => 'select',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_6501b93534495',
+								'operator' => '!=empty',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'choices' => array(
+						'one' => 'One',
+					),
+					'default_value' => false,
+					'return_format' => 'value',
+					'multiple' => 0,
+					'allow_null' => 1,
+					'ui' => 0,
+					'ajax' => 0,
+					'placeholder' => '',
+				),
+				array(
+					'key' => 'field_65021a73aaa46',
+					'label' => 'Menu Title (Shown on mobile)',
+					'name' => 'menu_title',
+					'aria-label' => '',
+					'type' => 'text',
+					'instructions' => '',
+					'required' => 0,
+					'conditional_logic' => array(
+						array(
+							array(
+								'field' => 'field_6501b93534495',
+								'operator' => '!=empty',
+							),
+						),
+					),
+					'wrapper' => array(
+						'width' => '',
+						'class' => '',
+						'id' => '',
+					),
+					'default_value' => 'Additional Links',
+					'maxlength' => '',
+					'placeholder' => '',
+					'prepend' => '',
+					'append' => '',
+				),
+			),
+
+			'location' => array(
+				array(
+					array(
+						'param' => 'post_type',
+						'operator' => '==',
+						'value' => 'page',
+					),
+				),
+			),
+			'menu_order' => 0,
+			'position' => 'side',
+			'style' => 'default',
+			'label_placement' => 'top',
+			'instruction_placement' => 'label',
+			'hide_on_screen' => '',
+			'active' => true,
+			'description' => '',
+			'show_in_rest' => 0,
+		) );
+	}
+}
+
 //image in rss feed
 function rss_post_thumbnail($content) {
     global $post;
