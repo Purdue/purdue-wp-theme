@@ -873,6 +873,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   }
 }
 .purdue-second-nav {
+  border-bottom: 1px solid $boiler-gold;
   & > .accordion__heading {
     display: none;
     @include touch {
