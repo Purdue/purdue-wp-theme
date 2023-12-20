@@ -1,27 +1,31 @@
 {
     "column" : "4",
-    "header" : "PEOPLE",
+    "header" : "COMMUNICATION",
     "links" : [
-        {
-            "link_text": "Speak Up",
-            "link_url": "https://www.purdue.edu/hotline/"
-        },
-        {
-            "link_text": "Diversity and Inclusion",
-            "link_url": "https://www.purdue.edu/diversity-inclusion/"
-        },
-        {
-            "link_text": "Ethics and Compliance",
-            "link_url": "https://www.purdue.edu/ethics/"
-        },
-        {
-            "link_text": "Information Technology",
-            "link_url": "https://www.it.purdue.edu/"
-        },
         {
             "link_text": "Annual Security Report",
             "link_url": "https://www.purdue.edu/ehps/police/statistics-policies/security-reports.php"
         },
+        {
+            "link_text": "Construction",
+            "link_url": "https://www.purdue.edu/physicalfacilities/construction/"
+        },
+        {
+            "link_text": "Emergency",
+            "link_url": "https://www.purdue.edu/emergency/"
+        },
+        {
+            "link_text": "Information Technology",
+            "link_url": "https://it.purdue.edu/"
+        },
+        {
+            "link_text": "Marketing and Communications",
+            "link_url": "https://marcom.purdue.edu/"
+        },
+        {
+            "link_text": "Purdue Hotline",
+            "link_url": "https://www.purdue.edu/hotline/"
+        },       
         {
             "link_text": "Timely Warnings",
             "link_url": "https://www.purdue.edu/ehps/police/timely-warnings/"
