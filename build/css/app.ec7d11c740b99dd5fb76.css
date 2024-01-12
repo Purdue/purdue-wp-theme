@@ -15066,25 +15066,34 @@ a:hover {
 
 #to-top {
   position: fixed;
-  bottom: -6rem;
+  bottom: 5rem;
   right: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #CFB991;
-  background: black;
-  font-size: 1.1rem;
-  padding: 1.5rem;
+  font-size: 1.5rem;
   margin: 0;
-  border: 2px solid #cfb991;
   transition: -webkit-transform 0.2s ease;
   transition: transform 0.2s ease;
   transition: transform 0.2s ease, -webkit-transform 0.2s ease;
-  border-radius: 100%;
-  z-index: 1000;
+  z-index: 999;
+  border: none;
+  background: none;
+  flex-direction: column;
+  align-items: center;
 }
 #to-top:hover {
   cursor: pointer;
+}
+#to-top .icon {
+  width: 56px;
+  height: 56px;
+  padding: 1rem;
+  color: #CFB991;
+  background: black;
+  border: 2px solid #CFB991;
+  border-radius: 100%;
+  margin-bottom: 0.5rem;
 }
 #to-top.to-top-hidden {
   -webkit-transform: translateY(300%);
@@ -15096,7 +15105,7 @@ a:hover {
 }
 @media (max-width: 414px) {
   #to-top {
-    font-size: 0.9rem;
+    font-size: 1.25rem;
     right: 2rem;
     padding: 1.2rem;
   }
@@ -15105,6 +15114,7 @@ a:hover {
 .to-top-relative {
   position: relative !important;
   margin-bottom: -5rem !important;
+  bottom: -6rem !important;
 }
 
 .to-top-relative {

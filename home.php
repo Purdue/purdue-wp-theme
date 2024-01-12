@@ -113,8 +113,8 @@
 	</div>
 	
 	<?php if (!has_block('purdue-blocks/anchor-link-navigation')&&!has_block('purdue-blocks/custom-side-menu')) { ?>
-		<button id="to-top" class="to-top-hidden" aria-label="To top button">
-			<i class="fas fa-chevron-up" aria-hidden="true"></i>
+		<button id="to-top" class="to-top-hidden" aria-label="Back to Top Button">
+			<span class="icon"><i class="fa-solid fa-arrow-up" aria-hidden="true"></i></span>
 		</button>
 	<?php } ?>
 </main><!-- #site-content -->

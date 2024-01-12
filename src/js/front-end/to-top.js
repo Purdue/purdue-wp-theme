@@ -14,8 +14,8 @@ if(toTop){
       toTop.classList.remove('to-top-hidden')
       toTop.classList.add('to-top-shown')
       const footer = document.getElementsByTagName('footer')[0]
-      const start = window.innerHeight-footer.getBoundingClientRect().top;
-  
+      const start = window.innerHeight-footer.getBoundingClientRect().top - 160;
+
       if (start >= 80){
         toTop.classList.add('to-top-relative')
       } else if(start < 80){ 
