@@ -31,37 +31,23 @@ const collapse = (secondNav) => {
   }
 };
 
-const secondNav = document.querySelector(".purdue-navbar-second");
+const secondNav = document.querySelectorAll(".purdue-second-nav");
 const currentpage = window.location.href;
-if (secondNav) {
-  window.addEventListener("load", () => {
-    collapse(secondNav);
-  });
-  window.addEventListener("resize", () => collapse(secondNav));
-  window.addEventListener("click", (e) => {
-    if (
-      (e.target.classList.contains("more") ||
-        e.target.classList.contains("less")) &&
-      e.target.parentElement.classList.contains("more-less")
-    ) {
-      toggle(e.target.parentElement, secondNav);
-    }
-  });
-  const navbar_items = [...secondNav.querySelectorAll("a")];
-  if (navbar_items.length > 0) {
-    navbar_items.forEach((el) => {
-      const href = el.getAttribute("href");
-      if (currentpage === href) {
-        el.parentElement.classList.add("is-current-page");
-      }
-    });
-  }
-  var sticky = secondNav.offsetTop;
+if (secondNav) {  
   window.addEventListener("scroll", () => {
-    if (window.pageYOffset >= sticky) {
-      secondNav.classList.add("sticky");
-    } else {
-      secondNav.classList.remove("sticky");
-    }
+    const header = document.getElementById('header'); 
+    const headerHeight = header.offsetHeight;
+    secondNav.forEach(element => {
+      const computedStyle = window.getComputedStyle(element);
+      const isDisplayNone = computedStyle.display === 'none';
+      if(!isDisplayNone){
+        const navbar = element;
+        if (window.scrollY >= headerHeight) {
+          navbar.classList.add("sticky");
+        } else {
+          navbar.classList.remove("sticky");
+        }
+      }
+    });       
   });
 }

@@ -615,6 +615,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     .navbar-other-links {
       display: flex;
       flex-wrap: wrap;
+      @include mobile{
+        flex-direction: column;
+        align-items: flex-start;
+      }
       a {
         color: $white;
         font-size: 1.125rem;
@@ -866,7 +870,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
           grid-row: 4/5;
         }
         @include mobile {
-          padding: 1rem 0 0;
+          padding: 1rem 0 3rem;
         }
       }
     }
@@ -874,6 +878,8 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 }
 .purdue-second-nav {
   border-bottom: 1px solid $boiler-gold;
+  min-height: auto;
+  padding: 0.5rem 0.25rem;
   & > .accordion__heading {
     display: none;
     @include touch {
@@ -910,6 +916,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   }
   .menu-items {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     width: 100%;
     color: $white;
@@ -923,6 +930,10 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     }
     &.show {
       display: flex;
+      position: absolute;
+      z-index: 999;
+      background: $black;
+      border-bottom: 1px solid $white;
     }
     &.hide {
       opacity: 0;
@@ -1139,5 +1150,15 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
         }
       }
     }
+  }
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  &.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index:10000;
+  }  
+  &.sticky + .main-content {
+    padding-top: 60px;
   }
 }
