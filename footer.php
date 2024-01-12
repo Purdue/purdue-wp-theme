@@ -15,7 +15,7 @@
  if(get_theme_mod('footer_image')){
 	$url=wp_get_attachment_image_src( get_theme_mod('footer_image'), 'full' )[0];
  }else{
-	$url="";
+	$url="https://www.purdue.edu/home/wp-content/uploads/2023/09/DSC2463_lowres.jpg";
  }
 
 ?>
