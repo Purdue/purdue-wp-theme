@@ -1,30 +1,34 @@
 {
     "column" : "2",
-    "header" : "COMMUNICATION",
+    "header" : "INFORMATION",
     "links" : [
         {
-            "link_text": "OneCampus Portal",
-            "link_url": "https://one.purdue.edu/"
+            "link_text": "Diversity, Inclusion and Belonging",
+            "link_url": "https://www.purdue.edu/diversity-inclusion/"
         },
         {
-            "link_text": "Brightspace",
-            "link_url": "https://purdue.brightspace.com/d2l/login"
+            "link_text": "Ethics and Compliance",
+            "link_url": "https://www.purdue.edu/ethics/"
         },
         {
-            "link_text": "BoilerConnect",
-            "link_url": "https://www.purdue.edu/boilerconnect/"
+            "link_text": "News",
+            "link_url": "https://www.purdue.edu/newsroom/"
         },
         {
-            "link_text": "Office 365",
-            "link_url": "http://portal.office.com/"
+            "link_text": "Office of Engagement",
+            "link_url": "https://www.purdue.edu/engagement/"
         },
         {
-            "link_text": "Outlook",
-            "link_url": "https://outlook.office.com/"
+            "link_text": "President",
+            "link_url": "https://www.purdue.edu/president/"
         },
         {
-            "link_text": "myPurdue",
-            "link_url": "https://mypurdue.purdue.edu"
+            "link_text": "Purdue Today",
+            "link_url": "https://www.purdue.edu/newsroom/purduetoday/"
+        },
+        {
+            "link_text": "Tuition Calculator",
+            "link_url": "https://www.purdue.edu/treasurer/finance/bursar-office/tuition/tuition-calculator/"
         }
     ]
 }
