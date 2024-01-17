@@ -878,8 +878,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
 }
 .purdue-second-nav {
   border-bottom: 1px solid $boiler-gold;
-  min-height: auto;
-  padding: 0.5rem 0.25rem;
+  min-height: 0;
+  padding:0 1.25rem;
+  @include touch{
+    padding:0;
+  }
   & > .accordion__heading {
     display: none;
     @include touch {
@@ -931,6 +934,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     &.show {
       display: flex;
       position: absolute;
+      left: 0;
       z-index: 999;
       background: $black;
       border-bottom: 1px solid $white;
@@ -938,7 +942,16 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     &.hide {
       opacity: 0;
     }
+    .navbar-link{
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
     .navbar-item {
+      &:not(.has-dropdown, .submenu){
+        @include desktop{
+          padding: 1rem 0.75rem;
+        }
+      }
       button.accordion__heading {
         background: none;
         border: none;
@@ -1033,7 +1046,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7' fill='none'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23ffffff' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
             background-repeat: no-repeat;
             position: absolute;
-            top: 1.7rem;
+            top: calc(50% + 1px);
             right: 1.125rem;
             width: 12px;
             height: 7px;
