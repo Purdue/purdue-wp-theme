@@ -8,7 +8,10 @@
  *
  * @package purdue-wp-theme
  */
-
+$customCSS = "";
+if (function_exists('get_field')) {	
+   $customCSS = wp_strip_all_tags(html_entity_decode(get_field('custom_styles')));
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +21,12 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<?php wp_head(); ?>
+	<?php 
+		 if($customCSS != ""){
+			echo '<style type="text/css">' . $customCSS . '</style>';
+		}
+		wp_head(); 
+	?>
 </head>
 
 <body <?php body_class(); ?>>

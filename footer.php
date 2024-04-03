@@ -246,6 +246,14 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<?php
+	$customJS ="";
+	if (function_exists('get_field')) {	
+		$customJS = get_field('custom_scripts');
+		if($customJS != ""){
+			echo '<script type="text/javascript">' . wp_strip_all_tags(html_entity_decode($customJS)) . '</script>';
+		}
+	}
+	?>
 </body>
 </html>

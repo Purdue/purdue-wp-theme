@@ -795,6 +795,76 @@ if( function_exists('acf_add_local_field_group') ):
     
     endif;		
 
+//Custom CSS and JS acf fields
+add_action( 'acf/include_fields', function() {
+	if ( ! function_exists( 'acf_add_local_field_group' ) ) {
+		return;
+	}
+    acf_add_local_field_group( array(
+		'key' => 'group_650c89da745d9',
+		'title' => 'Custom Styles and Scripts',
+		'fields' => array(
+			array(
+				'key' => 'field_650c89dce9501',
+				'label' => 'Custom Styles',
+				'name' => 'custom_styles',
+				'aria-label' => '',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'placeholder' => '',
+				'new_lines' => '',
+			),
+			array(
+				'key' => 'field_650c8a464395b',
+				'label' => 'Custom Scripts',
+				'name' => 'custom_scripts',
+				'aria-label' => '',
+				'type' => 'textarea',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'maxlength' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '!=',
+					'value' => 'alert',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+		'show_in_rest' => 0,
+	) );
+} );
 //image in rss feed
 function rss_post_thumbnail($content) {
     global $post;
