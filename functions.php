@@ -884,18 +884,26 @@ function mycustom_shortcode_iframe($args, $content) {
     $arguments = mycustom_extract_shortcode_arguments($args, $keys);
     return '<iframe ' . $arguments . '></iframe>';
 }
+//Add script shortcode compiler
+add_shortcode( 'custom-script' , 'mycustom_shortcode_script' );
+function mycustom_shortcode_script($args, $content) {
+    $keys = array("defer", "src");
+    $arguments = mycustom_extract_shortcode_arguments($args, $keys);
+    return '<script ' . $arguments . '></script>';
+}
 
 function mycustom_extract_shortcode_arguments($args, $keys) {
     $result = "";
     foreach ($keys as $key) {
-        if (isset($args[$key])) {
+        if ($key === "defer"){
+            $result .= $key." ";
+        }elseif (isset($args[$key])) {
             $result .= $key . '="' . $args[$key] . '" ';
         }
     }
     return $result;
 }
-
-/**
+/*
  * Find the images in a gallery and return them in a new wrapping <div>  for Square image gallery block
  *
  * @param string $block_content The block content about to be appended.
