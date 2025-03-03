@@ -20,6 +20,9 @@
         </div>
     </div>
 	<div class="footer footer__signature">
+            <?php
+				echo '<p><em>Last modified:</em> ' . get_the_modified_time('F j, Y') . '</p>';
+			?>
 		<div class="container is-fullhd">
 		&copy 2020 - <?php echo date('Y'); ?> Purdue University <?php purdueBrand_signatureLinks(); ?> 
 		</div>

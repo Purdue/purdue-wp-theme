@@ -236,6 +236,9 @@
 		</div>
 	</div>
 	<div class="footer footer__signature">
+			<?php
+				echo '<p><em>Last modified:</em> ' . get_the_modified_time('F j, Y') . '</p>';
+			?>
 		<div class="container is-fullhd">
 		<a href="https://www.purdue.edu/securepurdue/security-programs/copyright-policies/reporting-alleged-copyright-infringement.php" target="_blank">Copyright</a>
 		 &copy; <?php echo date('Y'); ?> Purdue University. All Rights Reserved.<br /> 

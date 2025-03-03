@@ -132,6 +132,11 @@
       background-color: $gray-footer !important;
       color:$steam-gray;
       font-size:0.9375rem;
+      p{
+        font-size:0.9375rem;
+        margin-bottom: 0;
+        color:$steam-gray;
+      }
       @include touch{
         padding:1.68rem 1.5rem !important;
       }
