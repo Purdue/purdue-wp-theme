@@ -241,7 +241,7 @@
 			?>
 		<div class="container is-fullhd">
 		<a href="https://www.purdue.edu/securepurdue/security-programs/copyright-policies/reporting-alleged-copyright-infringement.php" target="_blank">Copyright</a>
-		 &copy; <?php echo date('Y'); ?> Purdue University. All Rights Reserved.<br /> 
+		 &copy; <?php echo date('Y'); ?> Purdue University. All Rights Reserved. <a href="https://www.purdue.edu/trademarks-licensing/about/policy/trademark-statement.php" target="_blank">Trademark Statement</a>.<br /> 
 		 <a href="https://www.purdue.edu/accessibilityresources/" target="_blank">Accessibility</a> | <a href="https://www.purdue.edu/purdue/ea_eou_statement.php" target="_blank">EA/EO University</a> | <a href="https://www.purdue.edu/purdue/about/integrity_statement.php" target="_blank">Integrity Statement</a> | <a href="https://www.purdue.edu/home/free-speech/" target="_blank">Free Expression</a> | <a href="https://collegescorecard.ed.gov/school/fields/?243780-Purdue-University-Main-Campus" target="_blank">DOE Degree Scorecards</a> | <a href="https://www.purdue.edu/purdue/about/privacy-notice.php" target="_blank">Privacy Policy</a>
 		</div>
 	</div>
