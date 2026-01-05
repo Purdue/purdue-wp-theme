@@ -966,3 +966,17 @@ function pu_block_wrapper_edit_image_gallery( $block_content, $block ) {
 	return $block_content;
 }
 add_filter( 'render_block', 'pu_block_wrapper_edit_image_gallery', 10, 2 );
+
+/*
+* Disable loading of separate core block assets (for performance optimization)
+* Fixes conflict with WordPress 6.9
+* https://make.wordpress.org/core/2025/11/18/wordpress-6-9-frontend-performance-field-guide/#load-block-styles-on-demand-in-classic-themes
+*/
+
+add_action(
+	'after_setup_theme',
+	function () {
+		// Only do this if absolutely necessary!
+		add_filter( 'should_load_separate_core_block_assets', '__return_false' );
+	}
+);
