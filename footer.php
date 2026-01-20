@@ -62,7 +62,7 @@
 					$ftr_add3 = get_theme_mod('address_line_3', '');
 					$ftr_city = get_theme_mod('city', 'West Lafayette');
 					$ftr_state = get_theme_mod('state', 'IN');
-					$ftr_zip = get_theme_mod('zipcode', '47906');
+					$ftr_zip = get_theme_mod('zipcode', '47907');
 					$ftr_phone = get_theme_mod('phone_number', '765-494-4600');
 					$ftr_email = get_theme_mod('email_address', 'https://www.purdue.edu/purdue/contact-us/index.php');
 
@@ -85,7 +85,7 @@
 								echo('<a href="https://www.google.com/maps/search/?api=1&query=610+Purdue+Mall%2CWest+Lafayette%2CIN%2C47907" target="_blank">');
 								echo ('Purdue University<br/>');
 								echo ('610 Purdue Mall<br/>');
-								echo ('West Lafayette, IN 47906');
+								echo ('West Lafayette, IN 47907');
 								echo('</a>');
 							} else {
 								if($ftr_add1 != ''){

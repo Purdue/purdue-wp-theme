@@ -256,7 +256,7 @@ function purdue_contact_options($wp_customize)
     // Zipcode
     $wp_customize->add_setting( 'zipcode', array(
         'capability' => 'edit_theme_options',
-        'default' => '47906',
+        'default' => '47907',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
         
