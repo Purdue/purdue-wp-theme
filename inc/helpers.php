@@ -167,10 +167,10 @@ if ( ! function_exists( 'purdueBrand_header_links' ) ) {
 if ( ! function_exists( 'purdueBrand_header_buttons' ) ) {
 	function purdueBrand_header_buttons($file)
 	{
-		$directory = trailingslashit( get_template_directory_uri() ).'json/';
+        $file = basename($file);
+		$directory = trailingslashit( get_template_directory() ).'json/';
 		$url = $directory . $file;
-		$request = wp_remote_get( "$url" );
-		$body = wp_remote_retrieve_body( $request );
+        $body = file_get_contents($url);
 		$linkGroups = json_decode( $body );
 		$output='';
 
