@@ -1,3 +1,5 @@
+import {FocusTrap} from '@justpie/focustrap';
+
 document.addEventListener('DOMContentLoaded', () => {
   // set FA to add in icons where used in psuedo elements.
   window.FontAwesomeConfig = {
@@ -20,6 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const $button = document.querySelector('.purdue-navbar-black>.navbar-end')
         const expanded = el.getAttribute('aria-expanded') === 'false' ? true : false
         const hamburgerIcon = el.querySelector('.burger-icon')
+        const focus = new FocusTrap([el, $target[0]]);
+
         const closeIcon = el.querySelector('.close-icon')
         el.setAttribute('aria-expanded', expanded)
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
@@ -117,6 +121,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (width < 1024) {
         siteNameButton.setAttribute('aria-expanded', false);
         siteNameButton.setAttribute('aria-disabled', false);
+        siteNameButton.disabled = false;
+
         if(navLinks.length>0){
           navLinks.forEach((l)=>{
 
@@ -154,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.classList.remove('is-open')
         button.setAttribute('aria-expanded', true);
         button.setAttribute('aria-disabled', true);
+        button.disabled = true;
       }
 
       if(navbarWhite&&navbarWhite.classList.contains('is-active')){
@@ -163,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if(siteName){
           siteNameButton.setAttribute('aria-expanded', true);
           siteNameButton.setAttribute('aria-disabled', true);
+          siteNameButton.disabled = true;
           siteNameButton.classList.remove('is-open')
           globalNavContent.classList.remove('hide', 'show')
           globalNavContent.removeAttribute('style');
@@ -235,11 +243,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (currAttr !== "none") {
             siteNameButton.setAttribute('aria-expanded', true);
             siteNameButton.setAttribute('aria-disabled', false);
+            siteNameButton.disabled = false;
             globalNavContent.style.height="auto"
 
           }else{
             siteNameButton.setAttribute('aria-expanded', false);
             siteNameButton.setAttribute('aria-disabled', false);
+            siteNameButton.disabled = false;
           }
 
           const current= globalNavContent.querySelector('.navbar-item.active')
@@ -308,6 +318,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if(width<1024){
       $sideButton.setAttribute('aria-expanded', false);
       $sideButton.setAttribute('aria-disabled', false);
+      $sideButton.disabled = false;
+
     }
   }
   if (siteName) {

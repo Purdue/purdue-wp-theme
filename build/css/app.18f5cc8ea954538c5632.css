@@ -10658,6 +10658,17 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 
+.skip-link:focus {
+  width: auto !important;
+  height: auto !important;
+  display: inline-block;
+  clip: auto !important;
+  clip: initial !important;
+  z-index: 1111;
+  margin: 0.5rem 0 0 1rem;
+  background-color: #fff;
+}
+
 .purdue-navbar-black {
   padding: 1.22rem 3.25rem;
   align-items: center !important;
@@ -10676,6 +10687,9 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 .purdue-navbar-black a {
   font-weight: 400;
+}
+.purdue-navbar-black .navbar-brand {
+  width: 100%;
 }
 @media screen and (max-width: 1023px) {
   .purdue-navbar-black .navbar-brand {
@@ -14138,13 +14152,19 @@ a:hover {
   background: #fff;
   border: none;
   font-size: 1rem;
-  padding: 0 0.75rem 0 0;
+  padding: 0 0.75rem 0 0.75rem;
   border-right: 1px solid #555960;
   border-top: 1px solid #555960;
   border-bottom: 1px solid #555960;
 }
 .search-box form .search-button .search-icon {
   cursor: pointer;
+}
+.search-box form .search-button:focus {
+  background-color: #9d9795;
+}
+.search-box form .search-button:focus .search-icon {
+  color: #000;
 }
 .search-box-fullwidth {
   width: 100% !important;
@@ -14212,13 +14232,19 @@ a:hover {
   background: #fff;
   border: none;
   font-size: 1rem;
-  padding: 0 0.75rem 0 0;
+  padding: 0 0.75rem 0 0.75rem;
   border-right: 1px solid #555960;
   border-top: 1px solid #555960;
   border-bottom: 1px solid #555960;
 }
 .search-box form .search-button .search-icon {
   cursor: pointer;
+}
+.search-box form .search-button:focus {
+  background-color: #9d9795;
+}
+.search-box form .search-button:focus .search-icon {
+  color: #000;
 }
 .search-box-fullwidth {
   width: 100% !important;

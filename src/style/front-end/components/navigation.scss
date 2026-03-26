@@ -1,4 +1,15 @@
 $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
+.skip-link {
+  &:focus {
+    width:auto !important;
+    height:auto  !important;;
+    display: inline-block;
+    clip:unset !important;
+    z-index: 1111;
+    margin: .5rem 0 0 1rem;
+    background-color:#fff;
+  }
+}
 .purdue-navbar-black {
   padding: 1.22rem 3.25rem;
   align-items: center !important;
@@ -14,6 +25,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
     font-weight:400;
   }
   .navbar-brand {
+    width: 100%;
     @include touch{
       min-height:2rem;
     }

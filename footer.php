@@ -21,7 +21,7 @@
 		<div class="container is-fullhd">
 			<?php 
 				$ftr_link = "https://www.purdue.edu/";
-				echo '<a href="' . $ftr_link . '" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>';
+				echo '<a href="' . $ftr_link . '" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue University"></a>';
 			?>
 		</div>
 	</div>

@@ -33,12 +33,18 @@
             background: #fff;
             border: none;
             font-size: 1rem;
-            padding: 0 0.75rem 0 0;
+            padding: 0 0.75rem 0 0.75rem;
             border-right:1px solid $steel-gray;
             border-top:1px solid $steel-gray;
             border-bottom:1px solid $steel-gray;
             .search-icon{
                 cursor: pointer;
+            }
+            &:focus {
+               background-color: #9d9795;
+                .search-icon {
+                    color: #000;
+                }
             }
         }
     }

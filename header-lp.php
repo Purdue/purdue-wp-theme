@@ -66,7 +66,7 @@
 		<header id="header" class="header--lp">
 			<nav class="<?php echo $classes; ?>" role="navigation">
 				<div class="navbar-brand">
-					<a href="https://www.purdue.edu" class="navbar-item" rel="home"><img src="<?php echo $logo; ?>" alt="Purdue Logo"></a>
+					<a href="https://www.purdue.edu" class="navbar-item" rel="home"><img src="<?php echo $logo; ?>" alt="Purdue University"></a>
 				</div>
 			</nav>
 		</header>
