@@ -4,6 +4,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     NodeList.prototype.forEach = Array.prototype.forEach;
 }
 import "./accordion.js";
+import "./accessibility.js";
 import "./skip-link-focus-fix.js";
 import "./hideAjaxLoadMoreButton";
 import "./google-graph-spacing.js";
