@@ -9,26 +9,26 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/back-end/admin.js":
+/***/ "./src/js/back-end/admin.js"
 /*!**********************************!*\
   !*** ./src/js/back-end/admin.js ***!
   \**********************************/
-/***/ (() => {
+() {
 
-eval("wp.domReady(function () {\n  wp.blocks.registerBlockVariation('core/gallery', {\n    name: 'square-image-gallery',\n    title: wp.i18n.__('Square Image Gallery', 'purdue-wp-theme'),\n    description: wp.i18n.__('An image gallery based on the Gallery block.', 'purdue-wp-theme'),\n    icon: 'slides',\n    attributes: {\n      align: 'full',\n      className: 'purdue-image-gallery',\n      title: 'gallery'\n    },\n    scope: ['block', 'inserter', 'transform']\n  });\n});\n\n//# sourceURL=webpack://purdue-wp-theme/./src/js/back-end/admin.js?");
+eval("{wp.domReady(function () {\n  wp.blocks.registerBlockVariation('core/gallery', {\n    name: 'square-image-gallery',\n    title: wp.i18n.__('Square Image Gallery', 'purdue-wp-theme'),\n    description: wp.i18n.__('An image gallery based on the Gallery block.', 'purdue-wp-theme'),\n    icon: 'slides',\n    attributes: {\n      align: 'full',\n      className: 'purdue-image-gallery',\n      title: 'gallery'\n    },\n    scope: ['block', 'inserter', 'transform']\n  });\n});\n\n//# sourceURL=webpack://purdue-wp-theme/./src/js/back-end/admin.js?\n}");
 
-/***/ }),
+/***/ },
 
-/***/ "./src/style/back-end/admin.scss":
+/***/ "./src/style/back-end/admin.scss"
 /*!***************************************!*\
   !*** ./src/style/back-end/admin.scss ***!
   \***************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://purdue-wp-theme/./src/style/back-end/admin.scss?");
+eval("{__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extract-plugin\n\n\n//# sourceURL=webpack://purdue-wp-theme/./src/style/back-end/admin.scss?\n}");
 
-/***/ })
+/***/ }
 
 /******/ 	});
 /************************************************************************/
@@ -52,9 +52,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	__webpack_modules__["./src/js/back-end/admin.js"](0, {}, __webpack_require__);
+/******/ 	__webpack_modules__["./src/js/back-end/admin.js"](0,{},__webpack_require__);
 /******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/style/back-end/admin.scss"](0, __webpack_exports__, __webpack_require__);
+/******/ 	__webpack_modules__["./src/style/back-end/admin.scss"](0,__webpack_exports__,__webpack_require__);
 /******/ 	
 /******/ })()
 ;

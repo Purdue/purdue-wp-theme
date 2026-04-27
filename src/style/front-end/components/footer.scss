@@ -58,9 +58,7 @@
                     display:none;
                     pointer-events: none;
                 }
-                &:focus{
-                    outline:none;
-                }       
+
                 @include touch{
                     pointer-events: all;
                     padding:1rem $side-padding-tablet;
