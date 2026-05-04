@@ -6,10 +6,7 @@
     form{
         display:flex;
         flex-direction:row;
-        input:focus,
-        button:focus {
-            outline: none;
-        }
+
         input[type=search] {
             width:200px;
             font-size:1rem;
