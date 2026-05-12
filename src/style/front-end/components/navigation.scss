@@ -26,6 +26,7 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
   }
   .navbar-brand {
     width: 100%;
+    flex-wrap: wrap;
     @include touch{
       min-height:2rem;
     }
@@ -539,11 +540,11 @@ $thetransition: all 0.25s cubic-bezier(1, 0.25, 0, 0.75) 0s;
                 font-weight:700;
                 color:$white;
               }
-              width:64px;
+              width:4rem;
             }
             &:first-child{
               a{
-                width:75px;
+                width:4.688rem;
               }
             }
           }

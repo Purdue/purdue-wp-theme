@@ -283,6 +283,7 @@
         .social {
             font-size:1.375rem;
             display: flex;
+            flex-wrap: wrap;
             @include mobile {
                 justify-content: center;
             }
