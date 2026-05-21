@@ -195,6 +195,9 @@ if(footer){
         if (width < 1024) {
             el.setAttribute('aria-expanded', false);
             el.setAttribute('aria-disabled', false);
+            el.removeAttribute('disabled');
+        }else{
+            el.setAttribute('disabled', true);
         }
     });
 }
@@ -239,6 +242,7 @@ window.addEventListener('resize', () => {
             if (width >= 1024) {
                 el.setAttribute('aria-expanded', true);
                 el.setAttribute('aria-disabled', true);
+                el.setAttribute('disabled', true);
                 icons.forEach((el) => {
                     if(el.getAttribute('class').indexOf('hide') > -1){
                         el.setAttribute('class', el.getAttribute('class').replace('hide', ''));
@@ -255,6 +259,7 @@ window.addEventListener('resize', () => {
             } else {
                 el.setAttribute('aria-expanded', false);
                 el.setAttribute('aria-disabled', false);
+                el.removeAttribute('disabled');
             }
         });
     }
