@@ -657,6 +657,7 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 
@@ -1798,11 +1799,11 @@ a.box:active {
   border-color: transparent;
   color: rgb(158.1, 123.2889908257, 0);
 }
-.button.is-small:not(.is-rounded) {
-  border-radius: 2px;
-}
 .button.is-small {
   font-size: 0.75rem;
+}
+.button.is-small:not(.is-rounded) {
+  border-radius: 2px;
 }
 .button.is-normal {
   font-size: 1rem;
@@ -1864,11 +1865,11 @@ a.box:active {
 .buttons:not(:last-child) {
   margin-bottom: 1rem;
 }
-.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
-  border-radius: 2px;
-}
 .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
   font-size: 0.75rem;
+}
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+  border-radius: 2px;
 }
 .buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
   font-size: 1.25rem;
@@ -5445,6 +5446,7 @@ body.has-navbar-fixed-bottom {
   height: 3.25rem;
   position: relative;
   width: 3.25rem;
+  margin-left: auto;
 }
 .navbar-burger span {
   background-color: currentColor;
@@ -5478,9 +5480,6 @@ body.has-navbar-fixed-bottom {
 }
 .navbar-burger.is-active span:nth-child(3) {
   transform: translateY(-5px) rotate(-45deg);
-}
-.navbar-burger {
-  margin-left: auto;
 }
 
 .navbar-menu {
@@ -10888,14 +10887,14 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .purdue-navbar-white a {
   font-weight: 400;
 }
+.purdue-navbar-white .navbar-menu {
+  width: 100%;
+}
 @media screen and (max-width: 1023px) {
   .purdue-navbar-white .navbar-menu {
     padding: 0;
     background-color: #000 !important;
   }
-}
-.purdue-navbar-white .navbar-menu {
-  width: 100%;
 }
 .purdue-navbar-white .navbar-menu .navbar-start {
   flex-wrap: wrap;
@@ -11224,13 +11223,13 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   margin-right: 18rem;
   flex: 1 0 auto;
 }
+.header--global .purdue-navbar-black .navbar-end__quick-links li a {
+  width: 4rem;
+}
 .header--global .purdue-navbar-black .navbar-end__quick-links li a:hover {
   font-style: italic;
   font-weight: 700;
   color: hsl(0, 0%, 100%);
-}
-.header--global .purdue-navbar-black .navbar-end__quick-links li a {
-  width: 4rem;
 }
 .header--global .purdue-navbar-black .navbar-end__quick-links li:first-child a {
   width: 4.688rem;
@@ -12794,14 +12793,14 @@ ul.alm-listing {
   margin-bottom: 0;
   font-weight: 400;
 }
+.card.listed-faculty .media {
+  position: relative;
+}
 @media screen and (max-width: 767px) {
   .card.listed-faculty .media {
     flex-direction: column;
     align-items: center;
   }
-}
-.card.listed-faculty .media {
-  position: relative;
 }
 .card.listed-faculty .media .media-left {
   width: 150px;
@@ -14698,18 +14697,16 @@ a:hover {
 
 .wp-block-table-mobile {
   display: none;
+  margin-bottom: 1.875rem;
+  font-family: acumin-pro, "Franklin Gothic", sans-serif;
+  font-size: 1rem;
+  text-align: center;
 }
 @media screen and (max-width: 1023px) {
   .wp-block-table-mobile {
     display: block;
     width: 100%;
   }
-}
-.wp-block-table-mobile {
-  margin-bottom: 1.875rem;
-  font-family: acumin-pro, "Franklin Gothic", sans-serif;
-  font-size: 1rem;
-  text-align: center;
 }
 .wp-block-table-mobile .table-header {
   border-top: 1px solid #000 !important;
@@ -14827,12 +14824,10 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list li a:hover {
 }
 ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid {
   margin: -0.75rem 0 0;
+  justify-content: space-between;
 }
 ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid:last-child {
   margin-bottom: -0.75rem;
-}
-ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid {
-  justify-content: space-between;
 }
 ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid li {
   margin: 0.75rem 0;
@@ -15248,6 +15243,7 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 li {
   display: block;
   animation-name: slideDown;
   animation-duration: 4s;
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 }
 @media screen and (max-width: 1023px) {
   .purdue-navbar-second {
@@ -15350,9 +15346,6 @@ ul.wp-block-latest-posts.wp-block-latest-posts__list.is-grid.columns-2 li {
 }
 .purdue-navbar-second .navbar-items .more-less.show.open .less {
   display: block;
-}
-.purdue-navbar-second {
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
 }
 .purdue-navbar-second.sticky {
   position: fixed;

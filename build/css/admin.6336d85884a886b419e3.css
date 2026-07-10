@@ -307,6 +307,7 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
      -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
           text-size-adjust: 100%;
 }
 
@@ -1448,11 +1449,11 @@ a.box:active {
   border-color: transparent;
   color: hsl(348, 86%, 43%);
 }
-.button.is-small:not(.is-rounded) {
-  border-radius: 2px;
-}
 .button.is-small {
   font-size: 0.75rem;
+}
+.button.is-small:not(.is-rounded) {
+  border-radius: 2px;
 }
 .button.is-normal {
   font-size: 1rem;
@@ -1514,11 +1515,11 @@ a.box:active {
 .buttons:not(:last-child) {
   margin-bottom: 1rem;
 }
-.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
-  border-radius: 2px;
-}
 .buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large) {
   font-size: 0.75rem;
+}
+.buttons.are-small .button:not(.is-normal):not(.is-medium):not(.is-large):not(.is-rounded) {
+  border-radius: 2px;
 }
 .buttons.are-medium .button:not(.is-small):not(.is-normal):not(.is-large) {
   font-size: 1.25rem;
@@ -5095,6 +5096,7 @@ body.has-navbar-fixed-bottom {
   height: 3.25rem;
   position: relative;
   width: 3.25rem;
+  margin-left: auto;
 }
 .navbar-burger span {
   background-color: currentColor;
@@ -5128,9 +5130,6 @@ body.has-navbar-fixed-bottom {
 }
 .navbar-burger.is-active span:nth-child(3) {
   transform: translateY(-5px) rotate(-45deg);
-}
-.navbar-burger {
-  margin-left: auto;
 }
 
 .navbar-menu {
