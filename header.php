@@ -42,7 +42,9 @@ if (function_exists('get_field')) {
 			<header id="header" class="header--simple">
 				<nav class="navbar is-black purdue-navbar-black" role="navigation">
 					<div class="navbar-brand">
-						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
+						<a href="https://www.purdue.edu/" class="navbar-item" rel="home">
+                            <img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue University">
+                        </a>
 						<button class="icon is-large navbar-burger" data-target="simple-nav">
 							<i aria-hidden="true" class="fas fa-bars fa-2x burger-icon"></i><i aria-hidden="true" class="fas fa-times close-icon"></i>
 						</button>
@@ -67,19 +69,19 @@ if (function_exists('get_field')) {
 			<header id="header" class="header--global">
 				<nav class="navbar is-black purdue-navbar-black" role="navigation">
 					<div class="navbar-brand">
-						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Logo"></a>
+						<a href="https://www.purdue.edu/" class="navbar-item" rel="home"><img src="https://www.purdue.edu/purdue/images/PU-H.svg" alt="Purdue Unviersity"></a>
+                        <div class="navbar-menu">
+                            <div class="navbar-end">
+                                <ul class="navbar-end__quick-links">
+                                    <?php purdueBrand_header_buttons("global-header-buttons.json");?>
+                                </ul>
+                            </div>
+                        </div>
 						<button class="icon is-large navbar-burger" data-target="navbar-find-info" aria-expanded="false">
 							<span class="icon__button-text">Purdue Menu</span>	
 							<img src="<?php echo get_template_directory_uri() ?>/icons/search-menu-icon.png" aria-hidden="true" alt="" class="burger-icon">
 							<img src="<?php echo get_template_directory_uri() ?>/icons/close-icon.png" aria-hidden="true" alt="" class="close-icon">
 						</button>
-					</div>
-					<div class="navbar-menu">
-						<div class="navbar-end">
-							<ul class="navbar-end__quick-links">
-								<?php purdueBrand_header_buttons("global-header-buttons.json");?>
-							</ul>
-						</div>
 					</div>
 				</nav>
 				<div class="navbar-find-info"  data-menu="navbar-find-info">
@@ -108,7 +110,7 @@ if (function_exists('get_field')) {
 					</div>
 				</div>
 				<div class="navbar-site-name">
-					<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="global-nav-button" aria-controls="global-nav">
+					<button class="accordion__heading" aria-expanded="true" aria-disabled="true" id="global-nav-button" aria-controls="global-nav" aria-label="Purdue Menu" disabled>
 						<?php echo get_bloginfo( 'name' ); ?>
 					</button>
 				</div>

@@ -67,6 +67,7 @@ const toggle = (e) => {
                         content.style.height = content.scrollHeight + "px";
                     }
                 }
+
             })          
             break;
         case checkClassName(clicked, 'accordion__heading'): // accordion
@@ -107,6 +108,10 @@ const toggle = (e) => {
                     clicked.classList.add('is-open')
                     showFooter(content);
                     content.style.height = content.scrollHeight + "px";
+                    const links = content.querySelectorAll('a');
+                    if(links.length > 0) {
+                        links[0].focus();
+                    }
                 } 
             }
         })    
@@ -190,6 +195,9 @@ if(footer){
         if (width < 1024) {
             el.setAttribute('aria-expanded', false);
             el.setAttribute('aria-disabled', false);
+            el.removeAttribute('disabled');
+        }else{
+            el.setAttribute('disabled', true);
         }
     });
 }
@@ -228,11 +236,13 @@ window.addEventListener('resize', () => {
     if(footer){
         footer.querySelectorAll('.accordion__heading--footer').forEach((el) => {
             let content = document.querySelector('#' + el.getAttribute('aria-controls'));
+
             let icons = el.querySelectorAll('.accordion__icon');
             const currAttr = window.getComputedStyle(content).getPropertyValue('display');
             if (width >= 1024) {
                 el.setAttribute('aria-expanded', true);
                 el.setAttribute('aria-disabled', true);
+                el.setAttribute('disabled', true);
                 icons.forEach((el) => {
                     if(el.getAttribute('class').indexOf('hide') > -1){
                         el.setAttribute('class', el.getAttribute('class').replace('hide', ''));
@@ -249,6 +259,7 @@ window.addEventListener('resize', () => {
             } else {
                 el.setAttribute('aria-expanded', false);
                 el.setAttribute('aria-disabled', false);
+                el.removeAttribute('disabled');
             }
         });
     }

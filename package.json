@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
+    "@justpie/focustrap": "^1.1.0",
     "bulma": "^0.9.4",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.7.0",

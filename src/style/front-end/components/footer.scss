@@ -58,9 +58,7 @@
                     display:none;
                     pointer-events: none;
                 }
-                &:focus{
-                    outline:none;
-                }       
+
                 @include touch{
                     pointer-events: all;
                     padding:1rem $side-padding-tablet;
@@ -285,6 +283,7 @@
         .social {
             font-size:1.375rem;
             display: flex;
+            flex-wrap: wrap;
             @include mobile {
                 justify-content: center;
             }
